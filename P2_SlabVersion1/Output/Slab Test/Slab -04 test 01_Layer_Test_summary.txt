@@ -1,0 +1,11 @@
+SDIE Slab Estimation — Slab -04 test 01_Layer_Test.dxf
+Processed: 2026-06-03T10:21:40.530160+00:00
+Structural layers: STR-BEAM
+Default thickness: 200 mm
+
+Slabs detected: 1
+Total area:      60.506 m²
+Total concrete:  12.101 m³
+Total shuttering:60.506 m²
+
+  SLAB-001: 60.506 m², 200 mm (default_note), 12.101 m³

@@ -1,0 +1,118 @@
+{
+  "$schema": "sdie-ground-truth/v1",
+  "drawing_id": "Slab-02_Layer_Try",
+  "source_dxf": "Data Source/Slab Test/Slab-02_Layer_Try.dxf",
+  "validation_status": "approved",
+  "validated_by": "Nishanth BH",
+  "validated_at": "2026-06-03",
+  "audit_ref": "data/audits/Slab-02_Layer_Try_audit.json",
+  "drawing_metadata": {
+    "dxf_version": "AC1032",
+    "insunits": 4,
+    "insunits_name": "cm",
+    "internal_length_unit": "mm",
+    "area_conversion": "area_m2 = area_cm2 / 10000",
+    "scale": "1:100",
+    "floor_count": 5,
+    "mvp_floor_id": "LGF"
+  },
+  "floor_zones": [
+    {
+      "floor_id": "LGF",
+      "name": "Lower Ground Floor Framing Layout",
+      "elevation_text": "+102.0M LVL",
+      "heading_insert_xy_cm": [752260.112, 858.111],
+      "bounds_xy_cm": {
+        "xmin": 725000,
+        "xmax": 792000,
+        "ymin": 15000,
+        "ymax": 42000,
+        "note": "Approximate bounds for LGF Grade Slab-not sure if this is correct"
+      },
+      "default_thickness": {
+        "value_mm": 200,
+        "source": "G-ANNO-TEXT",
+        "text": "ALL SLABS ARE 200mm THK. U.N.O",
+        "confidence": 0.95
+      },
+      "local_thickness_labels": [
+        { "text": "200THK", "value_mm": 200, "xy_cm": [739790.964, 22161.832] },
+        { "text": "175THK", "value_mm": 175, "xy_cm": [747279.449, 26522.028] },
+        { "text": "175THK", "value_mm": 175, "xy_cm": [739323.929, 26468.538] },
+        { "text": "175THK", "value_mm": 175, "xy_cm": [759694.872, 26580.545] },
+        { "text": "150THK", "value_mm": 150, "xy_cm": [755524.462, 27515.648] },
+        { "text": "150THK", "value_mm": 150, "xy_cm": [764859.975, 25111.527] },
+        { "text": "125THK", "value_mm": 125, "xy_cm": [765159.291, 28508.309] },
+        { "text": "125THK", "value_mm": 125, "xy_cm": [766345.063, 22030.704] },
+        { "text": "125THK", "value_mm": 125, "xy_cm": [772420.696, 21544.023] },
+        { "text": "125THK", "value_mm": 125, "xy_cm": [779444.721, 21544.024] },
+        { "text": "125THK", "value_mm": 125, "xy_cm": [785493.495, 36156.212] }
+      ],
+      "void_annotations": [
+        { "type": "staircase", "label": "STAIRCASE", "xy_cm": [751756.212, 24751.742] },
+        { "type": "staircase", "label": "STAIRCASE", "xy_cm": [784607.016, 32116.142] },
+        { "type": "lift_pit", "label": "LIFT PIT", "xy_cm": [755473.144, 25363.552] },
+        { "type": "planter", "label": "PLANTER", "xy_cm": [745215.786, 22044.998] },
+        { "type": "planter", "label": "PLANTER", "xy_cm": [751041.34, 22138.183] },
+        { "type": "planter", "label": "PLANTER", "xy_cm": [772339.345, 22098.547] },
+        { "type": "planter", "label": "PLANTER", "xy_cm": [779384.589, 22119.14] },
+        { "type": "ramp", "label": "RAMP", "xy_cm": [768857.802, 25193.877] }
+      ],
+      "expected_total": {
+        "area_m2": 712.003,
+        "concrete_m3": 134.860952,
+        "shuttering_m2": 762.796466,
+        "comment": "Manual BOQ verified for LGF Grade Slab"
+      },
+      "slabs": [],
+      "machine_candidates_ref": "data/audits/Slab-02_LGF_candidates.json",
+      "machine_candidates_note": "Auto polygonize on S_FRAMES+STR-CUTOUT produces small beam-pocket cells (~80–200 m²), NOT final slab bays. Use Strategy B output for real slabs; keep these IDs only for debug."
+    },
+    {
+      "floor_id": "GF",
+      "name": "Ground Floor Framing Layout",
+      "elevation_text": "+106.2M LVL",
+      "heading_insert_xy_cm": [737062, -27211],
+      "default_thickness_mm": 150,
+      "process_in_mvp": false
+    },
+    {
+      "floor_id": "FF",
+      "name": "First Floor Framing Layout",
+      "elevation_text": "+110.7M LVL",
+      "heading_insert_xy_cm": [736586, -55600],
+      "default_thickness_mm": 150,
+      "process_in_mvp": false
+    },
+    {
+      "floor_id": "TF",
+      "name": "Terrace Floor Framing Layout",
+      "elevation_text": "+114.3m LVL",
+      "heading_insert_xy_cm": [736144, -89734],
+      "default_thickness_mm": 150,
+      "process_in_mvp": false
+    },
+    {
+      "floor_id": "SHR",
+      "name": "Staircase Headroom & OHT LVL Framing Layout",
+      "elevation_text": "+117.2m LVL",
+      "heading_insert_xy_cm": [749540, -131795],
+      "default_thickness_mm": 150,
+      "process_in_mvp": false
+    }
+  ],
+  "regression_config": {
+    "area_tolerance_pct": 3,
+    "volume_tolerance_pct": 3,
+    "shuttering_tolerance_pct": 3,
+    "thickness_must_match_mm": true
+  },
+  "engineer_checklist": [
+    "Confirm LGF bounds_xy_cm encloses full LGF plan only",
+    "Enter expected_total.area_m2, concrete_m3, shuttering_m2 from manual estimate",
+    "Add one slabs[] object per structural bay OR one merged slab with net area",
+    "For each slab: polygon_wkt (optional in v1), thickness_mm, is_structural_slab true/false",
+    "Confirm void_annotations are deducted in your manual BOQ",
+    "Set validation_status to approved"
+  ]
+}

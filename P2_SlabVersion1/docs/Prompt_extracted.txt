@@ -1,0 +1,201 @@
+Cursor AI Prompt – Phase 2 Structural Drawing Intelligence Engine (DXF Only)
+You are a Principal AI Architect, Structural Engineer, CAD Intelligence Researcher, Computer Vision Engineer, and Senior Python Developer.
+Your task is to build a completely new system called:
+STRUCTURAL DRAWING INTELLIGENCE ENGINE (SDIE)
+This is NOT a quantity estimation tool.
+This is an AI-powered structural drawing understanding platform whose first application is quantity estimation.
+The system must understand structural drawings the same way an experienced structural engineer would.
+MISSION
+Develop an advanced AI-assisted DXF interpretation platform that can process structural consultant drawings exactly as received.
+The system must work even when drawings contain:
+No slab polylines
+No slab tags
+No beam tags
+Broken geometry
+Inconsistent layer naming
+Multiple slab thicknesses
+Consultant-specific drafting styles
+Missing annotations
+The objective is to automatically identify slabs and calculate:
+Slab Area
+Concrete Quantity
+Shuttering Quantity
+without requiring manual CAD preparation.
+IMPORTANT PROJECT RULES
+Create a completely new architecture.
+Existing SlabVersion6 may be referenced only for reusable utility functions.
+Do not inherit existing assumptions.
+Build for future scalability to beams, columns, foundations, and full building BOQ.
+Focus only on slab intelligence in this phase.
+Beam recognition may exist only to support slab boundary identification.
+Do not build beam quantity calculations.
+INPUT FORMAT
+Current Supported Input:
+DXF ONLY
+Future support for DWG and PDF should be considered in architecture design only.
+Do not implement DWG or PDF ingestion.
+TARGET SYSTEM ARCHITECTURE
+Raw DXF
+↓
+Drawing Understanding Engine
+↓
+Structural Geometry Graph
+↓
+AI Structural Reasoning Layer
+↓
+Semantic Building Model
+↓
+Quantity Engine
+STAGE 1DXF INGESTION ENGINE
+Using:
+ezdxf
+Extract:
+LINE
+LWPOLYLINE
+POLYLINE
+ARC
+CIRCLE
+SPLINE
+TEXT
+MTEXT
+BLOCK REFERENCES
+HATCH
+DIMENSIONS
+Convert all entities into a normalized internal model.
+STAGE 2LAYER INTELLIGENCE
+Do not rely on layer names.
+Develop AI-assisted layer classification.
+Identify probable:
+Structural Layers
+Beam Layers
+Slab Layers
+Annotation Layers
+Grid Layers
+Border Layers
+Title Layers
+Generate confidence scores.
+STAGE 3STRUCTURAL GRAPH RECONSTRUCTION
+Build a graph-based model using:
+NetworkX
+Shapely
+Convert drawing into:
+Nodes:
+intersections
+Edges:
+structural members
+Generate a complete spatial graph.
+Detect:
+Closed regions
+Semi-closed regions
+Beam-framed regions
+Structural bays
+even when no slab polylines exist.
+STAGE 4SLAB DETECTION ENGINE
+Develop multiple slab detection strategies.
+Strategy A:Region detection
+Strategy B:Beam-frame detection
+Strategy C:Grid-based reconstruction
+Strategy D:Topology-based reconstruction
+Run all strategies independently.
+Compare results.
+Select best candidate using consensus scoring.
+STAGE 5THICKNESS INTELLIGENCE ENGINE
+Automatically detect slab thickness from:
+Source A:General Notes
+Source B:Nearby THK labels
+Source C:Legend Tables
+Source D:Slab Schedule References
+Source E:Engineer drafting patterns
+Create a thickness confidence engine.
+Example:
+150 THKConfidence 95%
+125 THKConfidence 71%
+When confidence below threshold:
+Request user confirmation.
+STAGE 6AI REASONING LAYER
+DeepSeek API available.
+Use DeepSeek only for ambiguity resolution.
+Never allow DeepSeek to perform quantity calculations.
+DeepSeek may assist with:
+Thickness interpretation
+Missing notes
+Conflicting notes
+Slab naming inference
+Drawing understanding
+DeepSeek must return:
+Proposed answer
+Supporting evidence
+Confidence score
+STAGE 7MULTI-AGENT REASONING
+Implement:
+Tree of Thought
+Evaluate multiple interpretations.
+Self Consistency
+Run independent extraction paths.
+Consensus Selection
+Choose highest confidence result.
+Explainability Layer
+Explain why decisions were made.
+STAGE 8SEMANTIC BUILDING MODEL
+Create an internal building model.
+Building├ Floors├ Structural Zones├ Slabs├ Openings├ Stair Voids├ Lift Cores└ Structural Notes
+This model becomes the foundation for future modules.
+STAGE 9QUANTITY ENGINE
+Generate:
+Slab Area
+Concrete Volume
+Shuttering Area
+Each result must contain:
+Quantity
+Confidence Score
+Source Evidence
+Calculation Trace
+STAGE 10VISUAL VALIDATION
+Build visual overlays.
+Show:
+Detected Slabs
+Detected Thickness
+Openings
+Ignored Areas
+Confidence Heat Map
+Allow engineer validation.
+TECH STACK
+Backend:
+PythonFastAPI
+Geometry:
+ezdxfshapelynetworkx
+AI:
+DeepSeek API
+Database:
+SQLite initially
+Future-ready for PostgreSQL
+Frontend:
+ReactTypeScript
+Visualization:
+SVGPlotly
+TESTING REQUIREMENTS
+Use available prototype DXF files as benchmark drawings.
+Create:
+Unit Tests
+Integration Tests
+Regression Tests
+Drawing Validation Tests
+Benchmark Metrics:
+Slab Detection Accuracy
+Thickness Detection Accuracy
+Concrete Quantity Accuracy
+Shuttering Accuracy
+Processing Time
+Confidence Reliability
+SUCCESS CRITERIA
+A structural engineer should be able to upload a raw DXF drawing received directly from the design consultant and obtain:
+Automatically detected slabs
+Thickness assignment
+Quantity estimation
+Visual validation
+Confidence scores
+without requiring slab polylines, slab tags, beam tags, or manual CAD cleanup.
+Build production-grade code.
+Avoid placeholders.
+Avoid hardcoded assumptions.
+Design this as the foundation of a future Structural Foundation Model capable of understanding complete building drawings.

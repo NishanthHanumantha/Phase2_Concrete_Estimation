@@ -1,0 +1,1100 @@
+{
+  "engine": "SDIE",
+  "version": "0.1.0",
+  "processed_at": "2026-06-03T12:08:06.757659+00:00",
+  "source_dxf": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion1\\Data Source\\Slab Test\\Slab-02_Terrace_LayerTest.dxf",
+  "drawing_meta": {
+    "path": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion1\\Data Source\\Slab Test\\Slab-02_Terrace_LayerTest.dxf",
+    "dxf_version": "AC1032",
+    "insunits": 4,
+    "insunits_name": "cm",
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "extents": {
+      "min": [
+        2327.681,
+        2180.842
+      ],
+      "max": [
+        57596.164,
+        27068.762
+      ]
+    }
+  },
+  "config": {
+    "structural_layers": [
+      "S_FRAMES",
+      "STR-CUTOUT"
+    ],
+    "polygonize_layers": [
+      "S_FRAMES",
+      "STR-CUTOUT"
+    ],
+    "annotation_layers": [
+      "G-ANNO-TEXT",
+      "S-BEAM-IDEN"
+    ],
+    "detection_mode": "auto",
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "min_slab_area_m2": 0.4
+  },
+  "detection_notes": {
+    "mode": "auto",
+    "frame_line_count": {
+      "horizontal": 186,
+      "vertical": 152
+    },
+    "beam_grid_count": 45,
+    "beam_grid_total_area_m2": 298.742,
+    "selected": "beam_grid_bay"
+  },
+  "notes": {
+    "default_thickness_mm": 150,
+    "default_note_text": "NOTE: \\P\\pxi-3,l3,t3;{\\fSymbol|b0|i0|c2|p18;\u00b7^I}ALL SLABS ARE 150mm THK. U.N.O",
+    "local_thk_label_count": 0
+  },
+  "slabs": [
+    {
+      "slab_id": "SLAB-001",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.472819,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.820923,
+      "shuttering_m2": 5.472819,
+      "calculation_trace": "area_m2=5.472819; thickness_mm=150; volume=0.820923",
+      "centroid_cm": [
+        7839.508,
+        10522.25
+      ],
+      "bounds_cm": [
+        5506.2,
+        9935.9,
+        10172.9,
+        11108.6
+      ],
+      "polygon_wkt": "POLYGON ((10172.854343556404 9935.879734084081, 10172.854343556404 11108.620278881475, 5506.162438213693 11108.620278881475, 5506.162438213693 9935.879734084081, 10172.854343556404 9935.879734084081))"
+    },
+    {
+      "slab_id": "SLAB-002",
+      "strategy": "beam_grid_bay",
+      "area_m2": 10.604461,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.590669,
+      "shuttering_m2": 10.604461,
+      "calculation_trace": "area_m2=10.604461; thickness_mm=150; volume=1.590669",
+      "centroid_cm": [
+        7839.508,
+        12178.14
+      ],
+      "bounds_cm": [
+        5506.2,
+        11042.0,
+        10172.9,
+        13314.3
+      ],
+      "polygon_wkt": "POLYGON ((10172.854343556404 11041.953612214807, 10172.854343556404 13314.325845499789, 5506.162438213693 13314.325845499789, 5506.162438213693 11041.953612214807, 10172.854343556404 11041.953612214807))"
+    },
+    {
+      "slab_id": "SLAB-003",
+      "strategy": "beam_grid_bay",
+      "area_m2": 14.259893,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 2.138984,
+      "shuttering_m2": 14.259893,
+      "calculation_trace": "area_m2=14.259893; thickness_mm=150; volume=2.138984",
+      "centroid_cm": [
+        7839.508,
+        14775.497
+      ],
+      "bounds_cm": [
+        5506.2,
+        13247.7,
+        10172.9,
+        16303.3
+      ],
+      "polygon_wkt": "POLYGON ((10172.854343556404 13247.65917883312, 10172.854343556404 16303.334035277141, 5506.162438213693 16303.334035277141, 5506.162438213693 13247.65917883312, 10172.854343556404 13247.65917883312))"
+    },
+    {
+      "slab_id": "SLAB-004",
+      "strategy": "beam_grid_bay",
+      "area_m2": 9.929127,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.489369,
+      "shuttering_m2": 9.929127,
+      "calculation_trace": "area_m2=9.929127; thickness_mm=150; volume=1.489369",
+      "centroid_cm": [
+        7839.508,
+        17300.497
+      ],
+      "bounds_cm": [
+        5506.2,
+        16236.7,
+        10172.9,
+        18364.3
+      ],
+      "polygon_wkt": "POLYGON ((10172.854343556404 16236.667368610473, 10172.854343556404 18364.325844427192, 5506.162438213693 18364.325844427192, 5506.162438213693 16236.667368610473, 10172.854343556404 16236.667368610473))"
+    },
+    {
+      "slab_id": "SLAB-005",
+      "strategy": "beam_grid_bay",
+      "area_m2": 14.544523,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 2.181678,
+      "shuttering_m2": 14.544523,
+      "calculation_trace": "area_m2=14.544523; thickness_mm=150; volume=2.181678",
+      "centroid_cm": [
+        7839.508,
+        19855.993
+      ],
+      "bounds_cm": [
+        5506.2,
+        18297.7,
+        10172.9,
+        21414.3
+      ],
+      "polygon_wkt": "POLYGON ((10172.854343556404 18297.659177760528, 10172.854343556404 21414.32584439384, 5506.162438213693 21414.32584439384, 5506.162438213693 18297.659177760528, 10172.854343556404 18297.659177760528))"
+    },
+    {
+      "slab_id": "SLAB-006",
+      "strategy": "beam_grid_bay",
+      "area_m2": 4.500946,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.675142,
+      "shuttering_m2": 4.500946,
+      "calculation_trace": "area_m2=4.500946; thickness_mm=150; volume=0.675142",
+      "centroid_cm": [
+        7839.508,
+        21829.901
+      ],
+      "bounds_cm": [
+        5506.2,
+        21347.7,
+        10172.9,
+        22312.1
+      ],
+      "polygon_wkt": "POLYGON ((10172.854343556404 21347.659177727175, 10172.854343556404 22312.14240160837, 5506.162438213693 22312.14240160837, 5506.162438213693 21347.659177727175, 10172.854343556404 21347.659177727175))"
+    },
+    {
+      "slab_id": "SLAB-007",
+      "strategy": "beam_grid_bay",
+      "area_m2": 11.426358,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.713954,
+      "shuttering_m2": 11.426358,
+      "calculation_trace": "area_m2=11.426358; thickness_mm=150; volume=1.713954",
+      "centroid_cm": [
+        7839.508,
+        23469.722
+      ],
+      "bounds_cm": [
+        5506.2,
+        22245.5,
+        10172.9,
+        24694.0
+      ],
+      "polygon_wkt": "POLYGON ((10172.854343556404 22245.475734941705, 10172.854343556404 24693.967857652216, 5506.162438213693 24693.967857652216, 5506.162438213693 22245.475734941705, 10172.854343556404 22245.475734941705))"
+    },
+    {
+      "slab_id": "SLAB-008",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.716814,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.407522,
+      "shuttering_m2": 2.716814,
+      "calculation_trace": "area_m2=2.716814; thickness_mm=150; volume=0.407522",
+      "centroid_cm": [
+        11264.506,
+        10522.25
+      ],
+      "bounds_cm": [
+        10106.2,
+        9935.9,
+        12422.8,
+        11108.6
+      ],
+      "polygon_wkt": "POLYGON ((12422.824692296032 9935.879734084081, 12422.824692296032 11108.620278881475, 10106.187676889736 11108.620278881475, 10106.187676889736 9935.879734084081, 12422.824692296032 9935.879734084081))"
+    },
+    {
+      "slab_id": "SLAB-009",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.264262,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.789639,
+      "shuttering_m2": 5.264262,
+      "calculation_trace": "area_m2=5.264262; thickness_mm=150; volume=0.789639",
+      "centroid_cm": [
+        11264.506,
+        12178.14
+      ],
+      "bounds_cm": [
+        10106.2,
+        11042.0,
+        12422.8,
+        13314.3
+      ],
+      "polygon_wkt": "POLYGON ((12422.824692296032 11041.953612214807, 12422.824692296032 13314.325845499789, 10106.187676889736 13314.325845499789, 10106.187676889736 11041.953612214807, 12422.824692296032 11041.953612214807))"
+    },
+    {
+      "slab_id": "SLAB-010",
+      "strategy": "beam_grid_bay",
+      "area_m2": 7.078889,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.061833,
+      "shuttering_m2": 7.078889,
+      "calculation_trace": "area_m2=7.078889; thickness_mm=150; volume=1.061833",
+      "centroid_cm": [
+        11264.506,
+        14775.497
+      ],
+      "bounds_cm": [
+        10106.2,
+        13247.7,
+        12422.8,
+        16303.3
+      ],
+      "polygon_wkt": "POLYGON ((12422.824692296032 13247.65917883312, 12422.824692296032 16303.334035277141, 10106.187676889736 16303.334035277141, 10106.187676889736 13247.65917883312, 12422.824692296032 13247.65917883312))"
+    },
+    {
+      "slab_id": "SLAB-011",
+      "strategy": "beam_grid_bay",
+      "area_m2": 4.929012,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.739352,
+      "shuttering_m2": 4.929012,
+      "calculation_trace": "area_m2=4.929012; thickness_mm=150; volume=0.739352",
+      "centroid_cm": [
+        11264.506,
+        17300.497
+      ],
+      "bounds_cm": [
+        10106.2,
+        16236.7,
+        12422.8,
+        18364.3
+      ],
+      "polygon_wkt": "POLYGON ((12422.824692296032 16236.667368610473, 12422.824692296032 18364.325844427192, 10106.187676889736 18364.325844427192, 10106.187676889736 16236.667368610473, 12422.824692296032 16236.667368610473))"
+    },
+    {
+      "slab_id": "SLAB-012",
+      "strategy": "beam_grid_bay",
+      "area_m2": 7.220185,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.083028,
+      "shuttering_m2": 7.220185,
+      "calculation_trace": "area_m2=7.220185; thickness_mm=150; volume=1.083028",
+      "centroid_cm": [
+        11264.506,
+        19855.993
+      ],
+      "bounds_cm": [
+        10106.2,
+        18297.7,
+        12422.8,
+        21414.3
+      ],
+      "polygon_wkt": "POLYGON ((12422.824692296032 18297.659177760528, 12422.824692296032 21414.32584439384, 10106.187676889736 21414.32584439384, 10106.187676889736 18297.659177760528, 12422.824692296032 18297.659177760528))"
+    },
+    {
+      "slab_id": "SLAB-013",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.234358,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.335154,
+      "shuttering_m2": 2.234358,
+      "calculation_trace": "area_m2=2.234358; thickness_mm=150; volume=0.335154",
+      "centroid_cm": [
+        11264.506,
+        21829.901
+      ],
+      "bounds_cm": [
+        10106.2,
+        21347.7,
+        12422.8,
+        22312.1
+      ],
+      "polygon_wkt": "POLYGON ((12422.824692296032 21347.659177727175, 12422.824692296032 22312.14240160837, 10106.187676889736 22312.14240160837, 10106.187676889736 21347.659177727175, 12422.824692296032 21347.659177727175))"
+    },
+    {
+      "slab_id": "SLAB-014",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.672267,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.85084,
+      "shuttering_m2": 5.672267,
+      "calculation_trace": "area_m2=5.672267; thickness_mm=150; volume=0.85084",
+      "centroid_cm": [
+        11264.506,
+        23469.722
+      ],
+      "bounds_cm": [
+        10106.2,
+        22245.5,
+        12422.8,
+        24694.0
+      ],
+      "polygon_wkt": "POLYGON ((12422.824692296032 22245.475734941705, 12422.824692296032 24693.967857652216, 10106.187676889736 24693.967857652216, 10106.187676889736 22245.475734941705, 12422.824692296032 22245.475734941705))"
+    },
+    {
+      "slab_id": "SLAB-015",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.599675,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.389951,
+      "shuttering_m2": 2.599675,
+      "calculation_trace": "area_m2=2.599675; thickness_mm=150; volume=0.389951",
+      "centroid_cm": [
+        13464.534,
+        10522.25
+      ],
+      "bounds_cm": [
+        12356.2,
+        9935.9,
+        14572.9,
+        11108.6
+      ],
+      "polygon_wkt": "POLYGON ((14572.909685802839 9935.879734084081, 14572.909685802839 11108.620278881475, 12356.158025629364 11108.620278881475, 12356.158025629364 9935.879734084081, 14572.909685802839 9935.879734084081))"
+    },
+    {
+      "slab_id": "SLAB-016",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.037285,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.755593,
+      "shuttering_m2": 5.037285,
+      "calculation_trace": "area_m2=5.037285; thickness_mm=150; volume=0.755593",
+      "centroid_cm": [
+        13464.534,
+        12178.14
+      ],
+      "bounds_cm": [
+        12356.2,
+        11042.0,
+        14572.9,
+        13314.3
+      ],
+      "polygon_wkt": "POLYGON ((14572.909685802839 11041.953612214807, 14572.909685802839 13314.325845499789, 12356.158025629364 13314.325845499789, 12356.158025629364 11041.953612214807, 14572.909685802839 11041.953612214807))"
+    },
+    {
+      "slab_id": "SLAB-017",
+      "strategy": "beam_grid_bay",
+      "area_m2": 6.773672,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.016051,
+      "shuttering_m2": 6.773672,
+      "calculation_trace": "area_m2=6.773672; thickness_mm=150; volume=1.016051",
+      "centroid_cm": [
+        13464.534,
+        14775.497
+      ],
+      "bounds_cm": [
+        12356.2,
+        13247.7,
+        14572.9,
+        16303.3
+      ],
+      "polygon_wkt": "POLYGON ((14572.909685802839 13247.65917883312, 14572.909685802839 16303.334035277141, 12356.158025629364 16303.334035277141, 12356.158025629364 13247.65917883312, 14572.909685802839 13247.65917883312))"
+    },
+    {
+      "slab_id": "SLAB-018",
+      "strategy": "beam_grid_bay",
+      "area_m2": 4.71649,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.707473,
+      "shuttering_m2": 4.71649,
+      "calculation_trace": "area_m2=4.71649; thickness_mm=150; volume=0.707473",
+      "centroid_cm": [
+        13464.534,
+        17300.497
+      ],
+      "bounds_cm": [
+        12356.2,
+        16236.7,
+        14572.9,
+        18364.3
+      ],
+      "polygon_wkt": "POLYGON ((14572.909685802839 16236.667368610473, 14572.909685802839 18364.325844427192, 12356.158025629364 18364.325844427192, 12356.158025629364 16236.667368610473, 14572.909685802839 16236.667368610473))"
+    },
+    {
+      "slab_id": "SLAB-019",
+      "strategy": "beam_grid_bay",
+      "area_m2": 6.908876,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.036331,
+      "shuttering_m2": 6.908876,
+      "calculation_trace": "area_m2=6.908876; thickness_mm=150; volume=1.036331",
+      "centroid_cm": [
+        13464.534,
+        19855.993
+      ],
+      "bounds_cm": [
+        12356.2,
+        18297.7,
+        14572.9,
+        21414.3
+      ],
+      "polygon_wkt": "POLYGON ((14572.909685802839 18297.659177760528, 14572.909685802839 21414.32584439384, 12356.158025629364 21414.32584439384, 12356.158025629364 18297.659177760528, 14572.909685802839 18297.659177760528))"
+    },
+    {
+      "slab_id": "SLAB-020",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.13802,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.320703,
+      "shuttering_m2": 2.13802,
+      "calculation_trace": "area_m2=2.13802; thickness_mm=150; volume=0.320703",
+      "centroid_cm": [
+        13464.534,
+        21829.901
+      ],
+      "bounds_cm": [
+        12356.2,
+        21347.7,
+        14572.9,
+        22312.1
+      ],
+      "polygon_wkt": "POLYGON ((14572.909685802839 21347.659177727175, 14572.909685802839 22312.14240160837, 12356.158025629364 22312.14240160837, 12356.158025629364 21347.659177727175, 14572.909685802839 21347.659177727175))"
+    },
+    {
+      "slab_id": "SLAB-021",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.427699,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.814155,
+      "shuttering_m2": 5.427699,
+      "calculation_trace": "area_m2=5.427699; thickness_mm=150; volume=0.814155",
+      "centroid_cm": [
+        13464.534,
+        23469.722
+      ],
+      "bounds_cm": [
+        12356.2,
+        22245.5,
+        14572.9,
+        24694.0
+      ],
+      "polygon_wkt": "POLYGON ((14572.909685802839 22245.475734941705, 14572.909685802839 24693.967857652216, 12356.158025629364 24693.967857652216, 12356.158025629364 22245.475734941705, 14572.909685802839 22245.475734941705))"
+    },
+    {
+      "slab_id": "SLAB-022",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.591837,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.838776,
+      "shuttering_m2": 5.591837,
+      "calculation_trace": "area_m2=5.591837; thickness_mm=150; volume=0.838776",
+      "centroid_cm": [
+        16890.332,
+        10522.25
+      ],
+      "bounds_cm": [
+        14506.2,
+        9935.9,
+        19274.4,
+        11108.6
+      ],
+      "polygon_wkt": "POLYGON ((19274.421831913365 9935.879734084081, 19274.421831913365 11108.620278881475, 14506.243019136171 11108.620278881475, 14506.243019136171 9935.879734084081, 19274.421831913365 9935.879734084081))"
+    },
+    {
+      "slab_id": "SLAB-023",
+      "strategy": "beam_grid_bay",
+      "area_m2": 10.835077,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.625262,
+      "shuttering_m2": 10.835077,
+      "calculation_trace": "area_m2=10.835077; thickness_mm=150; volume=1.625262",
+      "centroid_cm": [
+        16890.332,
+        12178.14
+      ],
+      "bounds_cm": [
+        14506.2,
+        11042.0,
+        19274.4,
+        13314.3
+      ],
+      "polygon_wkt": "POLYGON ((19274.421831913365 11041.953612214807, 19274.421831913365 13314.325845499789, 14506.243019136171 13314.325845499789, 14506.243019136171 11041.953612214807, 19274.421831913365 11041.953612214807))"
+    },
+    {
+      "slab_id": "SLAB-024",
+      "strategy": "beam_grid_bay",
+      "area_m2": 14.570004,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 2.185501,
+      "shuttering_m2": 14.570004,
+      "calculation_trace": "area_m2=14.570004; thickness_mm=150; volume=2.185501",
+      "centroid_cm": [
+        16890.332,
+        14775.497
+      ],
+      "bounds_cm": [
+        14506.2,
+        13247.7,
+        19274.4,
+        16303.3
+      ],
+      "polygon_wkt": "POLYGON ((19274.421831913365 13247.65917883312, 19274.421831913365 16303.334035277141, 14506.243019136171 16303.334035277141, 14506.243019136171 13247.65917883312, 19274.421831913365 13247.65917883312))"
+    },
+    {
+      "slab_id": "SLAB-025",
+      "strategy": "beam_grid_bay",
+      "area_m2": 10.145056,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.521758,
+      "shuttering_m2": 10.145056,
+      "calculation_trace": "area_m2=10.145056; thickness_mm=150; volume=1.521758",
+      "centroid_cm": [
+        16890.332,
+        17300.497
+      ],
+      "bounds_cm": [
+        14506.2,
+        16236.7,
+        19274.4,
+        18364.3
+      ],
+      "polygon_wkt": "POLYGON ((19274.421831913365 16236.667368610473, 19274.421831913365 18364.325844427192, 14506.243019136171 18364.325844427192, 14506.243019136171 16236.667368610473, 19274.421831913365 16236.667368610473))"
+    },
+    {
+      "slab_id": "SLAB-026",
+      "strategy": "beam_grid_bay",
+      "area_m2": 14.860824,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 2.229124,
+      "shuttering_m2": 14.860824,
+      "calculation_trace": "area_m2=14.860824; thickness_mm=150; volume=2.229124",
+      "centroid_cm": [
+        16890.332,
+        19855.993
+      ],
+      "bounds_cm": [
+        14506.2,
+        18297.7,
+        19274.4,
+        21414.3
+      ],
+      "polygon_wkt": "POLYGON ((19274.421831913365 18297.659177760528, 19274.421831913365 21414.32584439384, 14506.243019136171 21414.32584439384, 14506.243019136171 18297.659177760528, 19274.421831913365 18297.659177760528))"
+    },
+    {
+      "slab_id": "SLAB-027",
+      "strategy": "beam_grid_bay",
+      "area_m2": 4.598828,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.689824,
+      "shuttering_m2": 4.598828,
+      "calculation_trace": "area_m2=4.598828; thickness_mm=150; volume=0.689824",
+      "centroid_cm": [
+        16890.332,
+        21829.901
+      ],
+      "bounds_cm": [
+        14506.2,
+        21347.7,
+        19274.4,
+        22312.1
+      ],
+      "polygon_wkt": "POLYGON ((19274.421831913365 21347.659177727175, 19274.421831913365 22312.14240160837, 14506.243019136171 22312.14240160837, 14506.243019136171 21347.659177727175, 19274.421831913365 21347.659177727175))"
+    },
+    {
+      "slab_id": "SLAB-028",
+      "strategy": "beam_grid_bay",
+      "area_m2": 11.674848,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.751227,
+      "shuttering_m2": 11.674848,
+      "calculation_trace": "area_m2=11.674848; thickness_mm=150; volume=1.751227",
+      "centroid_cm": [
+        16890.332,
+        23469.722
+      ],
+      "bounds_cm": [
+        14506.2,
+        22245.5,
+        19274.4,
+        24694.0
+      ],
+      "polygon_wkt": "POLYGON ((19274.421831913365 22245.475734941705, 19274.421831913365 24693.967857652216, 14506.243019136171 24693.967857652216, 14506.243019136171 22245.475734941705, 19274.421831913365 22245.475734941705))"
+    },
+    {
+      "slab_id": "SLAB-029",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.81273,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.421909,
+      "shuttering_m2": 2.81273,
+      "calculation_trace": "area_m2=2.81273; thickness_mm=150; volume=0.421909",
+      "centroid_cm": [
+        20406.967,
+        10522.25
+      ],
+      "bounds_cm": [
+        19207.8,
+        9935.9,
+        21606.2,
+        11108.6
+      ],
+      "polygon_wkt": "POLYGON ((21606.179811988663 9935.879734084081, 21606.179811988663 11108.620278881475, 19207.7551652467 11108.620278881475, 19207.7551652467 9935.879734084081, 21606.179811988663 9935.879734084081))"
+    },
+    {
+      "slab_id": "SLAB-030",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.103029,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.765454,
+      "shuttering_m2": 5.103029,
+      "calculation_trace": "area_m2=5.103029; thickness_mm=150; volume=0.765454",
+      "centroid_cm": [
+        20406.967,
+        17300.497
+      ],
+      "bounds_cm": [
+        19207.8,
+        16236.7,
+        21606.2,
+        18364.3
+      ],
+      "polygon_wkt": "POLYGON ((21606.179811988663 16236.667368610473, 21606.179811988663 18364.325844427192, 19207.7551652467 18364.325844427192, 19207.7551652467 16236.667368610473, 21606.179811988663 16236.667368610473))"
+    },
+    {
+      "slab_id": "SLAB-031",
+      "strategy": "beam_grid_bay",
+      "area_m2": 7.47509,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.121263,
+      "shuttering_m2": 7.47509,
+      "calculation_trace": "area_m2=7.47509; thickness_mm=150; volume=1.121263",
+      "centroid_cm": [
+        20406.967,
+        19855.993
+      ],
+      "bounds_cm": [
+        19207.8,
+        18297.7,
+        21606.2,
+        21414.3
+      ],
+      "polygon_wkt": "POLYGON ((21606.179811988663 18297.659177760528, 21606.179811988663 21414.32584439384, 19207.7551652467 21414.32584439384, 19207.7551652467 18297.659177760528, 21606.179811988663 18297.659177760528))"
+    },
+    {
+      "slab_id": "SLAB-032",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.31324,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.346986,
+      "shuttering_m2": 2.31324,
+      "calculation_trace": "area_m2=2.31324; thickness_mm=150; volume=0.346986",
+      "centroid_cm": [
+        20406.967,
+        21829.901
+      ],
+      "bounds_cm": [
+        19207.8,
+        21347.7,
+        21606.2,
+        22312.1
+      ],
+      "polygon_wkt": "POLYGON ((21606.179811988663 21347.659177727175, 21606.179811988663 22312.14240160837, 19207.7551652467 22312.14240160837, 19207.7551652467 21347.659177727175, 21606.179811988663 21347.659177727175))"
+    },
+    {
+      "slab_id": "SLAB-033",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.872524,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.880879,
+      "shuttering_m2": 5.872524,
+      "calculation_trace": "area_m2=5.872524; thickness_mm=150; volume=0.880879",
+      "centroid_cm": [
+        20406.967,
+        23469.722
+      ],
+      "bounds_cm": [
+        19207.8,
+        22245.5,
+        21606.2,
+        24694.0
+      ],
+      "polygon_wkt": "POLYGON ((21606.179811988663 22245.475734941705, 21606.179811988663 24693.967857652216, 19207.7551652467 24693.967857652216, 19207.7551652467 22245.475734941705, 21606.179811988663 22245.475734941705))"
+    },
+    {
+      "slab_id": "SLAB-034",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.853435,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.428015,
+      "shuttering_m2": 2.853435,
+      "calculation_trace": "area_m2=2.853435; thickness_mm=150; volume=0.428015",
+      "centroid_cm": [
+        22756.08,
+        10522.25
+      ],
+      "bounds_cm": [
+        21539.5,
+        9935.9,
+        23972.6,
+        11108.6
+      ],
+      "polygon_wkt": "POLYGON ((23972.64743898577 9935.879734084081, 23972.64743898577 11108.620278881475, 21539.513145322 11108.620278881475, 21539.513145322 9935.879734084081, 23972.64743898577 9935.879734084081))"
+    },
+    {
+      "slab_id": "SLAB-035",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.528987,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.829348,
+      "shuttering_m2": 5.528987,
+      "calculation_trace": "area_m2=5.528987; thickness_mm=150; volume=0.829348",
+      "centroid_cm": [
+        22756.08,
+        12178.14
+      ],
+      "bounds_cm": [
+        21539.5,
+        11042.0,
+        23972.6,
+        13314.3
+      ],
+      "polygon_wkt": "POLYGON ((23972.64743898577 11041.953612214807, 23972.64743898577 13314.325845499789, 21539.513145322 13314.325845499789, 21539.513145322 11041.953612214807, 23972.64743898577 11041.953612214807))"
+    },
+    {
+      "slab_id": "SLAB-036",
+      "strategy": "beam_grid_bay",
+      "area_m2": 7.434867,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.11523,
+      "shuttering_m2": 7.434867,
+      "calculation_trace": "area_m2=7.434867; thickness_mm=150; volume=1.11523",
+      "centroid_cm": [
+        22756.08,
+        14775.497
+      ],
+      "bounds_cm": [
+        21539.5,
+        13247.7,
+        23972.6,
+        16303.3
+      ],
+      "polygon_wkt": "POLYGON ((23972.64743898577 13247.65917883312, 23972.64743898577 16303.334035277141, 21539.513145322 16303.334035277141, 21539.513145322 13247.65917883312, 23972.64743898577 13247.65917883312))"
+    },
+    {
+      "slab_id": "SLAB-037",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.176879,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.776532,
+      "shuttering_m2": 5.176879,
+      "calculation_trace": "area_m2=5.176879; thickness_mm=150; volume=0.776532",
+      "centroid_cm": [
+        22756.08,
+        17300.497
+      ],
+      "bounds_cm": [
+        21539.5,
+        16236.7,
+        23972.6,
+        18364.3
+      ],
+      "polygon_wkt": "POLYGON ((23972.64743898577 16236.667368610473, 23972.64743898577 18364.325844427192, 21539.513145322 18364.325844427192, 21539.513145322 16236.667368610473, 23972.64743898577 16236.667368610473))"
+    },
+    {
+      "slab_id": "SLAB-038",
+      "strategy": "beam_grid_bay",
+      "area_m2": 7.583269,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.13749,
+      "shuttering_m2": 7.583269,
+      "calculation_trace": "area_m2=7.583269; thickness_mm=150; volume=1.13749",
+      "centroid_cm": [
+        22756.08,
+        19855.993
+      ],
+      "bounds_cm": [
+        21539.5,
+        18297.7,
+        23972.6,
+        21414.3
+      ],
+      "polygon_wkt": "POLYGON ((23972.64743898577 18297.659177760528, 23972.64743898577 21414.32584439384, 21539.513145322 21414.32584439384, 21539.513145322 18297.659177760528, 23972.64743898577 18297.659177760528))"
+    },
+    {
+      "slab_id": "SLAB-039",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.346717,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.352008,
+      "shuttering_m2": 2.346717,
+      "calculation_trace": "area_m2=2.346717; thickness_mm=150; volume=0.352008",
+      "centroid_cm": [
+        22756.08,
+        21829.901
+      ],
+      "bounds_cm": [
+        21539.5,
+        21347.7,
+        23972.6,
+        22312.1
+      ],
+      "polygon_wkt": "POLYGON ((23972.64743898577 21347.659177727175, 23972.64743898577 22312.14240160837, 21539.513145322 22312.14240160837, 21539.513145322 21347.659177727175, 23972.64743898577 21347.659177727175))"
+    },
+    {
+      "slab_id": "SLAB-040",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.95751,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.893626,
+      "shuttering_m2": 5.95751,
+      "calculation_trace": "area_m2=5.95751; thickness_mm=150; volume=0.893626",
+      "centroid_cm": [
+        22756.08,
+        23469.722
+      ],
+      "bounds_cm": [
+        21539.5,
+        22245.5,
+        23972.6,
+        24694.0
+      ],
+      "polygon_wkt": "POLYGON ((23972.64743898577 22245.475734941705, 23972.64743898577 24693.967857652216, 21539.513145322 24693.967857652216, 21539.513145322 22245.475734941705, 23972.64743898577 22245.475734941705))"
+    },
+    {
+      "slab_id": "SLAB-041",
+      "strategy": "beam_grid_bay",
+      "area_m2": 6.926642,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.038996,
+      "shuttering_m2": 6.926642,
+      "calculation_trace": "area_m2=6.926642; thickness_mm=150; volume=1.038996",
+      "centroid_cm": [
+        25039.387,
+        14775.497
+      ],
+      "bounds_cm": [
+        23906.0,
+        13247.7,
+        26172.8,
+        16303.3
+      ],
+      "polygon_wkt": "POLYGON ((26172.793431766364 13247.65917883312, 26172.793431766364 16303.334035277141, 23905.980772319104 16303.334035277141, 23905.980772319104 13247.65917883312, 26172.793431766364 13247.65917883312))"
+    },
+    {
+      "slab_id": "SLAB-042",
+      "strategy": "beam_grid_bay",
+      "area_m2": 4.823003,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.72345,
+      "shuttering_m2": 4.823003,
+      "calculation_trace": "area_m2=4.823003; thickness_mm=150; volume=0.72345",
+      "centroid_cm": [
+        25039.387,
+        17300.497
+      ],
+      "bounds_cm": [
+        23906.0,
+        16236.7,
+        26172.8,
+        18364.3
+      ],
+      "polygon_wkt": "POLYGON ((26172.793431766364 16236.667368610473, 26172.793431766364 18364.325844427192, 23905.980772319104 18364.325844427192, 23905.980772319104 16236.667368610473, 26172.793431766364 16236.667368610473))"
+    },
+    {
+      "slab_id": "SLAB-043",
+      "strategy": "beam_grid_bay",
+      "area_m2": 7.064899,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.059735,
+      "shuttering_m2": 7.064899,
+      "calculation_trace": "area_m2=7.064899; thickness_mm=150; volume=1.059735",
+      "centroid_cm": [
+        25039.387,
+        19855.993
+      ],
+      "bounds_cm": [
+        23906.0,
+        18297.7,
+        26172.8,
+        21414.3
+      ],
+      "polygon_wkt": "POLYGON ((26172.793431766364 18297.659177760528, 26172.793431766364 21414.32584439384, 23905.980772319104 21414.32584439384, 23905.980772319104 18297.659177760528, 26172.793431766364 18297.659177760528))"
+    },
+    {
+      "slab_id": "SLAB-044",
+      "strategy": "beam_grid_bay",
+      "area_m2": 2.186303,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.327945,
+      "shuttering_m2": 2.186303,
+      "calculation_trace": "area_m2=2.186303; thickness_mm=150; volume=0.327945",
+      "centroid_cm": [
+        25039.387,
+        21829.901
+      ],
+      "bounds_cm": [
+        23906.0,
+        21347.7,
+        26172.8,
+        22312.1
+      ],
+      "polygon_wkt": "POLYGON ((26172.793431766364 21347.659177727175, 26172.793431766364 22312.14240160837, 23905.980772319104 22312.14240160837, 23905.980772319104 21347.659177727175, 26172.793431766364 21347.659177727175))"
+    },
+    {
+      "slab_id": "SLAB-045",
+      "strategy": "beam_grid_bay",
+      "area_m2": 5.550273,
+      "thickness_mm": 150,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.832541,
+      "shuttering_m2": 5.550273,
+      "calculation_trace": "area_m2=5.550273; thickness_mm=150; volume=0.832541",
+      "centroid_cm": [
+        25039.387,
+        23469.722
+      ],
+      "bounds_cm": [
+        23906.0,
+        22245.5,
+        26172.8,
+        24694.0
+      ],
+      "polygon_wkt": "POLYGON ((26172.793431766364 22245.475734941705, 26172.793431766364 24693.967857652216, 23905.980772319104 24693.967857652216, 23905.980772319104 22245.475734941705, 26172.793431766364 22245.475734941705))"
+    }
+  ],
+  "totals": {
+    "area_m2": 298.741502,
+    "concrete_m3": 44.811223,
+    "shuttering_m2": 298.741502,
+    "slab_count": 45
+  }
+}

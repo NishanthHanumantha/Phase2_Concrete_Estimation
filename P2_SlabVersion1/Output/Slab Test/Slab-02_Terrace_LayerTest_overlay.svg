@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<rect width="100%" height="100%" fill="#1e1e1e"/>
+<text x="12" y="24" fill="#fff" font-size="14" font-family="sans-serif">SDIE — Slab-02_Terrace_LayerTest.dxf</text>
+<polygon points="209.40,588.75 209.40,554.05 117.28,554.05 117.28,588.75 209.40,588.75" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="163.3" y="571.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-001 5.5m² 150mm</text>
+<polygon points="209.40,556.02 209.40,488.78 117.28,488.78 117.28,556.02 209.40,556.02" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="163.3" y="522.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-002 10.6m² 150mm</text>
+<polygon points="209.40,490.75 209.40,400.33 117.28,400.33 117.28,490.75 209.40,490.75" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="163.3" y="445.5" fill="#fff" font-size="11" font-family="sans-serif">SLAB-003 14.3m² 150mm</text>
+<polygon points="209.40,402.30 209.40,339.34 117.28,339.34 117.28,402.30 209.40,402.30" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="163.3" y="370.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-004 9.9m² 150mm</text>
+<polygon points="209.40,341.32 209.40,249.09 117.28,249.09 117.28,341.32 209.40,341.32" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="163.3" y="295.2" fill="#fff" font-size="11" font-family="sans-serif">SLAB-005 14.5m² 150mm</text>
+<polygon points="209.40,251.06 209.40,222.52 117.28,222.52 117.28,251.06 209.40,251.06" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="163.3" y="236.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-006 4.5m² 150mm</text>
+<polygon points="209.40,224.50 209.40,152.04 117.28,152.04 117.28,224.50 209.40,224.50" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="163.3" y="188.3" fill="#fff" font-size="11" font-family="sans-serif">SLAB-007 11.4m² 150mm</text>
+<polygon points="253.81,588.75 253.81,554.05 208.08,554.05 208.08,588.75 253.81,588.75" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="230.9" y="571.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-008 2.7m² 150mm</text>
+<polygon points="253.81,556.02 253.81,488.78 208.08,488.78 208.08,556.02 253.81,556.02" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="230.9" y="522.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-009 5.3m² 150mm</text>
+<polygon points="253.81,490.75 253.81,400.33 208.08,400.33 208.08,490.75 253.81,490.75" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="230.9" y="445.5" fill="#fff" font-size="11" font-family="sans-serif">SLAB-010 7.1m² 150mm</text>
+<polygon points="253.81,402.30 253.81,339.34 208.08,339.34 208.08,402.30 253.81,402.30" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="230.9" y="370.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-011 4.9m² 150mm</text>
+<polygon points="253.81,341.32 253.81,249.09 208.08,249.09 208.08,341.32 253.81,341.32" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="230.9" y="295.2" fill="#fff" font-size="11" font-family="sans-serif">SLAB-012 7.2m² 150mm</text>
+<polygon points="253.81,251.06 253.81,222.52 208.08,222.52 208.08,251.06 253.81,251.06" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="230.9" y="236.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-013 2.2m² 150mm</text>
+<polygon points="253.81,224.50 253.81,152.04 208.08,152.04 208.08,224.50 253.81,224.50" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="230.9" y="188.3" fill="#fff" font-size="11" font-family="sans-serif">SLAB-014 5.7m² 150mm</text>
+<polygon points="296.25,588.75 296.25,554.05 252.49,554.05 252.49,588.75 296.25,588.75" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="274.4" y="571.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-015 2.6m² 150mm</text>
+<polygon points="296.25,556.02 296.25,488.78 252.49,488.78 252.49,556.02 296.25,556.02" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="274.4" y="522.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-016 5.0m² 150mm</text>
+<polygon points="296.25,490.75 296.25,400.33 252.49,400.33 252.49,490.75 296.25,490.75" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="274.4" y="445.5" fill="#fff" font-size="11" font-family="sans-serif">SLAB-017 6.8m² 150mm</text>
+<polygon points="296.25,402.30 296.25,339.34 252.49,339.34 252.49,402.30 296.25,402.30" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="274.4" y="370.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-018 4.7m² 150mm</text>
+<polygon points="296.25,341.32 296.25,249.09 252.49,249.09 252.49,341.32 296.25,341.32" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="274.4" y="295.2" fill="#fff" font-size="11" font-family="sans-serif">SLAB-019 6.9m² 150mm</text>
+<polygon points="296.25,251.06 296.25,222.52 252.49,222.52 252.49,251.06 296.25,251.06" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="274.4" y="236.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-020 2.1m² 150mm</text>
+<polygon points="296.25,224.50 296.25,152.04 252.49,152.04 252.49,224.50 296.25,224.50" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="274.4" y="188.3" fill="#fff" font-size="11" font-family="sans-serif">SLAB-021 5.4m² 150mm</text>
+<polygon points="389.05,588.75 389.05,554.05 294.93,554.05 294.93,588.75 389.05,588.75" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="342.0" y="571.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-022 5.6m² 150mm</text>
+<polygon points="389.05,556.02 389.05,488.78 294.93,488.78 294.93,556.02 389.05,556.02" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="342.0" y="522.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-023 10.8m² 150mm</text>
+<polygon points="389.05,490.75 389.05,400.33 294.93,400.33 294.93,490.75 389.05,490.75" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="342.0" y="445.5" fill="#fff" font-size="11" font-family="sans-serif">SLAB-024 14.6m² 150mm</text>
+<polygon points="389.05,402.30 389.05,339.34 294.93,339.34 294.93,402.30 389.05,402.30" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="342.0" y="370.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-025 10.1m² 150mm</text>
+<polygon points="389.05,341.32 389.05,249.09 294.93,249.09 294.93,341.32 389.05,341.32" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="342.0" y="295.2" fill="#fff" font-size="11" font-family="sans-serif">SLAB-026 14.9m² 150mm</text>
+<polygon points="389.05,251.06 389.05,222.52 294.93,222.52 294.93,251.06 389.05,251.06" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="342.0" y="236.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-027 4.6m² 150mm</text>
+<polygon points="389.05,224.50 389.05,152.04 294.93,152.04 294.93,224.50 389.05,224.50" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="342.0" y="188.3" fill="#fff" font-size="11" font-family="sans-serif">SLAB-028 11.7m² 150mm</text>
+<polygon points="435.07,588.75 435.07,554.05 387.73,554.05 387.73,588.75 435.07,588.75" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="411.4" y="571.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-029 2.8m² 150mm</text>
+<polygon points="435.07,402.30 435.07,339.34 387.73,339.34 387.73,402.30 435.07,402.30" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="411.4" y="370.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-030 5.1m² 150mm</text>
+<polygon points="435.07,341.32 435.07,249.09 387.73,249.09 387.73,341.32 435.07,341.32" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="411.4" y="295.2" fill="#fff" font-size="11" font-family="sans-serif">SLAB-031 7.5m² 150mm</text>
+<polygon points="435.07,251.06 435.07,222.52 387.73,222.52 387.73,251.06 435.07,251.06" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="411.4" y="236.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-032 2.3m² 150mm</text>
+<polygon points="435.07,224.50 435.07,152.04 387.73,152.04 387.73,224.50 435.07,224.50" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="411.4" y="188.3" fill="#fff" font-size="11" font-family="sans-serif">SLAB-033 5.9m² 150mm</text>
+<polygon points="481.78,588.75 481.78,554.05 433.76,554.05 433.76,588.75 481.78,588.75" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="457.8" y="571.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-034 2.9m² 150mm</text>
+<polygon points="481.78,556.02 481.78,488.78 433.76,488.78 433.76,556.02 481.78,556.02" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="457.8" y="522.4" fill="#fff" font-size="11" font-family="sans-serif">SLAB-035 5.5m² 150mm</text>
+<polygon points="481.78,490.75 481.78,400.33 433.76,400.33 433.76,490.75 481.78,490.75" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="457.8" y="445.5" fill="#fff" font-size="11" font-family="sans-serif">SLAB-036 7.4m² 150mm</text>
+<polygon points="481.78,402.30 481.78,339.34 433.76,339.34 433.76,402.30 481.78,402.30" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="457.8" y="370.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-037 5.2m² 150mm</text>
+<polygon points="481.78,341.32 481.78,249.09 433.76,249.09 433.76,341.32 481.78,341.32" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="457.8" y="295.2" fill="#fff" font-size="11" font-family="sans-serif">SLAB-038 7.6m² 150mm</text>
+<polygon points="481.78,251.06 481.78,222.52 433.76,222.52 433.76,251.06 481.78,251.06" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="457.8" y="236.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-039 2.3m² 150mm</text>
+<polygon points="481.78,224.50 481.78,152.04 433.76,152.04 433.76,224.50 481.78,224.50" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="457.8" y="188.3" fill="#fff" font-size="11" font-family="sans-serif">SLAB-040 6.0m² 150mm</text>
+<polygon points="525.21,490.75 525.21,400.33 480.47,400.33 480.47,490.75 525.21,490.75" fill="#4CAF50" fill-opacity="0.35" stroke="#4CAF50" stroke-width="2"/>
+<text x="502.8" y="445.5" fill="#fff" font-size="11" font-family="sans-serif">SLAB-041 6.9m² 150mm</text>
+<polygon points="525.21,402.30 525.21,339.34 480.47,339.34 480.47,402.30 525.21,402.30" fill="#2196F3" fill-opacity="0.35" stroke="#2196F3" stroke-width="2"/>
+<text x="502.8" y="370.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-042 4.8m² 150mm</text>
+<polygon points="525.21,341.32 525.21,249.09 480.47,249.09 480.47,341.32 525.21,341.32" fill="#FF9800" fill-opacity="0.35" stroke="#FF9800" stroke-width="2"/>
+<text x="502.8" y="295.2" fill="#fff" font-size="11" font-family="sans-serif">SLAB-043 7.1m² 150mm</text>
+<polygon points="525.21,251.06 525.21,222.52 480.47,222.52 480.47,251.06 525.21,251.06" fill="#9C27B0" fill-opacity="0.35" stroke="#9C27B0" stroke-width="2"/>
+<text x="502.8" y="236.8" fill="#fff" font-size="11" font-family="sans-serif">SLAB-044 2.2m² 150mm</text>
+<polygon points="525.21,224.50 525.21,152.04 480.47,152.04 480.47,224.50 525.21,224.50" fill="#00BCD4" fill-opacity="0.35" stroke="#00BCD4" stroke-width="2"/>
+<text x="502.8" y="188.3" fill="#fff" font-size="11" font-family="sans-serif">SLAB-045 5.6m² 150mm</text>
+</svg>

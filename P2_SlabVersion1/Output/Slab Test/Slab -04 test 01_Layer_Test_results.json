@@ -1,0 +1,83 @@
+{
+  "engine": "SDIE",
+  "version": "0.1.0",
+  "processed_at": "2026-06-03T10:21:40.530160+00:00",
+  "source_dxf": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion1\\Data Source\\Slab Test\\Slab -04 test 01_Layer_Test.dxf",
+  "drawing_meta": {
+    "path": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion1\\Data Source\\Slab Test\\Slab -04 test 01_Layer_Test.dxf",
+    "dxf_version": "AC1032",
+    "insunits": 4,
+    "insunits_name": "cm",
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "extents": {
+      "min": [
+        18887.328,
+        4840.294
+      ],
+      "max": [
+        35572.774,
+        16102.477
+      ]
+    }
+  },
+  "config": {
+    "structural_layers": [
+      "STR-BEAM"
+    ],
+    "polygonize_layers": [
+      "STR-BEAM"
+    ],
+    "annotation_layers": [
+      "G-ANNO-TEXT",
+      "S-BEAM-IDEN"
+    ],
+    "detection_mode": "auto",
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "min_slab_area_m2": 10.0
+  },
+  "detection_notes": {
+    "mode": "auto",
+    "region_polygon_count": 0,
+    "region_total_area_m2": 0,
+    "region_rejected": "no closed regions, or areas too large (likely wrong layers)",
+    "selected": "beam_frame_bbox"
+  },
+  "notes": {
+    "default_thickness_mm": 200,
+    "default_note_text": "ALL SLABS ARE 200mm THK. U.N.O",
+    "local_thk_label_count": 0
+  },
+  "slabs": [
+    {
+      "slab_id": "SLAB-001",
+      "strategy": "beam_frame_bbox",
+      "area_m2": 60.506291,
+      "thickness_mm": 200,
+      "thickness_source": "default_note",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 12.101258,
+      "shuttering_m2": 60.506291,
+      "calculation_trace": "area_m2=60.506291; thickness_mm=200; volume=12.101258",
+      "centroid_cm": [
+        22748.712,
+        11861.802
+      ],
+      "bounds_cm": [
+        18853.7,
+        7978.3,
+        26643.8,
+        15745.3
+      ],
+      "polygon_wkt": "POLYGON ((26643.76723885012 7978.270092707107, 26643.76723885012 15745.334906631573, 18853.656963933572 15745.334906631573, 18853.656963933572 7978.270092707107, 26643.76723885012 7978.270092707107))"
+    }
+  ],
+  "totals": {
+    "area_m2": 60.506291,
+    "concrete_m3": 12.101258,
+    "shuttering_m2": 60.506291,
+    "slab_count": 1
+  }
+}

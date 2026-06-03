@@ -1,0 +1,18 @@
+{
+  "$schema": "sdie-ground-truth/v1",
+  "drawing_id": "Slab-04_test01_Layer_Test",
+  "source_dxf": "Data Source/Slab Test/Slab -04 test 01_Layer_Test.dxf",
+  "validation_status": "approved",
+  "validated_by": "Estimator BOQ",
+  "expected_total": {
+    "area_m2": 61.49,
+    "concrete_m3": 12.30,
+    "shuttering_m2": 61.49,
+    "comment": "Manual BOQ from Estimator tool"
+  },
+  "regression_config": {
+    "area_tolerance_pct": 3,
+    "volume_tolerance_pct": 3,
+    "shuttering_tolerance_pct": 3
+  }
+}

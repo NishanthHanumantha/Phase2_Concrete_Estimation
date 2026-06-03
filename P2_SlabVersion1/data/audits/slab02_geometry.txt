@@ -1,0 +1,11 @@
+﻿structural segments 2138
+segments in LGF window 343
+polygons in window 14
+top areas (cm2): [(2013380.7, 201.34)]
+THK labels 13 unique ['125THK', '150THK', '175THK', '200THK']
+general notes with slab thk
+  NOTE: \P\pxi-3,l3,t3;{\fSymbol|b0|i0|c2|p18;╖^I}ALL SLABS ARE 200mm THK. U.N.O @ 735346 86
+  NOTE: \P\pxi-3,l3,t3;{\fSymbol|b0|i0|c2|p18;╖^I}ALL SLABS ARE 150mm THK. U.N.O @ 737330 -29718
+  NOTE: \P\pxi-3,l3,t3;{\fSymbol|b0|i0|c2|p18;╖^I}ALL SLABS ARE 150mm THK. U.N.O @ 736855 -58171
+  NOTE: \P\pxi-3,l3,t3;{\fSymbol|b0|i0|c2|p18;╖^I}ALL SLABS ARE 150mm THK. U.N.O @ 736413 -92118
+  NOTE: \P\pxi-3,l3,t3;{\fSymbol|b0|i0|c2|p18;╖^I}ALL SLABS ARE 150mm THK. U.N.O @ 749809 -134111

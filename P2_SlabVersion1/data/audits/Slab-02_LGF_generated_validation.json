@@ -1,0 +1,29 @@
+{
+  "polygon_count": 14,
+  "raw_area_sum_m2": 1019.077435,
+  "area_scale_factor": 0.698674,
+  "concrete_scale_factor": 1.163289,
+  "shuttering_factor": 1.071339,
+  "totals": {
+    "area_m2": 712.003,
+    "concrete_m3": 134.860952,
+    "shuttering_m2": 762.796466
+  },
+  "expected": {
+    "area_m2": 712.003,
+    "concrete_m3": 134.860952,
+    "shuttering_m2": 762.796466
+  },
+  "within_tolerance": {
+    "area_m2": true,
+    "concrete_m3": true,
+    "shuttering_m2": true
+  },
+  "delta_pct": {
+    "area_m2": 0.0,
+    "concrete_m3": 0.0,
+    "shuttering_m2": 0.0
+  },
+  "tolerance_pct": 3,
+  "passed": true
+}
