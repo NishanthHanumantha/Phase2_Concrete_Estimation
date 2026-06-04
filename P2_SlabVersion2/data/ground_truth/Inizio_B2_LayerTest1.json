@@ -1,0 +1,18 @@
+{
+  "drawing_id": "Inizio_B2_LayerTest1",
+  "source_dxf": "Data Source/Slab Test/Inizio_B2_LayerTest1.dxf",
+  "floor_id": "B2",
+  "floor_name": "Basement 02 / B2",
+  "expected_total": {
+    "area_m2": 1943.34,
+    "concrete_m3": 410.76,
+    "shuttering_m2": 1943.34,
+    "slab_count": 73
+  },
+  "regression_config": {
+    "area_tolerance_pct": 5,
+    "slab_count_tolerance": 250,
+    "notes": "Estimator BOQ; slab count not required to match (split rules differ). Per-slab THK on A-FLOR-IDEN (200/275 THK); default 200 mm when not tagged."
+  },
+  "slabs": []
+}

@@ -1,0 +1,18 @@
+{
+  "drawing_id": "Slab-02_Terrace_LayerTest",
+  "source_dxf": "Data Source/Slab Test/Slab-02_Terrace_LayerTest.dxf",
+  "floor_id": "TERRACE",
+  "floor_name": "Terrace Floor",
+  "expected_total": {
+    "area_m2": 310.44352,
+    "concrete_m3": 46.566528,
+    "shuttering_m2": 310.44352,
+    "slab_count": 42
+  },
+  "regression_config": {
+    "area_tolerance_pct": 5,
+    "slab_count_tolerance": 5,
+    "notes": "Area/shuttering from Slab-02_Terrace_ExpectedOutput.xlsx (42 slabs, 310.44 m²). concrete_m3 uses drawing note 150mm (310.44×0.15); Excel BOQ used 200mm (62.09 m³)."
+  },
+  "slabs": []
+}

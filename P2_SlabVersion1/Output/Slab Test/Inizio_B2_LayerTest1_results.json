@@ -1,0 +1,1771 @@
+{
+  "engine": "SDIE",
+  "version": "0.1.0",
+  "processed_at": "2026-06-04T07:14:36.125553+00:00",
+  "source_dxf": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion1\\Data Source\\Slab Test\\Inizio_B2_LayerTest1.dxf",
+  "drawing_meta": {
+    "path": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion1\\Data Source\\Slab Test\\Inizio_B2_LayerTest1.dxf",
+    "dxf_version": "AC1032",
+    "insunits": 4,
+    "insunits_name": "cm",
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "extents": {
+      "min": [
+        1559.976,
+        1003.974
+      ],
+      "max": [
+        72843.968,
+        66632.611
+      ]
+    }
+  },
+  "config": {
+    "structural_layers": [
+      "S-BEAM"
+    ],
+    "polygonize_layers": [
+      "S-BEAM"
+    ],
+    "annotation_layers": [
+      "G-ANNO-TEXT",
+      "S-BEAM-IDEN",
+      "A-FLOR-IDEN"
+    ],
+    "detection_mode": "auto",
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "min_slab_area_m2": 0.4
+  },
+  "detection_notes": {
+    "mode": "auto",
+    "frame_line_count": {
+      "horizontal": 141,
+      "vertical": 89
+    },
+    "floor_zone": {
+      "method": "thk_cluster",
+      "label_count": 73,
+      "cluster_count": 2,
+      "included_satellite_clusters": 1,
+      "notes": {
+        "gap_mm": 6000.0,
+        "primary_cluster_labels": 68,
+        "margin_mm": 5000.0,
+        "subpanels": 2,
+        "selected_subpanel_labels": 64,
+        "internal_gap_mm": 4589.5,
+        "grid_ymax_capped": 53330.8
+      }
+    },
+    "floor_bounds_y_mm": [
+      9788.3,
+      53330.8
+    ],
+    "exclusion_area_m2": 4.243,
+    "exclusion_parts": 3,
+    "label_bounds_y_mm": [
+      9788.3,
+      66274.8
+    ],
+    "thk_labels_in_floor": 73,
+    "beam_grid_cell_count": 284,
+    "beam_grid_total_area_m2": 1935.521,
+    "label_merged_count": 73,
+    "label_merged_area_m2": 1935.521,
+    "selected": "label_merged_bay"
+  },
+  "notes": {
+    "default_thickness_mm": 200,
+    "default_note_text": null,
+    "local_thk_label_count": 74
+  },
+  "slabs": [
+    {
+      "slab_id": "SLAB-001",
+      "strategy": "label_merged_bay",
+      "area_m2": 44.005735,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 8.801147,
+      "shuttering_m2": 44.005735,
+      "calculation_trace": "area_m2=44.005735; thickness_mm=200; volume=8.801147",
+      "centroid_cm": [
+        39707.912,
+        21834.464
+      ],
+      "bounds_cm": [
+        36917.5,
+        17891.9,
+        42498.3,
+        25777.0
+      ],
+      "polygon_wkt": "POLYGON ((36917.48754319437 17891.897449675045, 36917.48754319437 25777.03082375635, 42498.33602817803 25777.03082375635, 42498.33602817803 17891.897449675045, 36917.48754319437 17891.897449675045))"
+    },
+    {
+      "slab_id": "SLAB-002",
+      "strategy": "label_merged_bay",
+      "area_m2": 112.126571,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 22.425314,
+      "shuttering_m2": 112.126571,
+      "calculation_trace": "area_m2=112.126571; thickness_mm=200; volume=22.425314",
+      "centroid_cm": [
+        26222.489,
+        21834.464
+      ],
+      "bounds_cm": [
+        19167.5,
+        17891.9,
+        33277.5,
+        25777.0
+      ],
+      "polygon_wkt": "POLYGON ((19167.49076172225 25777.03082375635, 21013.13040718325 25777.03082375635, 21123.13040718325 25777.03082375635, 33277.48754152544 25777.03082375635, 33277.48754152544 17891.897449675045, 21123.13040718325 17891.897449675045, 21013.13040718325 17891.897449675045, 19167.49076172225 17891.897449675045, 19167.49076172225 25777.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-003",
+      "strategy": "label_merged_bay",
+      "area_m2": 113.326363,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 22.665273,
+      "shuttering_m2": 113.326363,
+      "calculation_trace": "area_m2=113.326363; thickness_mm=200; volume=22.665273",
+      "centroid_cm": [
+        53986.709,
+        21834.464
+      ],
+      "bounds_cm": [
+        46965.6,
+        17891.9,
+        61007.8,
+        25777.0
+      ],
+      "polygon_wkt": "POLYGON ((53611.30931173899 25777.03082375635, 53721.30931173899 25777.03082375635, 54111.309311737125 25777.03082375635, 54221.309311737125 25777.03082375635, 59021.84404739626 25777.03082375635, 59131.84404739626 25777.03082375635, 61007.7864359364 25777.03082375635, 61007.7864359364 17891.897449675045, 59131.84404739626 17891.897449675045, 59021.84404739626 17891.897449675045, 54221.309311737125 17891.897449675045, 54111.309311737125 17891.897449675045, 53721.30931173899 17891.897449675045, 53611.30931173899 17891.897449675045, 46965.63094186019 17891.897449675045, 46965.63094186019 25777.03082375635, 53611.30931173899 25777.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-004",
+      "strategy": "label_merged_bay",
+      "area_m2": 42.25143,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 8.450286,
+      "shuttering_m2": 42.25143,
+      "calculation_trace": "area_m2=42.25143; thickness_mm=200; volume=8.450286",
+      "centroid_cm": [
+        39663.892,
+        37542.772
+      ],
+      "bounds_cm": [
+        34588.3,
+        35667.0,
+        46177.5,
+        39627.0
+      ],
+      "polygon_wkt": "POLYGON ((35038.33602891007 35667.026212567805, 35038.33602891007 36192.03100525715, 35038.33602891007 36302.03100525715, 35038.33602891007 36717.03599968773, 34588.336028908205 36717.03599968773, 34588.336028908205 39177.03301374927, 35038.33602891007 39177.03301374927, 35038.33602891007 39627.03303041865, 36577.48754319438 39627.03303041865, 36577.48754319438 39177.03301374927, 36917.48754319437 39177.03301374927, 36917.48754319437 39627.03303041865, 42388.33602817803 39627.03303041865, 42498.33602817803 39627.03303041865, 43134.43661654194 39627.03303041865, 43134.43661654194 39177.03301374927, 43677.486910669875 39177.03301374927, 43677.486910669875 36827.03599968773, 46177.48722798266 36827.03599968773, 46177.48722798266 36302.03100525715, 46177.48722798266 36192.03100525715, 46177.48722798266 35667.026212567805, 43677.486910669875 35667.026212567805, 43567.486910669875 35667.026212567805, 43134.43661654194 35667.026212567805, 43024.43661654194 35667.026212567805, 42498.33602817803 35667.026212567805, 42388.33602817803 35667.026212567805, 36917.48754319437 35667.026212567805, 36917.48754319437 36192.03100525715, 36917.48754319437 36302.03100525715, 36917.48754319437 36717.03599968773, 36577.48754319438 36717.03599968773, 36577.48754319438 36302.03100525715, 36577.48754319438 36192.03100525715, 36577.48754319438 35667.026212567805, 35038.33602891007 35667.026212567805))"
+    },
+    {
+      "slab_id": "SLAB-005",
+      "strategy": "label_merged_bay",
+      "area_m2": 2.902491,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.580498,
+      "shuttering_m2": 2.902491,
+      "calculation_trace": "area_m2=2.902491; thickness_mm=200; volume=0.580498",
+      "centroid_cm": [
+        13775.879,
+        20710.781
+      ],
+      "bounds_cm": [
+        13467.5,
+        17891.9,
+        14060.8,
+        25777.0
+      ],
+      "polygon_wkt": "POLYGON ((13467.486655605462 25777.03082375635, 14060.819118824604 25777.03082375635, 14060.819118824604 17891.897449675045, 13467.486655605462 17891.897449675045, 13467.486655605462 22070.86692979221, 14022.49088679142 22070.86692979221, 14022.49074850865 25270.86958591674, 13467.486655605462 25270.86958591674, 13467.486655605462 25777.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-006",
+      "strategy": "label_merged_bay",
+      "area_m2": 65.378506,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 13.075701,
+      "shuttering_m2": 65.378506,
+      "calculation_trace": "area_m2=65.378506; thickness_mm=200; volume=13.075701",
+      "centroid_cm": [
+        16084.002,
+        23620.185
+      ],
+      "bounds_cm": [
+        11211.4,
+        17891.9,
+        19277.5,
+        29927.0
+      ],
+      "polygon_wkt": "POLYGON ((19277.49076172225 17891.897449675045, 13950.819118824604 17891.897449675045, 13950.819118824604 22070.86692979221, 14022.49088679142 22070.86692979221, 14022.49074850865 25270.86958591674, 13950.819118824604 25270.86958591674, 13950.819118824604 25667.03082375635, 13950.819118824604 25777.03082375635, 13950.819118824604 26117.03082375635, 13577.486655605462 26117.03082375635, 13577.486655605462 25667.03082375635, 11661.390199347215 25667.03082375635, 11661.390199347215 26117.03082375635, 11211.390199343485 26117.03082375635, 11211.390199343485 28227.03082375635, 11661.390199347215 28227.03082375635, 11661.390199347215 28567.03082375635, 11211.390199343485 28567.03082375635, 11211.390199343485 29927.03562591104, 11771.390199347215 29927.03562591104, 11771.390199347215 28677.03082375635, 13577.486655605462 28677.03082375635, 13577.486655605462 28227.03082375635, 13950.819118824604 28227.03082375635, 14060.819118824604 28227.03082375635, 19277.49076172225 28227.03082375635, 19277.49076172225 26227.03082375635, 19277.49076172225 26117.03082375635, 19277.49076172225 25777.03082375635, 19277.49076172225 25667.03082375635, 19277.49076172225 17891.897449675045))"
+    },
+    {
+      "slab_id": "SLAB-007",
+      "strategy": "label_merged_bay",
+      "area_m2": 18.634683,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 3.726937,
+      "shuttering_m2": 18.634683,
+      "calculation_trace": "area_m2=18.634683; thickness_mm=200; volume=3.726937",
+      "centroid_cm": [
+        35209.805,
+        42496.189
+      ],
+      "bounds_cm": [
+        33167.5,
+        39067.0,
+        36577.5,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((33967.48739007749 39627.03303041865, 33967.48739007749 45777.03566842905, 34588.336028908205 45777.03566842905, 34698.336028908205 45777.03566842905, 35038.33602891007 45777.03566842905, 35148.33602891007 45777.03566842905, 36577.48754319438 45777.03566842905, 36577.48754319438 39517.03303041865, 35148.33602891007 39517.03303041865, 35038.33602891007 39517.03303041865, 34698.336028908205 39517.03303041865, 34698.336028908205 39067.03301374927, 34077.48739007749 39067.03301374927, 33967.48739007749 39067.03301374927, 33167.48754152544 39067.03301374927, 33167.48754152544 39627.03303041865, 33967.48739007749 39627.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-008",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.095158,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.219032,
+      "shuttering_m2": 1.095158,
+      "calculation_trace": "area_m2=1.095158; thickness_mm=200; volume=0.219032",
+      "centroid_cm": [
+        20145.311,
+        39347.033
+      ],
+      "bounds_cm": [
+        19167.5,
+        39067.0,
+        21123.1,
+        39627.0
+      ],
+      "polygon_wkt": "POLYGON ((19167.49076172225 39067.03301374927, 19167.49076172225 39627.03303041865, 21123.13040718325 39627.03303041865, 21123.13040718325 39067.03301374927, 19167.49076172225 39067.03301374927))"
+    },
+    {
+      "slab_id": "SLAB-009",
+      "strategy": "label_merged_bay",
+      "area_m2": 2.982936,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.596587,
+      "shuttering_m2": 2.982936,
+      "calculation_trace": "area_m2=2.982936; thickness_mm=200; volume=0.596587",
+      "centroid_cm": [
+        16614.155,
+        39347.033
+      ],
+      "bounds_cm": [
+        13950.8,
+        39067.0,
+        19277.5,
+        39627.0
+      ],
+      "polygon_wkt": "POLYGON ((13950.819118824604 39067.03301374927, 13950.819118824604 39627.03303041865, 19277.49076172225 39627.03303041865, 19277.49076172225 39067.03301374927, 13950.819118824604 39067.03301374927))"
+    },
+    {
+      "slab_id": "SLAB-010",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.123981,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.224796,
+      "shuttering_m2": 1.123981,
+      "calculation_trace": "area_m2=1.123981; thickness_mm=200; volume=0.224796",
+      "centroid_cm": [
+        33932.912,
+        46009.536
+      ],
+      "bounds_cm": [
+        33167.5,
+        45667.0,
+        34698.3,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((33167.48754152544 46352.03566842095, 33967.48739007749 46352.03566842095, 34077.48739007749 46352.03566842095, 34698.336028908205 46352.03566842095, 34698.336028908205 45667.03566842905, 34077.48739007749 45667.03566842905, 33967.48739007749 45667.03566842905, 33167.48754152544 45667.03566842905, 33167.48754152544 46352.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-011",
+      "strategy": "label_merged_bay",
+      "area_m2": 8.401085,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.680217,
+      "shuttering_m2": 8.401085,
+      "calculation_trace": "area_m2=8.401085; thickness_mm=200; volume=1.680217",
+      "centroid_cm": [
+        27145.309,
+        50234.526
+      ],
+      "bounds_cm": [
+        21013.1,
+        49892.0,
+        33277.5,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((21013.13040718325 49892.026332899644, 21013.13040718325 50577.02633290239, 33277.48754152544 50577.02633290239, 33277.48754152544 49892.026332899644, 21013.13040718325 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-012",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.339613,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.267923,
+      "shuttering_m2": 1.339613,
+      "calculation_trace": "area_m2=1.339613; thickness_mm=200; volume=0.267923",
+      "centroid_cm": [
+        20145.311,
+        50234.526
+      ],
+      "bounds_cm": [
+        19167.5,
+        49892.0,
+        21123.1,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((19167.49076172225 49892.026332899644, 19167.49076172225 50577.02633290239, 21123.13040718325 50577.02633290239, 21123.13040718325 49892.026332899644, 19167.49076172225 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-013",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.64877,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.729754,
+      "shuttering_m2": 3.64877,
+      "calculation_trace": "area_m2=3.64877; thickness_mm=200; volume=0.729754",
+      "centroid_cm": [
+        16614.155,
+        50234.526
+      ],
+      "bounds_cm": [
+        13950.8,
+        49892.0,
+        19277.5,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((13950.819118824604 49892.026332899644, 13950.819118824604 50577.02633290239, 19277.49076172225 50577.02633290239, 19277.49076172225 49892.026332899644, 13950.819118824604 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-014",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.312526,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.262505,
+      "shuttering_m2": 1.312526,
+      "calculation_trace": "area_m2=1.312526; thickness_mm=200; volume=0.262505",
+      "centroid_cm": [
+        12619.438,
+        50234.526
+      ],
+      "bounds_cm": [
+        11661.4,
+        49892.0,
+        13577.5,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((11661.390199347215 49892.026332899644, 11661.390199347215 50577.02633290239, 13577.486655605462 50577.02633290239, 13577.486655605462 49892.026332899644, 11661.390199347215 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-015",
+      "strategy": "label_merged_bay",
+      "area_m2": 2.105595,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.421119,
+      "shuttering_m2": 2.105595,
+      "calculation_trace": "area_m2=2.105595; thickness_mm=200; volume=0.421119",
+      "centroid_cm": [
+        11491.39,
+        48122.031
+      ],
+      "bounds_cm": [
+        11211.4,
+        46242.0,
+        11771.4,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((11211.390199343485 46242.03566842095, 11211.390199343485 50002.026332899644, 11771.390199347215 50002.026332899644, 11771.390199347215 46242.03566842095, 11211.390199343485 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-016",
+      "strategy": "label_merged_bay",
+      "area_m2": 8.19361,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.638722,
+      "shuttering_m2": 8.19361,
+      "calculation_trace": "area_m2=8.19361; thickness_mm=200; volume=1.638722",
+      "centroid_cm": [
+        41092.907,
+        46854.962
+      ],
+      "bounds_cm": [
+        36917.5,
+        45667.0,
+        43134.4,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((42388.33602817803 46352.03566842095, 42388.33602817803 50002.026332899644, 43134.43661654194 50002.026332899644, 43134.43661654194 46352.03566842095, 43134.43661654194 46242.03566842095, 43134.43661654194 45667.03566842905, 42498.33602817803 45667.03566842905, 42388.33602817803 45667.03566842905, 36917.48754319437 45667.03566842905, 36917.48754319437 46352.03566842095, 42388.33602817803 46352.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-017",
+      "strategy": "label_merged_bay",
+      "area_m2": 45.15793,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 9.031586,
+      "shuttering_m2": 45.15793,
+      "calculation_trace": "area_m2=45.15793; thickness_mm=200; volume=9.031586",
+      "centroid_cm": [
+        50385.408,
+        48430.628
+      ],
+      "bounds_cm": [
+        46965.6,
+        46242.0,
+        54221.3,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((46965.63094186019 46242.03566842095, 46965.63094186019 49892.026332899644, 46965.63094186019 50002.026332899644, 46965.63094186019 50577.02633290239, 53611.30931173899 50577.02633290239, 53721.30931173899 50577.02633290239, 54221.309311737125 50577.02633290239, 54221.309311737125 49892.026332899644, 53721.30931173899 49892.026332899644, 53721.30931173899 46242.03566842095, 46965.63094186019 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-018",
+      "strategy": "label_merged_bay",
+      "area_m2": 0.406433,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.081287,
+      "shuttering_m2": 0.406433,
+      "calculation_trace": "area_m2=0.406433; thickness_mm=200; volume=0.081287",
+      "centroid_cm": [
+        13764.153,
+        50234.526
+      ],
+      "bounds_cm": [
+        13467.5,
+        49892.0,
+        14060.8,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((13467.486655605462 49892.026332899644, 13467.486655605462 50577.02633290239, 14060.819118824604 50577.02633290239, 14060.819118824604 49892.026332899644, 13467.486655605462 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-019",
+      "strategy": "label_merged_bay",
+      "area_m2": 7.204505,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.440901,
+      "shuttering_m2": 7.204505,
+      "calculation_trace": "area_m2=7.204505; thickness_mm=200; volume=1.440901",
+      "centroid_cm": [
+        12619.438,
+        48122.031
+      ],
+      "bounds_cm": [
+        11661.4,
+        46242.0,
+        13577.5,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((11661.390199347215 46242.03566842095, 11661.390199347215 50002.026332899644, 13577.486655605462 50002.026332899644, 13577.486655605462 46242.03566842095, 11661.390199347215 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-020",
+      "strategy": "label_merged_bay",
+      "area_m2": 7.353187,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.470637,
+      "shuttering_m2": 7.353187,
+      "calculation_trace": "area_m2=7.353187; thickness_mm=200; volume=1.470637",
+      "centroid_cm": [
+        20145.311,
+        48122.031
+      ],
+      "bounds_cm": [
+        19167.5,
+        46242.0,
+        21123.1,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((19167.49076172225 46242.03566842095, 19167.49076172225 50002.026332899644, 21123.13040718325 50002.026332899644, 21123.13040718325 46242.03566842095, 19167.49076172225 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-021",
+      "strategy": "label_merged_bay",
+      "area_m2": 0.62335,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.12467,
+      "shuttering_m2": 0.62335,
+      "calculation_trace": "area_m2=0.62335; thickness_mm=200; volume=0.12467",
+      "centroid_cm": [
+        33622.487,
+        50234.526
+      ],
+      "bounds_cm": [
+        33167.5,
+        49892.0,
+        34077.5,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((33167.48754152544 49892.026332899644, 33167.48754152544 50577.02633290239, 34077.48739007749 50577.02633290239, 34077.48739007749 49892.026332899644, 33167.48754152544 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-022",
+      "strategy": "label_merged_bay",
+      "area_m2": 5.696601,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.13932,
+      "shuttering_m2": 5.696601,
+      "calculation_trace": "area_m2=5.696601; thickness_mm=200; volume=1.13932",
+      "centroid_cm": [
+        33622.487,
+        42647.034
+      ],
+      "bounds_cm": [
+        33167.5,
+        39517.0,
+        34077.5,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((33167.48754152544 39517.03303041865, 33167.48754152544 45777.03566842905, 34077.48739007749 45777.03566842905, 34077.48739007749 39517.03303041865, 33167.48754152544 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-023",
+      "strategy": "label_merged_bay",
+      "area_m2": 12.242309,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 2.448462,
+      "shuttering_m2": 12.242309,
+      "calculation_trace": "area_m2=12.242309; thickness_mm=200; volume=2.448462",
+      "centroid_cm": [
+        20145.311,
+        42647.034
+      ],
+      "bounds_cm": [
+        19167.5,
+        39517.0,
+        21123.1,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((19167.49076172225 39517.03303041865, 19167.49076172225 45777.03566842905, 21123.13040718325 45777.03566842905, 21123.13040718325 39517.03303041865, 19167.49076172225 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-024",
+      "strategy": "label_merged_bay",
+      "area_m2": 33.344979,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 6.668996,
+      "shuttering_m2": 33.344979,
+      "calculation_trace": "area_m2=33.344979; thickness_mm=200; volume=6.668996",
+      "centroid_cm": [
+        16614.155,
+        42647.034
+      ],
+      "bounds_cm": [
+        13950.8,
+        39517.0,
+        19277.5,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((13950.819118824604 39517.03303041865, 13950.819118824604 45777.03566842905, 19277.49076172225 45777.03566842905, 19277.49076172225 39517.03303041865, 13950.819118824604 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-025",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.421591,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.684318,
+      "shuttering_m2": 3.421591,
+      "calculation_trace": "area_m2=3.421591; thickness_mm=200; volume=0.684318",
+      "centroid_cm": [
+        33622.487,
+        48122.031
+      ],
+      "bounds_cm": [
+        33167.5,
+        46242.0,
+        34077.5,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((33167.48754152544 46242.03566842095, 33167.48754152544 50002.026332899644, 34077.48739007749 50002.026332899644, 34077.48739007749 46242.03566842095, 33167.48754152544 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-026",
+      "strategy": "label_merged_bay",
+      "area_m2": 46.113868,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 9.222774,
+      "shuttering_m2": 46.113868,
+      "calculation_trace": "area_m2=46.113868; thickness_mm=200; volume=9.222774",
+      "centroid_cm": [
+        27145.309,
+        48122.031
+      ],
+      "bounds_cm": [
+        21013.1,
+        46242.0,
+        33277.5,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((21013.13040718325 46242.03566842095, 21013.13040718325 50002.026332899644, 33277.48754152544 50002.026332899644, 33277.48754152544 46242.03566842095, 21013.13040718325 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-027",
+      "strategy": "label_merged_bay",
+      "area_m2": 20.028236,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 4.005647,
+      "shuttering_m2": 20.028236,
+      "calculation_trace": "area_m2=20.028236; thickness_mm=200; volume=4.005647",
+      "centroid_cm": [
+        16614.155,
+        48122.031
+      ],
+      "bounds_cm": [
+        13950.8,
+        46242.0,
+        19277.5,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((13950.819118824604 46242.03566842095, 13950.819118824604 50002.026332899644, 19277.49076172225 50002.026332899644, 19277.49076172225 46242.03566842095, 13950.819118824604 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-028",
+      "strategy": "label_merged_bay",
+      "area_m2": 2.230925,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.446185,
+      "shuttering_m2": 2.230925,
+      "calculation_trace": "area_m2=2.230925; thickness_mm=200; volume=0.446185",
+      "centroid_cm": [
+        13764.153,
+        48122.031
+      ],
+      "bounds_cm": [
+        13467.5,
+        46242.0,
+        14060.8,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((13467.486655605462 46242.03566842095, 13467.486655605462 50002.026332899644, 14060.819118824604 50002.026332899644, 14060.819118824604 46242.03566842095, 13467.486655605462 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-029",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.312526,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.262505,
+      "shuttering_m2": 1.312526,
+      "calculation_trace": "area_m2=1.312526; thickness_mm=200; volume=0.262505",
+      "centroid_cm": [
+        12619.438,
+        46009.536
+      ],
+      "bounds_cm": [
+        11661.4,
+        45667.0,
+        13577.5,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((11661.390199347215 45667.03566842905, 11661.390199347215 46352.03566842095, 13577.486655605462 46352.03566842095, 13577.486655605462 45667.03566842905, 11661.390199347215 45667.03566842905))"
+    },
+    {
+      "slab_id": "SLAB-030",
+      "strategy": "label_merged_bay",
+      "area_m2": 0.406433,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.081287,
+      "shuttering_m2": 0.406433,
+      "calculation_trace": "area_m2=0.406433; thickness_mm=200; volume=0.081287",
+      "centroid_cm": [
+        13764.153,
+        46009.536
+      ],
+      "bounds_cm": [
+        13467.5,
+        45667.0,
+        14060.8,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((13467.486655605462 45667.03566842905, 13467.486655605462 46352.03566842095, 14060.819118824604 46352.03566842095, 14060.819118824604 45667.03566842905, 13467.486655605462 45667.03566842905))"
+    },
+    {
+      "slab_id": "SLAB-031",
+      "strategy": "label_merged_bay",
+      "area_m2": 20.983938,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 4.196788,
+      "shuttering_m2": 20.983938,
+      "calculation_trace": "area_m2=20.983938; thickness_mm=200; volume=4.196788",
+      "centroid_cm": [
+        39707.912,
+        48122.031
+      ],
+      "bounds_cm": [
+        36917.5,
+        46242.0,
+        42498.3,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((36917.48754319437 46242.03566842095, 36917.48754319437 50002.026332899644, 42498.33602817803 50002.026332899644, 42498.33602817803 46242.03566842095, 36917.48754319437 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-032",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.924959,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.384992,
+      "shuttering_m2": 1.924959,
+      "calculation_trace": "area_m2=1.924959; thickness_mm=200; volume=0.384992",
+      "centroid_cm": [
+        46819.652,
+        48122.031
+      ],
+      "bounds_cm": [
+        46563.7,
+        46242.0,
+        47075.6,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((46563.67259514406 46242.03566842095, 46563.67259514406 50002.026332899644, 47075.63094186019 50002.026332899644, 47075.63094186019 46242.03566842095, 46563.67259514406 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-033",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.714263,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.742853,
+      "shuttering_m2": 3.714263,
+      "calculation_trace": "area_m2=3.714263; thickness_mm=200; volume=0.742853",
+      "centroid_cm": [
+        13764.153,
+        42647.034
+      ],
+      "bounds_cm": [
+        13467.5,
+        39517.0,
+        14060.8,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((13467.486655605462 39517.03303041865, 13467.486655605462 45777.03566842905, 14060.819118824604 45777.03566842905, 14060.819118824604 39517.03303041865, 13467.486655605462 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-034",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.505601,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.70112,
+      "shuttering_m2": 3.505601,
+      "calculation_trace": "area_m2=3.505601; thickness_mm=200; volume=0.70112",
+      "centroid_cm": [
+        11491.39,
+        42647.034
+      ],
+      "bounds_cm": [
+        11211.4,
+        39517.0,
+        11771.4,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((11211.390199343485 39517.03303041865, 11211.390199343485 45777.03566842905, 11771.390199347215 45777.03566842905, 11771.390199347215 39517.03303041865, 11211.390199343485 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-035",
+      "strategy": "label_merged_bay",
+      "area_m2": 8.401085,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.680217,
+      "shuttering_m2": 8.401085,
+      "calculation_trace": "area_m2=8.401085; thickness_mm=200; volume=1.680217",
+      "centroid_cm": [
+        27145.309,
+        46009.536
+      ],
+      "bounds_cm": [
+        21013.1,
+        45667.0,
+        33277.5,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((21013.13040718325 45667.03566842905, 21013.13040718325 46352.03566842095, 33277.48754152544 46352.03566842095, 33277.48754152544 45667.03566842905, 21013.13040718325 45667.03566842905))"
+    },
+    {
+      "slab_id": "SLAB-036",
+      "strategy": "label_merged_bay",
+      "area_m2": 0.500631,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.100126,
+      "shuttering_m2": 0.500631,
+      "calculation_trace": "area_m2=0.500631; thickness_mm=200; volume=0.100126",
+      "centroid_cm": [
+        34332.912,
+        50234.526
+      ],
+      "bounds_cm": [
+        33967.5,
+        49892.0,
+        34698.3,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((33967.48739007749 49892.026332899644, 33967.48739007749 50577.02633290239, 34698.336028908205 50577.02633290239, 34698.336028908205 49892.026332899644, 33967.48739007749 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-037",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.505601,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.70112,
+      "shuttering_m2": 3.505601,
+      "calculation_trace": "area_m2=3.505601; thickness_mm=200; volume=0.70112",
+      "centroid_cm": [
+        36747.488,
+        42647.034
+      ],
+      "bounds_cm": [
+        36467.5,
+        39517.0,
+        37027.5,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((36467.48754319438 39517.03303041865, 36467.48754319438 45777.03566842905, 37027.48754319437 45777.03566842905, 37027.48754319437 39517.03303041865, 36467.48754319438 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-038",
+      "strategy": "label_merged_bay",
+      "area_m2": 34.936126,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 6.987225,
+      "shuttering_m2": 34.936126,
+      "calculation_trace": "area_m2=34.936126; thickness_mm=200; volume=6.987225",
+      "centroid_cm": [
+        39707.912,
+        42647.034
+      ],
+      "bounds_cm": [
+        36917.5,
+        39517.0,
+        42498.3,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((36917.48754319437 39517.03303041865, 36917.48754319437 45777.03566842905, 42498.33602817803 45777.03566842905, 42498.33602817803 39517.03303041865, 36917.48754319437 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-039",
+      "strategy": "label_merged_bay",
+      "area_m2": 25.579018,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 5.115804,
+      "shuttering_m2": 25.579018,
+      "calculation_trace": "area_m2=25.579018; thickness_mm=200; volume=5.115804",
+      "centroid_cm": [
+        44753.652,
+        41017.72
+      ],
+      "bounds_cm": [
+        42388.3,
+        36717.0,
+        47075.6,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((46673.67259514406 36717.03599968773, 46177.48722798266 36717.03599968773, 46067.48722798266 36717.03599968773, 43567.486910669875 36717.03599968773, 43567.486910669875 39067.03301374927, 43567.486910669875 39177.03301374927, 43567.486910669875 39517.03303041865, 43134.43661654194 39517.03303041865, 43024.43661654194 39517.03303041865, 42388.33602817803 39517.03303041865, 42388.33602817803 45777.03566842905, 43024.43661654194 45777.03566842905, 43024.43661654194 46352.03566842095, 43677.486910669875 46352.03566842095, 43677.486910669875 45777.03566842905, 43677.486910669875 45667.03566842905, 43677.486910669875 39627.03303041865, 46067.48722798266 39627.03303041865, 46067.48722798266 45777.03566842905, 46563.67259514406 45777.03566842905, 46673.67259514406 45777.03566842905, 47075.63094186019 45777.03566842905, 47075.63094186019 39517.03303041865, 46673.67259514406 39517.03303041865, 46563.67259514406 39517.03303041865, 46177.48722798266 39517.03303041865, 46177.48722798266 39177.03301374927, 46673.67259514406 39177.03301374927, 46673.67259514406 36717.03599968773))"
+    },
+    {
+      "slab_id": "SLAB-040",
+      "strategy": "label_merged_bay",
+      "area_m2": 16.338609,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 3.267722,
+      "shuttering_m2": 16.338609,
+      "calculation_trace": "area_m2=16.338609; thickness_mm=200; volume=3.267722",
+      "centroid_cm": [
+        44872.487,
+        42647.034
+      ],
+      "bounds_cm": [
+        43567.5,
+        39517.0,
+        46177.5,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((43567.486910669875 39517.03303041865, 43567.486910669875 45777.03566842905, 46177.48722798266 45777.03566842905, 46177.48722798266 39517.03303041865, 43567.486910669875 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-041",
+      "strategy": "label_merged_bay",
+      "area_m2": 8.41082,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.682164,
+      "shuttering_m2": 8.41082,
+      "calculation_trace": "area_m2=8.41082; thickness_mm=200; volume=1.682164",
+      "centroid_cm": [
+        50343.47,
+        46009.536
+      ],
+      "bounds_cm": [
+        46965.6,
+        45667.0,
+        53721.3,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((46965.63094186019 46352.03566842095, 53721.30931173899 46352.03566842095, 53721.30931173899 45667.03566842905, 46965.63094186019 45667.03566842905, 46965.63094186019 46352.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-042",
+      "strategy": "label_merged_bay",
+      "area_m2": 42.290564,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 8.458113,
+      "shuttering_m2": 42.290564,
+      "calculation_trace": "area_m2=42.290564; thickness_mm=200; volume=8.458113",
+      "centroid_cm": [
+        50343.47,
+        42647.034
+      ],
+      "bounds_cm": [
+        46965.6,
+        39517.0,
+        53721.3,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((46965.63094186019 39517.03303041865, 46965.63094186019 45777.03566842905, 53721.30931173899 45777.03566842905, 53721.30931173899 39517.03303041865, 46965.63094186019 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-043",
+      "strategy": "label_merged_bay",
+      "area_m2": 57.716714,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 11.543343,
+      "shuttering_m2": 57.716714,
+      "calculation_trace": "area_m2=57.716714; thickness_mm=200; volume=11.543343",
+      "centroid_cm": [
+        57663.408,
+        46052.466
+      ],
+      "bounds_cm": [
+        53611.3,
+        39067.0,
+        61007.8,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((53611.30931173899 45667.03566842905, 53611.30931173899 45777.03566842905, 53611.30931173899 46242.03566842095, 53611.30931173899 46352.03566842095, 53611.30931173899 50002.026332899644, 54111.309311737125 50002.026332899644, 54111.309311737125 50577.02633290239, 59021.84404739626 50577.02633290239, 59131.84404739626 50577.02633290239, 61007.7864359364 50577.02633290239, 61007.7864359364 50002.026332899644, 61007.7864359364 49892.026332899644, 61007.7864359364 46352.03566842095, 61007.7864359364 46242.03566842095, 61007.7864359364 45777.03566842905, 61007.7864359364 45667.03566842905, 61007.7864359364 39517.03303041865, 59131.84404739626 39517.03303041865, 59131.84404739626 39067.03301374927, 54111.309311737125 39067.03301374927, 54111.309311737125 39517.03303041865, 53611.30931173899 39517.03303041865, 53611.30931173899 45667.03566842905), (54221.309311737125 45667.03566842905, 54221.309311737125 39627.03303041865, 59021.84404739626 39627.03303041865, 59021.84404739626 45667.03566842905, 54221.309311737125 45667.03566842905))"
+    },
+    {
+      "slab_id": "SLAB-044",
+      "strategy": "label_merged_bay",
+      "area_m2": 31.428561,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 6.285712,
+      "shuttering_m2": 31.428561,
+      "calculation_trace": "area_m2=31.428561; thickness_mm=200; volume=6.285712",
+      "centroid_cm": [
+        56621.577,
+        42647.034
+      ],
+      "bounds_cm": [
+        54111.3,
+        39517.0,
+        59131.8,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((54111.309311737125 39517.03303041865, 54111.309311737125 45777.03566842905, 59131.84404739626 45777.03566842905, 59131.84404739626 39517.03303041865, 54111.309311737125 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-045",
+      "strategy": "label_merged_bay",
+      "area_m2": 34.484589,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 6.896918,
+      "shuttering_m2": 34.484589,
+      "calculation_trace": "area_m2=34.484589; thickness_mm=200; volume=6.896918",
+      "centroid_cm": [
+        63806.388,
+        48122.031
+      ],
+      "bounds_cm": [
+        60897.8,
+        45667.0,
+        66715.0,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((66714.98866585437 46242.03566842095, 66714.98866585437 45667.03566842905, 66194.15832811357 45667.03566842905, 66084.15832811357 45667.03566842905, 60897.7864359364 45667.03566842905, 60897.7864359364 46242.03566842095, 60897.7864359364 46352.03566842095, 60897.7864359364 49892.026332899644, 60897.7864359364 50002.026332899644, 60897.7864359364 50577.02633290239, 66084.15832811357 50577.02633290239, 66194.15832811357 50577.02633290239, 66714.98866585437 50577.02633290239, 66714.98866585437 50002.026332899644, 66714.98866585437 49892.026332899644, 66714.98866585437 46352.03566842095, 66714.98866585437 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-046",
+      "strategy": "label_merged_bay",
+      "area_m2": 33.155302,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 6.63106,
+      "shuttering_m2": 33.155302,
+      "calculation_trace": "area_m2=33.155302; thickness_mm=200; volume=6.63106",
+      "centroid_cm": [
+        63545.972,
+        42647.034
+      ],
+      "bounds_cm": [
+        60897.8,
+        39517.0,
+        66194.2,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((60897.7864359364 39517.03303041865, 60897.7864359364 45777.03566842905, 66194.15832811357 45777.03566842905, 66194.15832811357 39517.03303041865, 60897.7864359364 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-047",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.551841,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.310368,
+      "shuttering_m2": 1.551841,
+      "calculation_trace": "area_m2=1.551841; thickness_mm=200; volume=0.310368",
+      "centroid_cm": [
+        66399.573,
+        37947.035
+      ],
+      "bounds_cm": [
+        66084.2,
+        36717.0,
+        66715.0,
+        39177.0
+      ],
+      "polygon_wkt": "POLYGON ((66084.15832811357 36717.03599968773, 66084.15832811357 39177.03301374927, 66714.98866585437 39177.03301374927, 66714.98866585437 36717.03599968773, 66084.15832811357 36717.03599968773))"
+    },
+    {
+      "slab_id": "SLAB-048",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.949,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.7898,
+      "shuttering_m2": 3.949,
+      "calculation_trace": "area_m2=3.949; thickness_mm=200; volume=0.7898",
+      "centroid_cm": [
+        66399.573,
+        42647.034
+      ],
+      "bounds_cm": [
+        66084.2,
+        39517.0,
+        66715.0,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((66084.15832811357 39517.03303041865, 66084.15832811357 45777.03566842905, 66714.98866585437 45777.03566842905, 66714.98866585437 39517.03303041865, 66084.15832811357 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-049",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.054319,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.210864,
+      "shuttering_m2": 1.054319,
+      "calculation_trace": "area_m2=1.054319; thickness_mm=200; volume=0.210864",
+      "centroid_cm": [
+        35807.912,
+        50234.526
+      ],
+      "bounds_cm": [
+        35038.3,
+        49892.0,
+        36577.5,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((35038.33602891007 49892.026332899644, 35038.33602891007 50577.02633290239, 36577.48754319438 50577.02633290239, 36577.48754319438 49892.026332899644, 35038.33602891007 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-050",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.822881,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.764576,
+      "shuttering_m2": 3.822881,
+      "calculation_trace": "area_m2=3.822881; thickness_mm=200; volume=0.764576",
+      "centroid_cm": [
+        39707.912,
+        50234.526
+      ],
+      "bounds_cm": [
+        36917.5,
+        49892.0,
+        42498.3,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((36917.48754319437 49892.026332899644, 36917.48754319437 50577.02633290239, 42498.33602817803 50577.02633290239, 42498.33602817803 49892.026332899644, 36917.48754319437 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-051",
+      "strategy": "label_merged_bay",
+      "area_m2": 6.09119,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.218238,
+      "shuttering_m2": 6.09119,
+      "calculation_trace": "area_m2=6.09119; thickness_mm=200; volume=1.218238",
+      "centroid_cm": [
+        12394.438,
+        37947.035
+      ],
+      "bounds_cm": [
+        11211.4,
+        36717.0,
+        13577.5,
+        39177.0
+      ],
+      "polygon_wkt": "POLYGON ((11211.390199343485 39177.03301374927, 11661.390199347215 39177.03301374927, 11771.390199347215 39177.03301374927, 13577.486655605462 39177.03301374927, 13577.486655605462 36717.03599968773, 11771.390199347215 36717.03599968773, 11661.390199347215 36717.03599968773, 11211.390199343485 36717.03599968773, 11211.390199343485 39177.03301374927))"
+    },
+    {
+      "slab_id": "SLAB-052",
+      "strategy": "label_merged_bay",
+      "area_m2": 11.994769,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 2.398954,
+      "shuttering_m2": 11.994769,
+      "calculation_trace": "area_m2=11.994769; thickness_mm=200; volume=2.398954",
+      "centroid_cm": [
+        12619.438,
+        42647.034
+      ],
+      "bounds_cm": [
+        11661.4,
+        39517.0,
+        13577.5,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((11661.390199347215 39517.03303041865, 11661.390199347215 45777.03566842905, 13577.486655605462 45777.03566842905, 13577.486655605462 39517.03303041865, 11661.390199347215 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-053",
+      "strategy": "label_merged_bay",
+      "area_m2": 74.335479,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 14.867096,
+      "shuttering_m2": 74.335479,
+      "calculation_trace": "area_m2=74.335479; thickness_mm=200; volume=14.867096",
+      "centroid_cm": [
+        44731.983,
+        21834.464
+      ],
+      "bounds_cm": [
+        42388.3,
+        17891.9,
+        47075.6,
+        25777.0
+      ],
+      "polygon_wkt": "POLYGON ((43134.43661654194 25777.03082375635, 43567.486910669875 25777.03082375635, 43677.486910669875 25777.03082375635, 46067.48722798266 25777.03082375635, 46177.48722798266 25777.03082375635, 46563.67259514406 25777.03082375635, 46673.67259514406 25777.03082375635, 47075.63094186019 25777.03082375635, 47075.63094186019 17891.897449675045, 46673.67259514406 17891.897449675045, 46563.67259514406 17891.897449675045, 46177.48722798266 17891.897449675045, 46067.48722798266 17891.897449675045, 43677.486910669875 17891.897449675045, 43567.486910669875 17891.897449675045, 43134.43661654194 17891.897449675045, 43024.43661654194 17891.897449675045, 42388.33602817803 17891.897449675045, 42388.33602817803 25777.03082375635, 43024.43661654194 25777.03082375635, 43134.43661654194 25777.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-054",
+      "strategy": "label_merged_bay",
+      "area_m2": 63.715443,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 12.743089,
+      "shuttering_m2": 63.715443,
+      "calculation_trace": "area_m2=63.715443; thickness_mm=200; volume=12.743089",
+      "centroid_cm": [
+        40111.925,
+        27779.5
+      ],
+      "bounds_cm": [
+        33167.5,
+        25667.0,
+        47075.6,
+        29927.0
+      ],
+      "polygon_wkt": "POLYGON ((33967.48739007749 25667.03082375635, 33167.48754152544 25667.03082375635, 33167.48754152544 26117.03082375635, 33167.48754152544 26227.03082375635, 33167.48754152544 28117.03082375635, 33167.48754152544 28227.03082375635, 33167.48754152544 28677.03082375635, 33967.48739007749 28677.03082375635, 33967.48739007749 29927.03562591104, 34588.336028908205 29927.03562591104, 34698.336028908205 29927.03562591104, 35038.33602891007 29927.03562591104, 35148.33602891007 29927.03562591104, 36467.48754319438 29927.03562591104, 36577.48754319438 29927.03562591104, 36917.48754319437 29927.03562591104, 37027.48754319437 29927.03562591104, 42388.33602817803 29927.03562591104, 42498.33602817803 29927.03562591104, 43024.43661654194 29927.03562591104, 43134.43661654194 29927.03562591104, 43567.486910669875 29927.03562591104, 43677.486910669875 29927.03562591104, 46067.48722798266 29927.03562591104, 46177.48722798266 29927.03562591104, 46673.67259514406 29927.03562591104, 46673.67259514406 28567.03082375635, 46177.48722798266 28567.03082375635, 46177.48722798266 28227.03082375635, 46563.67259514406 28227.03082375635, 46673.67259514406 28227.03082375635, 47075.63094186019 28227.03082375635, 47075.63094186019 26117.03082375635, 46673.67259514406 26117.03082375635, 46563.67259514406 26117.03082375635, 46177.48722798266 26117.03082375635, 46177.48722798266 25667.03082375635, 43567.486910669875 25667.03082375635, 43567.486910669875 26117.03082375635, 43134.43661654194 26117.03082375635, 43134.43661654194 25667.03082375635, 42498.33602817803 25667.03082375635, 42388.33602817803 25667.03082375635, 36917.48754319437 25667.03082375635, 36917.48754319437 26117.03082375635, 36577.48754319438 26117.03082375635, 36577.48754319438 25667.03082375635, 35038.33602891007 25667.03082375635, 35038.33602891007 26117.03082375635, 34698.336028908205 26117.03082375635, 34698.336028908205 25667.03082375635, 34077.48739007749 25667.03082375635, 33967.48739007749 25667.03082375635), (36577.48754319438 28567.03082375635, 36577.48754319438 28227.03082375635, 36917.48754319437 28227.03082375635, 36917.48754319437 28567.03082375635, 36577.48754319438 28567.03082375635), (35038.33602891007 28567.03082375635, 34698.336028908205 28567.03082375635, 34698.336028908205 28227.03082375635, 35038.33602891007 28227.03082375635, 35038.33602891007 28567.03082375635), (43567.486910669875 28567.03082375635, 43134.43661654194 28567.03082375635, 43134.43661654194 28227.03082375635, 43567.486910669875 28227.03082375635, 43567.486910669875 28567.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-055",
+      "strategy": "label_merged_bay",
+      "area_m2": 70.658895,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 14.131779,
+      "shuttering_m2": 70.658895,
+      "calculation_trace": "area_m2=70.658895; thickness_mm=200; volume=14.131779",
+      "centroid_cm": [
+        40608.856,
+        32813.018
+      ],
+      "bounds_cm": [
+        35038.3,
+        29817.0,
+        46177.5,
+        35777.0
+      ],
+      "polygon_wkt": "POLYGON ((35038.33602891007 29817.03562591104, 35038.33602891007 30317.03588466753, 35038.33602891007 30427.03588466753, 35038.33602891007 35777.026212567805, 36467.48754319438 35777.026212567805, 36577.48754319438 35777.026212567805, 36917.48754319437 35777.026212567805, 37027.48754319437 35777.026212567805, 42388.33602817803 35777.026212567805, 42498.33602817803 35777.026212567805, 43024.43661654194 35777.026212567805, 43134.43661654194 35777.026212567805, 43567.486910669875 35777.026212567805, 43677.486910669875 35777.026212567805, 46177.48722798266 35777.026212567805, 46177.48722798266 30427.03588466753, 46177.48722798266 30317.03588466753, 46177.48722798266 29817.03562591104, 43567.486910669875 29817.03562591104, 43567.486910669875 30317.03588466753, 43134.43661654194 30317.03588466753, 43134.43661654194 29817.03562591104, 42498.33602817803 29817.03562591104, 42388.33602817803 29817.03562591104, 36917.48754319437 29817.03562591104, 36917.48754319437 30317.03588466753, 36577.48754319438 30317.03588466753, 36577.48754319438 29817.03562591104, 35038.33602891007 29817.03562591104))"
+    },
+    {
+      "slab_id": "SLAB-056",
+      "strategy": "label_merged_bay",
+      "area_m2": 41.53326,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 8.306652,
+      "shuttering_m2": 41.53326,
+      "calculation_trace": "area_m2=41.53326; thickness_mm=200; volume=8.306652",
+      "centroid_cm": [
+        63531.547,
+        21824.324
+      ],
+      "bounds_cm": [
+        60897.8,
+        17891.9,
+        66194.2,
+        25777.0
+      ],
+      "polygon_wkt": "POLYGON ((66194.15832811357 17891.897449675045, 60897.7864359364 17891.897449675045, 60897.7864359364 25777.03082375635, 66194.15832811357 25777.03082375635, 66194.15832811357 25270.86969420348, 66122.48993193991 25270.86969420348, 66122.49007022269 22070.86703807895, 66194.15832811357 22070.86703807895, 66194.15832811357 17891.897449675045))"
+    },
+    {
+      "slab_id": "SLAB-057",
+      "strategy": "label_merged_bay",
+      "area_m2": 20.408393,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 4.081679,
+      "shuttering_m2": 20.408393,
+      "calculation_trace": "area_m2=20.408393; thickness_mm=200; volume=4.081679",
+      "centroid_cm": [
+        63643.445,
+        27197.154
+      ],
+      "bounds_cm": [
+        59021.8,
+        25667.0,
+        66715.0,
+        29927.0
+      ],
+      "polygon_wkt": "POLYGON ((60897.7864359364 26227.03082375635, 60897.7864359364 28117.03082375635, 60897.7864359364 28227.03082375635, 60897.7864359364 28677.03082375635, 66084.15832811357 28677.03082375635, 66084.15832811357 29927.03562591104, 66714.98866585437 29927.03562591104, 66714.98866585437 28567.03082375635, 66194.15832811357 28567.03082375635, 66194.15832811357 28227.03082375635, 66714.98866585437 28227.03082375635, 66714.98866585437 26117.03082375635, 66194.15832811357 26117.03082375635, 66194.15832811357 25667.03082375635, 61007.7864359364 25667.03082375635, 60897.7864359364 25667.03082375635, 59021.84404739626 25667.03082375635, 59021.84404739626 26227.03082375635, 60897.7864359364 26227.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-058",
+      "strategy": "label_merged_bay",
+      "area_m2": 3.64877,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.729754,
+      "shuttering_m2": 3.64877,
+      "calculation_trace": "area_m2=3.64877; thickness_mm=200; volume=0.729754",
+      "centroid_cm": [
+        16614.155,
+        46009.536
+      ],
+      "bounds_cm": [
+        13950.8,
+        45667.0,
+        19277.5,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((13950.819118824604 45667.03566842905, 13950.819118824604 46352.03566842095, 19277.49076172225 46352.03566842095, 19277.49076172225 45667.03566842905, 13950.819118824604 45667.03566842905))"
+    },
+    {
+      "slab_id": "SLAB-059",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.073014,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.214603,
+      "shuttering_m2": 1.073014,
+      "calculation_trace": "area_m2=1.073014; thickness_mm=200; volume=0.214603",
+      "centroid_cm": [
+        12619.438,
+        39347.033
+      ],
+      "bounds_cm": [
+        11661.4,
+        39067.0,
+        13577.5,
+        39627.0
+      ],
+      "polygon_wkt": "POLYGON ((11661.390199347215 39067.03301374927, 11661.390199347215 39627.03303041865, 13577.486655605462 39627.03303041865, 13577.486655605462 39067.03301374927, 11661.390199347215 39067.03301374927))"
+    },
+    {
+      "slab_id": "SLAB-060",
+      "strategy": "label_merged_bay",
+      "area_m2": 87.662367,
+      "thickness_mm": 275,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 24.107151,
+      "shuttering_m2": 87.662367,
+      "calculation_trace": "area_m2=87.662367; thickness_mm=275; volume=24.107151",
+      "centroid_cm": [
+        15543.726,
+        33462.998
+      ],
+      "bounds_cm": [
+        11211.4,
+        28117.0,
+        19277.5,
+        39177.0
+      ],
+      "polygon_wkt": "POLYGON ((13577.486655605462 28567.03082375635, 13467.486655605462 28567.03082375635, 11661.390199347215 28567.03082375635, 11661.390199347215 29817.03562591104, 11661.390199347215 29927.03562591104, 11661.390199347215 30317.03588466753, 11211.390199343485 30317.03588466753, 11211.390199343485 35777.026212567805, 11661.390199347215 35777.026212567805, 11661.390199347215 36192.03100525715, 11661.390199347215 36302.03100525715, 11661.390199347215 36827.03599968773, 13467.486655605462 36827.03599968773, 13467.486655605462 39177.03301374927, 13950.819118824604 39177.03301374927, 14060.819118824604 39177.03301374927, 19277.49076172225 39177.03301374927, 19277.49076172225 36827.03599968773, 19277.49076172225 36717.03599968773, 19277.49076172225 36302.03100525715, 19277.49076172225 36192.03100525715, 19277.49076172225 35777.026212567805, 19277.49076172225 35667.026212567805, 19277.49076172225 30427.03588466753, 19277.49076172225 30317.03588466753, 19277.49076172225 29927.03562591104, 19277.49076172225 29817.03562591104, 19277.49076172225 28677.03082375635, 19277.49076172225 28567.03082375635, 19277.49076172225 28117.03082375635, 13950.819118824604 28117.03082375635, 13950.819118824604 28567.03082375635, 13577.486655605462 28567.03082375635), (13577.486655605462 36302.03100525715, 13577.486655605462 36192.03100525715, 13577.486655605462 35777.026212567805, 13950.819118824604 35777.026212567805, 13950.819118824604 36192.03100525715, 13950.819118824604 36302.03100525715, 13950.819118824604 36717.03599968773, 13577.486655605462 36717.03599968773, 13577.486655605462 36302.03100525715), (13577.486655605462 30317.03588466753, 13577.486655605462 29927.03562591104, 13950.819118824604 29927.03562591104, 13950.819118824604 30317.03588466753, 13577.486655605462 30317.03588466753))"
+    },
+    {
+      "slab_id": "SLAB-061",
+      "strategy": "label_merged_bay",
+      "area_m2": 35.0097,
+      "thickness_mm": 275,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 9.627668,
+      "shuttering_m2": 35.0097,
+      "calculation_trace": "area_m2=35.0097; thickness_mm=275; volume=9.627668",
+      "centroid_cm": [
+        21590.498,
+        31095.655
+      ],
+      "bounds_cm": [
+        19167.5,
+        25667.0,
+        33277.5,
+        39177.0
+      ],
+      "polygon_wkt": "POLYGON ((33277.48754152544 25667.03082375635, 21123.13040718325 25667.03082375635, 21013.13040718325 25667.03082375635, 19167.49076172225 25667.03082375635, 19167.49076172225 26117.03082375635, 19167.49076172225 26227.03082375635, 19167.49076172225 28117.03082375635, 19167.49076172225 28227.03082375635, 19167.49076172225 28567.03082375635, 19167.49076172225 28677.03082375635, 19167.49076172225 29817.03562591104, 19167.49076172225 29927.03562591104, 19167.49076172225 30317.03588466753, 19167.49076172225 30427.03588466753, 19167.49076172225 35667.026212567805, 19167.49076172225 35777.026212567805, 19167.49076172225 36192.03100525715, 19167.49076172225 36302.03100525715, 19167.49076172225 36717.03599968773, 19167.49076172225 36827.03599968773, 19167.49076172225 39177.03301374927, 21123.13040718325 39177.03301374927, 21123.13040718325 36827.03599968773, 21123.13040718325 36717.03599968773, 21123.13040718325 36302.03100525715, 21123.13040718325 36192.03100525715, 21123.13040718325 35777.026212567805, 21123.13040718325 35667.026212567805, 21123.13040718325 30427.03588466753, 21123.13040718325 30317.03588466753, 21123.13040718325 29927.03562591104, 21123.13040718325 29817.03562591104, 21123.13040718325 28677.03082375635, 21123.13040718325 28567.03082375635, 21123.13040718325 28227.03082375635, 21123.13040718325 28117.03082375635, 21123.13040718325 26227.03082375635, 33277.48754152544 26227.03082375635, 33277.48754152544 25667.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-062",
+      "strategy": "label_merged_bay",
+      "area_m2": 196.413817,
+      "thickness_mm": 275,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 54.0138,
+      "shuttering_m2": 196.413817,
+      "calculation_trace": "area_m2=196.413817; thickness_mm=275; volume=54.0138",
+      "centroid_cm": [
+        27773.381,
+        32977.622
+      ],
+      "bounds_cm": [
+        21013.1,
+        26117.0,
+        35148.3,
+        39627.0
+      ],
+      "polygon_wkt": "POLYGON ((21013.13040718325 28677.03082375635, 21013.13040718325 29817.03562591104, 21013.13040718325 29927.03562591104, 21013.13040718325 30317.03588466753, 21013.13040718325 30427.03588466753, 21013.13040718325 35667.026212567805, 21013.13040718325 35777.026212567805, 21013.13040718325 36192.03100525715, 21013.13040718325 36302.03100525715, 21013.13040718325 36717.03599968773, 21013.13040718325 36827.03599968773, 21013.13040718325 39067.03301374927, 21013.13040718325 39177.03301374927, 21013.13040718325 39627.03303041865, 33277.48754152544 39627.03303041865, 33277.48754152544 39177.03301374927, 33967.48739007749 39177.03301374927, 34077.48739007749 39177.03301374927, 34698.336028908205 39177.03301374927, 34698.336028908205 36827.03599968773, 34698.336028908205 36717.03599968773, 34698.336028908205 36302.03100525715, 34698.336028908205 36192.03100525715, 34698.336028908205 35777.026212567805, 35148.33602891007 35777.026212567805, 35148.33602891007 30317.03588466753, 34698.336028908205 30317.03588466753, 34588.336028908205 30317.03588466753, 34077.48739007749 30317.03588466753, 34077.48739007749 29927.03562591104, 34077.48739007749 29817.03562591104, 34077.48739007749 28567.03082375635, 33277.48754152544 28567.03082375635, 33277.48754152544 28227.03082375635, 33277.48754152544 28117.03082375635, 33277.48754152544 26117.03082375635, 21013.13040718325 26117.03082375635, 21013.13040718325 28117.03082375635, 21013.13040718325 28227.03082375635, 21013.13040718325 28567.03082375635, 21013.13040718325 28677.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-063",
+      "strategy": "label_merged_bay",
+      "area_m2": 63.35301,
+      "thickness_mm": 275,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 17.422078,
+      "shuttering_m2": 63.35301,
+      "calculation_trace": "area_m2=63.35301; thickness_mm=275; volume=17.422078",
+      "centroid_cm": [
+        63711.482,
+        33854.961
+      ],
+      "bounds_cm": [
+        60897.8,
+        28567.0,
+        66715.0,
+        39177.0
+      ],
+      "polygon_wkt": "POLYGON ((60897.7864359364 30317.03588466753, 60897.7864359364 30427.03588466753, 60897.7864359364 35667.026212567805, 60897.7864359364 35777.026212567805, 60897.7864359364 36192.03100525715, 60897.7864359364 36302.03100525715, 60897.7864359364 36717.03599968773, 60897.7864359364 36827.03599968773, 60897.7864359364 39177.03301374927, 66194.15832811357 39177.03301374927, 66194.15832811357 36827.03599968773, 66714.98866585437 36827.03599968773, 66714.98866585437 36302.03100525715, 66714.98866585437 36192.03100525715, 66714.98866585437 35777.026212567805, 66714.98866585437 35667.026212567805, 66714.98866585437 30317.03588466753, 66194.15832811357 30317.03588466753, 66194.15832811357 29927.03562591104, 66194.15832811357 29817.03562591104, 66194.15832811357 28567.03082375635, 60897.7864359364 28567.03082375635, 60897.7864359364 29817.03562591104, 60897.7864359364 29927.03562591104, 60897.7864359364 30317.03588466753))"
+    },
+    {
+      "slab_id": "SLAB-064",
+      "strategy": "label_merged_bay",
+      "area_m2": 105.158387,
+      "thickness_mm": 275,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 28.918556,
+      "shuttering_m2": 105.158387,
+      "calculation_trace": "area_m2=105.158387; thickness_mm=275; volume=28.918556",
+      "centroid_cm": [
+        57367.056,
+        32417.083
+      ],
+      "bounds_cm": [
+        53611.3,
+        25667.0,
+        61007.8,
+        39177.0
+      ],
+      "polygon_wkt": "POLYGON ((54111.309311737125 28227.03082375635, 54111.309311737125 28567.03082375635, 53611.30931173899 28567.03082375635, 53611.30931173899 29927.03562591104, 54111.309311737125 29927.03562591104, 54111.309311737125 30317.03588466753, 53611.30931173899 30317.03588466753, 53611.30931173899 35777.026212567805, 54111.309311737125 35777.026212567805, 54111.309311737125 36192.03100525715, 54111.309311737125 36302.03100525715, 54111.309311737125 36717.03599968773, 54111.309311737125 36827.03599968773, 54111.309311737125 39177.03301374927, 59021.84404739626 39177.03301374927, 59131.84404739626 39177.03301374927, 61007.7864359364 39177.03301374927, 61007.7864359364 36827.03599968773, 61007.7864359364 36717.03599968773, 61007.7864359364 36302.03100525715, 61007.7864359364 36192.03100525715, 61007.7864359364 35777.026212567805, 61007.7864359364 35667.026212567805, 61007.7864359364 30427.03588466753, 61007.7864359364 30317.03588466753, 61007.7864359364 29927.03562591104, 61007.7864359364 29817.03562591104, 61007.7864359364 28677.03082375635, 61007.7864359364 28567.03082375635, 61007.7864359364 28227.03082375635, 61007.7864359364 28117.03082375635, 61007.7864359364 26117.03082375635, 59131.84404739626 26117.03082375635, 59131.84404739626 25667.03082375635, 54111.309311737125 25667.03082375635, 54111.309311737125 26117.03082375635, 53611.30931173899 26117.03082375635, 53611.30931173899 28227.03082375635, 54111.309311737125 28227.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-065",
+      "strategy": "label_merged_bay",
+      "area_m2": 106.775562,
+      "thickness_mm": 275,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 29.36328,
+      "shuttering_m2": 106.775562,
+      "calculation_trace": "area_m2=106.775562; thickness_mm=275; volume=29.36328",
+      "centroid_cm": [
+        50143.35,
+        32559.372
+      ],
+      "bounds_cm": [
+        46067.5,
+        25667.0,
+        54221.3,
+        39177.0
+      ],
+      "polygon_wkt": "POLYGON ((46965.63094186019 28117.03082375635, 46965.63094186019 28227.03082375635, 46965.63094186019 28567.03082375635, 46563.67259514406 28567.03082375635, 46563.67259514406 29927.03562591104, 46965.63094186019 29927.03562591104, 46965.63094186019 30317.03588466753, 46673.67259514406 30317.03588466753, 46563.67259514406 30317.03588466753, 46067.48722798266 30317.03588466753, 46067.48722798266 35777.026212567805, 46563.67259514406 35777.026212567805, 46673.67259514406 35777.026212567805, 46965.63094186019 35777.026212567805, 46965.63094186019 36192.03100525715, 46965.63094186019 36302.03100525715, 46965.63094186019 36717.03599968773, 46563.67259514406 36717.03599968773, 46563.67259514406 39177.03301374927, 46965.63094186019 39177.03301374927, 47075.63094186019 39177.03301374927, 53611.30931173899 39177.03301374927, 53721.30931173899 39177.03301374927, 54221.309311737125 39177.03301374927, 54221.309311737125 36717.03599968773, 53721.30931173899 36717.03599968773, 53721.30931173899 36302.03100525715, 53721.30931173899 36192.03100525715, 53721.30931173899 35777.026212567805, 53721.30931173899 35667.026212567805, 53721.30931173899 30427.03588466753, 53721.30931173899 30317.03588466753, 53721.30931173899 29927.03562591104, 53721.30931173899 29817.03562591104, 53721.30931173899 28677.03082375635, 53721.30931173899 28567.03082375635, 53721.30931173899 28227.03082375635, 53721.30931173899 28117.03082375635, 53721.30931173899 26227.03082375635, 53721.30931173899 26117.03082375635, 53721.30931173899 25667.03082375635, 46965.63094186019 25667.03082375635, 46965.63094186019 26117.03082375635, 46965.63094186019 26227.03082375635, 46965.63094186019 28117.03082375635))"
+    },
+    {
+      "slab_id": "SLAB-066",
+      "strategy": "label_merged_bay",
+      "area_m2": 1.339613,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.267923,
+      "shuttering_m2": 1.339613,
+      "calculation_trace": "area_m2=1.339613; thickness_mm=200; volume=0.267923",
+      "centroid_cm": [
+        20145.311,
+        46009.536
+      ],
+      "bounds_cm": [
+        19167.5,
+        45667.0,
+        21123.1,
+        46352.0
+      ],
+      "polygon_wkt": "POLYGON ((19167.49076172225 45667.03566842905, 19167.49076172225 46352.03566842095, 21123.13040718325 46352.03566842095, 21123.13040718325 45667.03566842905, 19167.49076172225 45667.03566842905))"
+    },
+    {
+      "slab_id": "SLAB-067",
+      "strategy": "label_merged_bay",
+      "area_m2": 76.774908,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 15.354982,
+      "shuttering_m2": 76.774908,
+      "calculation_trace": "area_m2=76.774908; thickness_mm=200; volume=15.354982",
+      "centroid_cm": [
+        27145.309,
+        42647.034
+      ],
+      "bounds_cm": [
+        21013.1,
+        39517.0,
+        33277.5,
+        45777.0
+      ],
+      "polygon_wkt": "POLYGON ((21013.13040718325 39517.03303041865, 21013.13040718325 45777.03566842905, 33277.48754152544 45777.03566842905, 33277.48754152544 39517.03303041865, 21013.13040718325 39517.03303041865))"
+    },
+    {
+      "slab_id": "SLAB-068",
+      "strategy": "label_merged_bay",
+      "area_m2": 4.754392,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.950878,
+      "shuttering_m2": 4.754392,
+      "calculation_trace": "area_m2=4.754392; thickness_mm=200; volume=0.950878",
+      "centroid_cm": [
+        43862.345,
+        49139.392
+      ],
+      "bounds_cm": [
+        42388.3,
+        46242.0,
+        46177.5,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((43024.43661654194 49892.026332899644, 42388.33602817803 49892.026332899644, 42388.33602817803 50577.02633290239, 43134.43661654194 50577.02633290239, 43134.43661654194 50002.026332899644, 43567.486910669875 50002.026332899644, 43567.486910669875 50577.02633290239, 46177.48722798266 50577.02633290239, 46177.48722798266 49892.026332899644, 43677.486910669875 49892.026332899644, 43677.486910669875 46242.03566842095, 43024.43661654194 46242.03566842095, 43024.43661654194 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-069",
+      "strategy": "label_merged_bay",
+      "area_m2": 0.447339,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.089468,
+      "shuttering_m2": 0.447339,
+      "calculation_trace": "area_m2=0.447339; thickness_mm=200; volume=0.089468",
+      "centroid_cm": [
+        43350.962,
+        50234.526
+      ],
+      "bounds_cm": [
+        43024.4,
+        49892.0,
+        43677.5,
+        50577.0
+      ],
+      "polygon_wkt": "POLYGON ((43024.43661654194 49892.026332899644, 43024.43661654194 50577.02633290239, 43677.486910669875 50577.02633290239, 43677.486910669875 49892.026332899644, 43024.43661654194 49892.026332899644))"
+    },
+    {
+      "slab_id": "SLAB-070",
+      "strategy": "label_merged_bay",
+      "area_m2": 2.747984,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.549597,
+      "shuttering_m2": 2.747984,
+      "calculation_trace": "area_m2=2.747984; thickness_mm=200; volume=0.549597",
+      "centroid_cm": [
+        34332.912,
+        48122.031
+      ],
+      "bounds_cm": [
+        33967.5,
+        46242.0,
+        34698.3,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((33967.48739007749 46242.03566842095, 33967.48739007749 50002.026332899644, 34698.336028908205 50002.026332899644, 34698.336028908205 46242.03566842095, 33967.48739007749 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-071",
+      "strategy": "label_merged_bay",
+      "area_m2": 2.105595,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.421119,
+      "shuttering_m2": 2.105595,
+      "calculation_trace": "area_m2=2.105595; thickness_mm=200; volume=0.421119",
+      "centroid_cm": [
+        34868.336,
+        48122.031
+      ],
+      "bounds_cm": [
+        34588.3,
+        46242.0,
+        35148.3,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((34588.336028908205 46242.03566842095, 34588.336028908205 50002.026332899644, 35148.33602891007 50002.026332899644, 35148.33602891007 46242.03566842095, 34588.336028908205 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-072",
+      "strategy": "label_merged_bay",
+      "area_m2": 5.787195,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 1.157439,
+      "shuttering_m2": 5.787195,
+      "calculation_trace": "area_m2=5.787195; thickness_mm=200; volume=1.157439",
+      "centroid_cm": [
+        35807.912,
+        48122.031
+      ],
+      "bounds_cm": [
+        35038.3,
+        46242.0,
+        36577.5,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((35038.33602891007 46242.03566842095, 35038.33602891007 50002.026332899644, 36577.48754319438 50002.026332899644, 36577.48754319438 46242.03566842095, 35038.33602891007 46242.03566842095))"
+    },
+    {
+      "slab_id": "SLAB-073",
+      "strategy": "label_merged_bay",
+      "area_m2": 2.105595,
+      "thickness_mm": 200,
+      "thickness_source": "local_thk_label",
+      "thickness_label_distance_cm": 0.0,
+      "thickness_confidence": 0.95,
+      "concrete_m3": 0.421119,
+      "shuttering_m2": 2.105595,
+      "calculation_trace": "area_m2=2.105595; thickness_mm=200; volume=0.421119",
+      "centroid_cm": [
+        36747.488,
+        48122.031
+      ],
+      "bounds_cm": [
+        36467.5,
+        46242.0,
+        37027.5,
+        50002.0
+      ],
+      "polygon_wkt": "POLYGON ((36467.48754319438 46242.03566842095, 36467.48754319438 50002.026332899644, 37027.48754319437 50002.026332899644, 37027.48754319437 46242.03566842095, 36467.48754319438 46242.03566842095))"
+    }
+  ],
+  "totals": {
+    "area_m2": 1935.521025,
+    "concrete_m3": 431.682173,
+    "shuttering_m2": 1935.521025,
+    "slab_count": 73
+  }
+}
