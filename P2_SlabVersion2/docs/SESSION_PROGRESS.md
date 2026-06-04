@@ -1,7 +1,9 @@
 # SDIE Phase 2 — Session Progress (resume checkpoint)
 
-**Last updated:** 2026-06-04  
-**Project root:** `P2_SlabVersion1/`  
+**Last updated:** 2026-06-04 (paused — resume in Version 2)  
+**Project root:** `P2_SlabVersion2/` — **active**  
+**Baseline (frozen):** `../P2_SlabVersion1/` — see `VERSION1_COMPLETE.md`  
+**Resume file:** `../RESUME.md`  
 **Design reference:** `docs/MODEL_DESIGN.md`, `docs/Prompt_extracted.txt`
 
 ---
