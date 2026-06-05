@@ -1,0 +1,12 @@
+SDIE v3.3 Semantic Pipeline — Slab -04 test 01_Layer_Test.dxf
+Processed: 2026-06-05T05:53:50.089968+00:00
+Components classified: 202
+Graph: 202 nodes, 1713 edges
+
+Slabs detected: 1
+Total area:      60.506 m²
+Total concrete:  12.101 m³
+Total shuttering:60.506 m²
+
+Benchmark overall accuracy: 98.395%
+  SLAB-001: 60.506 m², 200 mm (default_note), 12.101 m³

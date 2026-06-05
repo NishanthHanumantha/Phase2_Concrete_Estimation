@@ -1,6 +1,6 @@
 # P2_SlabVersion2 — SDIE Slab Intelligence
 
-Active development copy. **Frozen baseline:** `../P2_SlabVersion1/` (see `VERSION1_COMPLETE.md` there).
+**Frozen baseline** (see `VERSION2_COMPLETE.md`). **Active development:** `../P2_SlabVersion3/`. Also frozen: `../P2_SlabVersion1/` (`VERSION1_COMPLETE.md`).
 
 ## What was imported from Version 1
 
@@ -37,8 +37,6 @@ python scripts/run_pipeline.py "Data Source/Slab Test/Inizio_B2_LayerTest1.dxf" 
 
 Start at [docs/README.md](./docs/README.md).
 
-## Version 2 focus
+## Version 2 status
 
-- New consultant drawings
-- Generic model improvements
-- Do not edit `P2_SlabVersion1` for new experiments
+Frozen as of 2026-06-04. Use **P2_SlabVersion3** for new drawings and model changes.

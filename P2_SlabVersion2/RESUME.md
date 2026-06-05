@@ -1,8 +1,8 @@
-# Resume here — P2_SlabVersion2
+# P2_SlabVersion2 — Frozen (resume in V3)
 
-**Paused:** 2026-06-04  
-**Active project:** `P2_SlabVersion2/`  
-**Frozen baseline:** `../P2_SlabVersion1/` (do not edit for new work)
+**Frozen:** 2026-06-04  
+**Active project:** `../P2_SlabVersion3/` — see `RESUME.md` there  
+**Frozen baselines:** `P2_SlabVersion1/`, `P2_SlabVersion2/` (do not edit for new work)
 
 ---
 
