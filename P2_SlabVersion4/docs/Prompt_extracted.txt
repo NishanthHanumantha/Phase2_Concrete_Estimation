@@ -1,0 +1,153 @@
+SDIE v3.3 Enterprise Implementation Package
+Project: Inizio Structural Component Intelligence Engine
+
+================================================================================
+STRATEGIC OBJECTIVE
+================================================================================
+Replace the Geometry-First Slab Detection Architecture with a Structural
+Component Intelligence Architecture capable of learning from tagged structural
+drawings and estimator outputs.
+
+Target pipeline:
+  DXF → Structural Understanding → Component Classification → Semantic Building
+  Model → Quantity Estimation
+
+FINAL DIRECTIVE:
+  Do not improve slab detection directly.
+  Build Structural Component Intelligence first.
+  All slab estimation must occur only after component classification and
+  semantic building model generation.
+
+================================================================================
+PART 1 – CURRENT SYSTEM GAP ANALYSIS
+================================================================================
+Legacy pipeline:
+  DXF → Beam Grid → Grid Cells → THK Merge → Slab Candidates → Quantity
+
+Observed limitation — engine does not understand:
+  Beam, Column, Shear Wall, Lift Core, Stair Core, Shaft, Structural Wall
+Therefore non-slab regions are incorrectly classified as slabs.
+
+Root cause: geometry before semantics.
+Required change: semantics must precede geometry-based quantity estimation.
+
+================================================================================
+PART 2 – INIZIO STRUCTURAL COMPONENT ATLAS
+================================================================================
+Create a reusable Component Atlas from tagged drawings.
+
+Classes:
+  Slab, Beam, Column, Shear Wall, Structural Wall, Lift Core, Stair Core,
+  Shaft, Opening, Unknown
+
+Atlas sample schema:
+{
+  "sample_id": "",
+  "project_id": "INIZIO",
+  "component_type": "",
+  "geometry_features": {},
+  "annotation_features": {},
+  "graph_features": {},
+  "source_drawing": "",
+  "confidence": 1.0
+}
+
+Atlas becomes the foundation dataset for all future learning.
+
+================================================================================
+PART 3 – AUTO LABELLING ENGINE
+================================================================================
+Inputs: Beam/Slab/Column/Shearwall tagged DXF
+Process:
+  Tagged Drawing → Extract Tagged Entity → Convert to Geometry → Generate
+  Features → Create Atlas Sample
+Output: Atlas Database (no manual labelling after initial project setup)
+
+================================================================================
+PART 4 – COMPONENT CLASSIFIER
+================================================================================
+Inputs: Geometry, Topology, Layer Metadata, Annotation Text, Graph Relationships
+Output: { "component": "Beam", "confidence": 0.96 }
+Target accuracy: 95%+
+
+================================================================================
+PART 5 – FEATURE ENGINEERING
+================================================================================
+Beam: Length, Width, Aspect Ratio, Connectivity, Repetition
+Column: Rectangular Geometry, Grid Pattern, Beam Support Count
+Wall: Thickness, Continuity, Core Proximity
+Slab: Beam Enclosure, THK Annotation, Area, Exclusion Relationship
+
+================================================================================
+PART 6 – STRUCTURAL GRAPH ENGINE
+================================================================================
+Node types: Slab, Beam, Column, Wall, Core
+Relationships: Supports, Frames, Touches, Contains, Adjacent
+Example: Column → Beam → Slab
+Graph stored in NetworkX (future-ready for GNN).
+
+================================================================================
+PART 7 – DEEPSEEK REASONING LAYER
+================================================================================
+Allowed: Component Classification, Ambiguity Resolution, Missing Annotation Reasoning
+Forbidden: Area Calculation, Volume Calculation, Quantity Estimation
+Output schema: { "classification": "", "confidence": 0.0, "evidence": [] }
+
+================================================================================
+PART 8 – SEMANTIC BUILDING MODEL
+================================================================================
+Building → Floors → Zones → Components → Relationships → Quantities
+JSON: { "building": { "floors": [], "components": [], "relationships": [] } }
+
+================================================================================
+PART 9 – SLAB INTELLIGENCE ENGINE
+================================================================================
+New logic:
+  1. Identify Beam, Column, Wall, Core first
+  2. Then remaining framed region = potential slab
+Exclusions: Staircases, Lift Cores, Shafts, Structural Walls, Openings
+
+================================================================================
+PART 10 – BENCHMARK FRAMEWORK
+================================================================================
+Ground truth: Estimator workbook (Slab ID, Area, Thickness, Concrete, Shuttering)
+Metrics: Area, Thickness, Concrete, Shuttering accuracy
+Target: 95%+
+
+================================================================================
+PART 11 – CONFIDENCE FRAMEWORK
+================================================================================
+Final confidence =
+  0.35 × Geometry + 0.25 × Topology + 0.20 × Graph + 0.20 × DeepSeek
+Range: 0–100%
+
+================================================================================
+PART 12 – FASTAPI ARCHITECTURE
+================================================================================
+src/
+  ingestion/ atlas/ classification/ graph/ reasoning/ quantity/ validation/
+  api/ database/
+
+================================================================================
+PART 13 – DATABASE DESIGN
+================================================================================
+Tables: Projects, Drawings, Floors, Zones, Components, Relationships,
+        AtlasSamples, Benchmarks, Quantities
+Database: PostgreSQL (SQLite for local dev)
+
+================================================================================
+PART 14 – REACT APPLICATION (FUTURE)
+================================================================================
+Screens: Project Dashboard, Drawing Viewer, Component Explorer, Atlas Manager,
+         Validation Center, Benchmark Reports
+
+================================================================================
+PART 15 – IMPLEMENTATION ROADMAP (EPICS)
+================================================================================
+Epic 1 Atlas Builder       — Tagged drawings → atlas samples
+Epic 2 Component Classifier — 95% classification accuracy
+Epic 3 Structural Graph    — Relationships generated
+Epic 4 Semantic Building Model — Building model export working
+Epic 5 Slab Intelligence   — Non-slab regions excluded
+Epic 6 Quantity Engine     — 95% concrete accuracy
+Epic 7 Validation UI       — Human review workflow operational

@@ -1,0 +1,11 @@
+SDIE v4 RAG Pipeline — Manohar slab - beam -column with tag.dxf
+Processed: 2026-06-05T11:16:34.294964+00:00
+Components classified: 0
+Graph: 0 nodes, 0 edges
+
+Slabs detected: 0
+Total area:      0.000 m²
+Total concrete:  0.000 m³
+Total shuttering:0.000 m²
+
+Benchmark overall accuracy: 0.0%

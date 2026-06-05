@@ -1,8 +1,7 @@
-# P2_SlabVersion3 — SDIE v3.3 Structural Component Intelligence
+# P2_SlabVersion3 — SDIE v3.3 (Frozen)
 
-Active development copy implementing **SDIE v3.3 Enterprise** (semantics before geometry).  
-**Frozen baselines:** `../P2_SlabVersion1/`, `../P2_SlabVersion2/`.  
-**Spec:** `docs/Prompt_extracted.txt` · `docs/SDIE v3.3 Enterprise Implementation Package.pdf`
+**Frozen baseline** (`VERSION3_COMPLETE.md`). **Active development:** `../P2_SlabVersion4/`.  
+Also frozen: `../P2_SlabVersion1/`, `../P2_SlabVersion2/`.
 
 ## What was imported from Version 2
 

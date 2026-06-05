@@ -1,0 +1,117 @@
+SDIE v4 RAG Pipeline — TrustOffice_FF_LayerTest_RAG.dxf
+Processed: 2026-06-05T12:16:27.460611+00:00
+Components classified: 675
+Graph: 675 nodes, 774 edges
+
+Slabs detected: 107
+Total area:      572.658 m²
+Total concrete:  85.899 m³
+Total shuttering:572.658 m²
+
+  SLAB-001: 3.906 m², 150 mm (default_note), 0.586 m³
+  SLAB-002: 3.891 m², 150 mm (default_note), 0.584 m³
+  SLAB-003: 10.543 m², 150 mm (default_note), 1.581 m³
+  SLAB-004: 11.372 m², 150 mm (default_note), 1.706 m³
+  SLAB-005: 8.665 m², 150 mm (default_note), 1.300 m³
+  SLAB-006: 14.504 m², 150 mm (default_note), 2.176 m³
+  SLAB-007: 4.636 m², 150 mm (default_note), 0.695 m³
+  SLAB-008: 9.411 m², 150 mm (default_note), 1.412 m³
+  SLAB-009: 4.652 m², 150 mm (default_note), 0.698 m³
+  SLAB-010: 6.721 m², 150 mm (default_note), 1.008 m³
+  SLAB-011: 4.768 m², 150 mm (default_note), 0.715 m³
+  SLAB-012: 6.889 m², 150 mm (default_note), 1.033 m³
+  SLAB-013: 2.202 m², 150 mm (default_note), 0.330 m³
+  SLAB-014: 2.528 m², 150 mm (default_note), 0.379 m³
+  SLAB-015: 0.843 m², 150 mm (default_note), 0.127 m³
+  SLAB-016: 1.264 m², 150 mm (default_note), 0.190 m³
+  SLAB-017: 0.897 m², 150 mm (default_note), 0.135 m³
+  SLAB-018: 1.296 m², 150 mm (default_note), 0.194 m³
+  SLAB-019: 0.414 m², 150 mm (default_note), 0.062 m³
+  SLAB-020: 0.433 m², 150 mm (default_note), 0.065 m³
+  SLAB-021: 4.616 m², 150 mm (default_note), 0.692 m³
+  SLAB-022: 6.659 m², 150 mm (default_note), 0.999 m³
+  SLAB-023: 4.724 m², 150 mm (default_note), 0.709 m³
+  SLAB-024: 6.826 m², 150 mm (default_note), 1.024 m³
+  SLAB-025: 2.182 m², 150 mm (default_note), 0.327 m³
+  SLAB-026: 2.494 m², 150 mm (default_note), 0.374 m³
+  SLAB-027: 4.007 m², 150 mm (default_note), 0.601 m³
+  SLAB-028: 2.843 m², 150 mm (default_note), 0.426 m³
+  SLAB-029: 4.791 m², 150 mm (default_note), 0.719 m³
+  SLAB-030: 7.489 m², 150 mm (default_note), 1.123 m³
+  SLAB-031: 8.008 m², 150 mm (default_note), 1.201 m³
+  SLAB-032: 11.924 m², 150 mm (default_note), 1.789 m³
+  SLAB-033: 4.858 m², 150 mm (default_note), 0.729 m³
+  SLAB-034: 9.778 m², 150 mm (default_note), 1.467 m³
+  SLAB-035: 1.204 m², 150 mm (default_note), 0.181 m³
+  SLAB-036: 2.468 m², 150 mm (default_note), 0.370 m³
+  SLAB-037: 2.818 m², 150 mm (default_note), 0.423 m³
+  SLAB-038: 2.160 m², 150 mm (default_note), 0.324 m³
+  SLAB-039: 7.354 m², 150 mm (default_note), 1.103 m³
+  SLAB-040: 2.501 m², 150 mm (default_note), 0.375 m³
+  SLAB-041: 5.478 m², 150 mm (default_note), 0.822 m³
+  SLAB-042: 3.226 m², 150 mm (default_note), 0.484 m³
+  SLAB-043: 7.679 m², 150 mm (default_note), 1.152 m³
+  SLAB-044: 2.001 m², 150 mm (default_note), 0.300 m³
+  SLAB-045: 1.054 m², 150 mm (default_note), 0.158 m³
+  SLAB-046: 3.556 m², 150 mm (default_note), 0.533 m³
+  SLAB-047: 2.432 m², 150 mm (default_note), 0.365 m³
+  SLAB-048: 6.628 m², 150 mm (default_note), 0.994 m³
+  SLAB-049: 11.376 m², 150 mm (default_note), 1.706 m³
+  SLAB-050: 12.773 m², 150 mm (default_note), 1.916 m³
+  SLAB-051: 18.635 m², 150 mm (default_note), 2.795 m³
+  SLAB-052: 2.136 m², 150 mm (default_note), 0.320 m³
+  SLAB-053: 0.901 m², 150 mm (default_note), 0.135 m³
+  SLAB-054: 4.717 m², 150 mm (default_note), 0.708 m³
+  SLAB-055: 6.814 m², 150 mm (default_note), 1.022 m³
+  SLAB-056: 4.834 m², 150 mm (default_note), 0.725 m³
+  SLAB-057: 6.984 m², 150 mm (default_note), 1.048 m³
+  SLAB-058: 2.232 m², 150 mm (default_note), 0.335 m³
+  SLAB-059: 2.544 m², 150 mm (default_note), 0.382 m³
+  SLAB-060: 5.941 m², 150 mm (default_note), 0.891 m³
+  SLAB-061: 5.303 m², 150 mm (default_note), 0.796 m³
+  SLAB-062: 11.138 m², 150 mm (default_note), 1.671 m³
+  SLAB-063: 14.829 m², 150 mm (default_note), 2.224 m³
+  SLAB-064: 10.520 m², 150 mm (default_note), 1.578 m³
+  SLAB-065: 15.199 m², 150 mm (default_note), 2.280 m³
+  SLAB-066: 4.858 m², 150 mm (default_note), 0.729 m³
+  SLAB-067: 11.048 m², 150 mm (default_note), 1.657 m³
+  SLAB-068: 5.941 m², 150 mm (default_note), 0.891 m³
+  SLAB-069: 5.303 m², 150 mm (default_note), 0.795 m³
+  SLAB-070: 11.139 m², 150 mm (default_note), 1.671 m³
+  SLAB-071: 14.829 m², 150 mm (default_note), 2.224 m³
+  SLAB-072: 10.520 m², 150 mm (default_note), 1.578 m³
+  SLAB-073: 15.200 m², 150 mm (default_note), 2.280 m³
+  SLAB-074: 4.858 m², 150 mm (default_note), 0.729 m³
+  SLAB-075: 11.048 m², 150 mm (default_note), 1.657 m³
+  SLAB-076: 4.882 m², 150 mm (default_note), 0.732 m³
+  SLAB-077: 4.195 m², 150 mm (default_note), 0.629 m³
+  SLAB-078: 3.581 m², 150 mm (default_note), 0.537 m³
+  SLAB-079: 7.232 m², 150 mm (default_note), 1.085 m³
+  SLAB-080: 2.311 m², 150 mm (default_note), 0.347 m³
+  SLAB-081: 2.631 m², 150 mm (default_note), 0.395 m³
+  SLAB-082: 4.959 m², 150 mm (default_note), 0.744 m³
+  SLAB-083: 1.725 m², 150 mm (default_note), 0.259 m³
+  SLAB-084: 2.079 m², 150 mm (default_note), 0.312 m³
+  SLAB-085: 7.368 m², 150 mm (default_note), 1.105 m³
+  SLAB-086: 2.355 m², 150 mm (default_note), 0.353 m³
+  SLAB-087: 2.678 m², 150 mm (default_note), 0.402 m³
+  SLAB-088: 1.167 m², 150 mm (default_note), 0.175 m³
+  SLAB-089: 1.265 m², 150 mm (default_note), 0.190 m³
+  SLAB-090: 3.149 m², 150 mm (default_note), 0.472 m³
+  SLAB-091: 3.343 m², 150 mm (default_note), 0.501 m³
+  SLAB-092: 2.621 m², 150 mm (default_note), 0.393 m³
+  SLAB-093: 4.037 m², 150 mm (default_note), 0.606 m³
+  SLAB-094: 1.374 m², 150 mm (default_note), 0.206 m³
+  SLAB-095: 2.948 m², 150 mm (default_note), 0.442 m³
+  SLAB-096: 2.884 m², 150 mm (default_note), 0.433 m³
+  SLAB-097: 2.755 m², 150 mm (default_note), 0.413 m³
+  SLAB-098: 8.004 m², 150 mm (default_note), 1.201 m³
+  SLAB-099: 7.295 m², 150 mm (default_note), 1.094 m³
+  SLAB-100: 0.923 m², 150 mm (default_note), 0.139 m³
+  SLAB-101: 0.828 m², 150 mm (default_note), 0.124 m³
+  SLAB-102: 4.974 m², 150 mm (default_note), 0.746 m³
+  SLAB-103: 1.795 m², 150 mm (default_note), 0.269 m³
+  SLAB-104: 1.830 m², 150 mm (default_note), 0.275 m³
+  SLAB-105: 7.697 m², 150 mm (default_note), 1.155 m³
+  SLAB-106: 3.062 m², 150 mm (default_note), 0.459 m³
+  SLAB-107: 1.496 m², 150 mm (default_note), 0.224 m³

@@ -1,0 +1,463 @@
+{
+  "file": "TrustOffice_Terrace_Layer_Test.dxf",
+  "dxf_version": "AC1032",
+  "insunits": 4,
+  "insunits_name": "cm",
+  "layer_count": 9,
+  "layers": [
+    "0",
+    "G-ANNO-TEXT",
+    "S-BEAM-IDEN",
+    "S-COL HATCH",
+    "S-COLS",
+    "S-HEADING",
+    "STR-CUTOUT",
+    "S_FRAMES"
+  ],
+  "entity_counts": {
+    "LINE": 391,
+    "TEXT": 160,
+    "LWPOLYLINE": 86,
+    "MTEXT": 5,
+    "LEADER": 3,
+    "INSERT": 2,
+    "HATCH": 2,
+    "MULTILEADER": 1
+  },
+  "entities_per_layer": {
+    "S_FRAMES": 417,
+    "S-BEAM-IDEN": 159,
+    "STR-CUTOUT": 52,
+    "0": 10,
+    "G-ANNO-TEXT": 5,
+    "S-COLS": 3,
+    "S-HEADING": 2,
+    "S-COL HATCH": 2
+  },
+  "layer_entity_breakdown": {
+    "0": {
+      "LWPOLYLINE": 5,
+      "LEADER": 3,
+      "LINE": 1,
+      "INSERT": 1
+    },
+    "G-ANNO-TEXT": {
+      "MTEXT": 5
+    },
+    "S-BEAM-IDEN": {
+      "TEXT": 158,
+      "MULTILEADER": 1
+    },
+    "S-COL HATCH": {
+      "HATCH": 2
+    },
+    "S-COLS": {
+      "LWPOLYLINE": 2,
+      "INSERT": 1
+    },
+    "S-HEADING": {
+      "TEXT": 2
+    },
+    "STR-CUTOUT": {
+      "LINE": 52
+    },
+    "S_FRAMES": {
+      "LINE": 338,
+      "LWPOLYLINE": 79
+    }
+  },
+  "extents": {
+    "min": [
+      1297.354,
+      1478.696
+    ],
+    "max": [
+      56565.837,
+      26366.616
+    ],
+    "width": 55268.483,
+    "height": 24887.92
+  },
+  "closed_lwpolyline_count": 5,
+  "closed_polys_by_layer": {
+    "0": 3,
+    "S-COLS": 2
+  },
+  "largest_closed_polys": [],
+  "thickness_related_text": [
+    {
+      "type": "MTEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "NOTE: \\P\\pxi-3,l3,t3;{\\fSymbol|b0|i0|c2|p18;\u00b7^I}ALL SLABS ARE 150mm THK. U.N.O",
+      "x": 4423.622,
+      "y": 1920.84
+    },
+    {
+      "type": "MTEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "{\\fSwis721 LtCn BT|b1|i0|c0|p34;SLAB EXTENDED}",
+      "x": 48050.138,
+      "y": 7167.446
+    },
+    {
+      "type": "MTEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "{\\fSwis721 LtCn BT|b1|i0|c0|p34;SLAB EXTENDED}",
+      "x": 5594.636,
+      "y": 7147.414
+    }
+  ],
+  "sample_texts": [
+    {
+      "type": "TEXT",
+      "layer": "S-HEADING",
+      "text": "%%UTERRACE FLOOR FRAMING LAYOUT.",
+      "x": 4154.959,
+      "y": 4304.626
+    },
+    {
+      "type": "MTEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "{\\fSwis721 LtCn BT|b1|i0|c0|p34;\\LSCALE 1:100}",
+      "x": 6126.222,
+      "y": 3253.492
+    },
+    {
+      "type": "MTEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "NOTE: \\P\\pxi-3,l3,t3;{\\fSymbol|b0|i0|c2|p18;\u00b7^I}ALL SLABS ARE 150mm THK. U.N.O",
+      "x": 4423.622,
+      "y": 1920.84
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-HEADING",
+      "text": "%%U+114.3m LVL",
+      "x": 4154.959,
+      "y": 3561.87
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "INV.B(200X600)",
+      "x": 33053.715,
+      "y": 21157.54
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "INV.B(200X450)",
+      "x": 36125.392,
+      "y": 21592.718
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "INV.B(200X450)",
+      "x": 34475.384,
+      "y": 21592.718
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "STAIRCASE",
+      "x": 52618.383,
+      "y": 18486.075
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "STAIRCASE",
+      "x": 19893.375,
+      "y": 12285.069
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "LIFT",
+      "x": 23777.288,
+      "y": 11705.335
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "STAIRCASE",
+      "x": 52618.383,
+      "y": 18484.957
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "STAIRCASE",
+      "x": 19893.375,
+      "y": 12283.95
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "LIFT",
+      "x": 23777.288,
+      "y": 11704.217
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 6979.662,
+      "y": 23419.029
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 13683.667,
+      "y": 23419.029
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 20655.392,
+      "y": 23419.029
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(350X800)",
+      "x": 33792.838,
+      "y": 24186.325
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 40185.508,
+      "y": 23403.209
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 47188.229,
+      "y": 23419.029
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 6979.662,
+      "y": 17931.183
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 13683.667,
+      "y": 17931.183
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 20655.392,
+      "y": 17931.183
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 33626.33,
+      "y": 17931.183
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 40470.476,
+      "y": 17931.183
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 47188.229,
+      "y": 17931.183
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 6979.662,
+      "y": 15792.331
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 13783.667,
+      "y": 15792.331
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(350X800)",
+      "x": 21982.824,
+      "y": 15792.331
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 33626.33,
+      "y": 15792.331
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 40470.476,
+      "y": 15792.331
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 47188.229,
+      "y": 15792.331
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 6979.662,
+      "y": 9510.882
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 13683.667,
+      "y": 9510.882
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "MB(200X600)",
+      "x": 19698.345,
+      "y": 9366.892
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 33661.683,
+      "y": 9530.765
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 40151.818,
+      "y": 8649.417
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 47188.229,
+      "y": 8285.519
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 33930.171,
+      "y": 12778.26
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 39211.249,
+      "y": 12778.26
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 14573.648,
+      "y": 12598.612
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 6979.662,
+      "y": 12397.642
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 4176.963,
+      "y": 11242.973
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 4176.963,
+      "y": 18785.882
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 11002.914,
+      "y": 10865.896
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 11002.914,
+      "y": 18578.466
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 14008.279,
+      "y": 18578.466
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 18854.546,
+      "y": 11242.973
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 17975.342,
+      "y": 18578.466
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 21039.302,
+      "y": 18578.466
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(300X800)",
+      "x": 25830.922,
+      "y": 11938.102
+    }
+  ],
+  "total_text_count": 165
+}

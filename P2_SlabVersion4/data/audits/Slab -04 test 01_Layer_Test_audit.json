@@ -1,0 +1,288 @@
+{
+  "file": "Slab -04 test 01_Layer_Test.dxf",
+  "dxf_version": "AC1032",
+  "insunits": 4,
+  "insunits_name": "cm",
+  "layer_count": 19,
+  "layers": [
+    "0",
+    "G-ANNO-TEXT",
+    "S-BEAM-IDEN",
+    "S-COL HATCH",
+    "S-COLUMN",
+    "STR-BEAM",
+    "STR-RC WALL HATCH",
+    "Wall"
+  ],
+  "entity_counts": {
+    "LINE": 272,
+    "TEXT": 25,
+    "ARC": 22,
+    "HATCH": 2,
+    "LWPOLYLINE": 2,
+    "INSERT": 2,
+    "MTEXT": 1
+  },
+  "entities_per_layer": {
+    "STR-RC WALL HATCH": 83,
+    "S-COL HATCH": 69,
+    "STR-BEAM": 59,
+    "S-COLUMN": 51,
+    "Wall": 29,
+    "S-BEAM-IDEN": 16,
+    "G-ANNO-TEXT": 11,
+    "0": 8
+  },
+  "layer_entity_breakdown": {
+    "0": {
+      "ARC": 4,
+      "LINE": 4
+    },
+    "G-ANNO-TEXT": {
+      "TEXT": 9,
+      "LWPOLYLINE": 2
+    },
+    "S-BEAM-IDEN": {
+      "TEXT": 16
+    },
+    "S-COL HATCH": {
+      "LINE": 68,
+      "HATCH": 1
+    },
+    "S-COLUMN": {
+      "LINE": 44,
+      "ARC": 7
+    },
+    "STR-BEAM": {
+      "LINE": 48,
+      "ARC": 11
+    },
+    "STR-RC WALL HATCH": {
+      "LINE": 82,
+      "HATCH": 1
+    },
+    "Wall": {
+      "LINE": 26,
+      "INSERT": 2,
+      "MTEXT": 1
+    }
+  },
+  "extents": {
+    "min": [
+      18887.328,
+      4840.294
+    ],
+    "max": [
+      35572.774,
+      16102.477
+    ],
+    "width": 16685.446,
+    "height": 11262.183
+  },
+  "closed_lwpolyline_count": 2,
+  "closed_polys_by_layer": {
+    "G-ANNO-TEXT": 2
+  },
+  "largest_closed_polys": [],
+  "thickness_related_text": [
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "ALL SLABS ARE 200mm THK. U.N.O",
+      "x": 22503.672,
+      "y": 5101.216
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "ALL SLABS ARE 200mm THK. U.N.O",
+      "x": 22503.672,
+      "y": 5101.216
+    }
+  ],
+  "sample_texts": [
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 21761.902,
+      "y": 14928.885
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 26071.803,
+      "y": 11385.107
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 19668.336,
+      "y": 11102.896
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 20231.574,
+      "y": 9502.772
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 23279.334,
+      "y": 8568.701
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 27292.683,
+      "y": 10659.555
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "%%USCALE 1:100",
+      "x": 21809.906,
+      "y": 6363.393
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "NOTE:",
+      "x": 21630.281,
+      "y": 5607.114
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "\u00b7",
+      "x": 21635.467,
+      "y": 5101.216
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "ALL SLABS ARE 200mm THK. U.N.O",
+      "x": 22503.672,
+      "y": 5101.216
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 26662.904,
+      "y": 14075.323
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 29769.131,
+      "y": 12218.863
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 30531.019,
+      "y": 13803.096
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 33302.577,
+      "y": 12425.9
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 34624.364,
+      "y": 12672.629
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "%%USHR  & OHT BOTTOM LVL FRAMING PLAN",
+      "x": 21236.761,
+      "y": 6823.559
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "%%USCALE 1:100",
+      "x": 21809.906,
+      "y": 6363.393
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "NOTE:",
+      "x": 21630.281,
+      "y": 5607.114
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "\u00b7",
+      "x": 21635.467,
+      "y": 5101.216
+    },
+    {
+      "type": "TEXT",
+      "layer": "G-ANNO-TEXT",
+      "text": "ALL SLABS ARE 200mm THK. U.N.O",
+      "x": 22503.672,
+      "y": 5101.216
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 21761.902,
+      "y": 13437.731
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 21761.902,
+      "y": 10737.367
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 20718.1,
+      "y": 10935.404
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 24312.147,
+      "y": 10935.404
+    },
+    {
+      "type": "MTEXT",
+      "layer": "Wall",
+      "text": "\\A1;460",
+      "x": 34950.573,
+      "y": 13415.274
+    },
+    {
+      "type": "TEXT",
+      "layer": "S-BEAM-IDEN",
+      "text": "B(200X600)",
+      "x": 31159.053,
+      "y": 11284.849
+    }
+  ],
+  "total_text_count": 26
+}

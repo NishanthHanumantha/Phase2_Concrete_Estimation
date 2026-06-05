@@ -1,0 +1,157 @@
+{
+  "engine": "SDIE",
+  "version": "4.0.0",
+  "architecture": "knowledge_driven_rag_deepseek",
+  "processed_at": "2026-06-05T11:16:34.294964+00:00",
+  "source_dxf": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion4\\Data Source\\Project3 - Manohar\\Manohar slab - beam -column with tag.dxf",
+  "drawing_meta": {
+    "path": "C:\\Users\\nishanth.h\\Phase2_Concrete_Estimation\\P2_SlabVersion4\\Data Source\\Project3 - Manohar\\Manohar slab - beam -column with tag.dxf",
+    "dxf_version": "AC1032",
+    "insunits": 4,
+    "insunits_name": "cm",
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "extents": {
+      "min": [
+        1797.55,
+        1192.909
+      ],
+      "max": [
+        243113.04,
+        150435.445
+      ]
+    }
+  },
+  "config": {
+    "structural_layers": [
+      "S_FRAMES",
+      "STR-CUTOUT"
+    ],
+    "polygonize_layers": [
+      "S_FRAMES",
+      "STR-CUTOUT"
+    ],
+    "annotation_layers": [
+      "G-ANNO-TEXT",
+      "S-BEAM-IDEN",
+      "A-FLOR-IDEN"
+    ],
+    "detection_mode": "auto",
+    "semantic_pipeline": true,
+    "coordinate_unit": "mm",
+    "area_to_m2_factor": 1e-06,
+    "min_slab_area_m2": 0.4,
+    "project_id": "MANOHAR"
+  },
+  "detection_notes": {
+    "pipeline": "v4.0_rag_deepseek",
+    "mode": "auto",
+    "floor_zone": {
+      "method": "none",
+      "label_count": 0,
+      "cluster_count": 0,
+      "included_satellite_clusters": 0,
+      "notes": {}
+    },
+    "atlas_sample_count": 44,
+    "atlas_project_id": "MANOHAR",
+    "knowledge_base": {
+      "layer_entries": 35,
+      "annotation_entries": 5,
+      "pattern_entries": 269,
+      "estimator_mappings": 5
+    },
+    "classification": {
+      "method": "rag_rule_only",
+      "ambiguous_count": 0,
+      "total_entities": 0,
+      "deepseek": {
+        "status": "skipped",
+        "reason": "no_ambiguous_entities"
+      }
+    },
+    "entity_count": 0,
+    "classified_count": 0,
+    "component_type_counts": {},
+    "structural_graph": {
+      "node_count": 0,
+      "edge_count": 0,
+      "nodes": [],
+      "edges": [],
+      "notes": [
+        "beams=0 columns=0 slabs=0",
+        "cores=0 walls=0"
+      ]
+    },
+    "frame_line_count": {
+      "horizontal": 0,
+      "vertical": 0
+    },
+    "selected": "beam_frame_bbox"
+  },
+  "semantic_building_model": {
+    "building": {
+      "project_id": "MANOHAR",
+      "source_drawing": "Manohar slab - beam -column with tag.dxf",
+      "floors": [
+        {
+          "floor_id": "FLOOR-01",
+          "method": "none",
+          "bounds_y_mm": null,
+          "label_bounds_y_mm": null
+        }
+      ],
+      "zones": [],
+      "components": [],
+      "relationships": [],
+      "quantities": {}
+    }
+  },
+  "benchmark": {
+    "status": "computed",
+    "target_accuracy_pct": 95.0,
+    "tolerance_pct": 5,
+    "overall_accuracy_pct": 0.0,
+    "meets_target_95": false,
+    "metrics": {
+      "area_accuracy": {
+        "actual": 0.0,
+        "expected": 1066.088,
+        "accuracy_pct": 0.0,
+        "within_tolerance": false,
+        "meets_target_95": false
+      },
+      "concrete_accuracy": {
+        "actual": 0.0,
+        "expected": 182.987,
+        "accuracy_pct": 0.0,
+        "within_tolerance": false,
+        "meets_target_95": false
+      },
+      "shuttering_accuracy": {
+        "actual": 0.0,
+        "expected": 1066.088,
+        "accuracy_pct": 0.0,
+        "within_tolerance": false,
+        "meets_target_95": false
+      },
+      "slab_count": {
+        "actual": 0,
+        "expected": 78,
+        "within_tolerance": false
+      }
+    }
+  },
+  "notes": {
+    "default_thickness_mm": 200,
+    "default_note_text": null,
+    "local_thk_label_count": 0
+  },
+  "slabs": [],
+  "totals": {
+    "area_m2": 0,
+    "concrete_m3": 0,
+    "shuttering_m2": 0,
+    "slab_count": 0
+  }
+}

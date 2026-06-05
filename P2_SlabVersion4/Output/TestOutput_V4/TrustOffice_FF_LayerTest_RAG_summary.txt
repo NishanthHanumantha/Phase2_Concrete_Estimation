@@ -1,0 +1,27 @@
+SDIE v4 RAG Pipeline — TrustOffice_FF_LayerTest_RAG.dxf
+Processed: 2026-06-05T11:37:07.125540+00:00
+Components classified: 675
+Graph: 675 nodes, 774 edges
+
+Slabs detected: 17
+Total area:      216.597 m²
+Total concrete:  32.489 m³
+Total shuttering:216.597 m²
+
+  SLAB-001: 10.543 m², 150 mm (default_note), 1.581 m³
+  SLAB-002: 11.372 m², 150 mm (default_note), 1.706 m³
+  SLAB-003: 14.504 m², 150 mm (default_note), 2.176 m³
+  SLAB-004: 11.924 m², 150 mm (default_note), 1.789 m³
+  SLAB-005: 11.376 m², 150 mm (default_note), 1.706 m³
+  SLAB-006: 12.773 m², 150 mm (default_note), 1.916 m³
+  SLAB-007: 18.635 m², 150 mm (default_note), 2.795 m³
+  SLAB-008: 11.138 m², 150 mm (default_note), 1.671 m³
+  SLAB-009: 14.829 m², 150 mm (default_note), 2.224 m³
+  SLAB-010: 10.520 m², 150 mm (default_note), 1.578 m³
+  SLAB-011: 15.199 m², 150 mm (default_note), 2.280 m³
+  SLAB-012: 11.048 m², 150 mm (default_note), 1.657 m³
+  SLAB-013: 11.139 m², 150 mm (default_note), 1.671 m³
+  SLAB-014: 14.829 m², 150 mm (default_note), 2.224 m³
+  SLAB-015: 10.520 m², 150 mm (default_note), 1.578 m³
+  SLAB-016: 15.200 m², 150 mm (default_note), 2.280 m³
+  SLAB-017: 11.048 m², 150 mm (default_note), 1.657 m³

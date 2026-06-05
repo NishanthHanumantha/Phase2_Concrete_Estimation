@@ -1,0 +1,66 @@
+{
+  "version": "2",
+  "description": "Three estimator projects — tagged DXFs only (no RAW, no Inizio_B2 sample).",
+  "projects": [
+    {
+      "project_id": "INIZIO",
+      "name": "Project1 - Inizio",
+      "dxf_folder": "Project1 - Inizio",
+      "workbook": "Ground Truths/Project1 - Inizio/Inizio - Slab beam.xlsx",
+      "drawings": [
+        {
+          "drawing_id": "Inizio Slab with tag",
+          "dxf": "Project1 - Inizio/Inizio Slab with tag.dxf",
+          "primary": true,
+          "excel_floor": "Basement-02"
+        },
+        {
+          "drawing_id": "Inizio - Beam with tag",
+          "dxf": "Project1 - Inizio/Inizio - Beam with tag.dxf",
+          "tagged_beam": true
+        },
+        {
+          "drawing_id": "Inizio - Colum with tag",
+          "dxf": "Project1 - Inizio/Inizio - Colum with tag.dxf",
+          "tagged_column": true
+        },
+        {
+          "drawing_id": "Inizio - Shearwall with tag",
+          "dxf": "Project1 - Inizio/Inizio - Shearwall with tag.dxf",
+          "tagged_shearwall": true
+        }
+      ]
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "name": "Project2 - TrustOffice",
+      "dxf_folder": "Project2 - TrustOffice",
+      "workbook": "Ground Truths/Project2 - TrustOffice/Trust office - slab & Beam.xlsx",
+      "drawings": [
+        {
+          "drawing_id": "Trust office Slab & Beam with tag",
+          "dxf": "Project2 - TrustOffice/Trust office Slab & Beam with tag.dxf",
+          "primary": true
+        },
+        {
+          "drawing_id": "Trust office Column with tag",
+          "dxf": "Project2 - TrustOffice/Trust office Column with tag.dxf",
+          "tagged_column": true
+        }
+      ]
+    },
+    {
+      "project_id": "MANOHAR",
+      "name": "Project3 - Manohar",
+      "dxf_folder": "Project3 - Manohar",
+      "workbook": "Ground Truths/Project3 - Manohar/Manohar Slab & Beam.xlsx",
+      "drawings": [
+        {
+          "drawing_id": "Manohar slab - beam -column with tag",
+          "dxf": "Project3 - Manohar/Manohar slab - beam -column with tag.dxf",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}
