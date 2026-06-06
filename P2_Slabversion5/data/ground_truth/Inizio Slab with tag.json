@@ -1,0 +1,19 @@
+{
+  "drawing_id": "Inizio Slab with tag",
+  "project_id": "INIZIO",
+  "source_dxf": "Data Source/Project1 - Inizio/Inizio Slab with tag.dxf",
+  "estimator_workbook": "Data Source/Ground Truths/Project1 - Inizio/Inizio - Slab beam.xlsx",
+  "validation_status": "from_workbook",
+  "expected_total": {
+    "concrete_m3": 418.02671999999995,
+    "shuttering_m2": 2044.7078,
+    "area_m2": 2044.7078
+  },
+  "slabs": [],
+  "regression_config": {
+    "area_tolerance_pct": 5,
+    "slab_count_tolerance": 10,
+    "notes": "Imported from estimator Excel workbook"
+  },
+  "floor_match": "Basement-02"
+}

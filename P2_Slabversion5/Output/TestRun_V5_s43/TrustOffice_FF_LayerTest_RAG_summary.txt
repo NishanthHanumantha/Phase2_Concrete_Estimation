@@ -1,0 +1,67 @@
+SDIE v5 Structural Reasoning Pipeline — TrustOffice_FF_LayerTest_RAG.dxf
+Processed: 2026-06-06T10:32:18.243413+00:00
+Components classified: 675
+Graph: 675 nodes, 1288 edges
+Review queue: 675 entities (100.0% below 75.0%)
+
+Slabs detected: 56
+Total area:      560.069 m²
+Total concrete:  84.010 m³
+Total shuttering:560.069 m²
+
+  SLAB-001: 17.573 m², 150 mm (default_note), 2.636 m³
+  SLAB-002: 11.372 m², 150 mm (default_note), 1.706 m³
+  SLAB-003: 8.665 m², 150 mm (default_note), 1.300 m³
+  SLAB-004: 27.542 m², 150 mm (default_note), 4.131 m³
+  SLAB-005: 4.682 m², 150 mm (default_note), 0.702 m³
+  SLAB-006: 6.721 m², 150 mm (default_note), 1.008 m³
+  SLAB-007: 4.768 m², 150 mm (default_note), 0.715 m³
+  SLAB-008: 11.139 m², 150 mm (default_note), 1.671 m³
+  SLAB-009: 0.843 m², 150 mm (default_note), 0.127 m³
+  SLAB-010: 1.264 m², 150 mm (default_note), 0.190 m³
+  SLAB-011: 0.897 m², 150 mm (default_note), 0.135 m³
+  SLAB-012: 1.296 m², 150 mm (default_note), 0.194 m³
+  SLAB-013: 0.414 m², 150 mm (default_note), 0.062 m³
+  SLAB-014: 0.433 m², 150 mm (default_note), 0.065 m³
+  SLAB-015: 4.656 m², 150 mm (default_note), 0.698 m³
+  SLAB-016: 6.659 m², 150 mm (default_note), 0.999 m³
+  SLAB-017: 4.724 m², 150 mm (default_note), 0.709 m³
+  SLAB-018: 11.027 m², 150 mm (default_note), 1.654 m³
+  SLAB-019: 11.092 m², 150 mm (default_note), 1.664 m³
+  SLAB-020: 7.489 m², 150 mm (default_note), 1.123 m³
+  SLAB-021: 8.008 m², 150 mm (default_note), 1.201 m³
+  SLAB-022: 25.502 m², 150 mm (default_note), 3.825 m³
+  SLAB-023: 2.167 m², 150 mm (default_note), 0.325 m³
+  SLAB-024: 20.362 m², 150 mm (default_note), 3.054 m³
+  SLAB-025: 3.226 m², 150 mm (default_note), 0.484 m³
+  SLAB-026: 10.320 m², 150 mm (default_note), 1.548 m³
+  SLAB-027: 12.124 m², 150 mm (default_note), 1.819 m³
+  SLAB-028: 11.376 m², 150 mm (default_note), 1.706 m³
+  SLAB-029: 12.773 m², 150 mm (default_note), 1.916 m³
+  SLAB-030: 21.246 m², 150 mm (default_note), 3.187 m³
+  SLAB-031: 4.757 m², 150 mm (default_note), 0.714 m³
+  SLAB-032: 6.814 m², 150 mm (default_note), 1.022 m³
+  SLAB-033: 4.834 m², 150 mm (default_note), 0.725 m³
+  SLAB-034: 11.274 m², 150 mm (default_note), 1.691 m³
+  SLAB-035: 21.372 m², 150 mm (default_note), 3.206 m³
+  SLAB-036: 14.829 m², 150 mm (default_note), 2.224 m³
+  SLAB-037: 10.520 m², 150 mm (default_note), 1.578 m³
+  SLAB-038: 30.047 m², 150 mm (default_note), 4.507 m³
+  SLAB-039: 21.372 m², 150 mm (default_note), 3.206 m³
+  SLAB-040: 14.829 m², 150 mm (default_note), 2.224 m³
+  SLAB-041: 10.520 m², 150 mm (default_note), 1.578 m³
+  SLAB-042: 30.047 m², 150 mm (default_note), 4.507 m³
+  SLAB-043: 9.679 m², 150 mm (default_note), 1.452 m³
+  SLAB-044: 5.846 m², 150 mm (default_note), 0.877 m³
+  SLAB-045: 5.571 m², 150 mm (default_note), 0.836 m³
+  SLAB-046: 23.007 m², 150 mm (default_note), 3.451 m³
+  SLAB-047: 1.167 m², 150 mm (default_note), 0.175 m³
+  SLAB-048: 1.265 m², 150 mm (default_note), 0.190 m³
+  SLAB-049: 1.374 m², 150 mm (default_note), 0.206 m³
+  SLAB-050: 17.924 m², 150 mm (default_note), 2.689 m³
+  SLAB-051: 10.299 m², 150 mm (default_note), 1.545 m³
+  SLAB-052: 3.325 m², 150 mm (default_note), 0.499 m³
+  SLAB-053: 13.529 m², 150 mm (default_note), 2.029 m³
+  SLAB-054: 10.951 m², 150 mm (default_note), 1.643 m³
+  SLAB-055: 3.062 m², 150 mm (default_note), 0.459 m³
+  SLAB-056: 1.496 m², 150 mm (default_note), 0.224 m³

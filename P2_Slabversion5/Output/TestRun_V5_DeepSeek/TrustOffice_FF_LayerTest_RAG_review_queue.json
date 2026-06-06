@@ -1,0 +1,5779 @@
+{
+  "review_count": 252,
+  "warning_count": 339,
+  "total_entities": 675,
+  "low_confidence_pct": 37.33,
+  "thresholds": {
+    "auto_accept": 90.0,
+    "warning": 75.0,
+    "review": 75.0,
+    "force_queue": 60.0
+  },
+  "entities": [
+    {
+      "entity_id": "ENT-00001",
+      "classification": "Structural Wall",
+      "confidence": 4.7,
+      "review_required": true,
+      "layer": "G-ANNO-TEXT",
+      "evidence": {
+        "layer_match": 0.0,
+        "geometry_match": 0.0,
+        "topology_match": 0.0,
+        "annotation_match": 0.0,
+        "atlas_match": 47.0,
+        "kb_match": 0.0
+      },
+      "rule_evidence": [
+        "layer_profile:G-ANNO-TEXT:MTEXT",
+        "alternatives:Slab,Column",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00002",
+      "classification": "Slab",
+      "confidence": 25.3,
+      "review_required": true,
+      "layer": "G-ANNO-TEXT",
+      "evidence": {
+        "layer_match": 0.0,
+        "geometry_match": 0.0,
+        "topology_match": 0.0,
+        "annotation_match": 100.0,
+        "atlas_match": 53.0,
+        "kb_match": 100.0
+      },
+      "rule_evidence": [
+        "thk_annotation",
+        "alternatives:Structural Wall",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00392",
+      "classification": "Stair Core",
+      "confidence": 60.75,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 61.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "void_keyword:STAIRCASE",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00393",
+      "classification": "Stair Core",
+      "confidence": 60.75,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 61.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "void_keyword:STAIRCASE",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00394",
+      "classification": "Lift Core",
+      "confidence": 60.75,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 61.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "void_keyword:LIFT",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00395",
+      "classification": "Stair Core",
+      "confidence": 60.75,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 61.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "void_keyword:STAIRCASE",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00396",
+      "classification": "Stair Core",
+      "confidence": 60.75,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 61.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "void_keyword:STAIRCASE",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00397",
+      "classification": "Lift Core",
+      "confidence": 60.75,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 61.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "void_keyword:LIFT",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00398",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00399",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00400",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00401",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00402",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00403",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00404",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00405",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00406",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00407",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00408",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00409",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00410",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00411",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00412",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00413",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00414",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00415",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00416",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00417",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00418",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00419",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00420",
+      "classification": "Beam",
+      "confidence": 61.15,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 63.0,
+        "annotation_match": 100.0,
+        "atlas_match": 48.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00016",
+      "classification": "Column",
+      "confidence": 62.35,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 50.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00511",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00512",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00513",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00514",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00515",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00516",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00517",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00518",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00519",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00520",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00521",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00522",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00523",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00536",
+      "classification": "Beam",
+      "confidence": 65.25,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 70.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "alternatives:Slab",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00616",
+      "classification": "Beam",
+      "confidence": 66.75,
+      "review_required": true,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 50.0,
+        "topology_match": 50.0,
+        "annotation_match": 50.0,
+        "atlas_match": 80.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "hard_layer:S-BEAM-IDEN",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00339",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00340",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00342",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00345",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00348",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00351",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00353",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00356",
+      "classification": "Beam",
+      "confidence": 67.75,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 70.0,
+        "atlas_match": 65.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00363",
+      "classification": "Column",
+      "confidence": 68.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 50.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00071",
+      "classification": "Column",
+      "confidence": 68.5,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam,Unknown",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00003",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00004",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00005",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00006",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00007",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00008",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00009",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00010",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00011",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00012",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00013",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00014",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00015",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00017",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00018",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00019",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00020",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00021",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00022",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00023",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00024",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00025",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00026",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00027",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00028",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00029",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00030",
+      "classification": "Column",
+      "confidence": 68.6,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 80.0,
+        "annotation_match": 0.0,
+        "atlas_match": 51.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00481",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00482",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00483",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00484",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00485",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00486",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00487",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00488",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00489",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00490",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00491",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00492",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00493",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00494",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00495",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00496",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00497",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00498",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00499",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00500",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00501",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00502",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00503",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00504",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00505",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00506",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00507",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00508",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00509",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00510",
+      "classification": "Beam",
+      "confidence": 68.85,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00382",
+      "classification": "Beam",
+      "confidence": 69.0,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 50.0,
+        "annotation_match": 40.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00389",
+      "classification": "Beam",
+      "confidence": 69.0,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 75.0,
+        "topology_match": 50.0,
+        "annotation_match": 40.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Column",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00033",
+      "classification": "Column",
+      "confidence": 69.5,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 60.0,
+        "topology_match": 50.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00036",
+      "classification": "Column",
+      "confidence": 69.5,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 60.0,
+        "topology_match": 50.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00038",
+      "classification": "Column",
+      "confidence": 69.5,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 60.0,
+        "topology_match": 50.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00675",
+      "classification": "Shaft",
+      "confidence": 69.5,
+      "review_required": false,
+      "layer": "G-ANNO-TEXT",
+      "evidence": {
+        "layer_match": 70.0,
+        "geometry_match": 50.0,
+        "topology_match": 60.0,
+        "annotation_match": 100.0,
+        "atlas_match": 80.0,
+        "kb_match": 90.0
+      },
+      "rule_evidence": [
+        "void_keyword:SHAFT",
+        "alternatives:Structural Wall",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00524",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00525",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00526",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00527",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00528",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00529",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00530",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00531",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00532",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00533",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00534",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00535",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00537",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00538",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00539",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00540",
+      "classification": "Column",
+      "confidence": 70.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 80.0,
+        "topology_match": 70.0,
+        "annotation_match": 0.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00421",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00422",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00423",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00424",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00425",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00426",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00427",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00428",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00429",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00430",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00431",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00432",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00433",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00434",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00435",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00436",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00437",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00438",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00439",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00440",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00441",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00442",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00443",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00444",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00445",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00446",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00447",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00448",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00449",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00450",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00451",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00452",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00453",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00454",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00455",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00456",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00457",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00458",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00459",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00460",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00461",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00462",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00463",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00464",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00465",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00466",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00467",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00468",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00469",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00470",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00471",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00472",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00473",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00474",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00475",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00476",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00477",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00478",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00479",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00480",
+      "classification": "Beam",
+      "confidence": 70.55,
+      "review_required": false,
+      "layer": "S-BEAM-IDEN",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 0.0,
+        "topology_match": 88.0,
+        "annotation_match": 100.0,
+        "atlas_match": 92.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "atlas_match:Trust office Slab & Beam with tag_ENT-00128",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00241",
+      "classification": "Column",
+      "confidence": 71.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 60.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00243",
+      "classification": "Column",
+      "confidence": 71.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 60.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00245",
+      "classification": "Column",
+      "confidence": 71.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 60.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00247",
+      "classification": "Column",
+      "confidence": 71.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 60.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00331",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00332",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00333",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00334",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00335",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00336",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00337",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00338",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00341",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00343",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00344",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00346",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00347",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00349",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00350",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00352",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00354",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00355",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00357",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00358",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00359",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00360",
+      "classification": "Column",
+      "confidence": 72.0,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LWPOLYLINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": []
+    },
+    {
+      "entity_id": "ENT-00086",
+      "classification": "Beam",
+      "confidence": 72.25,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 85.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Column,Unknown",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00089",
+      "classification": "Beam",
+      "confidence": 72.25,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 85.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Column,Unknown",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Shear Wall",
+        "Structural Wall"
+      ]
+    },
+    {
+      "entity_id": "ENT-00242",
+      "classification": "Column",
+      "confidence": 72.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 65.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00244",
+      "classification": "Column",
+      "confidence": 72.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 65.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00246",
+      "classification": "Column",
+      "confidence": 72.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 65.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00248",
+      "classification": "Column",
+      "confidence": 72.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 65.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00249",
+      "classification": "Column",
+      "confidence": 72.25,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 70.0,
+        "topology_match": 65.0,
+        "annotation_match": 50.0,
+        "atlas_match": 55.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00061",
+      "classification": "Column",
+      "confidence": 72.5,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00066",
+      "classification": "Column",
+      "confidence": 72.5,
+      "review_required": false,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 75.0,
+        "geometry_match": 70.0,
+        "topology_match": 80.0,
+        "annotation_match": 60.0,
+        "atlas_match": 75.0,
+        "kb_match": 75.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00034",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00035",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00039",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00042",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00044",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00045",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00046",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00047",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00048",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00049",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00050",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00051",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00052",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00053",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00054",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00055",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00056",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00057",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00058",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00059",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    },
+    {
+      "entity_id": "ENT-00060",
+      "classification": "Column",
+      "confidence": 72.75,
+      "review_required": true,
+      "layer": "S_FRAMES",
+      "evidence": {
+        "layer_match": 100.0,
+        "geometry_match": 65.0,
+        "topology_match": 60.0,
+        "annotation_match": 60.0,
+        "atlas_match": 70.0,
+        "kb_match": 70.0
+      },
+      "rule_evidence": [
+        "layer_profile:S_FRAMES:LINE",
+        "alternatives:Beam",
+        "deepseek_v5"
+      ],
+      "alternatives": [
+        "Beam"
+      ]
+    }
+  ]
+}
