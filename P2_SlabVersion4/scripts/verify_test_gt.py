@@ -2,71 +2,13 @@
 from __future__ import annotations
 
 import json
-import re
+import sys
 from pathlib import Path
 
-import openpyxl
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
 
-
-def _num(value) -> float | None:
-    if isinstance(value, (int, float)) and not isinstance(value, bool):
-        return float(value)
-    return None
-
-
-def load_gt(path: Path) -> list[dict]:
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
-    ws = wb["Sheet1"]
-    slabs: list[dict] = []
-    for row in ws.iter_rows(min_row=3, values_only=True):
-        if not row or not isinstance(row[2], (int, float)):
-            continue
-        desc = row[3]
-        if not isinstance(desc, str) or not re.match(r"^S\d+", desc.strip(), re.I):
-            continue
-        length = _num(row[5])
-        breadth = _num(row[6])
-        thickness = _num(row[7])
-        conc = _num(row[8])
-        shut = _num(row[9])
-        area = shut if shut else (length * breadth if length and breadth else None)
-        slabs.append(
-            {
-                "id": desc.strip().upper(),
-                "length_m": length,
-                "breadth_m": breadth,
-                "thickness_m": thickness,
-                "area_m2": area,
-                "concrete_m3": conc,
-            }
-        )
-    wb.close()
-    return slabs
-
-
-def greedy_match(expected: list[dict], actual: list[dict], tol_pct: float = 15.0):
-    """Match GT slabs to model polygons by nearest area."""
-    used = set()
-    matches = []
-    for exp in expected:
-        best = None
-        best_err = 1e9
-        for i, act in enumerate(actual):
-            if i in used:
-                continue
-            err = abs(act["area_m2"] - exp["area_m2"]) / exp["area_m2"] * 100
-            if err < best_err:
-                best_err = err
-                best = (i, act)
-        if best and best_err <= tol_pct:
-            used.add(best[0])
-            matches.append((exp, best[1], best_err))
-        else:
-            matches.append((exp, None, best_err if best else None))
-    unmatched_actual = [a for i, a in enumerate(actual) if i not in used]
-    return matches, unmatched_actual
+from sdie.validation.gt_match import annotate_slabs_with_gt, greedy_match, load_gt_xlsx
 
 
 def main() -> None:
@@ -83,7 +25,7 @@ def main() -> None:
     gt_path = ROOT / "Data Source/Ground Truths/TestGT/TrustOffice_FF_ExpectedOutput.xlsx"
     results_path = args.results
 
-    gt = load_gt(gt_path)
+    gt = load_gt_xlsx(gt_path)
     results = json.loads(results_path.read_text(encoding="utf-8"))
     model = results["slabs"]
     totals = results["totals"]
@@ -134,7 +76,10 @@ def main() -> None:
         print(f"  {act['slab_id']}: {act['area_m2']:.3f} m2 strategy={act.get('strategy')}")
     print()
 
-    # Group GT by typical bay size patterns
+    annotation = annotate_slabs_with_gt(model, gt)
+    print("=== OVERLAY GT SUMMARY ===")
+    print(json.dumps(annotation["summary"], indent=2))
+
     small = [s for s in gt if s["area_m2"] < 8]
     medium = [s for s in gt if 8 <= s["area_m2"] < 14]
     large = [s for s in gt if s["area_m2"] >= 14]

@@ -1,0 +1,900 @@
+{
+  "summary": {
+    "gt_entities": 90499,
+    "evaluated": 90499,
+    "missing_predictions": 0,
+    "correct": 49850,
+    "accuracy_pct": 55.1
+  },
+  "per_class": {
+    "Slab": {
+      "tp": 0,
+      "fp": 4458,
+      "fn": 0,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_pct": 0.0
+    },
+    "Beam": {
+      "tp": 7478,
+      "fp": 23009,
+      "fn": 2432,
+      "precision_pct": 24.5,
+      "recall_pct": 75.5,
+      "f1_pct": 37.0
+    },
+    "Column": {
+      "tp": 282,
+      "fp": 12456,
+      "fn": 2836,
+      "precision_pct": 2.2,
+      "recall_pct": 9.0,
+      "f1_pct": 3.6
+    },
+    "Shear Wall": {
+      "tp": 42090,
+      "fp": 101,
+      "fn": 35381,
+      "precision_pct": 99.8,
+      "recall_pct": 54.3,
+      "f1_pct": 70.3
+    }
+  },
+  "confusion": {
+    "Slab": {
+      "Slab": 0,
+      "Beam": 0,
+      "Column": 0,
+      "Shear Wall": 0,
+      "Other": 0
+    },
+    "Beam": {
+      "Slab": 1430,
+      "Beam": 7478,
+      "Column": 721,
+      "Shear Wall": 91,
+      "Other": 190
+    },
+    "Column": {
+      "Slab": 160,
+      "Beam": 2640,
+      "Column": 282,
+      "Shear Wall": 10,
+      "Other": 26
+    },
+    "Shear Wall": {
+      "Slab": 2868,
+      "Beam": 20369,
+      "Column": 11735,
+      "Shear Wall": 42090,
+      "Other": 409
+    }
+  },
+  "top_layer_errors": [
+    [
+      "S-BEAM",
+      10273
+    ],
+    [
+      "S-COLS",
+      8325
+    ],
+    [
+      "S-COL HATCH",
+      7658
+    ],
+    [
+      "S-BEAM-IDEN",
+      7636
+    ],
+    [
+      "A-FLOR-IDEN",
+      4401
+    ],
+    [
+      "S_FRAMES",
+      1485
+    ],
+    [
+      "SUNK SLAB",
+      578
+    ],
+    [
+      "G-ANNO-TEXT",
+      277
+    ],
+    [
+      "S-WALL",
+      16
+    ]
+  ],
+  "top_type_pair_errors": [
+    {
+      "expected": "Shear Wall",
+      "predicted": "Beam",
+      "count": 20369
+    },
+    {
+      "expected": "Shear Wall",
+      "predicted": "Column",
+      "count": 11735
+    },
+    {
+      "expected": "Shear Wall",
+      "predicted": "Slab",
+      "count": 2868
+    },
+    {
+      "expected": "Column",
+      "predicted": "Beam",
+      "count": 2640
+    },
+    {
+      "expected": "Beam",
+      "predicted": "Slab",
+      "count": 1430
+    },
+    {
+      "expected": "Beam",
+      "predicted": "Column",
+      "count": 721
+    },
+    {
+      "expected": "Shear Wall",
+      "predicted": "Other",
+      "count": 409
+    },
+    {
+      "expected": "Beam",
+      "predicted": "Other",
+      "count": 190
+    },
+    {
+      "expected": "Column",
+      "predicted": "Slab",
+      "count": 160
+    },
+    {
+      "expected": "Beam",
+      "predicted": "Shear Wall",
+      "count": 91
+    },
+    {
+      "expected": "Column",
+      "predicted": "Other",
+      "count": 26
+    },
+    {
+      "expected": "Column",
+      "predicted": "Shear Wall",
+      "count": 10
+    }
+  ],
+  "sample_errors": [
+    {
+      "entity_id": "ENT-00002",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Column",
+      "raw_predicted": "Column",
+      "layer": "S-COL HATCH",
+      "entity_type": "HATCH",
+      "confidence": 54.0,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00002"
+      ]
+    },
+    {
+      "entity_id": "ENT-00008",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00009",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00011",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00012",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00088",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00089",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00130",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00131",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00132",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00133",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00169",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00170",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00171",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00172",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00173",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00174",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00175",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00176",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00177",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00178",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00179",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00180",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00181",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00182",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00183",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00184",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00185",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00186",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00187",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00188",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00189",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00190",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00191",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00192",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00193",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00194",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00195",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00196",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00197",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00198",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00199",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00200",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00201",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00202",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00203",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00204",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00205",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    },
+    {
+      "entity_id": "ENT-00206",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "MTEXT",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00015"
+      ]
+    },
+    {
+      "entity_id": "ENT-00207",
+      "project_id": "INIZIO",
+      "drawing": "Inizio - Beam with tag.dxf",
+      "expected": "Beam",
+      "predicted": "Slab",
+      "raw_predicted": "Slab",
+      "layer": "A-FLOR-IDEN",
+      "entity_type": "LWPOLYLINE",
+      "confidence": 55.75,
+      "evidence": [
+        "atlas_match:Inizio Slab with tag_ENT-00014"
+      ]
+    }
+  ],
+  "error_count": 40649,
+  "gt_corpus": {
+    "total_entities": 90499,
+    "by_type": {
+      "Beam": 9910,
+      "Column": 3118,
+      "Shear Wall": 77471
+    },
+    "by_project": {
+      "INIZIO": 88165,
+      "TRUST_OFFICE": 2334
+    },
+    "by_drawing": {
+      "INIZIO/Inizio - Beam with tag.dxf": 9910,
+      "INIZIO/Inizio - Colum with tag.dxf": 784,
+      "INIZIO/Inizio - Shearwall with tag.dxf": 77471,
+      "TRUST_OFFICE/Trust office Column with tag.dxf": 2334
+    }
+  },
+  "mode": {
+    "use_v4": false,
+    "enable_deepseek": false,
+    "include_primary_slab": true,
+    "component_tagged_only": true
+  }
+}

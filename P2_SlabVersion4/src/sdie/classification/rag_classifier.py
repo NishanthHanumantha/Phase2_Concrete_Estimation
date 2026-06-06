@@ -5,7 +5,8 @@ import logging
 from typing import Any
 
 from sdie.atlas.schema import AtlasSample
-from sdie.classification.classifier import DEFAULT_LAYER_HINTS, classify_entity
+from sdie.classification.classifier import classify_entities
+from sdie.classification.layer_profiles import load_profiles, merged_layer_hints_for_project
 from sdie.classification.types import ClassifiedComponent, ComponentType
 from sdie.confidence.scorer import score_confidence
 from sdie.ingestion.entity_extractor import DrawingEntity
@@ -34,12 +35,22 @@ Return JSON:
 
 Allowed: """ + ", ".join(ALLOWED)
 
-def _is_ambiguous(comp: ClassifiedComponent, *, threshold: float) -> bool:
+def _is_ambiguous(
+    comp: ClassifiedComponent,
+    *,
+    threshold: float,
+    project_id: str,
+    profiles: dict | None = None,
+) -> bool:
     if comp.component_type == ComponentType.UNKNOWN:
         return True
+    if any(e.startswith(("hard_layer:", "layer_profile:")) for e in comp.evidence):
+        if comp.confidence >= 82:
+            return False
     if comp.confidence < threshold:
         return True
-    layer_hint = DEFAULT_LAYER_HINTS.get(comp.layer or "")
+    hints = merged_layer_hints_for_project(project_id, profiles=profiles)
+    layer_hint = hints.get(comp.layer or "")
     if layer_hint and layer_hint != ComponentType.SLAB and comp.component_type == ComponentType.SLAB:
         return True
     if layer_hint == ComponentType.SLAB and comp.component_type not in (
@@ -97,13 +108,21 @@ def classify_entities_v4(
     V4: rule baseline → indexed RAG → DeepSeek on ambiguous entities only.
     """
     notes: dict[str, Any] = {"method": "rag_rule_baseline"}
-    classified = [classify_entity(e, atlas=atlas) for e in entities]
+    profiles = load_profiles()
+    classified = classify_entities(
+        entities, atlas=atlas, project_id=project_id, profiles=profiles
+    )
     index: RagIndex = build_rag_index(kb, atlas, project_id)
 
     ambiguous_ids = {
         c.component_id
         for c in classified
-        if _is_ambiguous(c, threshold=ambiguity_threshold)
+        if _is_ambiguous(
+            c,
+            threshold=ambiguity_threshold,
+            project_id=project_id,
+            profiles=profiles,
+        )
     }
     notes["ambiguous_count"] = len(ambiguous_ids)
     notes["total_entities"] = len(entities)

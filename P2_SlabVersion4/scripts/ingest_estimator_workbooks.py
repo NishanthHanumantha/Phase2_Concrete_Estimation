@@ -5,6 +5,7 @@ import argparse
 import json
 import subprocess
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,8 +13,8 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from sdie.atlas.builder import build_atlas_samples_from_dxf
 from sdie.atlas.store import load_atlas, save_atlas
-from sdie.rag.atlas_select import select_atlas_dxfs
 from sdie.rag.excel_ingest import ingest_all_projects
+from sdie.validation.component_gt import iter_gt_drawing_specs
 
 
 def _build_tagged_atlas(
@@ -23,29 +24,37 @@ def _build_tagged_atlas(
     *,
     fresh: bool,
 ) -> dict:
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     by_id = {} if fresh else {s.sample_id: s for s in load_atlas(output)}
-    per_project: dict[str, int] = {}
+    per_project: dict[str, int] = defaultdict(int)
+    supervised_counts: dict[str, int] = defaultdict(int)
 
-    for project in manifest.get("projects", []):
-        folder = data_source / project["dxf_folder"]
-        dxfs = select_atlas_dxfs(folder)
-        pid = project["project_id"]
-        count = 0
-        for dxf in dxfs:
-            samples = build_atlas_samples_from_dxf(
-                dxf.resolve(), project_id=pid
-            )
-            for s in samples:
-                by_id[s.sample_id] = s
-            count += len(samples)
-            print(f"{pid} / {dxf.name}: {len(samples)} samples")
-        per_project[pid] = count
+    for spec in iter_gt_drawing_specs(manifest_path, data_source):
+        dxf = spec.dxf_path
+        if "with tag" not in dxf.name.lower():
+            continue
+        supervised = spec.supervised_type
+        samples = build_atlas_samples_from_dxf(
+            dxf,
+            project_id=spec.project_id,
+            supervised_component_type=supervised,
+        )
+        for s in samples:
+            by_id[s.sample_id] = s
+        per_project[spec.project_id] += len(samples)
+        label = supervised or "rule"
+        if supervised:
+            supervised_counts[supervised] += len(samples)
+        print(f"{spec.project_id} / {dxf.name}: {len(samples)} samples ({label})")
 
     merged = list(by_id.values())
     save_atlas(merged, output)
     print(f"Atlas saved: {output} ({len(merged)} total samples, fresh={fresh})")
-    return {"total_samples": len(merged), "per_project": per_project, "fresh": fresh}
+    return {
+        "total_samples": len(merged),
+        "per_project": dict(per_project),
+        "supervised_counts": dict(supervised_counts),
+        "fresh": fresh,
+    }
 
 
 def main() -> int:

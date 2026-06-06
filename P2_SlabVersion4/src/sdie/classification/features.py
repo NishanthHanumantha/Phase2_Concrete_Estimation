@@ -83,14 +83,21 @@ def beam_enclosure_score(entity: DrawingEntity) -> float:
 
 
 def column_compactness_score(entity: DrawingEntity) -> float:
-    if entity.entity_type not in ("LWPOLYLINE", "HATCH"):
-        return 0.0
-    if entity.area_mm2 is None or entity.area_mm2 < 100:
-        return 0.1
-    ar = entity.aspect_ratio or 1.0
-    if ar <= 2.0 and entity.area_mm2 < 2_500_000:
-        return 0.85
-    return 0.4
+    if entity.entity_type in ("LWPOLYLINE", "HATCH"):
+        if entity.area_mm2 is None or entity.area_mm2 < 100:
+            return 0.1
+        ar = entity.aspect_ratio or 1.0
+        if ar <= 2.5 and entity.area_mm2 < 2_500_000:
+            return 0.88
+        return 0.4
+    if entity.entity_type == "LINE" and entity.length_mm is not None:
+        if entity.length_mm <= 1200:
+            return 0.72
+        if entity.length_mm <= 2500 and (entity.aspect_ratio or 1.0) <= 3.0:
+            return 0.55
+    if entity.entity_type in ("INSERT", "CIRCLE"):
+        return 0.8
+    return 0.0
 
 
 def wall_continuity_score(entity: DrawingEntity) -> float:

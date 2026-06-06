@@ -1,287 +1,348 @@
-SDIE VERSION 4 – DEEPSEEK SEMANTIC STRUCTURAL INTELLIGENCE ENGINE
-MISSION
-Redesign the current SDIE architecture from a geometry-first slab detection system into a semantic structural intelligence platform capable of learning from completed estimator projects.
-The primary failure in Version 3 is incorrect slab identification.
-The system incorrectly classifies:
-Beams
-Columns
-Structural Walls
-Shear Walls
-Lift Cores
-Stair Cores
-Shafts
-Openings
-as slab regions.
-The new system must perform structural understanding before quantity estimation.
-OBJECTIVE
-Enable the system to learn from 3 completed projects initially and expand to 5+ projects later.
-The system must ingest:
-Raw structural DXF drawings
-Tagged beam DXF drawings
-Tagged slab DXF drawings
-Tagged column DXF drawings
-Tagged shearwall DXF drawings
-Estimator quantity workbook
-Component mapping information
-and build a permanent structural knowledge base.
-CORE PRINCIPLE
-The current system is geometry-driven.
-Version 4 must become knowledge-driven.
-The system should learn how estimators identify structural components and how they distinguish slabs from non-slab elements.
-The estimator workbook is considered the ground truth source.
-Tagged DXF drawings are considered the semantic truth source.
-The combination of both forms the training corpus.
-ARCHITECTURE
-Raw DXF
-→ Geometry Extraction
-→ Feature Extraction
-→ Component Knowledge Base (RAG)
-→ DeepSeek Semantic Classification
-→ Structural Graph Engine
-→ Semantic Building Model
-→ Deterministic Quantity Engine
-→ Validation Layer
-DEEPSEEK MODEL STRATEGY
-Primary Model:
-DeepSeek-V3
-Purpose:
-Component Classification
-Annotation Reasoning
-Ambiguity Resolution
-Layer Interpretation
-Estimator Pattern Recognition
-Structural Context Understanding
-DeepSeek must never calculate:
-Area
-Volume
-Concrete Quantity
-Shuttering Quantity
-All calculations must remain deterministic and auditable.
-COMPONENT KNOWLEDGE BASE (RAG)
-Create a permanent retrieval-based structural knowledge base.
-Store:
-Layer Knowledge
-Examples:
-Beam Layers
-Slab Layers
-Column Layers
-Shearwall Layers
-Core Layers
-Opening Layers
-Store project-specific layer mappings.
-Annotation Knowledge
-Examples:
-THK 150
-THK 175
-THK 200
-THK 225
-THK 250
-Store interpretation rules.
-Component Pattern Knowledge
-Store:
-Beam Patterns
-Length
-Width
-Aspect Ratio
-Connectivity
-Repetition
-Column Patterns
-Rectangular Geometry
-Grid Alignment
-Beam Connectivity
-Wall Patterns
-Thickness
-Continuity
-Core Relationships
-Slab Patterns
-Beam Enclosure
-Thickness Annotation
-Structural Framing
-Estimator Mapping Knowledge
-Store relationships:
-Drawing Entity
-→ Estimator Component
-Examples:
-Polygon A → Slab S21
-Polygon B → Lift Core
-Polygon C → Stair Opening
-Polygon D → Structural Wall
-This becomes the most valuable learning dataset.
-COMPONENT CLASSES
-The classifier must identify:
-Slab
-Beam
-Column
-Shear Wall
-Structural Wall
-Lift Core
-Stair Core
-Shaft
-Opening
-Unknown
-HISTORICAL PROJECT LEARNING
-For each completed project:
-Extract:
-Geometry
-Layers
-Annotations
-Topology
-Component Tags
-Estimator Workbook Data
-Quantity References
-Structural Relationships
-Generate component samples.
-Store samples in the Component Atlas.
-Build reusable project intelligence.
-COMPONENT ATLAS
-Atlas Sample Structure:
-Sample ID
-Project ID
-Component Type
-Geometry Features
-Annotation Features
-Layer Features
-Graph Features
-Estimator Mapping
-Confidence Score
-Source Drawing
-Atlas becomes the foundation dataset for all future learning.
-STRUCTURAL GRAPH ENGINE
-Create nodes:
-Beam
-Column
-Slab
-Wall
-Core
-Opening
-Relationships:
-Supports
-Frames
-Contains
-Adjacent
-Touches
-Implementation:
-NetworkX
-Future Ready:
-Graph Neural Networks (GNN)
-SEMANTIC BUILDING MODEL
-Create a semantic building representation.
-Building
-├ Floors
-├ Zones
-├ Components
-├ Relationships
-└ Quantities
-Output as JSON.
-SLAB INTELLIGENCE ENGINE
-Never identify slabs first.
-Always identify:
-Columns
-Beams
-Structural Walls
-Shear Walls
-Lift Cores
-Stair Cores
-Shafts
-Openings
-Only after all exclusions are identified:
-Remaining framed region
-= Potential Slab
-This is the primary correction to Version 3.
-DEEPSEEK CLASSIFICATION WORKFLOW
-Input:
-Geometry Features
-Layer Information
-Annotation Data
-Graph Relationships
-Historical Atlas Samples
-RAG Context
-Output:
-{"component": "Beam","confidence": 0.96,"evidence": ["Layer Match","Topology Match","Estimator Pattern Match"]}
-CONFIDENCE FRAMEWORK
-Final Confidence Score:
-35% Geometry
-25% Topology
-20% Structural Graph
-20% DeepSeek Semantic Confidence
-Output:
-0–100%
-QUANTITY ENGINE
-Deterministic Only.
-No LLM calculations permitted.
-Concrete Quantity:
-Area × Thickness
-Shuttering Quantity:
-Area
-All calculations must be fully traceable.
-VALIDATION FRAMEWORK
-Ground Truth Source:
-Estimator Workbook
-Validation Metrics:
-Component Classification Accuracy
-Slab Area Accuracy
-Thickness Accuracy
-Concrete Quantity Accuracy
-Shuttering Quantity Accuracy
-Target:
-95%+
-DATABASE DESIGN
-PostgreSQL
-Tables:
-Projects
-Drawings
-Floors
-Zones
-Components
-Relationships
-Atlas Samples
-Knowledge Base
-Validation Results
-Quantities
-Benchmarks
-FASTAPI MODULE STRUCTURE
-src/
-ingestion/
-atlas/
-classification/
-rag/
-graph/
-reasoning/
-semantic_model/
-quantity/
-validation/
-api/
-database/
-REACT APPLICATION
-Screens:
-Project Dashboard
-Drawing Viewer
-Component Explorer
-Knowledge Base Manager
-Atlas Manager
-Validation Center
-Benchmark Reports
-ACCEPTANCE CRITERIA
-Epic 1 – Knowledge Base Builder
-Acceptance:Historical projects converted into reusable knowledge.
-Epic 2 – Atlas Builder
-Acceptance:Tagged drawings converted into atlas samples.
-Epic 3 – DeepSeek Classification Layer
-Acceptance:95%+ component classification accuracy.
-Epic 4 – Structural Graph Engine
-Acceptance:Relationships automatically generated.
-Epic 5 – Semantic Building Model
-Acceptance:Building model export functional.
-Epic 6 – Slab Intelligence Engine
-Acceptance:Non-slab regions successfully excluded.
-Epic 7 – Quantity Engine
-Acceptance:95%+ concrete and shuttering accuracy.
-Epic 8 – Validation Center
-Acceptance:Human review workflow operational.
-FINAL DIRECTIVE
-Do not improve slab detection directly.
-Build Structural Component Intelligence first.
-Teach the system how estimators classify components.
-All slab estimation must occur only after semantic component classification and semantic building model generation are complete.
-The objective is not slab detection.
-The objective is structural understanding.
+SDIE VERSION 4 – DEEPSEEK SEMANTIC STRUCTURAL INTELLIGENCE ENGINE
+MISSION
+Redesign the current SDIE architecture from a geometry-first slab detection system into a semantic structural intelligence platform capable of learning from completed estimator projects.
+The primary failure in Version 3 is incorrect slab identification.
+The system incorrectly classifies:
+Beams
+Columns
+Structural Walls
+Shear Walls
+Lift Cores
+Stair Cores
+Shafts
+Openings
+as slab regions.
+The new system must perform structural understanding before quantity estimation.
+
+BUSINESS OBJECTIVE (COMPANY WORKFLOW)
+Slab, Beam, Column, and Shear Wall quantities are calculated separately.
+The generic model must reliably identify these four component families before any quantity engine runs.
+Internal classes (Structural Wall, Lift Core, Opening, etc.) support exclusion and diagnostics but map to the four business calculators:
+  Slab → Slab calculator
+  Beam → Beam calculator
+  Column → Column calculator
+  Shear Wall / Structural Wall (structural) → Shear Wall calculator
+  Openings / cores / shafts → Exclusions (not slab area)
+
+OBJECTIVE
+Enable the system to learn from 3 completed projects initially (Inizio, Trust Office, Manohar) and expand to 5+ projects later.
+The system must ingest:
+Raw structural DXF drawings
+Tagged beam DXF drawings
+Tagged slab DXF drawings
+Tagged column DXF drawings
+Tagged shearwall DXF drawings
+Estimator quantity workbook
+Component mapping information (projects_manifest.json)
+and build a permanent structural knowledge base.
+
+CORE PRINCIPLE
+The current system is geometry-driven.
+Version 4 must become knowledge-driven.
+The system should learn how estimators identify structural components and how they distinguish slabs from non-slab elements.
+The estimator workbook is the slab quantity ground truth source.
+Tagged component DXF drawings are the entity-level semantic truth source for Beam / Column / Shear Wall.
+The combination of both forms the training and evaluation corpus.
+
+ARCHITECTURE
+Raw DXF
+→ Geometry Extraction (entity_extractor)
+→ Feature Extraction (geometry + annotation features)
+→ Rule Baseline + Per-Project Layer Profiles
+→ Component Knowledge Base (RAG) + Component Atlas (supervised + rule samples)
+→ DeepSeek Semantic Classification (ambiguous entities only)
+→ Structural Graph Engine
+→ Semantic Building Model
+→ Slab Intelligence Engine (exclusions → framed bays → quantities)
+→ Deterministic Quantity Engine
+→ Validation Layer (entity classification eval + slab GT + diagnostic overlay)
+
+IMPLEMENTED PIPELINE ORDER (P2_SlabVersion4)
+1. Extract entities from structural + annotation layers
+2. Classify components (rules → layer profiles → geometry → atlas → DeepSeek)
+3. Build structural graph from classified components
+4. Detect slab bays after non-slab exclusions (beam-grid + estimator bay merge)
+5. Assign thickness labels and compute deterministic quantities
+6. Export results JSON, building model, summary, diagnostic overlay HTML
+
+DEEPSEEK MODEL STRATEGY
+Primary Model:
+DeepSeek-V3 (deepseek-chat via API)
+Purpose:
+Component Classification (ambiguous entities only)
+Annotation Reasoning
+Ambiguity Resolution
+Layer Interpretation
+Estimator Pattern Recognition
+Structural Context Understanding
+DeepSeek must never calculate:
+Area
+Volume
+Concrete Quantity
+Shuttering Quantity
+All calculations must remain deterministic and auditable.
+
+CLASSIFICATION RULE STACK (IMPLEMENTED – PHASE A)
+Classification is no longer a single global layer map. Order of precedence:
+1. Annotation rules (THK → Slab, void keywords → cores/openings, beam size tags → Beam)
+2. Hard global layer rules (high confidence, project-independent):
+   S-COLS, S-COL HATCH, S-COL → Column
+   S-BEAM, S-BEAM-IDEN → Beam
+   S-SHEARWALL, S-SHEAR, S-WALL → Shear Wall
+   A-FLOR-IDEN → Slab (annotation context)
+3. Per-project layer profiles (learned from supervised teaching DXFs)
+   data/layer_profiles.json — keyed by (project_id, layer[, entity_type])
+4. Geometry rules for soft/ambiguous layers (S_FRAMES, STR-BEAM):
+   Geometry decides Column vs Beam vs Wall when layer name is shared
+   Example: Trust Office uses S_FRAMES for columns on column-tagged drawings
+5. Atlas k-NN vote (layer-indexed, supervised samples weighted at confidence 1.0)
+6. DeepSeek + RAG (only if entity still ambiguous below confidence threshold)
+
+Soft layers (geometry required before type assignment):
+  S_FRAMES, STR-BEAM
+Hard layers (type from layer name when entity type matches):
+  S-COLS, S-COL HATCH, S-BEAM, S-SHEARWALL, etc.
+
+High-confidence rule/profile hits (≥82%, evidence: hard_layer: or layer_profile:) skip DeepSeek.
+
+COMPONENT KNOWLEDGE BASE (RAG)
+Permanent retrieval-based structural knowledge base at data/knowledge_base/structural_kb.json
+Built by: scripts/build_knowledge_base.py (after ingest + atlas)
+Store:
+Layer Knowledge
+  GLOBAL hard layer hints
+  Per-project layer profiles (from supervised DXFs)
+  Atlas-derived layer → type mappings
+Annotation Knowledge
+  THK patterns, stair/lift/shaft keywords, default slab notes
+Component Pattern Knowledge
+  Geometry features (aspect ratio, entity type, area buckets) per project
+Estimator Mapping Knowledge
+  Workbook totals → drawing signals (from data/ground_truth/*.json)
+
+PER-PROJECT LAYER PROFILES (NEW)
+Script: scripts/build_layer_profiles.py
+Output: data/layer_profiles.json
+Source: projects_manifest.json tagged_beam / tagged_column / tagged_shearwall drawings
+Each rule: project_id, layer, optional entity_type, component_type, confidence, sample_count
+Profiles override global defaults per project (e.g. TRUST_OFFICE + S_FRAMES + LINE → Column).
+Re-run after adding new projects or teaching DXFs.
+
+COMPONENT CLASSES
+Classifier output classes:
+Slab
+Beam
+Column
+Shear Wall
+Structural Wall
+Lift Core
+Stair Core
+Shaft
+Opening
+Unknown
+Business evaluation collapses Structural Wall → Shear Wall for the four-calculator workflow.
+
+HISTORICAL PROJECT LEARNING
+Configured projects (Data Source/projects_manifest.json):
+  Project1 – Inizio (INIZIO)
+  Project2 – TrustOffice (TRUST_OFFICE)
+  Project3 – Manohar (MANOHAR)
+Teach flow: scripts/teach_all_projects.py
+  1. ingest_estimator_workbooks.py --build-atlas --fresh-atlas --build-kb
+  2. build_layer_profiles.py
+  3. run_pipeline.py per project drawing with --project-id
+For each completed project extract:
+Geometry, Layers, Annotations, Topology, Component Tags, Workbook Data
+Generate atlas samples (supervised labels on component-tagged DXFs; rule labels on primary drawings)
+Build reusable project intelligence in atlas + KB + layer profiles
+
+COMPONENT ATLAS (IMPLEMENTED)
+Path: data/atlas/component_atlas.json
+Atlas Sample Structure:
+  sample_id, project_id, component_type, geometry_features, annotation_features
+  graph_features, source_drawing, confidence, layer, entity_type
+SUPERVISED ATLAS LABELING (NEW):
+  Drawings flagged tagged_beam / tagged_column / tagged_shearwall in manifest
+  → every extracted entity labelled with that component type at confidence 1.0
+  Primary combined drawings → rule-based labels (unchanged)
+Supervised samples receive boosted atlas vote weight during classification.
+Build: scripts/ingest_estimator_workbooks.py --build-atlas --fresh-atlas
+
+STRUCTURAL GRAPH ENGINE
+Nodes: Beam, Column, Slab, Wall, Core, Opening
+Relationships: Supports, Frames, Contains, Adjacent, Touches
+Implementation: src/sdie/graph/engine.py (NetworkX-ready)
+Graph is built after classification; graph-aware refinement pass is planned (Phase A follow-up).
+
+SEMANTIC BUILDING MODEL
+Output: *_building_model.json
+Building → Floors → Components (with confidence breakdown, evidence, features)
+Used for component inspection and overlay diagnostics.
+
+SLAB INTELLIGENCE ENGINE
+Never identify slabs first.
+Always identify and exclude non-slab components, then detect framed slab bays.
+IMPLEMENTED DETECTION IMPROVEMENTS:
+  min_slab_area_m2 default: 0.4 m² (was 10 m² — recovered small GT bays)
+  merge_beam_grid_to_estimator_bays: true
+  Estimator-level bay merge (src/sdie/detection/bay_merge.py):
+    Merges adjacent partial beam-grid cells into estimator-sized bays
+    Fixes under-segmentation when beam axes split one physical bay
+  Beam footprints frame bays; columns/cores/walls are exclusions (beams not deducted)
+Remaining slab GT gaps: edge ledges, large irregular bays — ongoing tuning.
+
+DEEPSEEK CLASSIFICATION WORKFLOW
+Input per ambiguous entity:
+  Geometry features, layer, annotation text, rule baseline type/confidence
+  RAG context (layer knowledge, annotation rules, atlas samples, patterns)
+Output:
+  {"component_id": "ENT-00001", "component": "Beam", "confidence": 0.96,
+   "evidence": ["Layer Match", "Atlas Match"]}
+Batch size: 30 entities; only ambiguous entities sent (not entire drawing when rules are confident).
+
+CONFIDENCE FRAMEWORK
+Final Confidence Score:
+  35% Geometry (rule/profile/atlas baseline)
+  25% Topology
+  20% Structural Graph
+  20% DeepSeek Semantic Confidence
+Output: 0–100%
+Threshold: 65% default; entities below → DeepSeek candidate.
+
+QUANTITY ENGINE
+Deterministic only. src/sdie/quantity/slab.py
+Concrete: Area × Thickness
+Shuttering: Area (configurable soffit equality)
+All calculations traceable in calculation_trace per slab.
+
+VALIDATION FRAMEWORK (IMPLEMENTED)
+Two validation tracks:
+
+A. Entity-level component classification (four business types)
+   Script: scripts/evaluate_component_classification.py
+   GT source: manifest tagged_beam / tagged_column / tagged_shearwall (+ primary THK → Slab)
+   Modules: src/sdie/validation/component_gt.py, component_eval.py
+   Output: confusion matrix, per-class precision/recall, layer error breakdown
+   Options: --tagged-only, --baseline, --no-deepseek, --drawing <filter>
+   Target: ≥75% on tagged teaching files before adding new projects; ≥95% production
+
+B. Slab quantity vs estimator workbook
+   GT source: Data Source/Ground Truths/TestGT/*_ExpectedOutput.xlsx
+              or data/ground_truth/<drawing>.json
+   Script: scripts/verify_test_gt.py
+   Module: src/sdie/validation/gt_match.py (greedy area match, overlay GT coloring)
+   Auto-resolves TestGT Excel from LayerTest drawing stem
+   Target: 95%+ area accuracy (Trust Office FF test: ~99.5% area after bay merge)
+
+DIAGNOSTIC OVERLAY (IMPLEMENTED – Epic 8 partial)
+Output: *_overlay.html (self-contained viewer)
+Features:
+  Layer toggles: slab bays, beam grid, exclusions, classified entities by type
+  GT match coloring: matched (green), weak (amber), extra (magenta), missed (sidebar list)
+  Click-to-inspect slab or classified entity (type, layer, confidence)
+  Sidebar: GT summary stats, slab list filters, issue list
+Module: src/sdie/validation/overlay.py
+
+GROUND TRUTH CONVENTIONS
+GT (Ground Truth) = expected correct answer from estimator
+  Slab GT: Excel workbook quantities (count, area, concrete)
+  Component GT: isolated tagged DXF drawings (all entities = that component type)
+Do not compare slab output to workbook unless GT JSON/Excel is provided for that drawing.
+
+DATABASE DESIGN (PLANNED)
+PostgreSQL — schemas drafted; runtime uses JSON files in data/ and Output/
+
+FASTAPI MODULE STRUCTURE (IMPLEMENTED)
+src/sdie/
+  ingestion/          DXF load, entity extraction
+  atlas/              atlas builder (supervised + rule), store
+  classification/     classifier, rag_classifier, features, layer_profiles, types
+  rag/                KB builder, retriever, index, excel ingest
+  graph/              structural graph engine
+  detection/          slab intelligence, beam_grid, bay_merge, exclusions, floor_zone
+  model/              semantic building model
+  quantity/           deterministic slab quantities
+  validation/         overlay, gt_match, component_gt, component_eval
+  benchmark/          workbook benchmark metrics
+  reasoning/          DeepSeek client, refinement
+  semantic_pipeline.py
+  config.py           min_slab_area_m2=0.4, merge_beam_grid_to_estimator_bays=true
+
+KEY SCRIPTS
+  scripts/ingest_estimator_workbooks.py   Excel → ground_truth JSON + optional atlas + KB
+  scripts/build_layer_profiles.py         manifest supervised DXFs → layer_profiles.json
+  scripts/build_knowledge_base.py         atlas + profiles → structural_kb.json
+  scripts/teach_all_projects.py           full teach flow (3 projects)
+  scripts/run_pipeline.py                 single drawing run (--project-id, --min-area 0.4)
+  scripts/evaluate_component_classification.py   4-class entity eval
+  scripts/verify_test_gt.py               slab GT comparison
+  scripts/analyze_dxf.py                  layer/entity diagnostics
+
+REACT APPLICATION (PLANNED)
+Screens: Project Dashboard, Drawing Viewer, Component Explorer, Knowledge Base Manager,
+         Atlas Manager, Validation Center, Benchmark Reports
+Interim: diagnostic overlay HTML replaces viewer for validation.
+
+IMPLEMENTATION STATUS (P2_SlabVersion4 – June 2026)
+DONE:
+  Epic 1 – Knowledge Base + RAG index
+  Epic 2 – Atlas builder with supervised component-tagged labelling
+  Epic 3 – DeepSeek classification (ambiguous-only); Phase A rule/layer profile stack
+  Epic 4 – Structural graph
+  Epic 5 – Semantic building model JSON export
+  Epic 6 – Slab intelligence with exclusions + beam-grid + estimator bay merge
+  Epic 7 – Deterministic quantity engine
+  Epic 8 – Validation partial: diagnostic overlay, entity eval script, slab GT verify
+  Per-project layer profiles from teaching DXFs
+  Atlas performance: layer-indexed lookup (not full 107k scan per entity)
+
+IN PROGRESS:
+  Phase A – Rule/layer tuning (column eval improved 9% → 56% baseline; target ≥75%)
+  Phase B – Add 2 new project folders after Phase A stabilizes
+  Phase C – DeepSeek re-teach when ambiguous rate drops
+  Graph-aware classification second pass
+  Manohar layer-name alignment (0 entities on teach run)
+
+TEACH RESULTS (REFERENCE)
+  INIZIO:   697 slabs, 44,268 m²
+  TRUST_OFFICE: 5,330 slabs, 137,828 m²
+  Trust Office FF LayerTest: 60 slabs, 560 m² (~99.5% GT area after bay merge)
+  Component classification: ~50–60% overall before Phase A; improving per-class with profiles
+
+RECOMMENDED WORKFLOW FOR NEW DRAWINGS
+1. Add project to projects_manifest.json with DXFs and workbook path
+2. python scripts/ingest_estimator_workbooks.py --build-atlas --fresh-atlas --build-kb
+3. python scripts/build_layer_profiles.py
+4. python scripts/run_pipeline.py <drawing.dxf> -o Output/<project> --project-id <ID> --min-area 0.4
+5. python scripts/evaluate_component_classification.py --tagged-only --baseline
+6. Open *_overlay.html for visual review
+7. python scripts/verify_test_gt.py --results Output/.../results.json (when TestGT Excel exists)
+
+ACCEPTANCE CRITERIA
+Epic 1 – Knowledge Base Builder
+  Acceptance: Historical projects converted into reusable knowledge. DONE
+Epic 2 – Atlas Builder
+  Acceptance: Tagged drawings converted into atlas samples with supervised labels. DONE
+Epic 3 – DeepSeek Classification Layer
+  Acceptance: 95%+ component classification accuracy on four business types. IN PROGRESS
+Epic 4 – Structural Graph Engine
+  Acceptance: Relationships automatically generated. DONE
+Epic 5 – Semantic Building Model
+  Acceptance: Building model export functional. DONE
+Epic 6 – Slab Intelligence Engine
+  Acceptance: Non-slab regions excluded; estimator-level bays. DONE (tuning continues)
+Epic 7 – Quantity Engine
+  Acceptance: 95%+ concrete and shuttering accuracy vs workbook GT. PARTIAL (slab area strong on test drawing)
+Epic 8 – Validation Center
+  Acceptance: Human review workflow operational. PARTIAL (HTML overlay + eval scripts; React UI planned)
+
+FINAL DIRECTIVE
+Do not improve slab detection directly.
+Build Structural Component Intelligence first.
+Teach the system how estimators classify components using:
+  (1) supervised component-tagged DXFs → atlas + layer profiles
+  (2) entity-level evaluation before scaling to more projects
+  (3) DeepSeek only for true ambiguity after rules and profiles
+All slab estimation must occur only after semantic component classification and semantic building model generation are complete.
+The objective is not slab detection.
+The objective is structural understanding.

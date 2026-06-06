@@ -4,7 +4,10 @@ import json
 from pathlib import Path
 
 from sdie.atlas.store import load_atlas
-from sdie.classification.classifier import DEFAULT_LAYER_HINTS
+from sdie.classification.layer_profiles import (
+    HARD_GLOBAL_LAYER_HINTS,
+    load_profiles,
+)
 from sdie.rag.schema import (
     AnnotationKnowledge,
     EstimatorMapping,
@@ -68,14 +71,25 @@ def build_knowledge_base(
     root = project_root or Path(__file__).resolve().parents[3]
     kb = StructuralKnowledgeBase()
 
-    for layer, ctype in DEFAULT_LAYER_HINTS.items():
+    profiles = load_profiles()
+    for layer, ctype in HARD_GLOBAL_LAYER_HINTS.items():
         kb.layer_knowledge.append(
             LayerKnowledge(
                 layer=layer,
                 component_type=ctype.value,
                 project_id="GLOBAL",
-                confidence=0.75,
-                source="layer_hints",
+                confidence=0.92,
+                source="hard_layer_hints",
+            )
+        )
+    for rule in profiles.get("rules") or []:
+        kb.layer_knowledge.append(
+            LayerKnowledge(
+                layer=rule["layer"],
+                component_type=rule["component_type"],
+                project_id=rule["project_id"],
+                confidence=float(rule.get("confidence", 0.85)),
+                source="layer_profile",
             )
         )
 

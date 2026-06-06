@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections import defaultdict
+
 from sdie.atlas.schema import AtlasSample
 from sdie.classification.features import (
     beam_enclosure_score,
@@ -9,32 +11,50 @@ from sdie.classification.features import (
     WALL_KEYWORDS,
     wall_continuity_score,
 )
+from sdie.classification.layer_profiles import (
+    HARD_GLOBAL_LAYER_HINTS,
+    SOFT_LAYER_HINTS,
+    load_profiles,
+    merged_layer_hints_for_project,
+    resolve_hard_global_layer,
+    resolve_layer_rule,
+)
 from sdie.classification.types import ClassifiedComponent, ComponentType
 from sdie.confidence.scorer import score_confidence
 from sdie.ingestion.entity_extractor import DrawingEntity
 
-DEFAULT_LAYER_HINTS: dict[str, ComponentType] = {
-    "S-BEAM": ComponentType.BEAM,
-    "S_FRAMES": ComponentType.BEAM,
-    "STR-BEAM": ComponentType.BEAM,
-    "S-COLS": ComponentType.COLUMN,
-    "S-COL HATCH": ComponentType.COLUMN,
-    "S-COL": ComponentType.COLUMN,
-    "S-SHEARWALL": ComponentType.SHEAR_WALL,
-    "S-SHEAR": ComponentType.SHEAR_WALL,
-    "S-WALL": ComponentType.STRUCTURAL_WALL,
-    "STR-CUTOUT": ComponentType.OPENING,
-    "SUNK SLAB": ComponentType.OPENING,
-    "A-FLOR-IDEN": ComponentType.SLAB,
-    "S-BEAM-IDEN": ComponentType.BEAM,
-}
+# Backward-compatible export used by rag/builder
+DEFAULT_LAYER_HINTS = {k: v for k, v in HARD_GLOBAL_LAYER_HINTS.items()}
+DEFAULT_LAYER_HINTS["S_FRAMES"] = ComponentType.BEAM
+DEFAULT_LAYER_HINTS["STR-BEAM"] = ComponentType.BEAM
+DEFAULT_LAYER_HINTS["S-WALL"] = ComponentType.STRUCTURAL_WALL
+
+
+def build_atlas_layer_index(
+    atlas: list[AtlasSample],
+) -> dict[str, list[AtlasSample]]:
+    idx: dict[str, list[AtlasSample]] = defaultdict(list)
+    for sample in atlas:
+        if sample.layer:
+            idx[sample.layer].append(sample)
+    return idx
 
 
 def _atlas_vote(
     entity: DrawingEntity,
     atlas: list[AtlasSample],
+    *,
+    layer_index: dict[str, list[AtlasSample]] | None = None,
+    rule_confidence: float = 0.0,
 ) -> tuple[ComponentType | None, float, list[str]]:
     if not atlas:
+        return None, 0.0, []
+    candidates = (
+        layer_index.get(entity.layer or "", [])
+        if layer_index is not None
+        else atlas
+    )
+    if not candidates:
         return None, 0.0, []
     best_type: ComponentType | None = None
     best_score = 0.0
@@ -42,7 +62,7 @@ def _atlas_vote(
     geo = build_geometry_features(entity)
     ann = build_annotation_features(entity)
 
-    for sample in atlas:
+    for sample in candidates:
         score = 0.0
         if sample.layer and sample.layer == entity.layer:
             score += 0.35
@@ -54,6 +74,8 @@ def _atlas_vote(
             score += max(0, 0.25 - diff * 0.05)
         if ann.get("has_thk") and sample.annotation_features.get("has_thk"):
             score += 0.2
+        if sample.confidence >= 0.99:
+            score += 0.35
         if score > best_score:
             best_score = score
             try:
@@ -64,7 +86,33 @@ def _atlas_vote(
 
     if best_score < 0.45:
         return None, 0.0, []
-    return best_type, min(0.95, best_score), evidence
+    atlas_conf = min(0.95, best_score)
+    if rule_confidence >= 0.88:
+        return None, 0.0, []
+    return best_type, atlas_conf, evidence
+
+
+def _geometry_classify(
+    entity: DrawingEntity,
+    layer: str,
+) -> tuple[ComponentType | None, float, list[str]]:
+    """Geometry-first for soft/ambiguous layers (e.g. S_FRAMES)."""
+    beam_s = beam_enclosure_score(entity)
+    col_s = column_compactness_score(entity)
+    wall_s = wall_continuity_score(entity)
+
+    if col_s >= 0.65 and col_s >= beam_s:
+        return ComponentType.COLUMN, max(0.82, col_s), ["geometry:column_footprint"]
+    if beam_s >= 0.65 and beam_s > col_s:
+        return ComponentType.BEAM, max(0.82, beam_s), ["geometry:beam_line"]
+    if wall_s >= 0.6:
+        ctype = (
+            ComponentType.SHEAR_WALL
+            if any(k in layer.upper() for k in ("SHEAR", "SW", "WALL"))
+            else ComponentType.STRUCTURAL_WALL
+        )
+        return ctype, wall_s, ["geometry:wall_line"]
+    return None, 0.0, []
 
 
 def classify_entity(
@@ -72,13 +120,18 @@ def classify_entity(
     *,
     atlas: list[AtlasSample] | None = None,
     layer_hints: dict[str, ComponentType] | None = None,
+    atlas_layer_index: dict[str, list[AtlasSample]] | None = None,
+    project_id: str = "INIZIO",
+    profiles: dict | None = None,
 ) -> ClassifiedComponent:
-    hints = layer_hints or DEFAULT_LAYER_HINTS
+    profiles = profiles if profiles is not None else load_profiles()
+    hints = layer_hints or merged_layer_hints_for_project(project_id, profiles=profiles)
     geo_feats = build_geometry_features(entity)
     ann_feats = build_annotation_features(entity)
     evidence: list[str] = []
+    layer = entity.layer or ""
+    etype = entity.entity_type or ""
 
-    # Annotation-driven (highest priority for cores/openings)
     text = (entity.text or "").upper()
     component_type = ComponentType.UNKNOWN
     rule_conf = 0.5
@@ -95,36 +148,50 @@ def classify_entity(
         component_type = ComponentType.BEAM
         rule_conf = 0.85
         evidence.append("beam_size_tag")
-    elif entity.layer in hints:
-        component_type = hints[entity.layer]
-        rule_conf = 0.75
-        evidence.append(f"layer_hint:{entity.layer}")
     else:
-        beam_s = beam_enclosure_score(entity)
-        col_s = column_compactness_score(entity)
-        wall_s = wall_continuity_score(entity)
-        if beam_s >= 0.7 and beam_s >= col_s:
-            component_type = ComponentType.BEAM
-            rule_conf = beam_s
-            evidence.append("geometry:beam_line")
-        elif col_s >= 0.7:
-            component_type = ComponentType.COLUMN
-            rule_conf = col_s
-            evidence.append("geometry:column_footprint")
-        elif wall_s >= 0.6:
-            component_type = (
-                ComponentType.SHEAR_WALL
-                if any(k in (entity.layer or "").upper() for k in ("SHEAR", "SW"))
-                else ComponentType.STRUCTURAL_WALL
-            )
-            rule_conf = wall_s
-            evidence.append("geometry:wall_line")
-        elif any(k in text for k in WALL_KEYWORDS):
-            component_type = ComponentType.STRUCTURAL_WALL
-            rule_conf = 0.7
-            evidence.append("text:wall")
+        matched = False
 
-    atlas_type, atlas_conf, atlas_ev = _atlas_vote(entity, atlas or [])
+        hard = resolve_hard_global_layer(layer, etype, profiles=profiles)
+        if hard:
+            component_type, rule_conf, tag = hard
+            evidence.append(tag)
+            matched = True
+
+        if not matched:
+            proj_rule = resolve_layer_rule(project_id, layer, etype, profiles=profiles)
+            if proj_rule:
+                component_type, rule_conf, tag = proj_rule
+                evidence.append(tag)
+                matched = True
+
+        if not matched and layer in SOFT_LAYER_HINTS:
+            gtype, gconf, gev = _geometry_classify(entity, layer)
+            if gtype:
+                component_type, rule_conf = gtype, gconf
+                evidence.extend(gev)
+                matched = True
+
+        if not matched and layer in hints and layer not in SOFT_LAYER_HINTS:
+            component_type = hints[layer]
+            rule_conf = 0.75
+            evidence.append(f"layer_hint:{layer}")
+
+        if not matched and component_type == ComponentType.UNKNOWN:
+            gtype, gconf, gev = _geometry_classify(entity, layer)
+            if gtype:
+                component_type, rule_conf = gtype, gconf
+                evidence.extend(gev)
+            elif any(k in text for k in WALL_KEYWORDS):
+                component_type = ComponentType.SHEAR_WALL
+                rule_conf = 0.7
+                evidence.append("text:wall")
+
+    atlas_type, atlas_conf, atlas_ev = _atlas_vote(
+        entity,
+        atlas or [],
+        layer_index=atlas_layer_index,
+        rule_confidence=rule_conf,
+    )
     if atlas_type and atlas_conf > rule_conf:
         component_type = atlas_type
         rule_conf = atlas_conf
@@ -161,7 +228,19 @@ def classify_entities(
     *,
     atlas: list[AtlasSample] | None = None,
     layer_hints: dict[str, ComponentType] | None = None,
+    project_id: str = "INIZIO",
+    profiles: dict | None = None,
 ) -> list[ClassifiedComponent]:
+    profiles = profiles if profiles is not None else load_profiles()
+    atlas_layer_index = build_atlas_layer_index(atlas or [])
     return [
-        classify_entity(e, atlas=atlas, layer_hints=layer_hints) for e in entities
+        classify_entity(
+            e,
+            atlas=atlas,
+            layer_hints=layer_hints,
+            atlas_layer_index=atlas_layer_index,
+            project_id=project_id,
+            profiles=profiles,
+        )
+        for e in entities
     ]

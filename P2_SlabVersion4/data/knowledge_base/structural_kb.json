@@ -107,15 +107,8 @@
       "source": "atlas"
     },
     {
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "project_id": "INIZIO",
-      "confidence": 1.0,
-      "source": "atlas"
-    },
-    {
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
+      "layer": "S-COLS",
+      "component_type": "Column",
       "project_id": "INIZIO",
       "confidence": 1.0,
       "source": "atlas"
@@ -135,8 +128,15 @@
       "source": "atlas"
     },
     {
-      "layer": "S-COLS",
-      "component_type": "Column",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
       "project_id": "INIZIO",
       "confidence": 1.0,
       "source": "atlas"
@@ -163,28 +163,147 @@
       "source": "atlas"
     },
     {
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "project_id": "TRUST_OFFICE",
+      "layer": "S-COL HATCH",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
       "confidence": 1.0,
       "source": "atlas"
     },
     {
-      "layer": "S-COL HATCH",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-COLS",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "SUNK SLAB",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-WALL",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-BEAM",
       "component_type": "Column",
-      "project_id": "TRUST_OFFICE",
+      "project_id": "INIZIO",
       "confidence": 1.0,
       "source": "atlas"
     },
     {
       "layer": "S-BEAM-IDEN",
+      "component_type": "Column",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Column",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Column",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "SUNK SLAB",
+      "component_type": "Column",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "SUNK SLAB",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-COL HATCH",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-COLS",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-WALL",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S_FRAMES",
       "component_type": "Beam",
       "project_id": "TRUST_OFFICE",
       "confidence": 1.0,
       "source": "atlas"
     },
     {
-      "layer": "S_FRAMES",
+      "layer": "S-BEAM-IDEN",
       "component_type": "Beam",
       "project_id": "TRUST_OFFICE",
       "confidence": 1.0,
@@ -200,6 +319,13 @@
     {
       "layer": "G-ANNO-TEXT",
       "component_type": "Slab",
+      "project_id": "TRUST_OFFICE",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-COLS",
+      "component_type": "Column",
       "project_id": "TRUST_OFFICE",
       "confidence": 1.0,
       "source": "atlas"
@@ -226,6 +352,13 @@
       "source": "atlas"
     },
     {
+      "layer": "S-COL HATCH",
+      "component_type": "Column",
+      "project_id": "TRUST_OFFICE",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
       "layer": "STR-CUTOUT",
       "component_type": "Opening",
       "project_id": "TRUST_OFFICE",
@@ -235,6 +368,27 @@
     {
       "layer": "G-ANNO-TEXT",
       "component_type": "Shaft",
+      "project_id": "TRUST_OFFICE",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Column",
+      "project_id": "TRUST_OFFICE",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S_FRAMES",
+      "component_type": "Column",
+      "project_id": "TRUST_OFFICE",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Column",
       "project_id": "TRUST_OFFICE",
       "confidence": 1.0,
       "source": "atlas"
@@ -288,7 +442,7 @@
         "entity_type": "HATCH",
         "layer": "S-BEAM"
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -298,7 +452,53 @@
         "entity_type": "HATCH",
         "layer": "S-COL HATCH"
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "INSERT",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -312,7 +512,7 @@
         "width_mm": 6200.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -326,7 +526,7 @@
         "width_mm": 6200.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -340,7 +540,21 @@
         "width_mm": 0.0,
         "height_mm": 4700.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 2709.47,
+        "aspect_ratio": 2709.473,
+        "width_mm": 0.0,
+        "height_mm": 2709.47
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -354,7 +568,21 @@
         "width_mm": 0.0,
         "height_mm": 4700.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 2826.48,
+        "aspect_ratio": 2826.475,
+        "width_mm": 0.0,
+        "height_mm": 2826.48
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -366,7 +594,7 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -380,7 +608,7 @@
         "width_mm": 977.5,
         "height_mm": 411.83
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -392,7 +620,7 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -404,7 +632,7 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -418,7 +646,7 @@
         "width_mm": 977.5,
         "height_mm": 411.83
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -430,7 +658,7 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -439,12 +667,12 @@
       "geometry_features": {
         "entity_type": "LINE",
         "layer": "S-BEAM",
-        "length_mm": 4450.23,
-        "aspect_ratio": 4450.232,
-        "width_mm": 4450.23,
+        "length_mm": 4500.01,
+        "aspect_ratio": 4500.006,
+        "width_mm": 4500.01,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -453,12 +681,12 @@
       "geometry_features": {
         "entity_type": "LINE",
         "layer": "S-BEAM",
-        "length_mm": 4445.64,
-        "aspect_ratio": 4445.64,
-        "width_mm": 4445.64,
+        "length_mm": 676.77,
+        "aspect_ratio": 676.771,
+        "width_mm": 676.77,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -467,12 +695,67 @@
       "geometry_features": {
         "entity_type": "LINE",
         "layer": "S-BEAM",
-        "length_mm": 4500.0,
-        "aspect_ratio": 4500.0,
+        "length_mm": 4500.01,
+        "aspect_ratio": 4500.006,
+        "width_mm": 4500.01,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 703.02,
+        "aspect_ratio": 703.025,
+        "width_mm": 703.02,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 0.42,
+        "width_mm": 0.42,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 4700.0,
+        "aspect_ratio": 4700.0,
         "width_mm": 0.0,
-        "height_mm": 4500.0
+        "height_mm": 4700.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 2950.0,
+        "aspect_ratio": 2950.0,
+        "width_mm": 0.0,
+        "height_mm": 2950.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -484,7 +767,7 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -493,12 +776,26 @@
       "geometry_features": {
         "entity_type": "LINE",
         "layer": "S-BEAM",
-        "length_mm": 4500.0,
-        "aspect_ratio": 4500.0,
+        "length_mm": 4700.0,
+        "aspect_ratio": 4700.0,
         "width_mm": 0.0,
-        "height_mm": 4500.0
+        "height_mm": 4700.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 2950.0,
+        "aspect_ratio": 2950.0,
+        "width_mm": 0.0,
+        "height_mm": 2950.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -510,115 +807,7 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-BEAM",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LINE",
-        "layer": "S-BEAM",
-        "length_mm": 4499.58,
-        "aspect_ratio": 4499.576,
-        "width_mm": 4499.58,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-BEAM",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LINE",
-        "layer": "S-BEAM",
-        "length_mm": 4499.58,
-        "aspect_ratio": 4499.576,
-        "width_mm": 4499.58,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-BEAM",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LINE",
-        "layer": "S-BEAM",
-        "length_mm": 529.51,
-        "aspect_ratio": 529.512,
-        "width_mm": 529.51,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-BEAM",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LINE",
-        "layer": "S-BEAM",
-        "length_mm": 2350.0,
-        "aspect_ratio": 2349.998,
-        "width_mm": 0.0,
-        "height_mm": 2350.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-BEAM",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LINE",
-        "layer": "S-BEAM",
-        "length_mm": 2350.0,
-        "aspect_ratio": 2349.998,
-        "width_mm": 0.0,
-        "height_mm": 2350.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-BEAM",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LINE",
-        "layer": "S-BEAM",
-        "length_mm": 7151.61,
-        "aspect_ratio": 7151.613,
-        "width_mm": 7151.61,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "A-FLOR-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -632,7 +821,19 @@
         "width_mm": 977.5,
         "height_mm": 411.83
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "A-FLOR-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -646,7 +847,7 @@
         "width_mm": 977.5,
         "height_mm": 411.83
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -658,7 +859,7 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -672,7 +873,7 @@
         "width_mm": 977.5,
         "height_mm": 411.83
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -684,7 +885,19 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "A-FLOR-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -698,123 +911,7 @@
         "width_mm": 977.5,
         "height_mm": 411.83
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "A-FLOR-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "A-FLOR-IDEN",
-        "area_mm2": 402559.33,
-        "aspect_ratio": 2.374,
-        "width_mm": 977.5,
-        "height_mm": 411.83
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "A-FLOR-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "A-FLOR-IDEN",
-        "area_mm2": 402559.33,
-        "aspect_ratio": 2.374,
-        "width_mm": 977.5,
-        "height_mm": 411.83
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "A-FLOR-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "A-FLOR-IDEN",
-        "area_mm2": 402559.33,
-        "aspect_ratio": 2.374,
-        "width_mm": 977.5,
-        "height_mm": 411.83
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "A-FLOR-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "A-FLOR-IDEN",
-        "area_mm2": 402559.33,
-        "aspect_ratio": 2.374,
-        "width_mm": 977.5,
-        "height_mm": 411.83
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "A-FLOR-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "A-FLOR-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -826,7 +923,19 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -838,27 +947,531 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "A-FLOR-IDEN",
+        "area_mm2": 402559.33,
+        "aspect_ratio": 2.374,
+        "width_mm": 977.5,
+        "height_mm": 411.83
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "A-FLOR-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "A-FLOR-IDEN",
+        "area_mm2": 402559.33,
+        "aspect_ratio": 2.374,
+        "width_mm": 977.5,
+        "height_mm": 411.83
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "A-FLOR-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "A-FLOR-IDEN",
+        "area_mm2": 402559.33,
+        "aspect_ratio": 2.374,
+        "width_mm": 977.5,
+        "height_mm": 411.83
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "A-FLOR-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COL HATCH",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "INSERT",
+        "layer": "S-COL HATCH"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
       "layer": "S-COLS",
       "component_type": "Column",
       "geometry_features": {
-        "entity_type": "DIMENSION",
-        "layer": "S-COLS"
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-COLS",
+        "area_mm2": 10000.0,
+        "aspect_ratio": 1.0,
+        "width_mm": 100.0,
+        "height_mm": 100.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "SUNK SLAB",
+      "component_type": "Opening",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "SUNK SLAB"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
       "layer": "S-COLS",
       "component_type": "Column",
       "geometry_features": {
-        "entity_type": "DIMENSION",
-        "layer": "S-COLS"
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-COLS",
+        "area_mm2": 10000.0,
+        "aspect_ratio": 1.0,
+        "width_mm": 100.0,
+        "height_mm": 100.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COL HATCH",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-COL HATCH",
+        "area_mm2": 299976.94,
+        "aspect_ratio": 3.333,
+        "width_mm": 999.96,
+        "height_mm": 299.99
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -868,7 +1481,121 @@
         "entity_type": "HATCH",
         "layer": "S-COL HATCH"
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COL HATCH",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-COL HATCH",
+        "area_mm2": 299976.94,
+        "aspect_ratio": 3.333,
+        "width_mm": 999.96,
+        "height_mm": 299.99
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COL HATCH",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "INSERT",
+        "layer": "S-COL HATCH"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "DIMENSION",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "DIMENSION",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "DIMENSION",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "DIMENSION",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "DIMENSION",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "DIMENSION",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "DIMENSION",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "INSERT",
+        "layer": "S-COLS"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COL HATCH",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "HATCH",
+        "layer": "S-COL HATCH"
+      },
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -882,63 +1609,7 @@
         "width_mm": 750.0,
         "height_mm": 750.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
@@ -948,268 +1619,340 @@
         "entity_type": "HATCH",
         "layer": "S-COL HATCH"
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio Slab with tag.dxf"
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 1840005.58,
-        "aspect_ratio": 5.565,
-        "width_mm": 575.0,
-        "height_mm": 3200.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
       "geometry_features": {
         "entity_type": "HATCH",
-        "layer": "S-COL HATCH"
+        "layer": "S-BEAM"
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "component_type": "Column",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Shear Wall",
       "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 1840005.58,
-        "aspect_ratio": 5.565,
-        "width_mm": 575.0,
-        "height_mm": 3200.0
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
       "geometry_features": {
         "entity_type": "LINE",
-        "layer": "S-COL HATCH",
-        "length_mm": 1029.42,
-        "aspect_ratio": 1029.416,
-        "width_mm": 1029.42,
+        "layer": "S-BEAM",
+        "length_mm": 6200.0,
+        "aspect_ratio": 6200.0,
+        "width_mm": 6200.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
     },
     {
       "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "INSERT",
-        "layer": "S-COL HATCH"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "DIMENSION",
-        "layer": "S-COLS"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "DIMENSION",
-        "layer": "S-COLS"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "S-COL HATCH"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 562499.5,
-        "aspect_ratio": 1.0,
-        "width_mm": 750.0,
-        "height_mm": 750.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "S-COL HATCH"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 1840005.58,
-        "aspect_ratio": 5.565,
-        "width_mm": 575.0,
-        "height_mm": 3200.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "S-COL HATCH"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 1840005.58,
-        "aspect_ratio": 5.565,
-        "width_mm": 575.0,
-        "height_mm": 3200.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
       "geometry_features": {
         "entity_type": "LINE",
-        "layer": "S-COL HATCH",
-        "length_mm": 450.0,
-        "aspect_ratio": 450.0,
-        "width_mm": 450.0,
+        "layer": "S-BEAM",
+        "length_mm": 6200.0,
+        "aspect_ratio": 6199.999,
+        "width_mm": 6200.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
     },
     {
       "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 4700.0,
+        "aspect_ratio": 4700.0,
+        "width_mm": 0.0,
+        "height_mm": 4700.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 2709.47,
+        "aspect_ratio": 2709.473,
+        "width_mm": 0.0,
+        "height_mm": 2709.47
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 4700.0,
+        "aspect_ratio": 4700.0,
+        "width_mm": 0.0,
+        "height_mm": 4700.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 2826.48,
+        "aspect_ratio": 2826.475,
+        "width_mm": 0.0,
+        "height_mm": 2826.48
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "A-FLOR-IDEN",
+        "area_mm2": 402559.33,
+        "aspect_ratio": 2.374,
+        "width_mm": 977.5,
+        "height_mm": 411.83
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "A-FLOR-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "A-FLOR-IDEN",
+        "area_mm2": 402559.33,
+        "aspect_ratio": 2.374,
+        "width_mm": 977.5,
+        "height_mm": 411.83
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "A-FLOR-IDEN",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "A-FLOR-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 4500.01,
+        "aspect_ratio": 4500.006,
+        "width_mm": 4500.01,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 676.77,
+        "aspect_ratio": 676.771,
+        "width_mm": 676.77,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 4500.01,
+        "aspect_ratio": 4500.006,
+        "width_mm": 4500.01,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 703.02,
+        "aspect_ratio": 703.025,
+        "width_mm": 703.02,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 0.42,
+        "width_mm": 0.42,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "component_type": "Shear Wall",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-BEAM",
+        "length_mm": 4700.0,
+        "aspect_ratio": 4700.0,
+        "width_mm": 0.0,
+        "height_mm": 4700.0
+      },
+      "source_drawing": "Inizio - Shearwall with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S_FRAMES",
+        "length_mm": 1802.78,
+        "width_mm": 1006.14,
+        "height_mm": 796.64
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S_FRAMES",
+        "length_mm": 1624.21,
+        "width_mm": 1624.21,
+        "height_mm": 0.53
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S_FRAMES",
+        "length_mm": 6990.06,
+        "width_mm": 6990.06,
+        "height_mm": 0.17
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S_FRAMES",
+        "length_mm": 2335.68,
+        "width_mm": 2335.68,
+        "height_mm": 0.06
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-BEAM-IDEN",
+        "length_mm": 50201.67,
+        "width_mm": 200.7,
+        "height_mm": 24900.48
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
       "layer": "G-ANNO-TEXT",
       "component_type": "Structural Wall",
       "geometry_features": {
@@ -1218,265 +1961,55 @@
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
-      "project_id": "INIZIO",
+      "project_id": "TRUST_OFFICE",
       "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
+      "component_type": "Slab",
       "geometry_features": {
         "entity_type": "MTEXT",
         "layer": "G-ANNO-TEXT",
         "width_mm": 0.0,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Beam",
       "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-BEAM-IDEN",
+        "length_mm": 1449.23,
+        "width_mm": 1449.23,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Beam",
       "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-BEAM-IDEN",
+        "length_mm": 1449.23,
+        "width_mm": 1449.23,
         "height_mm": 0.0
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Beam",
       "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
+        "entity_type": "MULTILEADER",
+        "layer": "S-BEAM-IDEN"
       },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
-    },
-    {
-      "project_id": "INIZIO",
-      "layer": "SUNK SLAB",
-      "component_type": "Opening",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "SUNK SLAB"
-      },
-      "source_drawing": "Inizio - Beam with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1485,12 +2018,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 342637.42,
-        "aspect_ratio": 2.844,
-        "width_mm": 987.21,
-        "height_mm": 347.08
+        "area_mm2": 5302740.36,
+        "aspect_ratio": 132.587,
+        "width_mm": 199.99,
+        "height_mm": 26515.54
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1499,22 +2032,50 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 342637.42,
-        "aspect_ratio": 2.844,
-        "width_mm": 987.21,
-        "height_mm": 347.08
+        "length_mm": 17240.8,
+        "width_mm": 13828.9,
+        "height_mm": 3411.99
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
       "layer": "S-COLS",
       "component_type": "Column",
       "geometry_features": {
-        "entity_type": "INSERT",
-        "layer": "S-COLS"
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-COLS",
+        "length_mm": 17840.8,
+        "width_mm": 14128.9,
+        "height_mm": 3711.99
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-COLS",
+        "length_mm": 9899.15,
+        "width_mm": 9899.15,
+        "height_mm": 0.04
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "LWPOLYLINE",
+        "layer": "S-COLS",
+        "length_mm": 9902.31,
+        "width_mm": 9902.31,
+        "height_mm": 0.12
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1527,7 +2088,7 @@
         "width_mm": 0.82,
         "height_mm": 0.0
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1540,17 +2101,7 @@
         "width_mm": 0.41,
         "height_mm": 0.0
       },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-COL HATCH",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "HATCH",
-        "layer": "S-COL HATCH"
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1559,11 +2110,39 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "length_mm": 409914.19,
-        "width_mm": 84090.84,
-        "height_mm": 28610.0
+        "length_mm": 13148.47,
+        "width_mm": 13148.47,
+        "height_mm": 0.0
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-COLS",
+        "length_mm": 300.0,
+        "aspect_ratio": 300.0,
+        "width_mm": 0.0,
+        "height_mm": 300.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-COLS",
+      "component_type": "Column",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S-COLS",
+        "length_mm": 100.0,
+        "aspect_ratio": 100.0,
+        "width_mm": 0.0,
+        "height_mm": 100.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1572,12 +2151,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 13527000.0,
-        "aspect_ratio": 1.856,
-        "width_mm": 2700.0,
-        "height_mm": 5010.0
+        "area_mm2": 13521434.58,
+        "aspect_ratio": 1.854,
+        "width_mm": 2701.01,
+        "height_mm": 5008.11
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1586,12 +2165,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 11340000.0,
-        "aspect_ratio": 3.5,
-        "width_mm": 6300.0,
-        "height_mm": 1800.0
+        "area_mm2": 11345507.9,
+        "aspect_ratio": 3.499,
+        "width_mm": 6301.38,
+        "height_mm": 1800.93
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1600,12 +2179,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 5220000.0,
-        "aspect_ratio": 1.611,
+        "area_mm2": 5222689.95,
+        "aspect_ratio": 1.61,
         "width_mm": 2900.0,
-        "height_mm": 1800.0
+        "height_mm": 1800.93
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1614,12 +2193,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 7920000.0,
+        "area_mm2": 7917471.37,
         "aspect_ratio": 1.375,
         "width_mm": 2400.0,
-        "height_mm": 3300.0
+        "height_mm": 3300.02
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1628,12 +2207,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 3504105.3,
-        "aspect_ratio": 1.644,
-        "width_mm": 2400.07,
-        "height_mm": 1460.0
+        "area_mm2": 3502142.21,
+        "aspect_ratio": 1.645,
+        "width_mm": 2400.37,
+        "height_mm": 1459.0
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1642,12 +2221,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 6510769.6,
-        "aspect_ratio": 1.476,
-        "width_mm": 2100.0,
-        "height_mm": 3100.37
+        "area_mm2": 6507027.36,
+        "aspect_ratio": 1.477,
+        "width_mm": 2098.74,
+        "height_mm": 3100.45
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1656,11 +2235,12 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "length_mm": 80427.12,
-        "width_mm": 16545.0,
-        "height_mm": 15809.76
+        "area_mm2": 1469798.65,
+        "aspect_ratio": 2.999,
+        "width_mm": 2099.52,
+        "height_mm": 700.06
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1669,11 +2249,11 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "length_mm": 151830.47,
-        "width_mm": 71137.26,
-        "height_mm": 5803.63
+        "length_mm": 80422.73,
+        "width_mm": 16544.14,
+        "height_mm": 15809.38
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1682,26 +2262,11 @@
       "geometry_features": {
         "entity_type": "LWPOLYLINE",
         "layer": "S-COLS",
-        "area_mm2": 810000.0,
-        "aspect_ratio": 9.0,
-        "width_mm": 300.0,
-        "height_mm": 2700.0
+        "length_mm": 152444.27,
+        "width_mm": 71441.15,
+        "height_mm": 5800.2
       },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 810000.0,
-        "aspect_ratio": 9.0,
-        "width_mm": 300.0,
-        "height_mm": 2700.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
@@ -1715,817 +2280,172 @@
         "width_mm": 300.0,
         "height_mm": 2700.0
       },
-      "source_drawing": "Trust office Column with tag.dxf"
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 810096.55,
-        "aspect_ratio": 9.001,
-        "width_mm": 300.0,
-        "height_mm": 2700.32
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-COLS",
-      "component_type": "Column",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-COLS",
-        "area_mm2": 809865.87,
-        "aspect_ratio": 8.999,
-        "width_mm": 300.0,
-        "height_mm": 2699.55
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
+      "layer": "S_FRAMES",
       "component_type": "Beam",
       "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 225673.92,
-        "aspect_ratio": 2.669,
-        "width_mm": 784.65,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 228406.64,
-        "aspect_ratio": 2.706,
-        "width_mm": 795.56,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 259530.47,
-        "aspect_ratio": 3.061,
-        "width_mm": 899.82,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 233562.24,
-        "aspect_ratio": 2.779,
-        "width_mm": 816.98,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 255072.12,
-        "aspect_ratio": 3.009,
-        "width_mm": 884.65,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 255072.12,
-        "aspect_ratio": 3.009,
-        "width_mm": 884.65,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 223168.87,
-        "aspect_ratio": 2.64,
-        "width_mm": 776.13,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "geometry_features": {
-        "entity_type": "LWPOLYLINE",
-        "layer": "S-BEAM-IDEN",
-        "area_mm2": 259530.47,
-        "aspect_ratio": 3.061,
-        "width_mm": 899.82,
-        "height_mm": 293.98
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Stair Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Lift Core",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Slab",
-      "geometry_features": {
-        "entity_type": "TEXT",
-        "layer": "S-BEAM-IDEN",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Column with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 1155.79,
+        "aspect_ratio": 1155.794,
+        "width_mm": 0.11,
+        "height_mm": 1155.79
       },
       "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
     {
       "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Slab",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
       "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 4832.84,
+        "aspect_ratio": 4832.837,
+        "width_mm": 0.11,
+        "height_mm": 4832.84
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 5494.26,
+        "aspect_ratio": 5242.784,
+        "width_mm": 1.05,
+        "height_mm": 5494.26
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 6302.95,
+        "aspect_ratio": 6302.948,
+        "width_mm": 0.17,
+        "height_mm": 6302.95
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 0.05,
         "width_mm": 0.0,
-        "height_mm": 0.0
+        "height_mm": 0.05
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 8200.31,
+        "aspect_ratio": 8200.309,
+        "width_mm": 0.69,
+        "height_mm": 8200.31
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 6194.99,
+        "aspect_ratio": 6194.992,
+        "width_mm": 0.0,
+        "height_mm": 6194.99
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 8199.97,
+        "aspect_ratio": 8199.975,
+        "width_mm": 0.0,
+        "height_mm": 8199.97
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 1703.27,
+        "aspect_ratio": 1703.267,
+        "width_mm": 0.0,
+        "height_mm": 1703.27
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 8200.0,
+        "aspect_ratio": 8200.0,
+        "width_mm": 0.0,
+        "height_mm": 8200.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 5105.56,
+        "aspect_ratio": 5105.558,
+        "width_mm": 0.0,
+        "height_mm": 5105.56
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "geometry_features": {
+        "entity_type": "LINE",
+        "layer": "S_FRAMES",
+        "length_mm": 8204.79,
+        "aspect_ratio": 8204.789,
+        "width_mm": 0.0,
+        "height_mm": 8204.79
       },
       "source_drawing": "Trust office Slab & Beam with tag.dxf"
     },
@@ -2664,7 +2584,55 @@
     {
       "project_id": "TRUST_OFFICE",
       "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
       "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
       "geometry_features": {
         "entity_type": "TEXT",
         "layer": "S-BEAM-IDEN",
@@ -2712,7 +2680,55 @@
     {
       "project_id": "TRUST_OFFICE",
       "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
       "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
       "geometry_features": {
         "entity_type": "TEXT",
         "layer": "S-BEAM-IDEN",
@@ -2760,7 +2776,55 @@
     {
       "project_id": "TRUST_OFFICE",
       "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
       "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
       "geometry_features": {
         "entity_type": "TEXT",
         "layer": "S-BEAM-IDEN",
@@ -2788,6 +2852,90 @@
       "geometry_features": {
         "entity_type": "MTEXT",
         "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
         "width_mm": 0.0,
         "height_mm": 0.0
       },
@@ -3075,6 +3223,342 @@
     },
     {
       "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Shaft",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Shaft",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Shaft",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Slab",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Stair Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Lift Core",
+      "geometry_features": {
+        "entity_type": "TEXT",
+        "layer": "S-BEAM-IDEN",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "layer": "G-ANNO-TEXT",
+      "component_type": "Structural Wall",
+      "geometry_features": {
+        "entity_type": "MTEXT",
+        "layer": "G-ANNO-TEXT",
+        "width_mm": 0.0,
+        "height_mm": 0.0
+      },
+      "source_drawing": "Trust office Slab & Beam with tag.dxf"
+    },
+    {
+      "project_id": "TRUST_OFFICE",
       "layer": "G-ANNO-TEXT",
       "component_type": "Shaft",
       "geometry_features": {
@@ -3281,66 +3765,6 @@
       "project_id": "TRUST_OFFICE",
       "layer": "G-ANNO-TEXT",
       "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Slab & Beam with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Slab & Beam with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Structural Wall",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Slab & Beam with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Shaft",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Slab & Beam with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Shaft",
-      "geometry_features": {
-        "entity_type": "MTEXT",
-        "layer": "G-ANNO-TEXT",
-        "width_mm": 0.0,
-        "height_mm": 0.0
-      },
-      "source_drawing": "Trust office Slab & Beam with tag.dxf"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "layer": "G-ANNO-TEXT",
-      "component_type": "Shaft",
       "geometry_features": {
         "entity_type": "MTEXT",
         "layer": "G-ANNO-TEXT",

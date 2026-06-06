@@ -33,6 +33,7 @@ from sdie.thickness.parser import (
     extract_thk_labels,
     nearest_thickness_mm,
 )
+from sdie.validation.gt_match import annotate_slabs_with_gt, find_gt_xlsx_for_stem, load_gt_xlsx
 from sdie.validation.overlay import write_overlay_outputs
 
 
@@ -141,7 +142,9 @@ def run_semantic_pipeline(
         )
         detection_notes["classification"] = cls_notes
     else:
-        classified = classify_entities(entities, atlas=atlas)
+        classified = classify_entities(
+            entities, atlas=atlas, project_id=config.project_id
+        )
         ambiguous = [
             c
             for c in classified
@@ -381,6 +384,13 @@ def run_semantic_pipeline(
     if overlay_geoms:
         exclusion_union_wkt = unary_union(overlay_geoms).wkt
 
+    project_root = Path(__file__).resolve().parents[2]
+    gt_context = None
+    gt_xlsx = find_gt_xlsx_for_stem(stem, project_root)
+    if gt_xlsx:
+        gt_slabs = load_gt_xlsx(gt_xlsx)
+        gt_context = annotate_slabs_with_gt(slabs, gt_slabs)
+
     overlay_files = write_overlay_outputs(
         stem,
         output_dir,
@@ -389,6 +399,9 @@ def run_semantic_pipeline(
         title=f"SDIE v4 — {dxf_path.name}" if config.use_v4_pipeline else f"SDIE v3.3 — {dxf_path.name}",
         totals=totals,
         excluded_wkt=exclusion_union_wkt,
+        classified=classified,
+        gt_context=gt_context,
+        component_type_counts=type_counts,
     )
 
     summary_lines = [
