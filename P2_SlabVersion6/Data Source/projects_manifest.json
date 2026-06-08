@@ -1,0 +1,68 @@
+{
+  "version": "3",
+  "description": "INIZIO uses Revised Project Knowledge/Tagged files only. TRUST/MANOHAR legacy paths until revised packs are added.",
+  "projects": [
+    {
+      "project_id": "INIZIO",
+      "name": "Inizio — Revised Project Knowledge",
+      "knowledge_root": "Revised Project Knowledge",
+      "dxf_folder": "Revised Project Knowledge/Tagged files",
+      "raw_dxf": "Revised Project Knowledge/Raw File/Inizio - Slab beam_Raw_Revised1.dxf",
+      "ground_truth_json": "data/ground_truth/Inizio Slab with tag.json",
+      "workbook": null,
+      "drawings": [
+        {
+          "drawing_id": "Inizio Slab with tag Revised1",
+          "dxf": "Revised Project Knowledge/Tagged files/Inizio Slab with tag_Revised1.dxf",
+          "tagged_slab": true
+        },
+        {
+          "drawing_id": "Inizio - Beam with tag Revised1",
+          "dxf": "Revised Project Knowledge/Tagged files/Inizio - Beam with tag_Revised1.dxf",
+          "tagged_beam": true
+        },
+        {
+          "drawing_id": "Inizio - Colum with tag Revised1",
+          "dxf": "Revised Project Knowledge/Tagged files/Inizio - Colum with tag_Revised1.dxf",
+          "tagged_column": true
+        },
+        {
+          "drawing_id": "Inizio - Shearwall with tag Revised1",
+          "dxf": "Revised Project Knowledge/Tagged files/Inizio - Shearwall with tag_Revised1.dxf",
+          "tagged_shearwall": true
+        }
+      ]
+    },
+    {
+      "project_id": "TRUST_OFFICE",
+      "name": "Project2 - TrustOffice",
+      "dxf_folder": "Project2 - TrustOffice",
+      "workbook": "Ground Truths/TestGT/TrustOffice_FF_ExpectedOutput.xlsx",
+      "drawings": [
+        {
+          "drawing_id": "Trust office Slab & Beam with tag",
+          "dxf": "Project2 - TrustOffice/Trust office Slab & Beam with tag.dxf",
+          "primary": true
+        },
+        {
+          "drawing_id": "Trust office Column with tag",
+          "dxf": "Project2 - TrustOffice/Trust office Column with tag.dxf",
+          "tagged_column": true
+        }
+      ]
+    },
+    {
+      "project_id": "MANOHAR",
+      "name": "Project3 - Manohar",
+      "dxf_folder": "Project3 - Manohar",
+      "workbook": "Ground Truths/Project3 - Manohar/Manohar Slab & Beam.xlsx",
+      "drawings": [
+        {
+          "drawing_id": "Manohar slab - beam -column with tag",
+          "dxf": "Project3 - Manohar/Manohar slab - beam -column with tag.dxf",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}

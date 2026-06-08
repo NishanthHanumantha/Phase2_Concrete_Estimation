@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDIE V6 — Model Flow Diagram</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --card: #ffffff;
+      --text: #1a1a2e;
+      --muted: #5f6368;
+      --teach: #1a73e8;
+      --infer: #34a853;
+      --out: #f9ab00;
+      --border: #e0e4ea;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d3a5c 100%);
+      color: #fff;
+      padding: 2rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 0.4rem; font-size: 1.75rem; font-weight: 600; }
+    header p { margin: 0; opacity: 0.88; font-size: 1rem; }
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+    .dot { width: 12px; height: 12px; border-radius: 3px; }
+    .dot-teach { background: #E8F4FD; border: 2px solid var(--teach); }
+    .dot-infer { background: #E6F4EA; border: 2px solid var(--infer); }
+    .dot-out { background: #FEF7E0; border: 2px solid var(--out); }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    section h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    section .desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 1rem;
+    }
+    .diagram-wrap {
+      overflow-x: auto;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    .diagram-wrap .mermaid { min-width: 100%; }
+    .actions {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    button {
+      font: inherit;
+      font-size: 0.82rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      color: var(--text);
+    }
+    button:hover { background: #f0f2f5; }
+    button.primary {
+      background: var(--teach);
+      color: #fff;
+      border-color: var(--teach);
+    }
+    button.primary:hover { background: #1557b0; }
+
+    .hero {
+      border: 2px solid var(--teach);
+      background: linear-gradient(180deg, #fff 0%, #f5f9ff 100%);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 0.5rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+    th { background: #f0f4f8; font-weight: 600; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      padding: 1rem;
+    }
+    @media print {
+      body { background: #fff; }
+      section { break-inside: avoid; box-shadow: none; }
+      .actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SDIE V6 — Model Flow</h1>
+    <p>Teach from reference projects → Infer on any drawing → Quantify slabs &amp; beams</p>
+    <div class="legend">
+      <span><i class="dot dot-teach"></i> Teach (offline)</span>
+      <span><i class="dot dot-infer"></i> Infer (runtime)</span>
+      <span><i class="dot dot-out"></i> Outputs</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="sec-e2e">
+      <h2>1. End-to-End Flow</h2>
+      <p class="desc">Single view: reference teach artifacts feed generic inference on any raw DXF.</p>
+      <div class="diagram-wrap" data-export="SDIE_V6_End_to_End">
+        <pre class="mermaid">
+flowchart TD
+    classDef teach fill:#E8F4FD,stroke:#1A73E8,stroke-width:2px
+    classDef infer fill:#E6F4EA,stroke:#34A853,stroke-width:2px
+    classDef out fill:#FEF7E0,stroke:#FBBC04,stroke-width:2px
+
+    subgraph TEACH["A · TEACH — offline, reference projects only"]
+        T0["Tagged DXFs\nINIZIO · TRUST_OFFICE · MANOHAR"]:::teach
+        T1[Component Atlas]:::teach
+        T2[Layer Profiles]:::teach
+        T3[Structural Knowledge Base]:::teach
+        T0 --> T1 & T2 & T3
+    end
+
+    subgraph INFER["B · INFER — runtime, any raw DXF · project-id GENERIC"]
+        I0[Input DXF]:::infer
+        I1["Prepare drawing\nlayers · floor zone · entities"]:::infer
+        I2["Classify components\nrules · graph · DeepSeek"]:::infer
+        I3["Quantify\nbeams · slabs · concrete"]:::infer
+        I4[Export results]:::infer
+        I0 --> I1 --> I2 --> I3 --> I4
+    end
+
+    T1 & T2 & T3 --> I1
+    T1 & T2 & T3 --> I2
+
+    I4 --> O1[JSON + building model]:::out
+    I4 --> O2[Overlay HTML / SVG]:::out
+    I4 --> O3[Excel + review queue]:::out
+        </pre>
+      </div>
+      <div class="actions">
+        <button class="primary" onclick="exportPng('sec-e2e', 'SDIE_V6_End_to_End')">Download PNG</button>
+        <button onclick="exportSvg('sec-e2e', 'SDIE_V6_End_to_End')">Download SVG</button>
+      </div>
+    </section>
+
+    <section id="sec-teach">
+      <h2>2. Teach Pipeline (Phase A)</h2>
+      <p class="desc">Offline learning from tagged reference DXFs per project.</p>
+      <div class="diagram-wrap" data-export="SDIE_V6_Teach">
+        <pre class="mermaid">
+flowchart LR
+    M[projects_manifest.json] --> D[Tagged DXF per project]
+    D --> S1[build_atlas.py]
+    D --> S2[build_layer_profiles.py]
+    D --> S3[RAG / KB builder]
+    S1 --> A[(component_atlas.json)]
+    S2 --> P[(layer_profiles.json)]
+    S3 --> K[(structural_kb.json)]
+        </pre>
+      </div>
+      <div class="actions">
+        <button class="primary" onclick="exportPng('sec-teach', 'SDIE_V6_Teach')">Download PNG</button>
+        <button onclick="exportSvg('sec-teach', 'SDIE_V6_Teach')">Download SVG</button>
+      </div>
+    </section>
+
+    <section id="sec-infer">
+      <h2>3. Inference Pipeline (Phase B)</h2>
+      <p class="desc">Eleven numbered steps from DXF load through export.</p>
+      <div class="diagram-wrap" data-export="SDIE_V6_Inference">
+        <pre class="mermaid">
+flowchart TD
+    START([run_pipeline.py]) --> S1
+
+    S1["① Load DXF\nunits · scale · extents"]
+    S2["② Auto-discover layers\nframe · annotation · void · column"]
+    S3["③ Resolve floor zone\nTHK label clusters"]
+    S4["④ Load teach artifacts\nAtlas + KB · GENERIC = all projects"]
+    S5["⑤ Extract entities\nstructural · cutout · hatch void · columns"]
+    S6["⑥ Classify — V5 engine"]
+    S7["⑦ Beam quantities\nlength × section → concrete m³"]
+    S8["⑧ Build structural graph\nnodes + topology edges"]
+    S9["⑨ Slab detection\nexclusions → beam grid → bays"]
+    S10["⑩ Slab quantities\narea × THK → concrete m³"]
+    S11["⑪ Export\nJSON · overlay · Excel · review queue"]
+
+    START --> S1 --> S2 --> S3 --> S4 --> S5 --> S6
+    S6 --> S7 --> S8 --> S9 --> S10 --> S11
+        </pre>
+      </div>
+      <div class="actions">
+        <button class="primary" onclick="exportPng('sec-infer', 'SDIE_V6_Inference')">Download PNG</button>
+        <button onclick="exportSvg('sec-infer', 'SDIE_V6_Inference')">Download SVG</button>
+      </div>
+    </section>
+
+    <section id="sec-classify">
+      <h2>4. V5 Classification Engine</h2>
+      <p class="desc">Rule baseline → graph topology → DeepSeek on low-confidence entities.</p>
+      <div class="diagram-wrap" data-export="SDIE_V6_Classification">
+        <pre class="mermaid">
+flowchart TD
+    E[Entity] --> R{Rule baseline}
+    R -->|Hard layer| L1["Locked type\nOpening · Column · Beam"]
+    R -->|Soft layer| L2["Geometry heuristics\nbeam line · column · wall"]
+    R -->|Teach rule| L3["Best layer profile\ncross-project if GENERIC"]
+    L1 --> G[Structural graph topology]
+    L2 --> G
+    L3 --> G
+    G --> C[V5 confidence score]
+    C --> D{Below 75%?}
+    D -->|Yes| DS["DeepSeek + RAG\natlas · KB · neighbours"]
+    D -->|No| F[Final type]
+    DS --> F
+        </pre>
+      </div>
+      <div class="actions">
+        <button class="primary" onclick="exportPng('sec-classify', 'SDIE_V6_Classification')">Download PNG</button>
+        <button onclick="exportSvg('sec-classify', 'SDIE_V6_Classification')">Download SVG</button>
+      </div>
+    </section>
+
+    <section id="sec-qty">
+      <h2>5. Quantity Engines</h2>
+      <p class="desc">Beam takeoff (length × section) and slab takeoff (area × THK) combined into totals.</p>
+      <div class="diagram-wrap" data-export="SDIE_V6_Quantities">
+        <pre class="mermaid">
+flowchart LR
+    subgraph BEAM["Beam takeoff"]
+        B1[Classified Beam lines] --> B2[Centerline length]
+        B2 --> B3["Section WxD\ntags or drawing default"]
+        B3 --> B4["Concrete + shuttering m³/m²"]
+    end
+
+    subgraph SLAB["Slab takeoff"]
+        SL1[Classified framing] --> SL2[Exclusions applied]
+        SL2 --> SL3[Closed bays via beam grid]
+        SL3 --> SL4[Nearest THK label]
+        SL4 --> SL5["Area × thickness → m³"]
+    end
+
+    B4 --> T["Combined totals\nslab + beam concrete"]
+    SL5 --> T
+        </pre>
+      </div>
+      <div class="actions">
+        <button class="primary" onclick="exportPng('sec-qty', 'SDIE_V6_Quantities')">Download PNG</button>
+        <button onclick="exportSvg('sec-qty', 'SDIE_V6_Quantities')">Download SVG</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Inference Mode &amp; Outputs</h2>
+      <table>
+        <tr><th>project-id</th><th>Knowledge</th><th>Use case</th></tr>
+        <tr><td><strong>GENERIC</strong> (default)</td><td>All teach projects merged</td><td>New / unknown drawings</td></tr>
+        <tr><td>INIZIO</td><td>Inizio + GLOBAL</td><td>Teach evaluation</td></tr>
+        <tr><td>TRUST_OFFICE</td><td>Trust + GLOBAL</td><td>Teach evaluation</td></tr>
+      </table>
+      <table style="margin-top:1rem;">
+        <tr><th>Output file</th><th>Contents</th></tr>
+        <tr><td>{drawing}_results.json</td><td>Classification, slabs, beams, totals</td></tr>
+        <tr><td>{drawing}_overlay.html</td><td>Interactive component overlay</td></tr>
+        <tr><td>{drawing}_quantities.xlsx</td><td>Summary · Slabs · Beams · Classification</td></tr>
+        <tr><td>{drawing}_review_queue.json</td><td>Low-confidence entities</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>SDIE V6 · P2_SlabVersion6 · Open in browser · Use Download PNG for image export</footer>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        fontFamily: "Segoe UI, system-ui, sans-serif",
+        fontSize: "14px",
+        primaryColor: "#E6F4EA",
+        primaryBorderColor: "#34A853",
+        lineColor: "#5f6368",
+        tertiaryColor: "#E8F4FD"
+      },
+      flowchart: { curve: "basis", padding: 18, htmlLabels: true }
+    });
+
+    function getSvg(sectionId) {
+      const sec = document.getElementById(sectionId);
+      return sec ? sec.querySelector("svg") : null;
+    }
+
+    function downloadBlob(blob, filename) {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function exportSvg(sectionId, name) {
+      const svg = getSvg(sectionId);
+      if (!svg) return alert("Diagram not ready — wait a moment and retry.");
+      const xml = new XMLSerializer().serializeToString(svg);
+      downloadBlob(new Blob([xml], { type: "image/svg+xml" }), name + ".svg");
+    }
+
+    function exportPng(sectionId, name) {
+      const svg = getSvg(sectionId);
+      if (!svg) return alert("Diagram not ready — wait a moment and retry.");
+      const xml = new XMLSerializer().serializeToString(svg);
+      const img = new Image();
+      const svg64 = btoa(unescape(encodeURIComponent(xml)));
+      img.onload = function () {
+        const scale = 2;
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.scale(scale, scale);
+        ctx.drawImage(img, 0, 0);
+        canvas.toBlob(function (blob) {
+          if (blob) downloadBlob(blob, name + ".png");
+        }, "image/png");
+      };
+      img.src = "data:image/svg+xml;base64," + svg64;
+    }
+
+    // Export all diagrams button in header area via keyboard: none — per-section buttons suffice
+  </script>
+</body>
+</html>

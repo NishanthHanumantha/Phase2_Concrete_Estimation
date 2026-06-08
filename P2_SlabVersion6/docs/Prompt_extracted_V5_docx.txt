@@ -1,0 +1,297 @@
+SDIE VERSION 5 – DEEPSEEK STRUCTURAL REASONING ENGINE
+(Source: SDIE Version 5 – DeepSeek Structural Reasoning Engine.docx — verbatim extraction)
+
+MISSION
+Redesign SDIE into a Structural Reasoning Engine capable of understanding structural drawings the same way an experienced structural estimator interprets them.
+
+Version 4 improved classification accuracy through:
+Component Atlas
+Layer Profiles
+DeepSeek Ambiguity Resolution
+Structural Graphs
+Knowledge Base
+
+However classification accuracy remains insufficient because the system still relies heavily on layer interpretation and geometry heuristics.
+
+Version 5 must introduce estimator-style reasoning.
+
+The system must learn:
+How estimators identify structural components
+How estimators use drawing context
+How estimators interpret layers
+How estimators interpret annotations
+How estimators resolve ambiguity
+How estimators separate slab regions from exclusions
+
+The objective is not slab detection.
+The objective is structural understanding.
+
+PRIMARY OBJECTIVE
+Increase component classification accuracy from 50–60% toward 85–95%.
+
+Primary target classes:
+Slab
+Beam
+Column
+Shear Wall
+
+Supporting classes:
+Structural Wall
+Lift Core
+Stair Core
+Shaft
+Opening
+Unknown
+
+Business quantity engines remain:
+Slab Calculator
+Beam Calculator
+Column Calculator
+Shear Wall Calculator
+
+All other classes support exclusions and diagnostics.
+
+PROMPT ENGINEERING FRAMEWORK (NEW)
+Every DeepSeek request MUST include the following context.
+
+Scale Context
+Always pass drawing scale.
+Examples:
+Scale = 1:50
+Scale = 1:100
+Scale = 1:200
+DeepSeek must never assume scale.
+
+Unit Context
+Always pass unit system.
+Examples:
+Units = Millimeters
+Units = Meters
+Units = Feet
+Units = Inches
+Units = Imperial
+Units = Metric
+DeepSeek must never assume units.
+Geometry interpretation must depend on the supplied unit system.
+
+Layer Context Injection
+Always provide available layer names.
+Example:
+Layers Found:
+WALL WALLS COLUMN COLUMNS COL S-COLS S-COL HATCH BEAM S-BEAM STR-BEAM SLAB A-FLOR-IDEN SHEARWALL S-SHEARWALL CORE STAIR OPENING GRID TEXT DIMENSION
+DeepSeek should treat layer names as strong evidence.
+Layer names are not absolute truth.
+
+Geometry Context Injection
+Every candidate entity sent to DeepSeek must include:
+Entity Type
+Area
+Perimeter
+Aspect Ratio
+Bounding Box
+Connected Beams
+Connected Columns
+Connected Walls
+Neighbour Relationships
+Example:
+{ "entity_id": "ENT_001", "entity_type": "LWPOLYLINE", "area": 35.6, "perimeter": 24.8, "aspect_ratio": 7.4, "connected_beams": 4, "connected_columns": 2 }
+
+Annotation Context Injection
+Provide nearby text.
+Examples:
+THK 150
+THK 200
+THK 250
+B12
+C5
+SW1
+LIFT
+STAIR
+OPENING
+SHAFT
+Annotations are strong semantic indicators.
+
+Cursor Context Injection (NEW)
+Always include:
+@projects_manifest.json
+@data/layer_profiles.json
+@data/atlas/component_atlas.json
+@data/knowledge_base/structural_kb.json
+@src/sdie/config.py
+@src/sdie/classification/
+@src/sdie/rag/
+@src/sdie/validation/
+
+DEEPSEEK SYSTEM ROLE
+Every DeepSeek request must begin with:
+"You are a senior structural quantity surveyor, structural estimator, and CAD interpretation specialist.
+Your responsibility is structural component identification.
+You must classify structural entities using:
+Layer names
+Geometry
+Annotation text
+Structural topology
+Historical estimator examples
+Knowledge base context
+Atlas examples
+You are forbidden from calculating:
+Area
+Volume
+Concrete
+Shuttering
+You are only responsible for structural understanding.
+When layers are missing, infer component types from geometry, topology, and estimator patterns.
+Return confidence scores for every entity.
+Flag uncertain entities for review."
+
+MULTI-EVIDENCE CLASSIFICATION ENGINE
+DeepSeek must never classify using a single signal.
+Classification must combine:
+Layer Information = 25%
+Geometry Features = 25%
+Topology Features = 20%
+Annotation Features = 15%
+Atlas Similarity = 10%
+Knowledge Base Similarity = 5%
+Classification must be evidence-based.
+
+GEOMETRY FALLBACK REASONING (NEW)
+If layers are unnamed, incorrect, generic, or ambiguous:
+DeepSeek must infer component type from geometry.
+
+Beam Indicators
+Long narrow geometry
+High aspect ratio
+Connects columns
+Repeated pattern
+Structural alignment
+
+Column Indicators
+Small rectangular geometry
+Grid aligned
+Supports beams
+Repeating structural pattern
+
+Shear Wall Indicators
+Continuous wall geometry
+Large thickness
+Core proximity
+Structural continuity
+
+Slab Indicators
+Large enclosed framed region
+Surrounded by beams
+Thickness annotation nearby
+Not classified as wall/core/opening
+
+Lift Core Indicators
+Core enclosure
+Lift annotation
+Wall enclosure geometry
+
+Stair Core Indicators
+Stair annotation
+Flight geometry
+Core adjacency
+
+FEW SHOT ESTIMATOR REASONING
+Before classification retrieve:
+Top 5 similar Atlas samples.
+Top 5 similar Knowledge Base samples.
+
+Examples:
+Project: INIZIO
+Layer: S-BEAM
+Geometry:
+Length = 12.4m
+Width = 0.3m
+Classification:
+Beam
+Confidence:
+100%
+
+Use nearest estimator examples before classification.
+
+RAG RETRIEVAL STRATEGY
+Retrieve by:
+Layer Match
+Annotation Match
+Geometry Similarity
+Project Similarity
+Structural Relationship Similarity
+Combine results before DeepSeek reasoning.
+
+ENTITY LEVEL CONFIDENCE (NEW)
+Every classified entity must return:
+{ "entity_id": "ENT_001", "classification": "Beam", "confidence": 94, "review_required": false, "evidence": { "layer_match": 100, "geometry_match": 95, "annotation_match": 80, "atlas_match": 92 } }
+
+CONFIDENCE THRESHOLDS
+Confidence ≥ 90 — Automatic Acceptance
+Confidence 75–89 — Accepted With Warning
+Confidence < 75 — Manual Review Required
+Confidence < 60 — Force Validation Queue
+
+STRUCTURAL EXCLUSION REASONING
+Before slab identification explicitly classify and exclude:
+Beam
+Column
+Shear Wall
+Structural Wall
+Lift Core
+Stair Core
+Shaft
+Opening
+
+Only after exclusions:
+Remaining Framed Region = Potential Slab
+No slab may be generated before exclusion analysis.
+
+AMBIGUITY REVIEW ENGINE
+Create Review Queue: review_queue.json
+Store:
+Entity ID
+Proposed Classification
+Confidence
+Evidence
+Suggested Alternatives
+Example:
+{ "entity_id": "ENT_422", "classification": "Beam", "confidence": 63, "alternatives": [ "Shear Wall", "Structural Wall" ] }
+
+HISTORICAL PROJECT LEARNING
+Projects:
+INIZIO
+TRUST_OFFICE
+Future: Project4, Project5
+
+Every completed project contributes:
+Atlas Samples
+Layer Profiles
+Structural Patterns
+Annotation Patterns
+Quantity Relationships
+Knowledge accumulates permanently.
+
+CLASSIFICATION TARGETS
+Version 5 Target:
+Beam Accuracy ≥ 90%
+Column Accuracy ≥ 90%
+Shear Wall Accuracy ≥ 90%
+Slab Accuracy ≥ 90%
+Overall Classification ≥ 90%
+Low confidence entities ≤ 5%
+
+FINAL DIRECTIVE
+Do not improve slab detection directly.
+Improve structural reasoning.
+Teach the system how estimators think.
+DeepSeek is a structural reasoning engine.
+The quantity engine remains deterministic.
+
+All quantity estimation must occur only after:
+Component Classification
+Structural Graph Generation
+Semantic Building Model Creation
+Structural Exclusion Analysis
+
+The objective is not slab detection.
+The objective is structural understanding.

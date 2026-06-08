@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDIE V6 — Structural Concrete Estimation</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --surface2: #243044;
+      --border: #2d3f56;
+      --text: #e8edf4;
+      --muted: #8b9cb3;
+      --accent: #3d8bfd;
+      --accent-hover: #5ca0ff;
+      --success: #3dd68c;
+      --warn: #f5a623;
+      --error: #ff6b6b;
+      --slab: #34a853;
+      --beam: #1a73e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    header { text-align: center; margin-bottom: 2rem; }
+    header h1 { font-size: 1.6rem; font-weight: 600; margin: 0 0 0.35rem; }
+    header p { color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .card h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    .dropzone {
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .dropzone:hover, .dropzone.dragover {
+      border-color: var(--accent);
+      background: rgba(61, 139, 253, 0.06);
+    }
+    .dropzone input { display: none; }
+    .dropzone .icon { font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.7; }
+    .dropzone .fname { color: var(--accent); font-weight: 500; margin-top: 0.5rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      border: none;
+      font: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: var(--accent-hover); }
+    .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+    .btn-secondary {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: #2d3f56; }
+
+    .actions { display: flex; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; }
+
+    .status {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      background: var(--surface2);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .status.visible { display: flex; }
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .totals {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .totals.visible { display: grid; }
+    .metric {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--border);
+    }
+    .metric.slab { border-left-color: var(--slab); }
+    .metric.beam { border-left-color: var(--beam); }
+    .metric.total { border-left-color: var(--warn); }
+    .metric .label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .metric .value { font-size: 1.25rem; font-weight: 600; margin-top: 0.2rem; }
+    .metric .unit { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
+
+    .error-box {
+      display: none;
+      background: rgba(255,107,107,0.12);
+      border: 1px solid var(--error);
+      color: var(--error);
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-size: 0.88rem;
+    }
+    .error-box.visible { display: block; }
+
+    .example {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .example code {
+      background: var(--surface2);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>SDIE V6 Structural Estimation</h1>
+      <p>Upload a structural DXF → get slab &amp; beam concrete quantities (Excel)</p>
+    </header>
+
+    <section class="card">
+      <h2>1 · Input DXF</h2>
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept=".dxf" />
+        <div class="icon">📐</div>
+        <div>Drop a <strong>.dxf</strong> file here or click to browse</div>
+        <div class="fname" id="fileName"></div>
+      </label>
+      <p class="example">
+        Example reference drawing:
+        <code>Inizio_63F_Raw_Layer_Revised1.dxf</code>
+        (framed floor with S-BEAM grid and THK labels)
+      </p>
+      <div class="actions">
+        <button class="btn btn-primary" id="runBtn" disabled>Run estimation</button>
+      </div>
+      <div class="status" id="statusBox">
+        <div class="spinner" id="spinner"></div>
+        <span id="statusText">Processing…</span>
+      </div>
+      <div class="error-box" id="errorBox"></div>
+    </section>
+
+    <section class="card" id="resultsCard" style="display:none;">
+      <h2>2 · Results</h2>
+      <div class="totals" id="totalsGrid"></div>
+      <div class="actions" style="margin-top:1rem;">
+        <button class="btn btn-primary" id="downloadBtn">Download Excel (Beamquantities)</button>
+        <button class="btn btn-secondary" id="overlayBtn">View overlay</button>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const dropzone = document.getElementById("dropzone");
+    const fileName = document.getElementById("fileName");
+    const runBtn = document.getElementById("runBtn");
+    const statusBox = document.getElementById("statusBox");
+    const statusText = document.getElementById("statusText");
+    const spinner = document.getElementById("spinner");
+    const errorBox = document.getElementById("errorBox");
+    const resultsCard = document.getElementById("resultsCard");
+    const totalsGrid = document.getElementById("totalsGrid");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const overlayBtn = document.getElementById("overlayBtn");
+
+    let selectedFile = null;
+    let currentJobId = null;
+    let pollTimer = null;
+
+    function setFile(file) {
+      selectedFile = file;
+      fileName.textContent = file ? file.name : "";
+      runBtn.disabled = !file;
+    }
+
+    dropzone.addEventListener("click", () => fileInput.click());
+    fileInput.addEventListener("change", () => setFile(fileInput.files[0] || null));
+    dropzone.addEventListener("dragover", (e) => { e.preventDefault(); dropzone.classList.add("dragover"); });
+    dropzone.addEventListener("dragleave", () => dropzone.classList.remove("dragover"));
+    dropzone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropzone.classList.remove("dragover");
+      const f = e.dataTransfer.files[0];
+      if (f && f.name.toLowerCase().endsWith(".dxf")) setFile(f);
+    });
+
+    function showError(msg) {
+      errorBox.textContent = msg;
+      errorBox.classList.add("visible");
+    }
+    function clearError() {
+      errorBox.classList.remove("visible");
+    }
+
+    function metric(label, value, unit, cls) {
+      return `<div class="metric ${cls}"><div class="label">${label}</div><div class="value">${value}<span class="unit"> ${unit}</span></div></div>`;
+    }
+
+    function renderTotals(t) {
+      totalsGrid.innerHTML = [
+        metric("Slabs", t.slab_count ?? 0, "bays", "slab"),
+        metric("Slab concrete", (t.slab_concrete_m3 ?? 0).toFixed(2), "m³", "slab"),
+        metric("Beams", t.beam_count ?? 0, "runs", "beam"),
+        metric("Beam concrete", (t.beam_concrete_m3 ?? 0).toFixed(2), "m³", "beam"),
+        metric("Total concrete", (t.concrete_m3 ?? 0).toFixed(2), "m³", "total"),
+        metric("Slab area", (t.area_m2 ?? 0).toFixed(1), "m²", "slab"),
+      ].join("");
+      totalsGrid.classList.add("visible");
+    }
+
+    async function pollJob(jobId) {
+      const res = await fetch(`/api/jobs/${jobId}`);
+      const data = await res.json();
+      statusText.textContent = data.message || data.status;
+
+      if (data.status === "completed") {
+        clearInterval(pollTimer);
+        spinner.style.display = "none";
+        statusBox.classList.remove("visible");
+        resultsCard.style.display = "block";
+        renderTotals(data.totals || {});
+        runBtn.disabled = false;
+        return;
+      }
+      if (data.status === "failed") {
+        clearInterval(pollTimer);
+        spinner.style.display = "none";
+        statusBox.classList.remove("visible");
+        showError(data.error || "Pipeline failed.");
+        runBtn.disabled = false;
+      }
+    }
+
+    runBtn.addEventListener("click", async () => {
+      if (!selectedFile) return;
+      clearError();
+      resultsCard.style.display = "none";
+      runBtn.disabled = true;
+      statusBox.classList.add("visible");
+      spinner.style.display = "block";
+      statusText.textContent = "Uploading DXF…";
+
+      const form = new FormData();
+      form.append("file", selectedFile);
+
+      try {
+        const res = await fetch("/api/estimate", { method: "POST", body: form });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || res.statusText);
+
+        currentJobId = data.job_id;
+        statusText.textContent = "Queued — running pipeline (may take several minutes)…";
+        pollTimer = setInterval(() => pollJob(currentJobId), 3000);
+        pollJob(currentJobId);
+      } catch (err) {
+        statusBox.classList.remove("visible");
+        showError(err.message);
+        runBtn.disabled = false;
+      }
+    });
+
+    downloadBtn.addEventListener("click", () => {
+      if (currentJobId) window.location.href = `/api/jobs/${currentJobId}/excel`;
+    });
+
+    overlayBtn.addEventListener("click", () => {
+      if (currentJobId) window.open(`/api/jobs/${currentJobId}/overlay`, "_blank");
+    });
+  </script>
+</body>
+</html>

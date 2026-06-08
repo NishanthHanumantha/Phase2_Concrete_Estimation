@@ -1,0 +1,496 @@
+SDIE VERSION 6 – STRUCTURAL REASONING ENGINE (REVISED PROMPT)
+Derived from: SDIE Version 5 – DeepSeek Structural Reasoning Engine.docx
+Implementation baseline: P2_Slabversion5 @ b3ee8c0, P2_SlabVersion6 layer-discovery fork
+Last updated: June 2026 (Revised Inizio Project Knowledge — Tagged files corpus)
+
+================================================================================
+MISSION (unchanged from V5 docx)
+================================================================================
+Redesign SDIE into a Structural Reasoning Engine that interprets structural
+drawings the way an experienced structural estimator does.
+
+V4 foundations: Component Atlas, Layer Profiles, DeepSeek ambiguity resolution,
+Structural Graphs, Knowledge Base.
+
+V5 adds: estimator-style multi-evidence reasoning, topology-enriched DeepSeek
+prompts, review queue, semantic building model.
+
+V5/V6 implementation adds: slab intelligence with gated exclusions, estimator
+bay merge, multi-panel floor zones, Inizio podium grid, project-aware soft-layer
+arbitration.
+
+V6 adds: drawing-driven layer discovery (no hard-coded S_FRAMES default on
+Inizio sheets).
+
+V6 (Revised Knowledge): INIZIO teaching corpus is reorganized under
+Revised Project Knowledge/Tagged files/. The model must learn how the
+estimator draws closed polylines on the raw structural plan and assigns
+component tags (Slab, Beam, Column, Shear Wall) matching the four
+supervised tagged references. All downstream pipeline steps are unchanged.
+
+The objective is structural understanding first; slab quantities are
+deterministic and run only after classification + exclusions.
+
+================================================================================
+PRIMARY OBJECTIVE
+================================================================================
+Increase component classification accuracy from 50–60% toward 85–95%.
+
+Primary target classes: Slab, Beam, Column, Shear Wall
+Supporting: Structural Wall, Lift Core, Stair Core, Shaft, Opening, Unknown
+
+Business calculators (deterministic, post-classification):
+Slab, Beam, Column, Shear Wall — all other types support exclusions/diagnostics.
+
+INIZIO learning objective (Revised Project Knowledge):
+  Input  → Raw structural DXF (frame lines, annotations — no estimator tags)
+  Teach  → Four tagged DXFs (estimator-drawn polylines + component labels)
+  Output → On raw file: infer the same slab bays, beam runs, column footprints,
+           and shear-wall regions the estimator tagged in the teach set
+
+================================================================================
+REVISED INIZIO PROJECT KNOWLEDGE BASE (AUTHORITATIVE — JUNE 2026)
+================================================================================
+Root: P2_SlabVersion6/Revised Project Knowledge/
+
+ONLY the Tagged files folder is the project knowledge / teaching corpus for
+INIZIO. Do not use legacy paths (Data Source/Project1 - Inizio/, old manifest
+DXF names, or V4/V5 teach folders) when building atlas, layer profiles, KB,
+or component ground truth for INIZIO.
+
+── TEACHING CORPUS (supervised — estimator tags) ──
+  Revised Project Knowledge/Tagged files/
+
+  | Component   | File |
+  |-------------|------|
+  | Slab        | Inizio Slab with tag_Revised1.dxf |
+  | Beam        | Inizio - Beam with tag_Revised1.dxf |
+  | Column      | Inizio - Colum with tag_Revised1.dxf |
+  | Shear Wall  | Inizio - Shearwall with tag_Revised1.dxf |
+
+  Each tagged file is a single-component teaching sheet: every entity on that
+  drawing represents the estimator’s answer for that business type. The model
+  must learn:
+    - Where closed LWPOLYLINE (and supporting LINE/HATCH) regions are drawn
+    - How slab bays are bounded vs beam centerlines vs column footprints vs
+      shear-wall envelopes
+    - Which layers carry framing (S-BEAM, S-BEAM-IDEN, A-FLOR-IDEN, S-COLS, …)
+    - How annotations (*THK, beam marks, floor IDs) anchor quantity regions
+
+  Tagged corpus statistics (Revised1):
+    Slab teach:      ~14.9k entities, ~2.3k closed LWPOLYLINE (slab polygons)
+    Beam teach:      ~18.9k entities, beam linework + IDs
+    Column teach:    ~967 entities, column footprints (S-COLS, compact polys)
+    Shearwall teach: ~3.4k entities, wall polylines/lines on S-BEAM/S-COLS
+
+── INFERENCE TARGET (unsupervised — raw plan) ──
+  Revised Project Knowledge/Raw File/
+    Inizio - Slab beam_Raw_Revised1.dxf
+
+  The raw file is the production input: structural geometry and annotations
+  without estimator component polylines. The pipeline must:
+    1. Read raw geometry using V6 layer discovery + floor zone (unchanged)
+    2. Classify entities using knowledge learned from Tagged files only
+    3. Reconstruct framed regions equivalent to estimator slab polylines
+    4. Tag/classify beams, columns, shear walls as in the four teach sheets
+    5. Run exclusions → slab intelligence → deterministic quantities (unchanged)
+
+  Raw file statistics (Revised1):
+    ~17.5k entities, ~1.4k closed LWPOLYLINE (unlabeled — not GT polys)
+    Primary frame layer: S-BEAM (~5.5k entities)
+
+── WHAT CHANGES vs LEGACY INIZIO TEACH ──
+  REPLACE:
+    Data Source/Project1 - Inizio/Inizio Slab with tag.dxf
+    Data Source/Project1 - Inizio/Inizio - Beam with tag.dxf
+    Data Source/Project1 - Inizio/Inizio - Colum with tag.dxf
+    Data Source/Project1 - Inizio/Inizio - Shearwall with tag.dxf
+  WITH:
+    Revised Project Knowledge/Tagged files/*_Revised1.dxf (four files above)
+
+  projects_manifest.json INIZIO entries MUST point to Revised Project Knowledge
+  paths when rebuilding teach artifacts (atlas, layer_profiles, structural_kb).
+
+── TEACHING WORKFLOW (scripts — paths updated for Revised corpus) ──
+  1. build_layer_profiles.py      → data/layer_profiles.json (INIZIO rules)
+  2. ingest_estimator_workbooks / teach flow → atlas + KB from Tagged files only
+  3. evaluate_component_classification.py --project-id INIZIO --tagged-only
+     GT source: four Revised1 tagged DXFs (not legacy Project1 folder)
+
+  Success criterion for INIZIO teach:
+    Classifier + atlas retrieve patterns from Revised1 tagged polylines/layers
+    such that raw-file inference reproduces estimator-style component tagging
+    before slab quantity engine runs.
+
+── CURSOR / AGENT CONTEXT (INIZIO) ──
+  @Revised Project Knowledge/Tagged files/
+  @Revised Project Knowledge/Raw File/
+  @data/layer_profiles.json
+  @data/atlas/component_atlas.json
+  @data/knowledge_base/structural_kb.json
+  @src/sdie/ingestion/layer_discovery.py
+  @src/sdie/classification/
+  @src/sdie/detection/
+
+  Do NOT @-reference legacy Project1 - Inizio DXFs for new INIZIO work.
+
+================================================================================
+PIPELINE ORDER (IMPLEMENTED — UNCHANGED STEPS)
+================================================================================
+1. Load DXF + resolve units/scale (src/sdie/ingestion/dxf_reader.py)
+2. Layer discovery (V6) OR CLI override (src/sdie/ingestion/layer_discovery.py)
+3. Floor zone from *THK label clusters + frame extent (floor_zone.py)
+4. Extract entities from resolved structural + annotation layers
+5. Classify: rules → layer profiles → geometry → atlas → graph → DeepSeek (v5)
+6. Build structural graph (graph/engine.py)
+7. Slab intelligence: exclusions → beam grid / label merge / podium grid
+8. Deterministic quantities (quantity/slab.py)
+9. Outputs: results.json, building_model.json, overlay.html, review_queue.json
+
+Entry point: scripts/run_pipeline.py
+  --auto-layers (default) | --no-auto-layers | --layers <override>
+  --project-id INIZIO | TRUST_OFFICE | MANOHAR
+  --no-deepseek for rule+topology-only runs
+
+INIZIO inference example (raw Revised1 plan):
+  python scripts/run_pipeline.py ^
+    "Revised Project Knowledge/Raw File/Inizio - Slab beam_Raw_Revised1.dxf" ^
+    -o Output/Inizio_Raw_Revised1 --project-id INIZIO --no-deepseek
+
+Regression / layer-test drawing (separate from teach corpus):
+  Data Source/TestInput/Inizio_B2_LayerTest_V5.dxf
+
+================================================================================
+LAYER DISCOVERY ENGINE (V6 — NEW)
+================================================================================
+Problem (V5): CLI defaulted to --layers S_FRAMES STR-CUTOUT, which returns
+zero slabs on Inizio drawings that use S-BEAM for both beams and perimeter walls.
+
+Approach: single modelspace scan + project profile boost before classification.
+
+Module: src/sdie/ingestion/layer_discovery.py
+
+Algorithm:
+1. scan_layer_stats(msp) — per-layer counts of LINE, LWPOLYLINE, TEXT, HATCH
+2. Score structural candidates:
+   - lines × 3 + polylines × 2 + hatches
+   - × project layer_profiles boost for (project_id, layer)
+   - × 1.8 if layer name matches BEAM|FRAME|STR-BEAM|S-BEAM pattern
+   - down-rank cutout/annotation-dominant layers
+3. Keep candidates ≥ max(25% of top score, 30)
+4. Annotation layers: any layer with TEXT/MTEXT or ANNO|IDEN|FLOR|THK in name
+5. Cutout layers: STR-CUTOUT, SUNK SLAB, S-SUNKEN HATCH, name match CUTOUT|VOID
+6. frame_layers: top 1–2 line-heavy structural layers (for beam-grid + floor zone)
+
+Resolved sets written to PipelineConfig and logged in results JSON as layer_discovery.
+
+Validated auto-discovery:
+  INIZIO  → frame_layers: [S-BEAM], structural: [S-BEAM, SUNK SLAB]
+  TRUST_OFFICE → frame_layers: [S_FRAMES], structural: [S_FRAMES, STR-CUTOUT, S-SUNKEN HATCH]
+
+CLI override: --layers S-BEAM --no-auto-layers (disables discovery for framing)
+
+Diagnostic: scripts/analyze_dxf.py --project-id <ID> prints v6_layer_plan
+
+================================================================================
+CLASSIFICATION STACK (V4 + V5)
+================================================================================
+Order of precedence:
+1. Void/THK/beam-tag annotation rules
+2. Soft-layer geometry arbitration (see below)
+3. Per-project layer profiles (data/layer_profiles.json)
+4. Hard global layer hints (S-COLS, STR-CUTOUT, A-FLOR-IDEN, …)
+5. Geometry classify (beam_enclosure, column_compactness, wall_continuity)
+6. Atlas k-NN vote (layer-indexed)
+7. DeepSeek v5 for ambiguous entities only (threshold 75%)
+
+Soft layers (geometry required — never hard-map layer name alone):
+  S_FRAMES, STR-BEAM, S-BEAM, S-BEAM-IDEN
+
+Soft-layer arbitration (INIZIO S-BEAM — IMPLEMENTED):
+  If geometry:beam_line with conf ≥ 0.88 → Beam (interior grid lines)
+  Elif layer_profile Shear Wall with conf ≥ 0.85 → Shear Wall (perimeter)
+  Elif geometry wall_line / wall_polyline ≥ 0.82 → Shear Wall
+  Else fall through to project profile rule
+
+Evidence tags for downstream slab exclusions:
+  layer_profile:<layer>:<entity_type>
+  geometry:beam_line | geometry:wall_line | geometry:wall_polyline
+  (NOT geometry:wall — must match classifier output exactly)
+
+V5 multi-evidence weights (src/sdie/confidence/scorer.py):
+  Layer 25% | Geometry 25% | Topology 20% | Annotation 15% | Atlas 10% | KB 5%
+  Thresholds: auto_accept ≥90, review ≥75, force_queue <60
+
+Note: blended V5 scores understate high layer-profile confidence (~89% rule
+→ ~56% final). Exclusion gating uses effective confidence floor for profile-
+backed frame-layer shear walls (see Semantic Exclusions).
+
+================================================================================
+PROMPT ENGINEERING FRAMEWORK (V5 DEEPSEEK — from docx)
+================================================================================
+Every DeepSeek request MUST include:
+
+Scale Context — never assume; pass 1:50 / 1:100 / 1:200 explicitly
+Unit Context — Millimeters / Meters / Imperial; geometry depends on units
+Layer Context — all layer names found + resolved frame_layers from discovery
+Geometry Context — entity type, area, perimeter, aspect ratio, bbox,
+  connected beams/columns/walls, neighbour relationships
+Annotation Context — nearby THK, B12, C5, SW1, LIFT, STAIR, OPENING, SHAFT
+Cursor/RAG Context — Revised Project Knowledge/Tagged files (INIZIO),
+  layer_profiles, atlas, KB, config, classifier
+
+DeepSeek system role (verbatim intent):
+  Senior structural QS / estimator / CAD specialist
+  Classify only — forbidden from area, volume, concrete, shuttering
+  Return confidence + flag uncertain entities for review
+
+FEW-SHOT ESTIMATOR REASONING (INIZIO — Revised Tagged files)
+Before classifying entities on the RAW plan, retrieve similar patterns from
+the four Revised1 tagged teach sheets (not legacy Project1 DXFs).
+
+Retrieve:
+  Top 5 similar Atlas samples (built from Tagged files/ only)
+  Top 5 similar Knowledge Base samples (INIZIO Revised corpus)
+
+Teach file → business type mapping:
+  Inizio Slab with tag_Revised1.dxf        → Slab (closed bay polylines)
+  Inizio - Beam with tag_Revised1.dxf      → Beam
+  Inizio - Colum with tag_Revised1.dxf     → Column
+  Inizio - Shearwall with tag_Revised1.dxf → Shear Wall
+
+Inference mapping on raw plan:
+  Long narrow S-BEAM LINE        → match Beam teach linework
+  Closed region in beam grid     → match Slab teach polylines (*THK bays)
+  Compact S-COLS / hatch         → match Column teach footprints
+  Continuous S-BEAM wall poly    → match Shearwall teach envelopes
+
+Use nearest Revised1 estimator examples before DeepSeek classification.
+
+================================================================================
+FLOOR ZONE ENGINE (multi-panel DXF — IMPLEMENTED)
+================================================================================
+Module: src/sdie/detection/floor_zone.py
+
+Purpose: stacked plans on one sheet (tower + basement satellite + duplicate copy).
+
+Method: thk_cluster on A-FLOR-IDEN *THK labels
+  - Primary cluster = largest THK band (B2 tower on Inizio)
+  - Satellite clusters merged only if within gap of primary (not far-below stacks)
+  - Exclude Basement-03 tags far below primary (y < primary.y_min - 0.35×gap)
+  - Subpanel split when duplicate tower copy detected (internal Y gap)
+  - grid_bounds_y capped at selected subpanel ymax
+  - frame ymin extends floor bounds to lowest S-BEAM/frame line (podium margin)
+
+Outputs: bounds_y (grid), label_bounds_y (THK filter), notes in results JSON
+
+================================================================================
+SLAB INTELLIGENCE ENGINE v3.3 (IMPLEMENTED)
+================================================================================
+Module: src/sdie/detection/slab_intelligence.py
+Never identify slabs first. Classify → exclude → derive framed bays.
+
+Strategy selection (priority):
+1. semantic_label_merged_bay — *THK labels merged when ≥ min_thk_labels_for_merge
+2. semantic_beam_grid_bay[_merged] — orthogonal beam centerline grid
+3. +podium_grid — supplementary bays below THK band (Inizio podium)
+
+Config highlights (src/sdie/config.py):
+  min_slab_area_m2: 0.4
+  merge_beam_grid_to_estimator_bays: true
+  apply_slab_exclusions: true
+  use_layer_gated_semantic_exclusions: true
+  enable_podium_beam_grid_slabs: true
+  frame_layer_shear_wall_exclusion_min_confidence: 55
+
+Beam grid (detection/beam_grid.py):
+  - Collect orthogonal LINE axes on frame_layers
+  - Line intersects Y band (not centroid-only) for vertical beams in podium band
+  - augment_sparse_grid_axes: add band edges + primary X cluster for sparse grids
+  - ExclusionCatalog difference per cell before area threshold
+
+Label merge (detection/slab_by_label.py):
+  - Merge *THK TEXT/MTEXT into estimator bays using grid_cells as seeds
+  - bounds_y = label_bounds_y from floor zone
+
+================================================================================
+ESTIMATOR BAY MERGE (IMPLEMENTED — Trust Office S43 fix)
+================================================================================
+Module: src/sdie/detection/bay_merge.py
+
+Merges adjacent raw beam-grid cells into physical estimator bays.
+
+Key behaviours:
+  - infer_from_cells: auto span/area caps from cell population
+  - Column-stack merge: vertical neighbours sharing X column (i fixed, j±1)
+  - _span_touch_or_overlap: allow merge when grid lines touch/overlap (not only
+    identical edge coordinates) — fixes 1 m sliver bays blocking 27 m² merge
+  - _column_stack_pair / _is_row_sliver: stack thin row slivers without bridging
+    full adjacent bays
+  - Elevated area caps only for column-stack merges (not global)
+  - auto_inferred=True preserves infer_from_cells caps when merging
+
+Regression: tests/test_bay_merge.py (includes S43-style vertical stack)
+
+================================================================================
+PODIUM BEAM GRID (INIZIO — IMPLEMENTED)
+================================================================================
+Band: ymin = floor_bounds_y[0] to ymax = thk_label_bounds_y[0] - gap_mm
+
+_infer_podium_bounds_y:
+  Do NOT collapse ymax to tight horizontal-beam cap when framing is sparse
+  (Inizio corner detail at y≈1–3 m below full 15 m band).
+  Use ymax_candidate when horizontal span < 12% of band height.
+
+Sparse grid helpers (beam_grid.py):
+  - _select_primary_vertical_axis_cluster: drop duplicate plan X copies
+  - _augment_horizontal_axes / _augment_vertical_axes for 1–2 axis grids
+  - min_vertical_span uses Y-band overlap length (tower walls crossing band)
+
+Typical Inizio result: 2 podium cells ~7.7 m² at low Y + tower label-merge bays
+
+================================================================================
+SEMANTIC EXCLUSION GATING (IMPLEMENTED)
+================================================================================
+Module: slab_intelligence._classified_exclusion_geoms + _layer_allows_semantic_exclusion
+
+Geometric exclusions: columns, hatches, void labels, cutouts (layer lists in config)
+
+Semantic exclusions (classified components):
+  Gated by layer + confidence + evidence
+
+Frame-layer shear walls on S-BEAM (Inizio):
+  Allow exclusion when:
+    - component_type Shear Wall or Structural Wall
+    - layer in frame_layers
+    - evidence starts with layer_profile: OR geometry:wall_line OR geometry:wall_polyline
+    - effective confidence ≥ frame_layer_shear_wall_exclusion_min_confidence (55)
+      OR layer_profile boost to 88 for gating (V5 blend understates rule conf)
+
+Do NOT deduct interior beam centerlines on frame_layers (Beam classification).
+
+Buffer widths: wall 200 mm, column 50 mm, core 4500 mm, opening 1500 mm
+
+Results JSON fields:
+  semantic_exclusion_area_m2, semantic_exclusion_parts, total_exclusion_area_m2
+
+================================================================================
+STRUCTURAL EXCLUSION REASONING (docx + implementation)
+================================================================================
+Before slab identification, classify and exclude:
+Beam, Column, Shear Wall, Structural Wall, Lift Core, Stair Core, Shaft, Opening
+
+Remaining framed region = potential slab.
+No slab quantity before exclusion analysis completes.
+
+================================================================================
+REVIEW QUEUE (V5)
+================================================================================
+Output: *_review_queue.json
+Entities with confidence < 75% (or force_queue < 60%)
+Fields: entity_id, classification, confidence, evidence, alternatives
+
+================================================================================
+VALIDATION & BENCHMARKS (June 2026)
+================================================================================
+INIZIO component teach / eval (Revised Project Knowledge):
+  scripts/evaluate_component_classification.py --project-id INIZIO --tagged-only
+  GT: four files under Revised Project Knowledge/Tagged files/*_Revised1.dxf
+  Each file = 100% supervised type (slab / beam / column / shearwall sheet)
+
+INIZIO raw inference validation:
+  Run pipeline on Raw File/Inizio - Slab beam_Raw_Revised1.dxf
+  Compare overlay polylines + classified components against Tagged files teach
+  patterns (visual + entity-level precision/recall vs teach geometry statistics)
+  Slab quantity GT (when available): data/ground_truth/Inizio Slab with tag.json
+
+Other projects (unchanged):
+  TRUST_OFFICE / MANOHAR — legacy manifest + Project2/3 folders until revised
+
+Slab quantity (workbook):
+  scripts/verify_test_gt.py
+  GT: data/ground_truth/*.json or TestGT Excel
+
+Reference runs (P2_Slabversion5 — LayerTest regression, not Revised teach):
+  Trust Office FF: ~27/30 GT bays matched (terrace run), S43 27.54 m² bay fixed
+  Inizio B2 LayerTest: 70 slabs, 2336 m² (workbook 2045 m²)
+
+Overlay: src/sdie/validation/overlay.py — layer toggles, GT match coloring,
+  compare raw inference output against Revised1 tagged teach overlays
+
+================================================================================
+HISTORICAL PROJECT LEARNING (UPDATED)
+================================================================================
+INIZIO (authoritative corpus):
+  Revised Project Knowledge/Tagged files/ — ONLY source for teach rebuild
+  project_id: INIZIO
+
+TRUST_OFFICE / MANOHAR:
+  Data Source/projects_manifest.json + Project2/3 folders (unchanged until
+  revised knowledge packs are added)
+
+Every INIZIO teach rebuild contributes from Revised1 tagged files:
+  Atlas samples (closed polylines, linework, layer+geometry features)
+  Layer profiles (project_id=INIZIO, layer, entity_type rules)
+  Structural KB patterns (annotation + topology + bay framing)
+  Component GT for evaluate_component_classification.py
+
+Knowledge accumulates in data/ — source DXFs remain in Revised Project Knowledge/.
+
+================================================================================
+KEY MODULE MAP (P2_SlabVersion6)
+================================================================================
+src/sdie/
+  ingestion/       dxf_reader, entity_extractor, layer_discovery (V6), units
+  classification/  classifier, rag_classifier, layer_profiles, features, types
+  detection/       slab_intelligence, beam_grid, bay_merge, floor_zone,
+                   exclusions, slab_by_label, region, beam_frame
+  graph/           engine.py
+  model/           building.py
+  confidence/      scorer.py (V4 + V5 weights)
+  reasoning/       v5_context, deepseek_client, component_classification
+  validation/      overlay, gt_match, component_gt, component_eval, review_queue
+  semantic_pipeline.py, pipeline.py, config.py
+
+Revised Project Knowledge/  (INIZIO — authoritative teach + raw inference)
+  Tagged files/             four *_Revised1.dxf component teach sheets
+  Raw File/                 Inizio - Slab beam_Raw_Revised1.dxf (inference input)
+
+data/  (generated from Tagged files — not hand-edited for INIZIO teach)
+  atlas/component_atlas.json
+  knowledge_base/structural_kb.json
+  layer_profiles.json
+  ground_truth/Inizio Slab with tag.json  (workbook totals — slab BOQ check)
+
+scripts/
+  run_pipeline.py, analyze_dxf.py, build_layer_profiles.py,
+  evaluate_component_classification.py, verify_test_gt.py, diagnose_s43.py,
+  teach_all_projects.py  (must use Revised Project Knowledge paths for INIZIO)
+
+================================================================================
+CLASSIFICATION TARGETS (aspirational)
+================================================================================
+Beam / Column / Shear Wall / Slab accuracy ≥ 90%
+Overall classification ≥ 90%
+Low-confidence entities ≤ 5%
+
+================================================================================
+FINAL DIRECTIVE (from V5 docx — still applies)
+================================================================================
+Do not improve slab detection by geometry hacks alone.
+Improve structural reasoning and teach estimator patterns.
+
+For INIZIO: learn polyline-and-tag behaviour from Revised Project Knowledge/
+Tagged files/, then apply the same structural understanding to the Raw File
+plan. The tagged sheets are the estimator’s ground truth for HOW to bound
+and label components — not optional reference material.
+
+DeepSeek = structural reasoning engine.
+Quantity engine = deterministic.
+
+All quantities only after:
+  Teach corpus load (Tagged files) → Raw plan load → Layer discovery →
+  Component Classification → Structural Graph → Semantic Building Model →
+  Structural Exclusion Analysis → Slab Intelligence → Quantity Engine
+
+The objective is structural understanding.
