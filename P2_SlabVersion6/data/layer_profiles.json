@@ -130,39 +130,93 @@
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-WALL",
-      "entity_type": "LINE",
-      "component_type": "Slab",
-      "confidence": 0.947,
+      "layer": "S-COL HATCH",
+      "entity_type": null,
+      "component_type": "Shear Wall",
+      "confidence": 0.965,
       "source": "supervised_dxf",
-      "sample_count": 405
+      "sample_count": 25658
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COL HATCH",
+      "entity_type": "LINE",
+      "component_type": "Shear Wall",
+      "confidence": 0.979,
+      "source": "supervised_dxf",
+      "sample_count": 23141
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "entity_type": null,
+      "component_type": "Shear Wall",
+      "confidence": 0.909,
+      "source": "supervised_dxf",
+      "sample_count": 5428
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "entity_type": "LINE",
+      "component_type": "Shear Wall",
+      "confidence": 0.95,
+      "source": "supervised_dxf",
+      "sample_count": 3120
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COL HATCH",
+      "entity_type": "HATCH",
+      "component_type": "Shear Wall",
+      "confidence": 0.881,
+      "source": "supervised_dxf",
+      "sample_count": 2508
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-COLS",
+      "entity_type": "LWPOLYLINE",
+      "component_type": "Shear Wall",
+      "confidence": 0.873,
+      "source": "supervised_dxf",
+      "sample_count": 2286
     },
     {
       "project_id": "INIZIO",
       "layer": "S-WALL",
       "entity_type": null,
       "component_type": "Slab",
-      "confidence": 0.944,
+      "confidence": 0.863,
       "source": "supervised_dxf",
-      "sample_count": 405
+      "sample_count": 553
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-COLS",
+      "layer": "S-WALL",
       "entity_type": "LINE",
-      "component_type": "Beam",
-      "confidence": 0.913,
+      "component_type": "Slab",
+      "confidence": 0.892,
       "source": "supervised_dxf",
-      "sample_count": 195
+      "sample_count": 408
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-BEAM",
-      "entity_type": "DIMENSION",
+      "layer": "STR-BEAM",
+      "entity_type": null,
       "component_type": "Beam",
       "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 141
+      "sample_count": 246
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "STR-BEAM",
+      "entity_type": "LINE",
+      "component_type": "Beam",
+      "confidence": 0.98,
+      "source": "supervised_dxf",
+      "sample_count": 182
     },
     {
       "project_id": "INIZIO",
@@ -171,16 +225,43 @@
       "component_type": "Beam",
       "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 83
+      "sample_count": 163
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-COL HATCH",
-      "entity_type": "LINE",
+      "layer": "S-BEAM",
+      "entity_type": "LEADER",
       "component_type": "Beam",
-      "confidence": 0.939,
+      "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 29
+      "sample_count": 44
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "STR-BEAM",
+      "entity_type": "ARC",
+      "component_type": "Beam",
+      "confidence": 0.98,
+      "source": "supervised_dxf",
+      "sample_count": 37
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "entity_type": "SOLID",
+      "component_type": "Beam",
+      "confidence": 0.98,
+      "source": "supervised_dxf",
+      "sample_count": 14
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "STR-BEAM",
+      "entity_type": "LWPOLYLINE",
+      "component_type": "Beam",
+      "confidence": 0.98,
+      "source": "supervised_dxf",
+      "sample_count": 14
     },
     {
       "project_id": "INIZIO",
@@ -189,16 +270,16 @@
       "component_type": "Beam",
       "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 8
+      "sample_count": 11
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-COLS",
-      "entity_type": "INSERT",
-      "component_type": "Slab",
-      "confidence": 0.9,
+      "layer": "STR-BEAM",
+      "entity_type": "DIMENSION",
+      "component_type": "Beam",
+      "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 5
+      "sample_count": 11
     },
     {
       "project_id": "INIZIO",
@@ -207,7 +288,7 @@
       "component_type": "Beam",
       "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 5
+      "sample_count": 10
     },
     {
       "project_id": "INIZIO",
@@ -216,16 +297,43 @@
       "component_type": "Beam",
       "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 5
+      "sample_count": 9
     },
     {
       "project_id": "INIZIO",
-      "layer": "S-BEAM-IDEN",
-      "entity_type": "LWPOLYLINE",
+      "layer": "G-ANNO-TEXT",
+      "entity_type": "TEXT",
       "component_type": "Beam",
-      "confidence": 0.887,
+      "confidence": 0.98,
       "source": "supervised_dxf",
-      "sample_count": 4
+      "sample_count": 9
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "entity_type": "MLINE",
+      "component_type": "Slab",
+      "confidence": 0.924,
+      "source": "supervised_dxf",
+      "sample_count": 8
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "entity_type": "MTEXT",
+      "component_type": "Beam",
+      "confidence": 0.98,
+      "source": "supervised_dxf",
+      "sample_count": 7
+    },
+    {
+      "project_id": "INIZIO",
+      "layer": "S-BEAM",
+      "entity_type": "HATCH",
+      "component_type": "Slab",
+      "confidence": 0.868,
+      "source": "supervised_dxf",
+      "sample_count": 3
     }
   ]
 }

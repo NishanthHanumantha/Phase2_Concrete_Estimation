@@ -1,37 +1,574 @@
 {
-  "version": "3",
-  "description": "INIZIO uses Revised Project Knowledge/Tagged files only. TRUST/MANOHAR legacy paths until revised packs are added.",
+  "version": "4",
+  "description": "INIZIO teach: Tagged Files_2 single-floor component plans (primary) + legacy Tagged files full sheets. TRUST/MANOHAR unchanged.",
   "projects": [
     {
       "project_id": "INIZIO",
-      "name": "Inizio — Revised Project Knowledge",
+      "name": "Inizio \u2014 Revised Project Knowledge",
       "knowledge_root": "Revised Project Knowledge",
-      "dxf_folder": "Revised Project Knowledge/Tagged files",
+      "dxf_folder": "Revised Project Knowledge/Tagged Files_2",
       "raw_dxf": "Revised Project Knowledge/Raw File/Inizio - Slab beam_Raw_Revised1.dxf",
       "ground_truth_json": "data/ground_truth/Inizio Slab with tag.json",
       "workbook": null,
       "drawings": [
         {
-          "drawing_id": "Inizio Slab with tag Revised1",
+          "drawing_id": "Inizio Slab with tag_Revised1",
           "dxf": "Revised Project Knowledge/Tagged files/Inizio Slab with tag_Revised1.dxf",
-          "tagged_slab": true
+          "tagged_slab": true,
+          "corpus": "tagged_files_v1",
+          "floor_plan": false
         },
         {
-          "drawing_id": "Inizio - Beam with tag Revised1",
+          "drawing_id": "Inizio - Beam with tag_Revised1",
           "dxf": "Revised Project Knowledge/Tagged files/Inizio - Beam with tag_Revised1.dxf",
-          "tagged_beam": true
+          "tagged_beam": true,
+          "corpus": "tagged_files_v1",
+          "floor_plan": false
         },
         {
-          "drawing_id": "Inizio - Colum with tag Revised1",
+          "drawing_id": "Inizio - Colum with tag_Revised1",
           "dxf": "Revised Project Knowledge/Tagged files/Inizio - Colum with tag_Revised1.dxf",
-          "tagged_column": true
+          "tagged_column": true,
+          "corpus": "tagged_files_v1",
+          "floor_plan": false
         },
         {
-          "drawing_id": "Inizio - Shearwall with tag Revised1",
+          "drawing_id": "Inizio - Shearwall with tag_Revised1",
           "dxf": "Revised Project Knowledge/Tagged files/Inizio - Shearwall with tag_Revised1.dxf",
-          "tagged_shearwall": true
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v1",
+          "floor_plan": false
+        },
+        {
+          "drawing_id": "ShearWallTag_ST_Inizio1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/ShearWallTag_ST_Inizio1.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "Sherwall_Tag_ST_Inizio2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/Sherwall_Tag_ST_Inizio2.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag-Inizio_ST13",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag-Inizio_ST13.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST1.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST10",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST10.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST11",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST11.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST12",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST12.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST14",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST14.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "Slabtag_Inizio_ST15",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/Slabtag_Inizio_ST15.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST16",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST16.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST2.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST3.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST4",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST4.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST5",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST5.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST6",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST6.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST8",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST8.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inizio_ST9",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inizio_ST9.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_Inzio_ST17",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_Inzio_ST17.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_TO_ST1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_TO_ST1.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_TO_ST2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_TO_ST2.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "SlabTag_TO_ST3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag_TO_ST3.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "ST_E_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/ST_E_1.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "ST_E_2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/ST_E_2.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "ST_E_3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/ST_E_3.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "ST_M_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/ST_M_1.dxf",
+          "tagged_slab": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Slab"
+        },
+        {
+          "drawing_id": "BeamTAG_I_ST1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BeamTAG_I_ST1.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BeamTag_I_ST2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BeamTag_I_ST2.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BeamTag_TO_ST1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BeamTag_TO_ST1.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BeamTag_TO_ST2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BeamTag_TO_ST2.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BeamTag_TO_ST3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BeamTag_TO_ST3.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_DH_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_DH_1.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_DH_2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_DH_2.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_DH_3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_DH_3.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_DH_4",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_DH_4.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_DH_5",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_DH_5.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_E_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_E_1.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_E_2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_E_2.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_E_3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_E_3.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_GC_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_GC_1.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_GC_3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_GC_3.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST10",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST10.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST12",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST12.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST13",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST13.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST4",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST4.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST5",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST5.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST6",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST6.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST7",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST7.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST8",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST8.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_I_ST9",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_I_ST9.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "BT_M_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Beam/BT_M_1.dxf",
+          "tagged_beam": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Beam"
+        },
+        {
+          "drawing_id": "Column_DH_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Column/Column_DH_1.dxf",
+          "tagged_column": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Column"
+        },
+        {
+          "drawing_id": "Column_GC_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Column/Column_GC_1.dxf",
+          "tagged_column": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Column"
+        },
+        {
+          "drawing_id": "Column_GC_2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Column/Column_GC_2.dxf",
+          "tagged_column": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Column"
+        },
+        {
+          "drawing_id": "Inizio - Colum with tag_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Column/Inizio - Colum with tag_1.dxf",
+          "tagged_column": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Column"
+        },
+        {
+          "drawing_id": "SW_I_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_1.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_2.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_3.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_4",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_4.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_5",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_5.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_6",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_6.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_7",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_7.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_8",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_8.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "SW_I_9",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_9.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "Wall_E_1",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/Wall_E_1.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "Wall_E_2",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/Wall_E_2.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
+        },
+        {
+          "drawing_id": "Wall_E_3",
+          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/Wall_E_3.dxf",
+          "tagged_shearwall": true,
+          "corpus": "tagged_files_v2",
+          "floor_plan": true,
+          "component_folder": "Wall"
         }
-      ]
+      ],
+      "tagged_corpus_v2": "Revised Project Knowledge/Tagged Files_2"
     },
     {
       "project_id": "TRUST_OFFICE",

@@ -221,6 +221,7 @@ def full_evaluation(
     *,
     include_primary_slab: bool = True,
     component_tagged_only: bool = False,
+    slab_beam_only: bool = False,
     use_v4: bool = True,
     use_v5: bool = True,
     enable_deepseek: bool = True,
@@ -232,6 +233,7 @@ def full_evaluation(
         project_root,
         include_primary_slab=include_primary_slab,
         component_tagged_only=component_tagged_only,
+        slab_beam_only=slab_beam_only,
     )
     runs = run_classification_on_gt_drawings(
         manifest_path,
@@ -251,5 +253,6 @@ def full_evaluation(
         "enable_deepseek": enable_deepseek,
         "include_primary_slab": include_primary_slab,
         "component_tagged_only": component_tagged_only,
+        "slab_beam_only": slab_beam_only,
     }
     return report

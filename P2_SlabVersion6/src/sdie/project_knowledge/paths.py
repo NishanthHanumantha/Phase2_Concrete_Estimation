@@ -5,7 +5,44 @@ from pathlib import Path
 
 REVISED_KNOWLEDGE_ROOT = "Revised Project Knowledge"
 REVISED_TAGGED_DIR_REL = f"{REVISED_KNOWLEDGE_ROOT}/Tagged files"
+REVISED_TAGGED_V2_ROOT_REL = f"{REVISED_KNOWLEDGE_ROOT}/Tagged Files_2"
 REVISED_RAW_DIR_REL = f"{REVISED_KNOWLEDGE_ROOT}/Raw File"
+
+TAGGED_V2_COMPONENT_FOLDERS: dict[str, str] = {
+    "Slab": "tagged_slab",
+    "Beam": "tagged_beam",
+    "Column": "tagged_column",
+    "Wall": "tagged_shearwall",
+}
+
+
+def tagged_v2_component_flag(folder_name: str) -> str | None:
+    return TAGGED_V2_COMPONENT_FOLDERS.get(folder_name)
+
+
+def tagged_v2_folder_for_flag(flag: str) -> str | None:
+    for folder, f in TAGGED_V2_COMPONENT_FOLDERS.items():
+        if f == flag:
+            return folder
+    return None
+
+
+def tagged_v2_root(project_root: Path | None = None) -> Path:
+    root = project_root or default_project_root()
+    return root / REVISED_TAGGED_V2_ROOT_REL
+
+
+def iter_tagged_v2_dxfs(project_root: Path | None = None) -> list[tuple[str, Path, str]]:
+    """Yield (component_folder, dxf_path, manifest_flag) for Tagged Files_2."""
+    base = tagged_v2_root(project_root)
+    out: list[tuple[str, Path, str]] = []
+    for folder, flag in TAGGED_V2_COMPONENT_FOLDERS.items():
+        sub = base / folder
+        if not sub.is_dir():
+            continue
+        for dxf in sorted(sub.glob("*.dxf")):
+            out.append((folder, dxf, flag))
+    return out
 
 INIZIO_TAGGED_DXFS: dict[str, str] = {
     "slab": f"{REVISED_TAGGED_DIR_REL}/Inizio Slab with tag_Revised1.dxf",

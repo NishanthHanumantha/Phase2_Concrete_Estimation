@@ -59,6 +59,16 @@ def main() -> int:
         _run(
             [
                 sys.executable,
+                str(ROOT / "scripts" / "discover_tagged_corpus.py"),
+                "--include-legacy",
+                "--write-manifest",
+                str(args.project_root / "Data Source" / "projects_manifest.json"),
+            ],
+            label="Discover Tagged Files_2 corpus → manifest",
+        )
+        _run(
+            [
+                sys.executable,
                 str(ROOT / "scripts" / "build_layer_profiles.py"),
                 "--project-root",
                 str(args.project_root),

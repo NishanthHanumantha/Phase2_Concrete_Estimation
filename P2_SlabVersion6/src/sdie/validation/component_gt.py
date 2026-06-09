@@ -19,6 +19,9 @@ BUSINESS_COMPONENT_TYPES: tuple[str, ...] = (
     "Shear Wall",
 )
 
+# Current phase: quantity targets + primary classification eval scope.
+QUANTITY_PHASE_TYPES: tuple[str, ...] = ("Slab", "Beam")
+
 MANIFEST_SUPERVISED_FLAGS: dict[str, str] = {
     "tagged_beam": ComponentType.BEAM.value,
     "tagged_column": ComponentType.COLUMN.value,
@@ -181,16 +184,21 @@ def load_all_entity_ground_truth(
     *,
     include_primary_slab: bool = True,
     component_tagged_only: bool = False,
+    slab_beam_only: bool = False,
 ) -> list[EntityGroundTruth]:
     """
     Load entity GT corpus from manifest.
 
-    component_tagged_only: only tagged_beam/column/shearwall (no primary THK slabs)
+    component_tagged_only: only manifest-tagged drawings (tagged_slab/beam/column/shearwall)
+    slab_beam_only: only tagged Slab/ and Beam/ teach drawings (quantity-phase eval)
     """
     all_gt: list[EntityGroundTruth] = []
     for spec in iter_gt_drawing_specs(manifest_path, project_root):
         if component_tagged_only and not spec.supervised_type:
             continue
+        if slab_beam_only:
+            if spec.supervised_type not in QUANTITY_PHASE_TYPES:
+                continue
         if not include_primary_slab and spec.primary and not spec.supervised_type:
             continue
         all_gt.extend(build_entity_ground_truth(spec))

@@ -10,15 +10,18 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from sdie.validation.component_eval import full_evaluation
-from sdie.validation.component_gt import BUSINESS_COMPONENT_TYPES
+from sdie.validation.component_gt import BUSINESS_COMPONENT_TYPES, QUANTITY_PHASE_TYPES
 
 
 def _print_report(report: dict) -> None:
     mode = report.get("mode", {})
     print("=== COMPONENT CLASSIFICATION EVALUATION ===")
+    if mode.get("slab_beam_only"):
+        print("Phase scope: Slab + Beam quantity (Column/Wall teach = context only)")
     print(
         f"Mode: v4={mode.get('use_v4')} deepseek={mode.get('enable_deepseek')} "
         f"tagged_only={mode.get('component_tagged_only')} "
+        f"slab_beam_only={mode.get('slab_beam_only')} "
         f"include_primary_slab={mode.get('include_primary_slab')}"
     )
     print()
@@ -42,14 +45,24 @@ def _print_report(report: dict) -> None:
     print(f"Errors:     {report.get('error_count', 0)}")
     print()
 
+    eval_types = (
+        list(QUANTITY_PHASE_TYPES)
+        if mode.get("slab_beam_only")
+        else list(BUSINESS_COMPONENT_TYPES)
+    )
     print("=== PER CLASS (precision / recall / F1) ===")
-    for ctype in BUSINESS_COMPONENT_TYPES:
+    for ctype in eval_types:
         row = report.get("per_class", {}).get(ctype, {})
         print(
             f"  {ctype:12} P={row.get('precision_pct', 0):5.1f}% "
             f"R={row.get('recall_pct', 0):5.1f}% F1={row.get('f1_pct', 0):5.1f}% "
             f"(tp={row.get('tp', 0)} fp={row.get('fp', 0)} fn={row.get('fn', 0)})"
         )
+    if mode.get("slab_beam_only"):
+        tp = sum(report.get("per_class", {}).get(t, {}).get("tp", 0) for t in eval_types)
+        fn = sum(report.get("per_class", {}).get(t, {}).get("fn", 0) for t in eval_types)
+        phase_recall = round(tp / (tp + fn) * 100, 1) if (tp + fn) else 0.0
+        print(f"  {'(phase recall)':12} Slab+Beam recall={phase_recall}%")
     print()
 
     print("=== CONFUSION MATRIX (rows=expected, cols=predicted) ===")
@@ -57,7 +70,7 @@ def _print_report(report: dict) -> None:
     cols = list(BUSINESS_COMPONENT_TYPES) + ["Other"]
     header = "           " + "".join(f"{c:>12}" for c in cols)
     print(header)
-    for exp in BUSINESS_COMPONENT_TYPES:
+    for exp in eval_types:
         row = confusion.get(exp, {})
         vals = "".join(f"{row.get(c, 0):>12}" for c in cols)
         print(f"{exp:12}{vals}")
@@ -117,7 +130,15 @@ def main() -> int:
     parser.add_argument(
         "--tagged-only",
         action="store_true",
-        help="Only tagged_beam/column/shearwall drawings (recommended baseline)",
+        help="Only manifest-tagged teach drawings (all four component flags)",
+    )
+    parser.add_argument(
+        "--slab-beam-only",
+        action="store_true",
+        help=(
+            "Quantity-phase eval: only Tagged Files_2 Slab/ + Beam/ drawings "
+            "(recommended; Column/Wall teach still used at atlas/KB build)"
+        ),
     )
     parser.add_argument(
         "--no-primary-slab",
@@ -148,6 +169,9 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    if args.slab_beam_only:
+        args.tagged_only = True
+
     from sdie.validation.component_gt import load_all_entity_ground_truth
 
     gt = load_all_entity_ground_truth(
@@ -155,6 +179,7 @@ def main() -> int:
         args.project_root,
         include_primary_slab=not args.no_primary_slab,
         component_tagged_only=args.tagged_only,
+        slab_beam_only=args.slab_beam_only,
     )
     if args.drawing:
         needles = [d.lower() for d in args.drawing]
@@ -184,6 +209,7 @@ def main() -> int:
         "enable_deepseek": not args.no_deepseek and not args.baseline,
         "include_primary_slab": not args.no_primary_slab,
         "component_tagged_only": args.tagged_only,
+        "slab_beam_only": args.slab_beam_only,
         "drawing_filter": args.drawing,
     }
 

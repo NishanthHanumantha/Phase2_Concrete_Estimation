@@ -79,6 +79,41 @@
       "source": "hard_layer_hints"
     },
     {
+      "layer": "S-SUNKEN HATCH",
+      "component_type": "Opening",
+      "project_id": "GLOBAL",
+      "confidence": 0.92,
+      "source": "hard_layer_hints"
+    },
+    {
+      "layer": "STR-BEAM",
+      "component_type": "Beam",
+      "project_id": "GLOBAL",
+      "confidence": 0.92,
+      "source": "hard_layer_hints"
+    },
+    {
+      "layer": "S-COLUMN",
+      "component_type": "Column",
+      "project_id": "GLOBAL",
+      "confidence": 0.92,
+      "source": "hard_layer_hints"
+    },
+    {
+      "layer": "Wall",
+      "component_type": "Structural Wall",
+      "project_id": "GLOBAL",
+      "confidence": 0.92,
+      "source": "hard_layer_hints"
+    },
+    {
+      "layer": "STR-RC WALL HATCH",
+      "component_type": "Shear Wall",
+      "project_id": "GLOBAL",
+      "confidence": 0.92,
+      "source": "hard_layer_hints"
+    },
+    {
       "layer": "S_FRAMES",
       "component_type": "Column",
       "project_id": "TRUST_OFFICE",
@@ -159,49 +194,112 @@
       "layer": "S-COLS",
       "component_type": "Column",
       "project_id": "TRUST_OFFICE",
-      "confidence": 0.98,
-      "source": "layer_profile"
-    },
-    {
-      "layer": "S-WALL",
-      "component_type": "Slab",
-      "project_id": "INIZIO",
-      "confidence": 0.947,
-      "source": "layer_profile"
-    },
-    {
-      "layer": "S-WALL",
-      "component_type": "Slab",
-      "project_id": "INIZIO",
-      "confidence": 0.944,
-      "source": "layer_profile"
-    },
-    {
-      "layer": "S-COLS",
-      "component_type": "Beam",
-      "project_id": "INIZIO",
-      "confidence": 0.913,
-      "source": "layer_profile"
-    },
-    {
-      "layer": "S-BEAM",
-      "component_type": "Beam",
-      "project_id": "INIZIO",
-      "confidence": 0.98,
-      "source": "layer_profile"
-    },
-    {
-      "layer": "S-BEAM-IDEN",
-      "component_type": "Beam",
-      "project_id": "INIZIO",
       "confidence": 0.98,
       "source": "layer_profile"
     },
     {
       "layer": "S-COL HATCH",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 0.965,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-COL HATCH",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 0.979,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-COLS",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 0.909,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-COLS",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 0.95,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-COL HATCH",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 0.881,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-COLS",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 0.873,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-WALL",
+      "component_type": "Slab",
+      "project_id": "INIZIO",
+      "confidence": 0.863,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-WALL",
+      "component_type": "Slab",
+      "project_id": "INIZIO",
+      "confidence": 0.892,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "STR-BEAM",
       "component_type": "Beam",
       "project_id": "INIZIO",
-      "confidence": 0.939,
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "STR-BEAM",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-BEAM-IDEN",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "STR-BEAM",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "STR-BEAM",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 0.98,
       "source": "layer_profile"
     },
     {
@@ -212,10 +310,10 @@
       "source": "layer_profile"
     },
     {
-      "layer": "S-COLS",
-      "component_type": "Slab",
+      "layer": "STR-BEAM",
+      "component_type": "Beam",
       "project_id": "INIZIO",
-      "confidence": 0.9,
+      "confidence": 0.98,
       "source": "layer_profile"
     },
     {
@@ -233,10 +331,31 @@
       "source": "layer_profile"
     },
     {
-      "layer": "S-BEAM-IDEN",
+      "layer": "G-ANNO-TEXT",
       "component_type": "Beam",
       "project_id": "INIZIO",
-      "confidence": 0.887,
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-BEAM",
+      "component_type": "Slab",
+      "project_id": "INIZIO",
+      "confidence": 0.924,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-BEAM",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 0.98,
+      "source": "layer_profile"
+    },
+    {
+      "layer": "S-BEAM",
+      "component_type": "Slab",
+      "project_id": "INIZIO",
+      "confidence": 0.868,
       "source": "layer_profile"
     },
     {
@@ -549,6 +668,48 @@
     },
     {
       "layer": "S-COLS",
+      "component_type": "Shear Wall",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S_FRAMES",
+      "component_type": "Slab",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "STR-CUTOUT",
+      "component_type": "Slab",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S_FRAMES",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "STR-CUTOUT",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "STR-BEAM",
+      "component_type": "Beam",
+      "project_id": "INIZIO",
+      "confidence": 1.0,
+      "source": "atlas"
+    },
+    {
+      "layer": "S-WALL",
       "component_type": "Shear Wall",
       "project_id": "INIZIO",
       "confidence": 1.0,
@@ -2681,7 +2842,10 @@
       "component_type": "Slab",
       "geometry_features": {
         "entity_type": "HATCH",
-        "layer": "S-BEAM"
+        "layer": "S-BEAM",
+        "area_mm2": 224278802.34,
+        "width_mm": 13231.8,
+        "height_mm": 16949.99
       },
       "source_drawing": "Inizio Slab with tag_Revised1.dxf"
     },
@@ -2691,7 +2855,10 @@
       "component_type": "Slab",
       "geometry_features": {
         "entity_type": "HATCH",
-        "layer": "S-COL HATCH"
+        "layer": "S-COL HATCH",
+        "area_mm2": 0.0,
+        "width_mm": 0.0,
+        "height_mm": 400.0
       },
       "source_drawing": "Inizio Slab with tag_Revised1.dxf"
     },
@@ -2935,7 +3102,10 @@
       "component_type": "Beam",
       "geometry_features": {
         "entity_type": "HATCH",
-        "layer": "S-BEAM"
+        "layer": "S-BEAM",
+        "area_mm2": 224278802.34,
+        "width_mm": 13231.8,
+        "height_mm": 16949.99
       },
       "source_drawing": "Inizio - Beam with tag_Revised1.dxf"
     },
@@ -2945,7 +3115,10 @@
       "component_type": "Beam",
       "geometry_features": {
         "entity_type": "HATCH",
-        "layer": "S-COL HATCH"
+        "layer": "S-COL HATCH",
+        "area_mm2": 0.0,
+        "width_mm": 0.0,
+        "height_mm": 400.0
       },
       "source_drawing": "Inizio - Beam with tag_Revised1.dxf"
     },
@@ -3463,7 +3636,10 @@
       "component_type": "Shear Wall",
       "geometry_features": {
         "entity_type": "HATCH",
-        "layer": "S-BEAM"
+        "layer": "S-BEAM",
+        "area_mm2": 224278802.34,
+        "width_mm": 13231.8,
+        "height_mm": 16949.99
       },
       "source_drawing": "Inizio - Shearwall with tag_Revised1.dxf"
     },

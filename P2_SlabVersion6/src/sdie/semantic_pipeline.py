@@ -39,6 +39,7 @@ from sdie.thickness.parser import (
 from sdie.util.progress import progress_for, set_active
 from sdie.validation.excel_export import export_results_to_excel
 from sdie.validation.gt_match import annotate_slabs_with_gt, find_gt_xlsx_for_stem, load_gt_xlsx
+from sdie.validation.inference_metrics import build_inference_metrics
 from sdie.validation.overlay import write_overlay_outputs
 from sdie.validation.review_queue import write_review_queue
 
@@ -483,6 +484,13 @@ def run_semantic_pipeline(
 
     gt = _load_ground_truth(config, dxf_path.stem)
     benchmark = compute_benchmark_report(totals, gt)
+    inference_metrics = build_inference_metrics(
+        classified,
+        detection_notes=detection_notes,
+        totals=totals,
+        benchmark=benchmark,
+        review_threshold=config.v5_review_threshold,
+    )
 
     result = {
         "engine": "SDIE",
@@ -517,6 +525,7 @@ def run_semantic_pipeline(
         "detection_notes": detection_notes,
         "semantic_building_model": building_model.to_dict(),
         "benchmark": benchmark,
+        "inference_metrics": inference_metrics,
         "notes": {
             "default_thickness_mm": default_mm,
             "default_note_text": note_text,
@@ -531,6 +540,7 @@ def run_semantic_pipeline(
     json_path = output_dir / f"{stem}_results.json"
     model_path = output_dir / f"{stem}_building_model.json"
     summary_path = output_dir / f"{stem}_summary.txt"
+    metrics_path = output_dir / f"{stem}_metrics.json"
 
     review_path = None
     if config.use_v5_pipeline and config.use_v4_pipeline:
@@ -631,10 +641,26 @@ def run_semantic_pipeline(
         if len(beams) > 10:
             summary_lines.append(f"  ... +{len(beams) - 10} more beams")
         summary_lines.append("")
+    summary_lines.extend(
+        [
+            "=== Inference metrics (raw drawing — no workbook GT) ===",
+            f"Slab+Beam entities: {inference_metrics['classification']['slab_beam_entity_count']} "
+            f"({inference_metrics['classification']['slab_beam_share_pct']}%)",
+            f"Mean confidence (Slab+Beam): {inference_metrics['classification']['mean_confidence_slab_beam']}%",
+            f"Low confidence (<{config.v5_review_threshold}%): "
+            f"{inference_metrics['classification']['low_confidence_pct']}%",
+            f"Review required: {inference_metrics['classification']['review_required_count']} "
+            f"({inference_metrics['classification']['review_required_pct']}%)",
+            f"Unknown: {inference_metrics['classification']['unknown_pct']}%",
+            f"Quality checks pass: {inference_metrics.get('quality_pass')}",
+            "",
+        ]
+    )
     if benchmark.get("status") == "computed":
         summary_lines.append(
-            f"Benchmark overall accuracy: {benchmark.get('overall_accuracy_pct')}%"
+            f"Workbook benchmark accuracy: {benchmark.get('overall_accuracy_pct')}%"
         )
+        summary_lines.append("")
     for s in slabs:
         summary_lines.append(
             f"  {s['slab_id']}: {s['area_m2']:.3f} m², "
@@ -642,6 +668,9 @@ def run_semantic_pipeline(
             f"{s['concrete_m3']:.3f} m³"
         )
     summary_path.write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+    metrics_path.write_text(
+        json.dumps(inference_metrics, indent=2), encoding="utf-8"
+    )
 
     excel_path = output_dir / f"{stem}_quantities.xlsx"
     try:
@@ -655,6 +684,7 @@ def run_semantic_pipeline(
         "svg": overlay_files["svg"],
         "overlay_html": overlay_files["html"],
         "summary": str(summary_path),
+        "metrics": str(metrics_path),
     }
     if excel_path is not None:
         result["output_files"]["excel"] = str(excel_path)

@@ -47,6 +47,8 @@ def _write_summary_sheet(wb, result: dict[str, Any]) -> None:
     notes = result.get("detection_notes") or {}
     cls = notes.get("classification") or {}
     benchmark = result.get("benchmark") or {}
+    inf = result.get("inference_metrics") or {}
+    inf_cls = inf.get("classification") or {}
     config = result.get("config") or {}
 
     rows: list[tuple[str, Any]] = [
@@ -73,6 +75,12 @@ def _write_summary_sheet(wb, result: dict[str, Any]) -> None:
         ("", ""),
         ("Benchmark status", benchmark.get("status")),
         ("Benchmark accuracy %", benchmark.get("overall_accuracy_pct")),
+        ("", ""),
+        ("Slab+Beam entity share %", inf_cls.get("slab_beam_share_pct")),
+        ("Mean confidence Slab+Beam %", inf_cls.get("mean_confidence_slab_beam")),
+        ("Low confidence %", inf_cls.get("low_confidence_pct")),
+        ("Unknown %", inf_cls.get("unknown_pct")),
+        ("Quality checks pass", inf.get("quality_pass")),
     ]
 
     for idx, (label, value) in enumerate(rows, start=3):
@@ -173,6 +181,105 @@ def _write_beams_sheet(wb, beams: list[dict[str, Any]]) -> None:
     _autosize_columns(ws)
 
 
+def _write_metrics_sheet(wb, result: dict[str, Any]) -> None:
+    inf = result.get("inference_metrics") or {}
+    if not inf:
+        return
+    ws = wb.create_sheet("Metrics")
+    bold = Font(bold=True)
+    row = 1
+    ws.cell(row=row, column=1, value="SDIE Inference Metrics").font = bold
+    row += 2
+
+    def section(title: str) -> None:
+        nonlocal row
+        ws.cell(row=row, column=1, value=title).font = bold
+        row += 1
+
+    def kv(label: str, value: Any) -> None:
+        nonlocal row
+        ws.cell(row=row, column=1, value=label)
+        ws.cell(row=row, column=2, value=value)
+        row += 1
+
+    gt = inf.get("ground_truth") or {}
+    section("Ground truth")
+    kv("Workbook benchmark", gt.get("workbook_benchmark"))
+    kv("Entity accuracy eval", gt.get("entity_accuracy_eval"))
+    row += 1
+
+    cls = inf.get("classification") or {}
+    section("Classification")
+    kv("Entities total", cls.get("entities_total"))
+    kv("Slab+Beam entity count", cls.get("slab_beam_entity_count"))
+    kv("Slab+Beam share %", cls.get("slab_beam_share_pct"))
+    kv("Mean confidence (all) %", cls.get("mean_confidence_all"))
+    kv("Mean confidence (Slab+Beam) %", cls.get("mean_confidence_slab_beam"))
+    kv("Low confidence count", cls.get("low_confidence_count"))
+    kv("Low confidence %", cls.get("low_confidence_pct"))
+    kv("Review required count", cls.get("review_required_count"))
+    kv("Review required %", cls.get("review_required_pct"))
+    kv("Unknown count", cls.get("unknown_count"))
+    kv("Unknown %", cls.get("unknown_pct"))
+    kv("DeepSeek ambiguous", cls.get("ambiguous_count"))
+    kv("DeepSeek updated", cls.get("deepseek_updated"))
+    row += 1
+
+    qty = inf.get("quantities") or {}
+    section("Quantities")
+    kv("Slab count", qty.get("slab_count"))
+    kv("Slab area (m2)", qty.get("slab_area_m2"))
+    kv("Slab concrete (m3)", qty.get("slab_concrete_m3"))
+    kv("Beam count", qty.get("beam_count"))
+    kv("Beam total length (m)", qty.get("beam_total_length_m"))
+    kv("Beam concrete (m3)", qty.get("beam_concrete_m3"))
+    kv("Total concrete (m3)", qty.get("total_concrete_m3"))
+    kv("Total shuttering (m2)", qty.get("total_shuttering_m2"))
+    row += 1
+
+    section("Quality targets")
+    targets = inf.get("quality_targets") or {}
+    for key, val in targets.items():
+        kv(key, val)
+    kv("Overall quality pass", inf.get("quality_pass"))
+    row += 1
+
+    checks = inf.get("quality_checks") or []
+    if checks:
+        section("Quality checks")
+        ws.cell(row=row, column=1, value="Check").font = bold
+        ws.cell(row=row, column=2, value="Value").font = bold
+        ws.cell(row=row, column=3, value="Target").font = bold
+        ws.cell(row=row, column=4, value="Pass").font = bold
+        row += 1
+        for item in checks:
+            ws.cell(row=row, column=1, value=item.get("check"))
+            ws.cell(row=row, column=2, value=item.get("value"))
+            ws.cell(row=row, column=3, value=item.get("target"))
+            ws.cell(row=row, column=4, value=item.get("pass"))
+            row += 1
+        row += 1
+
+    per_type = cls.get("per_type") or {}
+    if per_type:
+        section("Per-type confidence")
+        ws.cell(row=row, column=1, value="Component Type").font = bold
+        ws.cell(row=row, column=2, value="Count").font = bold
+        ws.cell(row=row, column=3, value="Mean confidence %").font = bold
+        ws.cell(row=row, column=4, value="Low confidence %").font = bold
+        row += 1
+        for ctype, stats in sorted(per_type.items()):
+            if not isinstance(stats, dict):
+                continue
+            ws.cell(row=row, column=1, value=ctype)
+            ws.cell(row=row, column=2, value=stats.get("count"))
+            ws.cell(row=row, column=3, value=stats.get("mean_confidence"))
+            ws.cell(row=row, column=4, value=stats.get("low_confidence_pct"))
+            row += 1
+
+    _autosize_columns(ws)
+
+
 def _write_classification_sheet(wb, result: dict[str, Any]) -> None:
     notes = result.get("detection_notes") or {}
     counts = notes.get("component_type_counts") or {}
@@ -197,6 +304,7 @@ def export_results_to_excel(
 
     wb = openpyxl.Workbook()
     _write_summary_sheet(wb, result)
+    _write_metrics_sheet(wb, result)
     _write_slabs_sheet(wb, result.get("slabs") or [])
     _write_beams_sheet(wb, result.get("beams") or [])
     _write_classification_sheet(wb, result)
