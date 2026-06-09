@@ -248,6 +248,26 @@ def run_semantic_pipeline(
         2,
     )
 
+    plan_x_bounds = None
+    if config.dedupe_plan_copies_x and floor_zone is not None:
+        from sdie.detection.beam_grid import resolve_plan_x_bounds_from_thk_labels
+
+        thk_band_y = floor_zone.thk_filter_bounds_y or floor_bounds_y
+        plan_x_bounds = resolve_plan_x_bounds_from_thk_labels(
+            thk_labels,
+            thk_band_y,
+        )
+        if plan_x_bounds is not None:
+            span = plan_x_bounds[1] - plan_x_bounds[0]
+            detection_notes["primary_plan_x_bounds_mm"] = [
+                round(plan_x_bounds[0], 1),
+                round(plan_x_bounds[1], 1),
+            ]
+            # Labels repeat on every plan copy — skip filter when span covers whole sheet.
+            if span > 25000.0:
+                plan_x_bounds = None
+                detection_notes["primary_plan_x_bounds_skipped"] = "wide_sheet_multi_copy"
+
     beams: list[dict] = []
     beam_notes: dict = {}
     if config.enable_beam_quantities:
@@ -260,7 +280,25 @@ def run_semantic_pipeline(
             min_confidence=config.min_beam_confidence,
             default_width_mm=config.default_beam_width_mm,
             default_depth_mm=config.default_beam_depth_mm,
+            plan_x_bounds_mm=plan_x_bounds,
         )
+        if config.dedupe_plan_copies_x and len(beams) > 1:
+            from sdie.quantity.beam import dedupe_plan_copy_beams
+
+            before = len(beams)
+            beams, removed = dedupe_plan_copy_beams(beams)
+            beam_notes["plan_copy_dedup_removed"] = removed
+            beam_notes["plan_copy_dedup_before"] = before
+            beam_notes["beam_count"] = len(beams)
+            beam_notes["total_length_m"] = round(
+                sum(b["length_m"] for b in beams), 3
+            )
+            beam_notes["concrete_m3"] = round(
+                sum(b["concrete_m3"] for b in beams), 6
+            )
+            beam_notes["shuttering_m2"] = round(
+                sum(b["shuttering_m2"] for b in beams), 6
+            )
         detection_notes["beam_quantities"] = beam_notes
         progress.stage(
             "Beam quantities ready",
@@ -550,6 +588,7 @@ def run_semantic_pipeline(
         classified=classified,
         gt_context=gt_context,
         component_type_counts=type_counts,
+        beams=beams,
     )
 
     version_label = (

@@ -85,6 +85,49 @@ def compute_beam_quantity(
     )
 
 
+def dedupe_plan_copy_beams(
+    beams: list[dict[str, Any]],
+    *,
+    y_bucket_mm: float = 80.0,
+) -> tuple[list[dict[str, Any]], int]:
+    """Keep one beam per (length, Y-band) — drops duplicate plan copies."""
+    groups: dict[tuple[float, float], list[dict[str, Any]]] = {}
+    for beam in beams:
+        centroid = beam.get("centroid_mm") or [0.0, 0.0]
+        y_key = round(float(centroid[1]) / y_bucket_mm) * y_bucket_mm
+        key = (round(float(beam.get("length_m") or 0), 2), y_key)
+        groups.setdefault(key, []).append(beam)
+    removed = sum(len(g) - 1 for g in groups.values())
+    kept: list[dict[str, Any]] = []
+    for group in groups.values():
+        kept.append(
+            min(
+                group,
+                key=lambda b: (b.get("centroid_mm") or [0.0, 0.0])[0],
+            )
+        )
+    kept.sort(
+        key=lambda b: (
+            (b.get("centroid_mm") or [0.0, 0.0])[1],
+            (b.get("centroid_mm") or [0.0, 0.0])[0],
+        ),
+        reverse=True,
+    )
+    for idx, beam in enumerate(kept, start=1):
+        beam["beam_id"] = f"BEAM-{idx:03d}"
+    return kept, removed
+
+
+def _centroid_in_plan_x_bounds(
+    centroid_mm: list[float] | None,
+    plan_x_bounds_mm: tuple[float, float] | None,
+) -> bool:
+    if plan_x_bounds_mm is None or not centroid_mm or len(centroid_mm) < 1:
+        return True
+    xmin, xmax = plan_x_bounds_mm
+    return xmin <= float(centroid_mm[0]) <= xmax
+
+
 def compute_beam_quantities_from_classification(
     classified: list[ClassifiedComponent],
     *,
@@ -94,6 +137,7 @@ def compute_beam_quantities_from_classification(
     min_confidence: float = 70.0,
     default_width_mm: int = 300,
     default_depth_mm: int = 600,
+    plan_x_bounds_mm: tuple[float, float] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """
     Derive beam takeoff from classified Beam components (centerline length × section).
@@ -107,6 +151,7 @@ def compute_beam_quantities_from_classification(
     beams: list[dict[str, Any]] = []
     skipped_short = 0
     skipped_low_conf = 0
+    skipped_duplicate_copy = 0
 
     beam_idx = 0
     for comp in classified:
@@ -114,6 +159,10 @@ def compute_beam_quantities_from_classification(
             continue
         if comp.confidence < min_confidence:
             skipped_low_conf += 1
+            continue
+        centroid = list(comp.centroid_mm) if comp.centroid_mm else None
+        if not _centroid_in_plan_x_bounds(centroid, plan_x_bounds_mm):
+            skipped_duplicate_copy += 1
             continue
         geo = comp.geometry_features or {}
         length_mm = geo.get("length_mm")
@@ -131,7 +180,6 @@ def compute_beam_quantities_from_classification(
 
         qty = compute_beam_quantity(float(length_mm), width_mm, depth_mm)
         beam_idx += 1
-        centroid = list(comp.centroid_mm) if comp.centroid_mm else None
         beams.append(
             {
                 "beam_id": f"BEAM-{beam_idx:03d}",
@@ -148,6 +196,7 @@ def compute_beam_quantities_from_classification(
                 "confidence": comp.confidence,
                 "review_required": comp.review_required,
                 "centroid_mm": centroid,
+                "geometry_wkt": comp.geometry_wkt,
                 "calculation_trace": qty.trace,
             }
         )
@@ -161,6 +210,8 @@ def compute_beam_quantities_from_classification(
         "default_section_source": draw_src,
         "skipped_short": skipped_short,
         "skipped_low_confidence": skipped_low_conf,
+        "skipped_duplicate_copy": skipped_duplicate_copy,
+        "plan_x_bounds_mm": list(plan_x_bounds_mm) if plan_x_bounds_mm else None,
     }
     notes = {
         "engine": "beam_quantity_v1",

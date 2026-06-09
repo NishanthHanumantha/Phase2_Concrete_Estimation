@@ -286,6 +286,37 @@ def _renumber_slab_candidates(
     return candidates
 
 
+def _dedupe_plan_copy_slabs(
+    candidates: list[SlabCandidate],
+    *,
+    y_bucket_mm: float = 80.0,
+) -> tuple[list[SlabCandidate], int]:
+    """
+    Drop side-by-side duplicate plan copies: one bay per (area, Y-band).
+    Keeps the leftmost copy (minimum centroid X).
+    """
+    groups: dict[tuple[float, float], list[SlabCandidate]] = {}
+    for cand in candidates:
+        cy = cand.centroid_cm[1] if cand.centroid_cm else 0.0
+        y_key = round(cy / y_bucket_mm) * y_bucket_mm
+        key = (round(cand.area_m2, 2), y_key)
+        groups.setdefault(key, []).append(cand)
+    removed = sum(len(g) - 1 for g in groups.values())
+    kept: list[SlabCandidate] = []
+    for group in groups.values():
+        kept.append(
+            min(group, key=lambda c: c.centroid_cm[0] if c.centroid_cm else 0.0)
+        )
+    kept.sort(
+        key=lambda c: (
+            c.centroid_cm[1] if c.centroid_cm else 0.0,
+            c.centroid_cm[0] if c.centroid_cm else 0.0,
+        ),
+        reverse=True,
+    )
+    return kept, removed
+
+
 def detect_slabs_after_classification(
     msp,
     *,
@@ -361,12 +392,13 @@ def detect_slabs_after_classification(
     )
     grid_notes: dict = {}
     tower_bounds_y = label_bounds_y or floor_bounds_y
+    tower_min_area = max(config.tower_min_slab_area_m2, config.min_slab_area_m2)
     grid_candidates = detect_beam_grid_slabs(
         msp,
         frame_layers=frame_layers,
         annotation_layers=config.annotation_layers,
         area_to_m2_factor=area_to_m2_factor,
-        min_area_m2=config.min_slab_area_m2,
+        min_area_m2=tower_min_area,
         min_horizontal_span_mm=config.grid_min_horizontal_span_mm,
         min_vertical_span_mm=config.grid_min_vertical_span_mm,
         axis_cluster_tol_mm=config.grid_axis_cluster_tol_mm,
@@ -428,12 +460,13 @@ def detect_slabs_after_classification(
         )
         if podium_bounds_y is not None:
             podium_notes: dict = {}
+            podium_min_area = max(config.podium_min_slab_area_m2, config.min_slab_area_m2)
             podium_candidates = detect_beam_grid_slabs(
                 msp,
                 frame_layers=frame_layers,
                 annotation_layers=config.annotation_layers,
                 area_to_m2_factor=area_to_m2_factor,
-                min_area_m2=config.min_slab_area_m2,
+                min_area_m2=podium_min_area,
                 min_horizontal_span_mm=config.podium_grid_min_horizontal_span_mm,
                 min_vertical_span_mm=config.podium_grid_min_vertical_span_mm,
                 axis_cluster_tol_mm=config.grid_axis_cluster_tol_mm,
@@ -472,11 +505,18 @@ def detect_slabs_after_classification(
         notes["selected"] = "none"
 
     if podium_candidates:
-        candidates = _renumber_slab_candidates(
-            candidates + podium_candidates,
-            id_prefix="SLAB",
-        )
+        candidates = candidates + podium_candidates
         notes["selected"] = f"{notes['selected']}+podium_grid"
+
+    if config.dedupe_plan_copies_x and len(candidates) > 1:
+        before = len(candidates)
+        candidates, removed = _dedupe_plan_copy_slabs(candidates)
+        notes["plan_copy_dedup_removed"] = removed
+        notes["plan_copy_dedup_before"] = before
+        notes["plan_copy_dedup_after"] = len(candidates)
+
+    if candidates:
+        candidates = _renumber_slab_candidates(candidates, id_prefix="SLAB")
         notes["slab_count_with_podium"] = len(candidates)
 
     for cand in candidates:

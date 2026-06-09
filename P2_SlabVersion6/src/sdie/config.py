@@ -30,6 +30,9 @@ class PipelineConfig:
     layer_discovery_notes: dict = field(default_factory=dict)
     detection_mode: str = "auto"  # auto | semantic | region | beam_frame | beam_grid
     min_slab_area_m2: float = 0.4
+    tower_min_slab_area_m2: float = 5.0
+    podium_min_slab_area_m2: float = 3.0
+    dedupe_plan_copies_x: bool = True
     merge_beam_grid_to_estimator_bays: bool = True
     bay_merge_small_preserve_max_m2: float = 3.5
     bay_merge_auto_infer_spans: bool = True

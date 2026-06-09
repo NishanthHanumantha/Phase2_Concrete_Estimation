@@ -336,12 +336,31 @@ def build_svg_content(
     return "\n".join(parts)
 
 
+def _beams_overlay_items(beams: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "beam_id": b.get("beam_id"),
+            "component_id": b.get("component_id"),
+            "layer": b.get("layer"),
+            "length_m": b.get("length_m"),
+            "width_mm": b.get("width_mm"),
+            "depth_mm": b.get("depth_mm"),
+            "concrete_m3": b.get("concrete_m3"),
+            "confidence": b.get("confidence"),
+            "geometry_wkt": b.get("geometry_wkt"),
+            "centroid_mm": b.get("centroid_mm"),
+        }
+        for b in beams
+    ]
+
+
 def build_diagnostic_svg(
     slabs: list[dict],
     extents: dict | None,
     *,
     classified: list[ClassifiedComponent] | None = None,
     excluded_wkt: str | None = None,
+    beams: list[dict[str, Any]] | None = None,
     crop_to_slabs: bool = True,
 ) -> tuple[str, int, int, float, float, float, float]:
     """Build layered SVG for the diagnostic viewer. Returns svg + view metadata."""
@@ -391,6 +410,36 @@ def build_diagnostic_svg(
             stroke_width=0.5,
         )
     parts.append("</g>")
+
+    if beams:
+        parts.append('<g id="layer-beam-quantities" data-layer="beam-quantities">')
+        for beam in beams:
+            beam_id = html.escape(str(beam.get("beam_id", "")))
+            comp_id = html.escape(str(beam.get("component_id", "")))
+            attrs = (
+                f' class="beam-qty" data-beam-id="{beam_id}" '
+                f'data-component-id="{comp_id}"'
+            )
+            centroid = beam.get("centroid_mm")
+            _append_classified_geom(
+                parts,
+                beam.get("geometry_wkt"),
+                tuple(centroid) if centroid else None,
+                tx,
+                ty,
+                stroke="#1E88E5",
+                stroke_width=2.2,
+                extra_attrs=attrs,
+            )
+            if centroid and len(centroid) >= 2:
+                parts.append(
+                    f'<text x="{tx(centroid[0]):.1f}" y="{ty(centroid[1]):.1f}" '
+                    f'fill="#BBDEFB" font-size="8" text-anchor="middle" '
+                    f'dominant-baseline="middle" font-family="Segoe UI, sans-serif" '
+                    f'paint-order="stroke" stroke="#0D47A1" stroke-width="2" '
+                    f'pointer-events="none">{beam_id}</text>'
+                )
+        parts.append("</g>")
 
     if classified:
         by_type: dict[str, list[ClassifiedComponent]] = {}
@@ -483,6 +532,7 @@ def write_diagnostic_overlay_html(
     gt_context: dict[str, Any] | None,
     component_type_counts: dict[str, int],
     totals: dict | None,
+    beams: list[dict[str, Any]] | None = None,
     view_meta: tuple[int, int, float, float, float, float],
 ) -> None:
     """Self-contained diagnostic HTML with layers, GT summary, and slab inspection."""
@@ -492,6 +542,7 @@ def write_diagnostic_overlay_html(
     gt_json = json.dumps(gt_context or {}, ensure_ascii=False)
     counts_json = json.dumps(component_type_counts, ensure_ascii=False)
     totals_json = json.dumps(totals or {}, ensure_ascii=False)
+    beams_json = json.dumps(beams or [], ensure_ascii=False)
     svg_w, svg_h, xmin, ymin, xmax, ymax = view_meta
 
     doc = f"""<!DOCTYPE html>
@@ -534,7 +585,10 @@ def write_diagnostic_overlay_html(
     .stat.weak .n {{ color: #ffca28; }}
     .stat.missed .n {{ color: #ef5350; }}
     .stat.extra .n {{ color: #ec407a; }}
-    #slab-list, #issue-list {{ max-height: 180px; overflow-y: auto; }}
+    #slab-list, #beam-list, #issue-list {{ max-height: 160px; overflow-y: auto; }}
+    .list-item.beam {{ border-left-color: #1E88E5; }}
+    .beam-qty {{ cursor: pointer; }}
+    .beam-qty:hover {{ stroke-width: 3.5; filter: brightness(1.2); }}
     .list-item {{
       padding: 6px 8px; margin: 3px 0; border-radius: 5px; background: #222; cursor: pointer;
       border-left: 3px solid #444;
@@ -586,6 +640,10 @@ def write_diagnostic_overlay_html(
         <label><input type="checkbox" id="toggle-beams" checked/> Beam grid (footprint)</label>
       </div>
       <div class="layer-row">
+        <span class="swatch" style="background:#1E88E5"></span>
+        <label><input type="checkbox" id="toggle-beam-qty" checked/> Quantified beams (BEAM-xxx)</label>
+      </div>
+      <div class="layer-row">
         <span class="swatch" style="background:#E91E63"></span>
         <label><input type="checkbox" id="toggle-exclusions" checked/> Exclusions (cols/cores)</label>
       </div>
@@ -607,9 +665,11 @@ def write_diagnostic_overlay_html(
         <button type="button" data-filter="extra">Extra</button>
       </div>
       <div id="slab-list"></div>
+      <h3>Beams (Excel)</h3>
+      <div id="beam-list"></div>
       <h3>Issues</h3>
       <div id="issue-list"></div>
-      <div id="detail-panel"><div class="empty">Click a slab bay or classified entity for details.</div></div>
+      <div id="detail-panel"><div class="empty">Click a slab, beam, or classified entity for details.</div></div>
     </aside>
     <div id="viewport">
       <div id="stage">{svg_content}</div>
@@ -618,6 +678,7 @@ def write_diagnostic_overlay_html(
   <script>
 (function () {{
   const SLABS = {slabs_json};
+  const BEAMS = {beams_json};
   const CLASSIFIED = {classified_json};
   const GT = {gt_json};
   const COUNTS = {counts_json};
@@ -698,6 +759,40 @@ def write_diagnostic_overlay_html(
     detail.innerHTML = lines.join("<br/>");
   }}
 
+  function focusBeam(beamId) {{
+    const beam = BEAMS.find(b => b.beam_id === beamId);
+    if (!beam || !svg) return;
+    const c = beam.centroid_mm;
+    if (!c || c.length < 2) return;
+    const w = VIEW.xmax - VIEW.xmin;
+    const h = VIEW.ymax - VIEW.ymin;
+    const sx = (c[0] - VIEW.xmin) / w * VIEW.svgW;
+    const sy = VIEW.svgH - (c[1] - VIEW.ymin) / h * VIEW.svgH;
+    const vw = viewport.clientWidth;
+    const vh = viewport.clientHeight;
+    scale = Math.min(vw, vh) * 0.35 / Math.max(VIEW.svgW, VIEW.svgH) * 4;
+    panX = vw / 2 - sx * scale;
+    panY = vh / 2 - sy * scale;
+    applyTransform();
+    showBeamDetail(beamId);
+    document.querySelectorAll(".beam-qty").forEach(el => {{
+      el.style.filter = el.dataset.beamId === beamId ? "brightness(1.5)" : "";
+    }});
+    document.querySelectorAll(".slab-poly").forEach(el => {{ el.style.filter = ""; }});
+  }}
+
+  function showBeamDetail(beamId) {{
+    const b = BEAMS.find(x => x.beam_id === beamId);
+    if (!b) return;
+    detail.innerHTML = [
+      `<strong>${{b.beam_id}}</strong>`,
+      `Layer: ${{b.layer || "—"}} · L=${{b.length_m?.toFixed(2)}} m`,
+      `Section: ${{b.width_mm}}×${{b.depth_mm}} mm · Concrete: ${{b.concrete_m3?.toFixed(3)}} m³`,
+      `Confidence: ${{b.confidence?.toFixed?.(1) ?? b.confidence}}%`,
+      b.component_id ? `Entity: ${{b.component_id}}` : "",
+    ].filter(Boolean).join("<br/>");
+  }}
+
   function showCompDetail(el) {{
     detail.innerHTML = [
       `<strong>${{el.dataset.compId}}</strong>`,
@@ -713,14 +808,32 @@ def write_diagnostic_overlay_html(
     const hasGt = gt.gt_count > 0;
     el.innerHTML = `
       <div class="stat-grid">
-        <div class="stat"><div class="n">${{TOTALS.slab_count || SLABS.length}}</div><div class="l">Model slabs</div></div>
-        <div class="stat"><div class="n">${{(TOTALS.area_m2 || 0).toFixed(0)}}</div><div class="l">Area m²</div></div>
+        <div class="stat"><div class="n">${{TOTALS.slab_count || SLABS.length}}</div><div class="l">Slabs</div></div>
+        <div class="stat"><div class="n">${{TOTALS.beam_count || BEAMS.length}}</div><div class="l">Beams</div></div>
+        <div class="stat"><div class="n">${{(TOTALS.area_m2 || 0).toFixed(0)}}</div><div class="l">Slab m²</div></div>
+        <div class="stat"><div class="n">${{(TOTALS.concrete_m3 || 0).toFixed(0)}}</div><div class="l">Total m³</div></div>
         ${{hasGt ? `
         <div class="stat matched"><div class="n">${{gt.matched_count || 0}}</div><div class="l">GT matched</div></div>
         <div class="stat weak"><div class="n">${{gt.weak_count || 0}}</div><div class="l">Weak</div></div>
         <div class="stat missed"><div class="n">${{gt.missed_count || 0}}</div><div class="l">Missed GT</div></div>
         <div class="stat extra"><div class="n">${{gt.extra_count || 0}}</div><div class="l">Extra</div></div>` : ""}}
       </div>`;
+  }}
+
+  function renderBeamList() {{
+    const list = document.getElementById("beam-list");
+    if (!BEAMS.length) {{
+      list.innerHTML = '<div class="empty" style="padding:6px">No beams quantified.</div>';
+      return;
+    }}
+    const items = [...BEAMS].sort((a, b) => a.beam_id.localeCompare(b.beam_id));
+    list.innerHTML = items.map(b => `
+      <div class="list-item beam" data-beam-id="${{b.beam_id}}">
+        ${{b.beam_id}} · L=${{b.length_m?.toFixed(1)}} m · ${{b.concrete_m3?.toFixed(2)}} m³
+      </div>`).join("");
+    list.querySelectorAll(".list-item").forEach(row => {{
+      row.onclick = () => focusBeam(row.dataset.beamId);
+    }});
   }}
 
   function renderSlabList() {{
@@ -772,6 +885,7 @@ def write_diagnostic_overlay_html(
 
   document.getElementById("toggle-slabs").onchange = e => setLayerVisible("layer-slabs", e.target.checked);
   document.getElementById("toggle-beams").onchange = e => setLayerVisible("layer-beams", e.target.checked);
+  document.getElementById("toggle-beam-qty").onchange = e => setLayerVisible("layer-beam-quantities", e.target.checked);
   document.getElementById("toggle-exclusions").onchange = e => setLayerVisible("layer-exclusions", e.target.checked);
   document.getElementById("toggle-classified").onchange = e => {{
     document.querySelectorAll('[data-layer="classified"]').forEach(g => {{
@@ -813,6 +927,12 @@ def write_diagnostic_overlay_html(
         showCompDetail(el);
       }});
     }});
+    svg.querySelectorAll(".beam-qty").forEach(el => {{
+      el.addEventListener("click", ev => {{
+        ev.stopPropagation();
+        focusBeam(el.dataset.beamId);
+      }});
+    }});
   }}
 
   viewport.addEventListener("wheel", e => {{
@@ -847,6 +967,7 @@ def write_diagnostic_overlay_html(
 
   renderSummary();
   renderSlabList();
+  renderBeamList();
   renderIssues();
   renderClassifiedToggles();
   bindTypeToggles();
@@ -885,6 +1006,7 @@ def write_overlay_outputs(
     classified: list[ClassifiedComponent] | None = None,
     gt_context: dict[str, Any] | None = None,
     component_type_counts: dict[str, int] | None = None,
+    beams: list[dict[str, Any]] | None = None,
 ) -> dict[str, str]:
     svg_path = output_dir / f"{stem}_overlay.svg"
     html_path = output_dir / f"{stem}_overlay.html"
@@ -900,11 +1022,13 @@ def write_overlay_outputs(
     svg_path.write_text(svg_content, encoding="utf-8")
 
     classified_items = _classified_overlay_items(classified or [])
+    overlay_beams = beams or []
     diag_svg, svg_w, svg_h, xmin, ymin, xmax, ymax = build_diagnostic_svg(
         overlay_slabs,
         extents,
         classified=classified,
         excluded_wkt=excluded_wkt,
+        beams=overlay_beams,
     )
     write_diagnostic_overlay_html(
         html_path,
@@ -915,6 +1039,7 @@ def write_overlay_outputs(
         gt_context=gt_context,
         component_type_counts=component_type_counts or {},
         totals=totals,
+        beams=_beams_overlay_items(overlay_beams),
         view_meta=(svg_w, svg_h, xmin, ymin, xmax, ymax),
     )
     return {"svg": str(svg_path), "html": str(html_path)}

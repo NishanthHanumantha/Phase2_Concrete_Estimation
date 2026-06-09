@@ -219,6 +219,33 @@ def _select_primary_vertical_axis_cluster(
     return best
 
 
+def resolve_plan_x_bounds_from_thk_labels(
+    thk_labels,
+    label_bounds_y: tuple[float, float] | None,
+    *,
+    margin_mm: float = 6000.0,
+) -> tuple[float, float] | None:
+    """
+    X extent of the active plan copy from *THK label positions.
+    On wide consultant sheets, labels cluster on one copy while framing repeats.
+    """
+    xs: list[float] = []
+    for lb in thk_labels:
+        xy = getattr(lb, "xy_cm", None) or getattr(lb, "xy", None)
+        if not xy or len(xy) < 2:
+            continue
+        y = float(xy[1])
+        if label_bounds_y is not None:
+            if not (label_bounds_y[0] <= y <= label_bounds_y[1]):
+                continue
+        xs.append(float(xy[0]))
+    if len(xs) < 2:
+        return None
+    xmin, xmax = min(xs), max(xs)
+    pad = max(margin_mm, (xmax - xmin) * 0.35)
+    return (xmin - pad, xmax + pad)
+
+
 def bay_polygon_for_point(
     x: float,
     y: float,
@@ -319,7 +346,6 @@ def detect_beam_grid_slabs(
         bounds_y=bounds_y,
     )
     if augment_sparse_grid_axes:
-        axes_y = _augment_horizontal_axes(axes_y, bounds_y)
         if bounds_y is not None:
             axes_x = _select_primary_vertical_axis_cluster(
                 axes_x,
@@ -329,6 +355,7 @@ def detect_beam_grid_slabs(
                 gap_threshold_mm=axis_cluster_tol_mm * 5.0,
                 min_horizontal_span_mm=min_horizontal_span_mm,
             )
+        axes_y = _augment_horizontal_axes(axes_y, bounds_y)
         axes_x = _augment_vertical_axes(axes_x, bounds_y)
     if len(axes_x) < 2 or len(axes_y) < 2:
         return []
