@@ -15,3 +15,18 @@ Thumbs.db
 
 # Cursor
 .cursor/
+
+# Pipeline outputs (regenerable)
+**/Output/**
+!**/Output/.gitkeep
+
+# Temp / web UI job cache
+**/_tmp/
+**/web_jobs/
+
+# AutoCAD / Office temp binaries
+*.bak
+*.dwg
+*.dwl
+*.dwl2
+~$*
