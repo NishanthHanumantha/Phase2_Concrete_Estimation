@@ -23,7 +23,9 @@ from sdie.validation.component_gt import (
 from sdie.validation.ml_project_metrics import (
     build_ml_project_report,
     build_test_corpus_metrics,
+    eval_fragment_from_train_metrics,
     format_train_metrics,
+    merge_eval_reports,
 )
 
 
@@ -35,6 +37,7 @@ def _run_train_evaluation(
     kb_path: Path,
     enable_deepseek: bool,
     max_drawings: int | None = None,
+    skip_drawings: int = 0,
 ) -> dict:
     """Train eval with per-drawing progress lines for batch monitoring."""
     gt = load_all_entity_ground_truth(
@@ -50,10 +53,13 @@ def _run_train_evaluation(
         for s in iter_gt_drawing_specs(manifest_path, project_root)
         if (s.dxf_path.name, s.project_id) in needed
     ]
+    total_drawings = len(specs)
+    if skip_drawings:
+        specs = specs[skip_drawings:]
     if max_drawings is not None:
         specs = specs[:max_drawings]
-        selected = {s.dxf_path.name for s in specs}
-        gt = [row for row in gt if row.source_drawing in selected]
+    selected = {s.dxf_path.name for s in specs}
+    gt = [row for row in gt if row.source_drawing in selected]
     project_ids = {s.project_id for s in specs}
     atlas_by_project = {
         pid: load_atlas(atlas_path, project_id=pid) for pid in project_ids
@@ -63,9 +69,13 @@ def _run_train_evaluation(
     from sdie.validation.component_eval import _classify_drawing
 
     runs: list[ClassificationRun] = []
-    total = len(specs)
+    batch_total = len(specs)
     for i, spec in enumerate(specs, start=1):
-        print(f"[{i}/{total}] START {spec.dxf_path.name}", flush=True)
+        global_idx = skip_drawings + i
+        print(
+            f"[{global_idx}/{total_drawings}] START {spec.dxf_path.name}",
+            flush=True,
+        )
         components = _classify_drawing(
             spec.dxf_path,
             spec.project_id,
@@ -82,7 +92,10 @@ def _run_train_evaluation(
                 components=components,
             )
         )
-        print(f"[{i}/{total}] DONE {spec.dxf_path.name}", flush=True)
+        print(
+            f"[{global_idx}/{total_drawings}] DONE {spec.dxf_path.name}",
+            flush=True,
+        )
 
     report = evaluate_components(gt, runs)
     report["gt_corpus"] = summarize_gt_corpus(gt)
@@ -94,6 +107,9 @@ def _run_train_evaluation(
         "component_tagged_only": True,
         "slab_beam_only": True,
         "max_drawings": max_drawings,
+        "skip_drawings": skip_drawings,
+        "drawings_in_batch": batch_total,
+        "drawings_total": total_drawings,
     }
     return report
 
@@ -151,6 +167,20 @@ def main() -> int:
         metavar="N",
         help="Train eval: only first N teach drawings (faster sample)",
     )
+    parser.add_argument(
+        "--skip-drawings",
+        type=int,
+        default=0,
+        metavar="N",
+        help="Train eval: skip first N teach drawings (resume partial run)",
+    )
+    parser.add_argument(
+        "--merge-from",
+        type=Path,
+        default=None,
+        metavar="JSON",
+        help="Merge saved train_metrics.json from a prior partial run into final report",
+    )
     args = parser.parse_args()
 
     run_train = not args.test_only
@@ -161,8 +191,12 @@ def main() -> int:
 
     if run_train:
         print("=== TRAIN (X): Tagged Files_2 entity classification ===")
+        if args.skip_drawings:
+            print(f"  Skipping first {args.skip_drawings} teach drawings")
         if args.max_drawings:
             print(f"  Limiting train eval to first {args.max_drawings} drawings")
+        if args.merge_from:
+            print(f"  Will merge prior metrics from {args.merge_from}")
         eval_report = _run_train_evaluation(
             args.manifest,
             args.project_root,
@@ -170,7 +204,23 @@ def main() -> int:
             kb_path=args.kb,
             enable_deepseek=not args.no_deepseek,
             max_drawings=args.max_drawings,
+            skip_drawings=args.skip_drawings,
         )
+        if args.merge_from and args.merge_from.exists():
+            prior = json.loads(args.merge_from.read_text(encoding="utf-8"))
+            prior_fragment = eval_fragment_from_train_metrics(prior)
+            eval_report = merge_eval_reports(prior_fragment, eval_report)
+            full_gt = load_all_entity_ground_truth(
+                args.manifest,
+                args.project_root,
+                include_primary_slab=False,
+                component_tagged_only=True,
+                slab_beam_only=True,
+            )
+            eval_report["gt_corpus"] = summarize_gt_corpus(full_gt)
+            mode = eval_report.get("mode") or {}
+            mode["merged_from"] = str(args.merge_from).replace("\\", "/")
+            eval_report["mode"] = mode
         train_metrics = format_train_metrics(eval_report)
         checks = train_metrics.get("quality_checks") or []
         train_metrics["quality_pass"] = all(c["pass"] for c in checks) if checks else None

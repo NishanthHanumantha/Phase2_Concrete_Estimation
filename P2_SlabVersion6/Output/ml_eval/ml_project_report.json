@@ -1,0 +1,182 @@
+{
+  "project": "SDIE V6 slab_beam",
+  "train_corpus": "Revised Project Knowledge/Tagged Files_2",
+  "test_corpus": "Revised Project Knowledge/Raw files_2",
+  "phase_targets": {
+    "classification_f1_pct_min": 85.0,
+    "reference_accuracy_pct_min": 85.0
+  },
+  "train": {
+    "split": "train",
+    "corpus": "Tagged Files_2",
+    "metric_type": "entity_classification",
+    "ground_truth": "manifest_supervised_flags",
+    "summary": {
+      "entities_evaluated": 22943,
+      "correct": 8878,
+      "accuracy_pct": 38.7,
+      "missing_predictions": 2818,
+      "slab_beam_mean_f1_pct": 40.5
+    },
+    "per_class": {
+      "Slab": {
+        "tp": 5269,
+        "fp": 6169,
+        "fn": 6498,
+        "precision_pct": 46.1,
+        "recall_pct": 44.8,
+        "f1_pct": 45.4
+      },
+      "Beam": {
+        "tp": 3609,
+        "fp": 5408,
+        "fn": 7567,
+        "precision_pct": 40.0,
+        "recall_pct": 32.3,
+        "f1_pct": 35.7
+      },
+      "Column": {
+        "tp": 0,
+        "fp": 1297,
+        "fn": 0,
+        "precision_pct": 0.0,
+        "recall_pct": 0.0,
+        "f1_pct": 0.0
+      },
+      "Shear Wall": {
+        "tp": 0,
+        "fp": 384,
+        "fn": 0,
+        "precision_pct": 0.0,
+        "recall_pct": 0.0,
+        "f1_pct": 0.0
+      }
+    },
+    "confusion": {
+      "Slab": {
+        "Slab": 5269,
+        "Beam": 5408,
+        "Column": 478,
+        "Shear Wall": 164,
+        "Other": 448
+      },
+      "Beam": {
+        "Slab": 6169,
+        "Beam": 3609,
+        "Column": 819,
+        "Shear Wall": 220,
+        "Other": 359
+      },
+      "Column": {
+        "Slab": 0,
+        "Beam": 0,
+        "Column": 0,
+        "Shear Wall": 0,
+        "Other": 0
+      },
+      "Shear Wall": {
+        "Slab": 0,
+        "Beam": 0,
+        "Column": 0,
+        "Shear Wall": 0,
+        "Other": 0
+      }
+    },
+    "targets": {
+      "accuracy_pct_min": 85.0,
+      "slab_f1_pct_min": 85.0,
+      "beam_f1_pct_min": 85.0
+    },
+    "quality_checks": [
+      {
+        "check": "train_accuracy_pct",
+        "value": 38.7,
+        "target": ">= 85.0",
+        "pass": false
+      },
+      {
+        "check": "train_slab_f1_pct",
+        "value": 45.4,
+        "target": ">= 85.0",
+        "pass": false
+      },
+      {
+        "check": "train_beam_f1_pct",
+        "value": 35.7,
+        "target": ">= 85.0",
+        "pass": false
+      },
+      {
+        "check": "train_slab_beam_mean_f1_pct",
+        "value": 40.5,
+        "target": ">= 85.0",
+        "pass": false
+      }
+    ],
+    "quality_pass": false,
+    "mode": {
+      "merged_from": "Output/ml_eval/train_partial_first10.json"
+    },
+    "gt_corpus": {
+      "total_entities": 25761,
+      "by_type": {
+        "Slab": 11767,
+        "Beam": 13994
+      },
+      "by_project": {
+        "INIZIO": 25761
+      },
+      "by_drawing": {
+        "INIZIO/SlabTag-Inizio_ST13.dxf": 32,
+        "INIZIO/SlabTag_Inizio_ST1.dxf": 544,
+        "INIZIO/SlabTag_Inizio_ST10.dxf": 675,
+        "INIZIO/SlabTag_Inizio_ST11.dxf": 28,
+        "INIZIO/SlabTag_Inizio_ST12.dxf": 731,
+        "INIZIO/SlabTag_Inizio_ST14.dxf": 32,
+        "INIZIO/Slabtag_Inizio_ST15.dxf": 502,
+        "INIZIO/SlabTag_Inizio_ST16.dxf": 494,
+        "INIZIO/SlabTag_Inizio_ST2.dxf": 691,
+        "INIZIO/SlabTag_Inizio_ST3.dxf": 680,
+        "INIZIO/SlabTag_Inizio_ST4.dxf": 759,
+        "INIZIO/SlabTag_Inizio_ST5.dxf": 762,
+        "INIZIO/SlabTag_Inizio_ST6.dxf": 736,
+        "INIZIO/SlabTag_Inizio_ST8.dxf": 884,
+        "INIZIO/SlabTag_Inizio_ST9.dxf": 641,
+        "INIZIO/SlabTag_Inzio_ST17.dxf": 479,
+        "INIZIO/SlabTag_TO_ST1.dxf": 594,
+        "INIZIO/SlabTag_TO_ST2.dxf": 675,
+        "INIZIO/SlabTag_TO_ST3.dxf": 638,
+        "INIZIO/ST_E_1.dxf": 450,
+        "INIZIO/ST_E_2.dxf": 337,
+        "INIZIO/ST_E_3.dxf": 403,
+        "INIZIO/BeamTAG_I_ST1.dxf": 561,
+        "INIZIO/BeamTag_I_ST2.dxf": 702,
+        "INIZIO/BeamTag_TO_ST1.dxf": 593,
+        "INIZIO/BeamTag_TO_ST2.dxf": 675,
+        "INIZIO/BeamTag_TO_ST3.dxf": 638,
+        "INIZIO/BT_DH_1.dxf": 445,
+        "INIZIO/BT_DH_2.dxf": 506,
+        "INIZIO/BT_DH_3.dxf": 522,
+        "INIZIO/BT_DH_4.dxf": 508,
+        "INIZIO/BT_DH_5.dxf": 519,
+        "INIZIO/BT_E_1.dxf": 493,
+        "INIZIO/BT_E_2.dxf": 137,
+        "INIZIO/BT_E_3.dxf": 98,
+        "INIZIO/BT_GC_1.dxf": 318,
+        "INIZIO/BT_GC_3.dxf": 345,
+        "INIZIO/BT_I_ST10.dxf": 556,
+        "INIZIO/BT_I_ST12.dxf": 754,
+        "INIZIO/BT_I_ST13.dxf": 690,
+        "INIZIO/BT_I_ST4.dxf": 794,
+        "INIZIO/BT_I_ST5.dxf": 800,
+        "INIZIO/BT_I_ST6.dxf": 771,
+        "INIZIO/BT_I_ST7.dxf": 791,
+        "INIZIO/BT_I_ST8.dxf": 1092,
+        "INIZIO/BT_I_ST9.dxf": 642,
+        "INIZIO/BT_M_1.dxf": 44
+      }
+    }
+  },
+  "test": null,
+  "overall_pass": false
+}

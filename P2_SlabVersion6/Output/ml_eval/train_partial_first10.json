@@ -1,0 +1,139 @@
+{
+  "split": "train",
+  "corpus": "Tagged Files_2",
+  "metric_type": "entity_classification",
+  "ground_truth": "manifest_supervised_flags",
+  "summary": {
+    "entities_evaluated": 4409,
+    "correct": 668,
+    "accuracy_pct": 15.2,
+    "missing_predictions": 0,
+    "slab_beam_mean_f1_pct": 13.2
+  },
+  "per_class": {
+    "Slab": {
+      "tp": 668,
+      "fp": 0,
+      "fn": 3741,
+      "precision_pct": 100.0,
+      "recall_pct": 15.2,
+      "f1_pct": 26.3
+    },
+    "Beam": {
+      "tp": 0,
+      "fp": 3307,
+      "fn": 0,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_pct": 0.0
+    },
+    "Column": {
+      "tp": 0,
+      "fp": 216,
+      "fn": 0,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_pct": 0.0
+    },
+    "Shear Wall": {
+      "tp": 0,
+      "fp": 16,
+      "fn": 0,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_pct": 0.0
+    }
+  },
+  "confusion": {
+    "Slab": {
+      "Slab": 668,
+      "Beam": 3307,
+      "Column": 216,
+      "Shear Wall": 16,
+      "Other": 202
+    },
+    "Beam": {
+      "Slab": 0,
+      "Beam": 0,
+      "Column": 0,
+      "Shear Wall": 0,
+      "Other": 0
+    },
+    "Column": {
+      "Slab": 0,
+      "Beam": 0,
+      "Column": 0,
+      "Shear Wall": 0,
+      "Other": 0
+    },
+    "Shear Wall": {
+      "Slab": 0,
+      "Beam": 0,
+      "Column": 0,
+      "Shear Wall": 0,
+      "Other": 0
+    }
+  },
+  "targets": {
+    "accuracy_pct_min": 85.0,
+    "slab_f1_pct_min": 85.0,
+    "beam_f1_pct_min": 85.0
+  },
+  "quality_checks": [
+    {
+      "check": "train_accuracy_pct",
+      "value": 15.2,
+      "target": ">= 85.0",
+      "pass": false
+    },
+    {
+      "check": "train_slab_f1_pct",
+      "value": 26.3,
+      "target": ">= 85.0",
+      "pass": false
+    },
+    {
+      "check": "train_beam_f1_pct",
+      "value": 0.0,
+      "target": ">= 85.0",
+      "pass": false
+    },
+    {
+      "check": "train_slab_beam_mean_f1_pct",
+      "value": 13.2,
+      "target": ">= 85.0",
+      "pass": false
+    }
+  ],
+  "quality_pass": false,
+  "mode": {
+    "use_v4": true,
+    "use_v5": true,
+    "enable_deepseek": true,
+    "include_primary_slab": false,
+    "component_tagged_only": true,
+    "slab_beam_only": true,
+    "max_drawings": 10
+  },
+  "gt_corpus": {
+    "total_entities": 4409,
+    "by_type": {
+      "Slab": 4409
+    },
+    "by_project": {
+      "INIZIO": 4409
+    },
+    "by_drawing": {
+      "INIZIO/SlabTag-Inizio_ST13.dxf": 32,
+      "INIZIO/SlabTag_Inizio_ST1.dxf": 544,
+      "INIZIO/SlabTag_Inizio_ST10.dxf": 675,
+      "INIZIO/SlabTag_Inizio_ST11.dxf": 28,
+      "INIZIO/SlabTag_Inizio_ST12.dxf": 731,
+      "INIZIO/SlabTag_Inizio_ST14.dxf": 32,
+      "INIZIO/Slabtag_Inizio_ST15.dxf": 502,
+      "INIZIO/SlabTag_Inizio_ST16.dxf": 494,
+      "INIZIO/SlabTag_Inizio_ST2.dxf": 691,
+      "INIZIO/SlabTag_Inizio_ST3.dxf": 680
+    }
+  }
+}

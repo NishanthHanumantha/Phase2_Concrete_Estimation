@@ -9,6 +9,7 @@ from typing import Any
 from sdie.benchmark.metrics import accuracy_pct, within_tolerance
 from sdie.project_knowledge.paths import resolve_manifest_dxf_path
 from sdie.validation.component_gt import (
+    BUSINESS_COMPONENT_TYPES,
     QUANTITY_PHASE_TYPES,
     build_entity_ground_truth,
     load_manifest,
@@ -25,6 +26,78 @@ def _mean_accuracy(values: list[float | None]) -> float | None:
     if not nums:
         return None
     return round(sum(nums) / len(nums), 1)
+
+
+def eval_fragment_from_train_metrics(train_metrics: dict[str, Any]) -> dict[str, Any]:
+    """Convert a saved train_metrics.json chunk into an eval_report fragment."""
+    summary = train_metrics.get("summary") or {}
+    evaluated = summary.get("entities_evaluated") or summary.get("evaluated") or 0
+    return {
+        "summary": {
+            "gt_entities": evaluated,
+            "evaluated": evaluated,
+            "missing_predictions": summary.get("missing_predictions", 0),
+            "correct": summary.get("correct", 0),
+            "accuracy_pct": summary.get("accuracy_pct", 0),
+        },
+        "confusion": train_metrics.get("confusion") or {},
+        "gt_corpus": train_metrics.get("gt_corpus"),
+    }
+
+
+def merge_eval_reports(*reports: dict[str, Any]) -> dict[str, Any]:
+    """Merge disjoint train-eval fragments (e.g. first 10 + remaining 37 drawings)."""
+    classes = list(BUSINESS_COMPONENT_TYPES)
+    pred_labels = classes + ["Other"]
+    confusion: dict[str, dict[str, int]] = {
+        exp: {pred: 0 for pred in pred_labels} for exp in classes
+    }
+    correct = 0
+    evaluated = 0
+    missing_pred = 0
+    gt_entities = 0
+
+    for report in reports:
+        summary = report.get("summary") or {}
+        correct += int(summary.get("correct") or 0)
+        evaluated += int(summary.get("evaluated") or 0)
+        missing_pred += int(summary.get("missing_predictions") or 0)
+        gt_entities += int(summary.get("gt_entities") or summary.get("entities_evaluated") or 0)
+        conf = report.get("confusion") or {}
+        for exp in classes:
+            row = conf.get(exp) or {}
+            for pred in pred_labels:
+                confusion[exp][pred] += int(row.get(pred) or 0)
+
+    per_class: dict[str, dict[str, float | int]] = {}
+    for ctype in classes:
+        tp = confusion[ctype][ctype]
+        fp = sum(confusion[other][ctype] for other in classes if other != ctype)
+        fn = sum(confusion[ctype][other] for other in pred_labels if other != ctype)
+        precision = tp / (tp + fp) if (tp + fp) else 0.0
+        recall = tp / (tp + fn) if (tp + fn) else 0.0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+        per_class[ctype] = {
+            "tp": tp,
+            "fp": fp,
+            "fn": fn,
+            "precision_pct": round(precision * 100, 1),
+            "recall_pct": round(recall * 100, 1),
+            "f1_pct": round(f1 * 100, 1),
+        }
+
+    accuracy = (correct / evaluated * 100) if evaluated else 0.0
+    return {
+        "summary": {
+            "gt_entities": gt_entities,
+            "evaluated": evaluated,
+            "missing_predictions": missing_pred,
+            "correct": correct,
+            "accuracy_pct": round(accuracy, 1),
+        },
+        "per_class": per_class,
+        "confusion": confusion,
+    }
 
 
 def format_train_metrics(eval_report: dict[str, Any]) -> dict[str, Any]:
