@@ -1,7 +1,8 @@
 SDIE VERSION 6 – STRUCTURAL REASONING ENGINE (REVISED PROMPT)
 Derived from: SDIE Version 5 – DeepSeek Structural Reasoning Engine.docx
 Implementation baseline: P2_Slabversion5 @ b3ee8c0, P2_SlabVersion6 layer-discovery fork
-Last updated: June 2026 (Phase: slab+beam quantity; Tagged Files_2 teach corpus)
+Last updated: June 2026 (Phase: slab+beam quantity; Tagged Files_2 multi-project
+train corpus X, Raw files_2 test corpus Y)
 
 ================================================================================
 MISSION (unchanged from V5 docx)
@@ -22,13 +23,19 @@ arbitration.
 V6 adds: drawing-driven layer discovery (no hard-coded S_FRAMES default on
 Inizio sheets).
 
-V6 (Revised Knowledge): INIZIO teaching corpus under Revised Project Knowledge/.
-Primary teach set (June 2026+): Tagged Files_2/ — estimator split each floor into
-separate single-plan DXFs organised by component (Slab/, Beam/, Column/, Wall/).
-Legacy full-sheet teaches remain in Tagged files/ (four Revised1 sheets).
-The model must learn component geometry per floor from Tagged Files_2, then classify
-and quantify on generic raw drawings without project lock-in (GENERIC inference).
+V6 (Revised Knowledge): ML-style train/test split under Revised Project Knowledge/.
+  X (train) = Tagged Files_2/ — 8-9 projects' tagged drawings, split by component
+              (Slab/, Beam/, Column/, Wall/) and by floor for readability.
+              SOLE source for supervised slab/beam/column/wall learning.
+  Y (test)  = Raw files_2/ — raw untagged floor plans (Inizio + Trust Office)
+              for inference + metrics. Never used for teaching.
+Projects in X include Inizio (_I_/Inizio_*), Trust Office (_TO_), and others
+(_E_, _DH_, _GC_, _M_) — all consolidated under manifest corpus key INIZIO.
+The model must learn component geometry per floor from X, then classify and
+quantify on raw drawings from Y without project lock-in (GENERIC inference).
 All downstream pipeline steps (classification → exclusions → quantities) unchanged.
+Legacy corpora (Tagged files/ v1 full sheets, Project2/3 TRUST_OFFICE/MANOHAR
+data sources, P2_SlabVersion4 Data Source) are UNLEARNED and removed.
 
 The objective is structural understanding first; quantities are
 deterministic and run only after classification + exclusions.
@@ -46,8 +53,9 @@ Classification must be aware of (teach + classify, but NO quantity calculators):
   and Beam stays Beam on raw consultant drawings.
 
 Ground truth for this phase:
-  → Tagged Files_2 + legacy Tagged files/ (manifest supervised flags)
-  → Overlay + raw inference checks on TestInput / Raw File DXFs
+  → Tagged Files_2 only (manifest supervised flags) — train corpus X
+  → Overlay + raw inference checks + inference metrics on Raw files_2 (test Y)
+    and Data Source/TestInput DXFs
   → NOT estimator Excel workbooks (legacy BOQ JSON optional reference only;
     user provided workbooks for few drawings — do not use as pass/fail GT now)
 
@@ -68,21 +76,24 @@ Context classes (classify for exclusions / topology only):
 Business calculators (deterministic, post-classification) — this phase:
   Slab, Beam only (column/wall/shuttering calculators deferred)
 
-INIZIO learning objective (Revised Project Knowledge):
-  Input  → Raw / generic structural DXF (frame lines, annotations — no estimator tags)
-  Teach  → Tagged Files_2 single-floor plans + legacy Tagged files full sheets
-  Output → Classify slab/beam correctly; supporting components for exclusions;
-           compute slab + beam concrete/shuttering on generic input
+Learning objective (Revised Project Knowledge, multi-project):
+  Train X → Tagged Files_2 single-floor tagged plans (8-9 projects)
+  Test Y  → Raw files_2 raw plans (no estimator tags)
+  Output  → Classify slab/beam correctly; supporting components for exclusions;
+            compute slab + beam concrete/shuttering on raw input + metrics
 
 ================================================================================
-REVISED INIZIO PROJECT KNOWLEDGE BASE (AUTHORITATIVE — JUNE 2026)
+REVISED PROJECT KNOWLEDGE BASE (AUTHORITATIVE — JUNE 2026)
 ================================================================================
 Root: P2_SlabVersion6/Revised Project Knowledge/
+  Tagged Files_2/   train corpus X (multi-project, tagged, per-component, per-floor)
+  Raw files_2/      test corpus Y (raw plans, inference + metrics only)
 
-INIZIO teach corpus = manifest project_id INIZIO in
-Data Source/projects_manifest.json (version 4+).
+Teach corpus = manifest corpus key INIZIO (multi-project contents) in
+Data Source/projects_manifest.json (version 5+) — the ONLY manifest project.
 
-TRUST_OFFICE / MANOHAR entries in the manifest are UNCHANGED (legacy Project2/3).
+Legacy TRUST_OFFICE / MANOHAR manifest entries (Project2/3 data sources) are
+REMOVED; their ground-truth JSON and KB/atlas/profile knowledge were unlearned.
 
 ── PRIMARY TEACHING CORPUS (single-floor plans — Tagged Files_2) ──
   Revised Project Knowledge/Tagged Files_2/
@@ -96,11 +107,18 @@ TRUST_OFFICE / MANOHAR entries in the manifest are UNCHANGED (legacy Project2/3)
   | Column/ | tagged_column      | Column        | 4+  (growing) |
   | Wall/   | tagged_shearwall   | Shear Wall    | 12+ (growing) |
 
-  Naming conventions (examples — not exhaustive):
+  Naming conventions (examples — not exhaustive; infix = source project):
     Slab:  SlabTag_Inizio_ST*, SlabTag_TO_ST*, ST_E_*, ST_M_*
     Beam:  BT_I_ST*, BT_E_*, BT_DH_*, BT_GC_*, BT_M_*, BeamTag_*
     Column: Column_DH_*, Column_GC_*, Inizio - Colum with tag_*
     Wall:  SW_I_*, Wall_E_*, ShearWallTag_*
+
+  Teach-layer fallback (June 2026): projects whose layer naming differs from the
+  default whitelist (e.g. DH: 'S - BEAM'/'HAT', GC: blocks with STR-BEAM inside
+  INSERTs) are extracted via component-aware keyword discovery + INSERT
+  expansion (component_gt.discover_teach_structural_layers). Cross-component
+  layers (e.g. 'S - COL' inside a Beam teach file) are never mislabeled.
+  Known untaggable: ST_M_1.dxf contains no slab tag layer — re-tag in CAD.
 
   Each file is a 100%-supervised single-component teach sheet for ONE floor:
     - No side-by-side duplicate plan copies (contrast with wide raw consultant sheets)
@@ -113,64 +131,66 @@ TRUST_OFFICE / MANOHAR entries in the manifest are UNCHANGED (legacy Project2/3)
     single-floor tagged plans teach one clean bay grid per ST level without
     plan-copy dedup ambiguity during teach/eval.
 
-── LEGACY TEACHING CORPUS (full sheets — Tagged files) ──
-  Revised Project Knowledge/Tagged files/  (tagged_files_v1 in manifest)
+── LEGACY TEACHING CORPUS — REMOVED ──
+  Revised Project Knowledge/Tagged files/ (v1 full sheets) was deleted from disk;
+  manifest no longer references it. Tagged Files_2 is the sole train corpus.
 
-  | Component   | File |
-  |-------------|------|
-  | Slab        | Inizio Slab with tag_Revised1.dxf |
-  | Beam        | Inizio - Beam with tag_Revised1.dxf |
-  | Column      | Inizio - Colum with tag_Revised1.dxf |
-  | Shear Wall  | Inizio - Shearwall with tag_Revised1.dxf |
-
-  Retained for cross-check and atlas diversity; primary teach weight shifts to
-  Tagged Files_2 as the corpus grows.
-
-── INFERENCE TARGETS (unsupervised — raw / generic plans) ──
-  Revised Project Knowledge/Raw File/
-    Inizio - Slab beam_Raw_Revised1.dxf          (full INIZIO raw — teach eval)
+── INFERENCE TARGETS (test corpus Y — raw / generic plans) ──
+  Revised Project Knowledge/Raw files_2/
+    Inizio_Raw_1..15.dxf                          (Inizio floors, raw)
+    TrustOffice_GF_Layer_Raw.dxf, TrustOffice_RAW_FF.dxf,
+    TrustOffice_RAW_TerraceF.dxf                  (Trust Office floors, raw)
   Data Source/TestInput/
-    Inizio_63F_Raw_Layer_Revised1.dxf            (single-floor raw regression)
     Other project test DXFs                       (GENERIC inference default)
 
   Generic inference (--project-id GENERIC default):
-    Atlas + layer profiles + KB load ALL teach projects (INIZIO + Trust + Manohar).
+    Atlas + layer profiles + KB load the full multi-project teach corpus.
     No project lock-in at runtime; teach corpus improves classification for new firms.
+
+  Batch test run output folder:
+    Output/RawFiles2_TestRun/{drawing}/  (18 raw files, overlay + metrics + Excel)
 
   Pipeline on raw/generic input (unchanged steps):
     1. Layer discovery + floor zone
-    2. Classify using knowledge from manifest tagged corpus (v1 + v2)
+    2. Classify using knowledge from Tagged Files_2 teach corpus only
     3. Plan-copy dedup on wide sheets (slab/beam quantities)
     4. Exclusions → slab intelligence → slab + beam quantities
+    5. inference_metrics.json + Excel Metrics sheet per run
 
-── MANIFEST & DISCOVERY (do not hand-edit 70+ entries) ──
+── MANIFEST & DISCOVERY (do not hand-edit 60+ entries) ──
   scripts/discover_tagged_corpus.py
-    --include-legacy  → merge Tagged files v1 + Tagged Files_2
     --write-manifest "Data Source/projects_manifest.json"
+    (writes the single multi-project corpus entry; drops legacy projects)
 
   After adding DXFs to Slab/Beam/Column/Wall folders, re-run discover then:
-    1. build_layer_profiles.py --project-id INIZIO --merge-projects INIZIO
-    2. ingest_estimator_workbooks.py --build-atlas --merge-atlas INIZIO
-       --atlas-project-id INIZIO --build-kb
+    1. build_layer_profiles.py
+    2. ingest_estimator_workbooks.py --build-atlas --fresh-atlas --build-kb
        (Excel workbook import optional — atlas builds from tagged DXFs)
     3. evaluate_component_classification.py --tagged-only --slab-beam-only
 
 ── TEACHING WORKFLOW (scripts) ──
-  0. discover_tagged_corpus.py --include-legacy --write-manifest …
-  1. build_layer_profiles.py      → data/layer_profiles.json (INIZIO rules)
-  2. teach_inizio_revised.py / ingest_estimator_workbooks --build-atlas --build-kb
-  3. evaluate_component_classification.py --tagged-only --slab-beam-only
-  4. run_pipeline.py on Raw File / TestInput → overlay slab+beam verification
+  0. discover_tagged_corpus.py --write-manifest …
+  1. build_layer_profiles.py      → data/layer_profiles.json (corpus rules)
+  2. ingest_estimator_workbooks.py --build-atlas --fresh-atlas --build-kb
+  3. evaluate_ml_project.py --train-only [--max-drawings N]
+     (or evaluate_component_classification.py --tagged-only --slab-beam-only)
+  4. run_pipeline.py on Raw files_2 → Output/RawFiles2_TestRun/
+  5. evaluate_ml_project.py --test-only → ml_project_report.json (train + test)
+
+  Corpus size (June 2026 rebuild):
+    62 tagged teach DXFs (47 Slab+Beam for classification eval)
+    ~33,800 atlas samples (DH/GC teach-layer fallback included)
+    18 raw test DXFs in Raw files_2/
 
   Success criterion (this phase):
-    Slab + Beam F1 ≥ 85% on --slab-beam-only eval (Tagged Files_2 Slab/ + Beam/)
-    Raw inference: correct slab count, beam count, quantities via overlay
-    Column/Wall classification: good enough for exclusions (not 90% entity eval)
+    Train (X): Slab + Beam F1 ≥ 85% on --slab-beam-only / evaluate_ml_project
+    Test  (Y): reference accuracy ≥ 85% vs paired teach floors (ml_project_report)
+    Raw inference: slab/beam counts + quantities verified via overlay
+    Column/Wall: classify reliably for exclusions (no entity-accuracy gate)
 
-── CURSOR / AGENT CONTEXT (INIZIO) ──
+── CURSOR / AGENT CONTEXT ──
   @Revised Project Knowledge/Tagged Files_2/
-  @Revised Project Knowledge/Tagged files/
-  @Revised Project Knowledge/Raw File/
+  @Revised Project Knowledge/Raw files_2/
   @Data Source/projects_manifest.json
   @scripts/discover_tagged_corpus.py
   @src/sdie/project_knowledge/paths.py
@@ -181,8 +201,16 @@ TRUST_OFFICE / MANOHAR entries in the manifest are UNCHANGED (legacy Project2/3)
   @src/sdie/ingestion/layer_discovery.py
   @src/sdie/classification/
   @src/sdie/detection/
+  @src/sdie/validation/inference_metrics.py
+  @src/sdie/validation/ml_project_metrics.py
+  @scripts/evaluate_ml_project.py
+  @docs/SDIE_V6_Model_Flow.html
 
-  Do NOT @-reference legacy Data Source/Project1 - Inizio/ for new INIZIO work.
+  Do NOT @-reference:
+    legacy Data Source/Project1 - Inizio/
+    Data Source/Project2 - TrustOffice/ or Project3 - Manohar/
+    P2_SlabVersion4/Data Source/
+    Revised Project Knowledge/Tagged files/ (v1 — removed)
 
 ================================================================================
 PIPELINE ORDER (IMPLEMENTED — UNCHANGED STEPS)
@@ -194,18 +222,24 @@ PIPELINE ORDER (IMPLEMENTED — UNCHANGED STEPS)
 5. Classify: rules → layer profiles → geometry → atlas → graph → DeepSeek (v5)
 6. Build structural graph (graph/engine.py)
 7. Slab intelligence: exclusions → beam grid / label merge / podium grid
-8. Deterministic quantities (quantity/slab.py)
-9. Outputs: results.json, building_model.json, overlay.html, review_queue.json
+8. Deterministic quantities (quantity/slab.py, quantity/beam.py)
+9. Inference metrics (validation/inference_metrics.py)
+10. Outputs: results.json, metrics.json, building_model.json, overlay, Excel, review_queue
 
 Entry point: scripts/run_pipeline.py
   --auto-layers (default) | --no-auto-layers | --layers <override>
-  --project-id GENERIC (default) | INIZIO | TRUST_OFFICE | MANOHAR
+  --project-id GENERIC (default) | INIZIO (corpus-scoped teach eval only)
   --no-deepseek for rule+topology-only runs
 
-INIZIO inference example (raw Revised1 plan):
+Batch test (all 18 Raw files_2):
+  foreach raw DXF in "Revised Project Knowledge/Raw files_2":
+    python scripts/run_pipeline.py <dxf> -o Output/RawFiles2_TestRun/<stem>
+  python scripts/evaluate_ml_project.py --test-only
+
+Test-corpus inference example (Raw files_2):
   python scripts/run_pipeline.py ^
-    "Revised Project Knowledge/Raw File/Inizio - Slab beam_Raw_Revised1.dxf" ^
-    -o Output/Inizio_Raw_Revised1 --project-id GENERIC
+    "Revised Project Knowledge/Raw files_2/Inizio_Raw_1.dxf" ^
+    -o Output/RawFiles2_TestRun/Inizio_Raw_1 --project-id GENERIC
 
 Generic single-floor regression:
   python scripts/run_pipeline.py ^
@@ -292,7 +326,7 @@ Layer Context — all layer names found + resolved frame_layers from discovery
 Geometry Context — entity type, area, perimeter, aspect ratio, bbox,
   connected beams/columns/walls, neighbour relationships
 Annotation Context — nearby THK, B12, C5, SW1, LIFT, STAIR, OPENING, SHAFT
-Cursor/RAG Context — Revised Project Knowledge/Tagged files (INIZIO),
+Cursor/RAG Context — Revised Project Knowledge/Tagged Files_2 (multi-project),
   layer_profiles, atlas, KB, config, classifier
 
 DeepSeek system role (verbatim intent):
@@ -300,20 +334,19 @@ DeepSeek system role (verbatim intent):
   Classify only — forbidden from area, volume, concrete, shuttering
   Return confidence + flag uncertain entities for review
 
-FEW-SHOT ESTIMATOR REASONING (INIZIO — Tagged Files_2 + legacy)
+FEW-SHOT ESTIMATOR REASONING (Tagged Files_2 multi-project corpus)
 Before classifying entities on a RAW/GENERIC plan, retrieve similar patterns from
-the manifest tagged teach corpus (70+ drawings: Tagged Files_2 primary + v1 legacy).
+the manifest tagged teach corpus (62 drawings, 8-9 projects, Tagged Files_2 only).
 
 Retrieve:
   Top 5 similar Atlas samples (built from all manifest tagged drawings)
-  Top 5 similar Knowledge Base samples (INIZIO + other teach projects in GENERIC mode)
+  Top 5 similar Knowledge Base samples (all teach projects in GENERIC mode)
 
 Teach folder → business type mapping:
   Tagged Files_2/Slab/    → Slab (single-floor closed bay polylines)
   Tagged Files_2/Beam/      → Beam (centerlines, beam IDs per ST level)
   Tagged Files_2/Column/    → Column (footprints, S-COLS)
   Tagged Files_2/Wall/      → Shear Wall (SW_*, Wall_* envelopes)
-  Tagged files/*_Revised1   → legacy full-sheet reference per component
 
 Inference mapping on raw/generic plan:
   Long narrow S-BEAM LINE        → match Beam teach linework (BT_*, BeamTag_*)
@@ -450,21 +483,67 @@ Entities with confidence < 75% (or force_queue < 60%)
 Fields: entity_id, classification, confidence, evidence, alternatives
 
 ================================================================================
+INFERENCE METRICS (per raw run — test split Y)
+================================================================================
+Module: src/sdie/validation/inference_metrics.py
+Written by semantic_pipeline.py as {drawing}_metrics.json and Excel Metrics sheet.
+
+Per-run metrics (no entity GT on raw drawings):
+  split: "test"
+  metric_type: "inference_proxy"
+  classification: entity counts by type, mean confidence (all + slab/beam)
+  low_confidence_pct, review_required_pct, unknown_pct
+  quantities: slab_count, beam_count, areas, concrete m³
+  quality_checks: slab_beam_mean_confidence ≥ 75, low_confidence ≤ 10%, unknown ≤ 5%
+  quality_pass: boolean aggregate
+
+True accuracy on raw drawings requires evaluate_ml_project.py --test-only, which
+pairs each Raw files_2 DXF to its teach floor (Inizio_Raw_N → SlabTag_Inizio_STN +
+BeamTAG_I_STN) and computes reference accuracy on entity/quantity counts.
+
+================================================================================
+ML PROJECT METRICS (train X + test Y — authoritative)
+================================================================================
+Module: src/sdie/validation/ml_project_metrics.py
+Script: scripts/evaluate_ml_project.py
+
+  Train (X):
+    evaluate_ml_project.py --train-only [--max-drawings N] [--no-deepseek]
+    Entity accuracy / precision / recall / F1 on Tagged Files_2 Slab/ + Beam/
+    Output: Output/ml_eval/train_metrics.json
+
+  Test (Y):
+    evaluate_ml_project.py --test-only
+    Reads Output/RawFiles2_TestRun/*_results.json
+    Auto-pairs raw → teach reference per floor
+    Reference accuracy: predicted vs teach entity/quantity counts
+    Output: Output/ml_eval/test_metrics.json
+
+  Combined:
+    evaluate_ml_project.py  (both legs)
+    Output: Output/ml_eval/ml_project_report.json
+    overall_pass: train F1 + test reference accuracy vs 85% target
+
+  Flow diagram: docs/SDIE_V6_Model_Flow.html
+
+================================================================================
 VALIDATION & BENCHMARKS (June 2026 — SLAB+BEAM PHASE)
 ================================================================================
-Primary classification eval (manifest tagged DXF — NOT Excel):
+
+Primary classification eval (same as train leg of ML report):
   scripts/evaluate_component_classification.py --tagged-only --slab-beam-only
   GT: entity labels from tagged_slab / tagged_beam manifest flags only
-  Scope: Tagged Files_2/Slab/, Tagged Files_2/Beam/, legacy slab/beam Revised1
+  Scope: Tagged Files_2/Slab/, Tagged Files_2/Beam/ (multi-project)
   Target: Slab F1 ≥ 85%, Beam F1 ≥ 85%
 
 Optional full 4-class diagnostic (not phase pass/fail):
   scripts/evaluate_component_classification.py --tagged-only
   (Column/Wall entity scores are misleading on drawing-level GT — diagnostic only)
 
-INIZIO / generic raw inference validation (primary quantity check):
-  python scripts/run_pipeline.py <raw.dxf> -o Output/... --project-id GENERIC
+Raw / generic inference validation on test corpus Y (primary quantity check):
+  python scripts/run_pipeline.py <Raw files_2/*.dxf> -o Output/... (GENERIC)
   Overlay: slab labels, beam IDs, Excel sidebar cross-check
+  Inference metrics: *_metrics.json + Excel Metrics sheet per run
   Success = slab count, beam count, areas/volumes match teach patterns visually
 
 Estimator Excel / workbook GT — NOT used this phase:
@@ -472,35 +551,47 @@ Estimator Excel / workbook GT — NOT used this phase:
   Data Source/Ground Truths/ Excel — optional import only; not regression gate
   scripts/verify_test_gt.py — deferred unless user re-enables workbook GT
 
-Other projects (unchanged):
-  TRUST_OFFICE / MANOHAR — legacy manifest + Project2/3 folders until revised
-
 Reference runs:
   Inizio_63F_Raw_Layer_Revised1.dxf — 15 slabs, 134 beams (plan-copy dedup fix)
+  Raw files_2 batch — Output/RawFiles2_TestRun/ (18 drawings, June 2026)
   Overlay: src/sdie/validation/overlay.py
+
+Current baseline (June 2026 — to improve toward 85%):
+  Test (Y) mean reference accuracy: ~37% (paired teach floors, 18 raw files)
+  Train (X) F1: run evaluate_ml_project.py --train-only when teach eval completes
+  Per-run inference: many raw files fail quality_pass (low confidence, unknown %)
+
+================================================================================
+SUPPORTING COMPONENTS (hardcoded — preserved, not from teach corpus)
+================================================================================
+Staircase, lift cutout, stair cutout, openings/voids use code-based exclusion rules
+in detection/exclusions.py and config hatch_void_layers — NOT learned from manifest.
+These remain active regardless of teach corpus changes. Teach corpus changes affect
+slab/beam/column/wall classification only.
+
+VOID_KEYWORD_RADIUS_MM, NON_SLAB_TEXT_KEYWORDS, hatch_void_layers in config.py.
 
 ================================================================================
 HISTORICAL PROJECT LEARNING (UPDATED)
 ================================================================================
-INIZIO (authoritative corpus):
-  Primary: Revised Project Knowledge/Tagged Files_2/{Slab,Beam,Column,Wall}/
-  Legacy:  Revised Project Knowledge/Tagged files/ (4 full sheets)
+Authoritative corpus (multi-project, 8-9 projects):
+  Train X: Revised Project Knowledge/Tagged Files_2/{Slab,Beam,Column,Wall}/
+  Test Y:  Revised Project Knowledge/Raw files_2/
   Manifest: Data Source/projects_manifest.json (discover_tagged_corpus.py)
-  project_id: INIZIO (teach) | GENERIC (runtime inference default)
+  Corpus key: INIZIO (teach) | GENERIC (runtime inference default)
 
-TRUST_OFFICE / MANOHAR:
-  Data Source/projects_manifest.json + Project2/3 folders (unchanged until
-  revised knowledge packs are added)
+TRUST_OFFICE / MANOHAR legacy entries: REMOVED (unlearned June 2026).
+Trust Office now contributes via its Tagged Files_2 drawings (_TO_ infix).
 
-Every INIZIO teach rebuild contributes from manifest tagged drawings (v1 + v2):
+Every teach rebuild contributes from manifest tagged drawings:
   Atlas samples (closed polylines, linework, layer+geometry features)
-  Layer profiles (project_id=INIZIO, layer, entity_type rules)
+  Layer profiles (corpus, layer, entity_type rules)
   Structural KB patterns (annotation + topology + bay framing)
   Component GT for evaluate_component_classification.py
 
 Knowledge accumulates in data/ — source DXFs remain in Revised Project Knowledge/.
 When new single-floor tagged DXFs are added, re-run discover_tagged_corpus.py
-then rebuild layer profiles, atlas, and KB (TRUST/MANOHAR unchanged).
+then rebuild layer profiles, atlas (--fresh-atlas), and KB.
 
 ================================================================================
 KEY MODULE MAP (P2_SlabVersion6)
@@ -517,26 +608,34 @@ src/sdie/
   inference/       generic.py (GENERIC runtime — all teach projects)
   project_knowledge/ paths.py, Tagged Files_2 helpers
   quantity/        slab.py, beam.py (column/wall quantities TBD)
-  validation/      overlay, gt_match, component_gt, component_eval, review_queue
+  validation/      overlay, component_gt, component_eval, inference_metrics,
+                   ml_project_metrics, excel_export, review_queue
   semantic_pipeline.py, pipeline.py, config.py
 
-Revised Project Knowledge/  (INIZIO — teach + raw inference)
-  Tagged Files_2/           Slab/, Beam/, Column/, Wall/ — primary teach (single floor)
-  Tagged files/             four legacy *_Revised1.dxf full sheets
-  Raw File/                 Inizio - Slab beam_Raw_Revised1.dxf (inference input)
+Revised Project Knowledge/  (multi-project — train + test)
+  Tagged Files_2/           Slab/, Beam/, Column/, Wall/ — train corpus X (single floor)
+  Raw files_2/              18 raw plans (Inizio + Trust Office) — test corpus Y
 
-data/  (generated from manifest tagged corpus — rebuild after discover script)
-  atlas/component_atlas.json
-  knowledge_base/structural_kb.json
+data/  (generated from Tagged Files_2 — rebuild after discover script)
+  atlas/component_atlas.json     (~33,800 samples, June 2026)
+  knowledge_base/structural_kb.json (105 layer rules)
   layer_profiles.json
   ground_truth/*.json  (legacy workbook import — optional, not phase GT)
 
+Output/
+  RawFiles2_TestRun/     per-raw-drawing pipeline outputs (test Y)
+  ml_eval/               train_metrics.json, test_metrics.json, ml_project_report.json
+
 scripts/
   run_pipeline.py, analyze_dxf.py, build_layer_profiles.py,
-  discover_tagged_corpus.py, evaluate_component_classification.py,
-  verify_test_gt.py, diagnose_s43.py,
-  teach_inizio_revised.py, teach_all_projects.py
-  (must refresh manifest via discover_tagged_corpus.py before INIZIO teach rebuild)
+  discover_tagged_corpus.py, ingest_estimator_workbooks.py,
+  evaluate_component_classification.py, evaluate_ml_project.py,
+  verify_test_gt.py, diagnose_s43.py
+  (refresh manifest via discover_tagged_corpus.py before any teach rebuild)
+
+docs/
+  Prompt_extracted_V6.txt   (this file — authoritative spec)
+  SDIE_V6_Model_Flow.html   (visual ML train/test flow diagrams)
 
 ================================================================================
 CLASSIFICATION TARGETS (this phase)
@@ -554,20 +653,25 @@ FINAL DIRECTIVE (from V5 docx — still applies)
 Do not improve slab detection by geometry hacks alone.
 Improve structural reasoning and teach estimator patterns.
 
-For INIZIO: learn polyline-and-tag behaviour from Tagged Files_2 single-floor
-plans (plus legacy Tagged files/), then apply the same structural understanding
-to raw/generic drawings with --project-id GENERIC. Tagged sheets are the
-estimator ground truth for HOW to bound and label components.
+Learn polyline-and-tag behaviour from Tagged Files_2 single-floor plans
+(8-9 projects), then apply the same structural understanding to raw drawings
+(Raw files_2 and new client DXFs) with --project-id GENERIC. Tagged sheets are
+the estimator ground truth for HOW to bound and label components.
 
 DeepSeek = structural reasoning engine.
 Quantity engine = deterministic.
 
 All quantities only after:
-  Manifest discover → Teach corpus load (Tagged Files_2 + v1) → Raw/generic plan load
+  Manifest discover → Teach corpus load (Tagged Files_2 / X)
+  → Atlas + profiles + KB rebuild
+  → Train metrics (evaluate_ml_project.py --train-only)
+  → Raw plan load (Raw files_2 / Y)
   → Layer discovery → Component Classification → Structural Graph
   → Semantic Building Model → Structural Exclusion Analysis
   → Slab Intelligence → Quantity Engine (slab + beam this phase)
+  → Inference metrics per run → Test metrics (evaluate_ml_project.py --test-only)
 
 The objective is structural understanding that delivers correct slab and beam
-quantities on generic drawings. Column, wall, and supporting components are
-classification context — not quantity outputs or Excel-GT regression this phase.
+quantities on generic drawings, measured by ML-style train (X) and test (Y)
+accuracy metrics. Column, wall, and hardcoded supporting-component rules are
+classification/exclusion context — not quantity outputs or Excel-GT regression.

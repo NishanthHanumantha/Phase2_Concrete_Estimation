@@ -92,6 +92,7 @@ def learn_profiles_from_manifest(
             spec.dxf_path,
             structural_layers=DEFAULT_STRUCTURAL_LAYERS,
             annotation_layers=DEFAULT_ANNOTATION_LAYERS,
+            supervised_fallback_type=gt_type,
         )
         for ent in entities:
             layer = ent.layer or ""

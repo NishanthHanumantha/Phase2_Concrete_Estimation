@@ -1,0 +1,67 @@
+SDIE v5 Structural Reasoning Pipeline — Inizio_Raw_10.dxf
+Processed: 2026-06-10T06:44:42.437653+00:00
+Components classified: 883
+Graph: 883 nodes, 2042 edges
+Review queue: 103 entities (47.34% below 75.0%)
+
+Slabs detected: 31
+Slab area:       489.963 m²
+Slab concrete:   98.172 m³
+Beams quantified: 136
+Beam length:     363.854 m
+Beam concrete:   120.073 m³
+Total concrete:  218.245 m³ (slab + beam)
+Total shuttering:1399.609 m²
+
+Beams (first 10):
+  BEAM-001: L=3.05 m, 300x1100 mm, 1.007 m³
+  BEAM-002: L=5.40 m, 300x1100 mm, 1.782 m³
+  BEAM-003: L=6.55 m, 300x1100 mm, 2.161 m³
+  BEAM-004: L=3.40 m, 300x1100 mm, 1.122 m³
+  BEAM-005: L=3.40 m, 300x1100 mm, 1.122 m³
+  BEAM-006: L=3.15 m, 300x1100 mm, 1.040 m³
+  BEAM-007: L=4.13 m, 300x1100 mm, 1.363 m³
+  BEAM-008: L=6.55 m, 300x1100 mm, 2.161 m³
+  BEAM-009: L=3.05 m, 300x1100 mm, 1.007 m³
+  BEAM-010: L=2.10 m, 300x1100 mm, 0.693 m³
+  ... +126 more beams
+
+=== Inference metrics (raw drawing — no workbook GT) ===
+Slab+Beam entities: 734 (83.1%)
+Mean confidence (Slab+Beam): 75.9%
+Low confidence (<75.0%): 47.34%
+Review required: 103 (11.7%)
+Unknown: 3.6%
+Quality checks pass: False
+
+  SLAB-001: 12.174 m², 200 mm (default_note), 2.435 m³
+  SLAB-002: 8.975 m², 200 mm (default_note), 1.795 m³
+  SLAB-003: 12.390 m², 200 mm (default_note), 2.478 m³
+  SLAB-004: 9.366 m², 200 mm (default_note), 1.873 m³
+  SLAB-005: 17.905 m², 210 mm (210 THK), 3.760 m³
+  SLAB-006: 42.083 m², 200 mm (default_note), 8.417 m³
+  SLAB-007: 12.596 m², 200 mm (default_note), 2.519 m³
+  SLAB-008: 7.722 m², 200 mm (200 THK), 1.544 m³
+  SLAB-009: 11.009 m², 200 mm (200 THK), 2.202 m³
+  SLAB-010: 25.506 m², 200 mm (default_note), 5.101 m³
+  SLAB-011: 5.208 m², 200 mm (200 THK), 1.042 m³
+  SLAB-012: 7.448 m², 200 mm (200 THK), 1.490 m³
+  SLAB-013: 14.585 m², 200 mm (default_note), 2.917 m³
+  SLAB-014: 5.692 m², 200 mm (200 THK), 1.138 m³
+  SLAB-015: 7.420 m², 200 mm (default_note), 1.484 m³
+  SLAB-016: 7.110 m², 200 mm (default_note), 1.422 m³
+  SLAB-017: 8.878 m², 200 mm (default_note), 1.776 m³
+  SLAB-018: 8.350 m², 200 mm (default_note), 1.670 m³
+  SLAB-019: 27.300 m², 200 mm (default_note), 5.460 m³
+  SLAB-020: 10.750 m², 200 mm (200 THK), 2.150 m³
+  SLAB-021: 13.423 m², 200 mm (default_note), 2.685 m³
+  SLAB-022: 65.525 m², 200 mm (default_note), 13.105 m³
+  SLAB-023: 12.345 m², 200 mm (200 THK), 2.469 m³
+  SLAB-024: 5.250 m², 200 mm (default_note), 1.050 m³
+  SLAB-025: 8.353 m², 200 mm (default_note), 1.671 m³
+  SLAB-026: 30.149 m², 200 mm (default_note), 6.030 m³
+  SLAB-027: 19.910 m², 200 mm (default_note), 3.982 m³
+  SLAB-028: 19.475 m², 200 mm (default_note), 3.895 m³
+  SLAB-029: 16.624 m², 200 mm (200 THK), 3.325 m³
+  SLAB-030: 9.766 m², 200 mm (200 THK), 1.953 m³
+  SLAB-031: 26.674 m², 200 mm (default_note), 5.335 m³

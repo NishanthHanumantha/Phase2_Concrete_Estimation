@@ -1,0 +1,103 @@
+SDIE v5 Structural Reasoning Pipeline — Inizio_Raw_3.dxf
+Processed: 2026-06-10T07:58:34.368615+00:00
+Components classified: 838
+Graph: 838 nodes, 1121 edges
+Review queue: 86 entities (45.58% below 75.0%)
+
+Slabs detected: 67
+Slab area:       2618.796 m²
+Slab concrete:   564.486 m³
+Beams quantified: 191
+Beam length:     840.461 m
+Beam concrete:   285.757 m³
+Total concrete:  850.243 m³ (slab + beam)
+Total shuttering:4383.766 m²
+
+Beams (first 10):
+  BEAM-001: L=11.93 m, 400x850 mm, 4.055 m³
+  BEAM-002: L=4.13 m, 400x850 mm, 1.404 m³
+  BEAM-003: L=8.90 m, 400x850 mm, 3.026 m³
+  BEAM-004: L=7.50 m, 400x850 mm, 2.550 m³
+  BEAM-005: L=7.50 m, 400x850 mm, 2.550 m³
+  BEAM-006: L=7.35 m, 400x850 mm, 2.499 m³
+  BEAM-007: L=4.15 m, 400x850 mm, 1.412 m³
+  BEAM-008: L=7.18 m, 400x850 mm, 2.441 m³
+  BEAM-009: L=1.35 m, 400x850 mm, 0.458 m³
+  BEAM-010: L=5.13 m, 400x850 mm, 1.745 m³
+  ... +181 more beams
+
+=== Inference metrics (raw drawing — no workbook GT) ===
+Slab+Beam entities: 767 (91.5%)
+Mean confidence (Slab+Beam): 74.18%
+Low confidence (<75.0%): 45.58%
+Review required: 86 (10.3%)
+Unknown: 4.9%
+Quality checks pass: False
+
+  SLAB-001: 41.977 m², 200 mm (local_thk_label), 8.395 m³
+  SLAB-002: 21.508 m², 200 mm (local_thk_label), 4.302 m³
+  SLAB-003: 12.032 m², 200 mm (local_thk_label), 2.406 m³
+  SLAB-004: 9.233 m², 200 mm (local_thk_label), 1.847 m³
+  SLAB-005: 31.078 m², 200 mm (local_thk_label), 6.216 m³
+  SLAB-006: 20.339 m², 200 mm (local_thk_label), 4.068 m³
+  SLAB-007: 16.228 m², 200 mm (local_thk_label), 3.246 m³
+  SLAB-008: 10.754 m², 200 mm (local_thk_label), 2.151 m³
+  SLAB-009: 14.917 m², 200 mm (local_thk_label), 2.983 m³
+  SLAB-010: 83.974 m², 200 mm (local_thk_label), 16.795 m³
+  SLAB-011: 96.556 m², 200 mm (local_thk_label), 19.311 m³
+  SLAB-012: 74.513 m², 200 mm (local_thk_label), 14.903 m³
+  SLAB-013: 24.867 m², 200 mm (local_thk_label), 4.973 m³
+  SLAB-014: 24.651 m², 200 mm (local_thk_label), 4.930 m³
+  SLAB-015: 18.605 m², 200 mm (local_thk_label), 3.721 m³
+  SLAB-016: 27.402 m², 200 mm (local_thk_label), 5.480 m³
+  SLAB-017: 13.596 m², 200 mm (local_thk_label), 2.719 m³
+  SLAB-018: 12.516 m², 200 mm (local_thk_label), 2.503 m³
+  SLAB-019: 28.844 m², 200 mm (local_thk_label), 5.769 m³
+  SLAB-020: 10.859 m², 200 mm (local_thk_label), 2.172 m³
+  SLAB-021: 15.300 m², 200 mm (local_thk_label), 3.060 m³
+  SLAB-022: 34.433 m², 200 mm (local_thk_label), 6.887 m³
+  SLAB-023: 31.704 m², 200 mm (local_thk_label), 6.341 m³
+  SLAB-024: 14.092 m², 200 mm (local_thk_label), 2.818 m³
+  SLAB-025: 31.429 m², 200 mm (local_thk_label), 6.286 m³
+  SLAB-026: 42.291 m², 200 mm (local_thk_label), 8.458 m³
+  SLAB-027: 6.311 m², 200 mm (local_thk_label), 1.262 m³
+  SLAB-028: 16.339 m², 200 mm (local_thk_label), 3.268 m³
+  SLAB-029: 8.070 m², 200 mm (local_thk_label), 1.614 m³
+  SLAB-030: 34.936 m², 200 mm (local_thk_label), 6.987 m³
+  SLAB-031: 15.144 m², 200 mm (local_thk_label), 3.029 m³
+  SLAB-032: 45.253 m², 200 mm (local_thk_label), 9.051 m³
+  SLAB-033: 31.840 m², 200 mm (local_thk_label), 6.368 m³
+  SLAB-034: 20.838 m², 200 mm (local_thk_label), 4.168 m³
+  SLAB-035: 10.669 m², 200 mm (local_thk_label), 2.134 m³
+  SLAB-036: 13.845 m², 200 mm (local_thk_label), 2.769 m³
+  SLAB-037: 15.283 m², 200 mm (local_thk_label), 3.057 m³
+  SLAB-038: 20.056 m², 200 mm (local_thk_label), 4.011 m³
+  SLAB-039: 26.753 m², 200 mm (local_thk_label), 5.351 m³
+  SLAB-040: 47.441 m², 200 mm (local_thk_label), 9.488 m³
+  SLAB-041: 17.562 m², 200 mm (local_thk_label), 3.512 m³
+  SLAB-042: 88.507 m², 275 mm (local_thk_label), 24.339 m³
+  SLAB-043: 78.080 m², 200 mm (local_thk_label), 15.616 m³
+  SLAB-044: 15.911 m², 200 mm (local_thk_label), 3.182 m³
+  SLAB-045: 119.448 m², 275 mm (local_thk_label), 32.848 m³
+  SLAB-046: 90.015 m², 275 mm (local_thk_label), 24.754 m³
+  SLAB-047: 123.892 m², 275 mm (local_thk_label), 34.070 m³
+  SLAB-048: 21.790 m², 275 mm (local_thk_label), 5.992 m³
+  SLAB-049: 99.377 m², 275 mm (local_thk_label), 27.329 m³
+  SLAB-050: 7.699 m², 200 mm (local_thk_label), 1.540 m³
+  SLAB-051: 36.772 m², 200 mm (local_thk_label), 7.354 m³
+  SLAB-052: 94.033 m², 200 mm (local_thk_label), 18.807 m³
+  SLAB-053: 43.744 m², 200 mm (local_thk_label), 8.749 m³
+  SLAB-054: 53.641 m², 200 mm (local_thk_label), 10.728 m³
+  SLAB-055: 22.774 m², 200 mm (local_thk_label), 4.555 m³
+  SLAB-056: 16.995 m², 200 mm (local_thk_label), 3.399 m³
+  SLAB-057: 82.898 m², 200 mm (local_thk_label), 16.580 m³
+  SLAB-058: 98.172 m², 200 mm (local_thk_label), 19.634 m³
+  SLAB-059: 40.687 m², 200 mm (local_thk_label), 8.137 m³
+  SLAB-060: 189.846 m², 200 mm (local_thk_label), 37.969 m³
+  SLAB-061: 16.387 m², 200 mm (local_thk_label), 3.277 m³
+  SLAB-062: 83.102 m², 200 mm (local_thk_label), 16.620 m³
+  SLAB-063: 19.419 m², 200 mm (local_thk_label), 3.884 m³
+  SLAB-064: 30.538 m², 200 mm (local_thk_label), 6.108 m³
+  SLAB-065: 18.361 m², 200 mm (local_thk_label), 3.672 m³
+  SLAB-066: 25.756 m², 200 mm (local_thk_label), 5.151 m³
+  SLAB-067: 6.917 m², 200 mm (local_thk_label), 1.383 m³

@@ -1,0 +1,101 @@
+{
+  "split": "test",
+  "phase": "slab_beam_quantity",
+  "metric_type": "inference_proxy",
+  "ground_truth": {
+    "workbook_benchmark": "no_ground_truth",
+    "train_accuracy_eval": "scripts/evaluate_ml_project.py --train-only (entity F1 on Tagged Files_2)",
+    "test_accuracy_eval": "scripts/evaluate_ml_project.py --test-only (paired teach reference on Raw files_2)"
+  },
+  "classification": {
+    "entities_total": 934,
+    "by_type": {
+      "Column": 253,
+      "Slab": 33,
+      "Beam": 597,
+      "Shear Wall": 9,
+      "Opening": 17,
+      "Unknown": 25
+    },
+    "slab_beam_entity_count": 630,
+    "slab_beam_share_pct": 67.5,
+    "mean_confidence_all": 75.26,
+    "mean_confidence_slab_beam": 75.81,
+    "low_confidence_count": 340,
+    "low_confidence_pct": 36.4,
+    "review_required_count": 72,
+    "review_required_pct": 7.7,
+    "unknown_count": 25,
+    "unknown_pct": 2.7,
+    "ambiguous_count": 934,
+    "deepseek_updated": 917,
+    "per_type": {
+      "Beam": {
+        "count": 597,
+        "mean_confidence": 75.88,
+        "low_confidence_pct": 40.9
+      },
+      "Column": {
+        "count": 253,
+        "mean_confidence": 79.7,
+        "low_confidence_pct": 15.4
+      },
+      "Opening": {
+        "count": 17,
+        "mean_confidence": 61.21,
+        "low_confidence_pct": 100.0
+      },
+      "Shear Wall": {
+        "count": 9,
+        "mean_confidence": 74.87,
+        "low_confidence_pct": 55.6
+      },
+      "Slab": {
+        "count": 33,
+        "mean_confidence": 74.5,
+        "low_confidence_pct": 30.3
+      },
+      "Unknown": {
+        "count": 25,
+        "mean_confidence": 26.22,
+        "low_confidence_pct": 100.0
+      }
+    }
+  },
+  "quantities": {
+    "slab_count": 46,
+    "slab_area_m2": 717.569829,
+    "slab_concrete_m3": 149.910022,
+    "beam_count": 124,
+    "beam_total_length_m": 437.111,
+    "beam_concrete_m3": 144.247853,
+    "total_concrete_m3": 294.157875,
+    "total_shuttering_m2": 1810.356604
+  },
+  "quality_targets": {
+    "mean_confidence_slab_beam_min": 75.0,
+    "low_confidence_pct_max": 10.0,
+    "unknown_pct_max": 5.0
+  },
+  "quality_checks": [
+    {
+      "check": "slab_beam_mean_confidence",
+      "value": 75.81,
+      "target": ">= 75",
+      "pass": true
+    },
+    {
+      "check": "low_confidence_pct",
+      "value": 36.4,
+      "target": "<= 10",
+      "pass": false
+    },
+    {
+      "check": "unknown_pct",
+      "value": 2.7,
+      "target": "<= 5",
+      "pass": true
+    }
+  ],
+  "quality_pass": false
+}

@@ -1,0 +1,51 @@
+SDIE v5 Structural Reasoning Pipeline — Inizio_Raw_11.dxf
+Processed: 2026-06-10T06:54:10.976732+00:00
+Components classified: 726
+Graph: 726 nodes, 900 edges
+Review queue: 84 entities (46.01% below 75.0%)
+
+Slabs detected: 15
+Slab area:       279.731 m²
+Slab concrete:   67.401 m³
+Beams quantified: 134
+Beam length:     387.014 m
+Beam concrete:   127.716 m³
+Total concrete:  195.117 m³ (slab + beam)
+Total shuttering:1247.274 m²
+
+Beams (first 10):
+  BEAM-001: L=6.21 m, 300x1100 mm, 2.049 m³
+  BEAM-002: L=3.05 m, 300x1100 mm, 1.007 m³
+  BEAM-003: L=5.40 m, 300x1100 mm, 1.782 m³
+  BEAM-004: L=6.55 m, 300x1100 mm, 2.161 m³
+  BEAM-005: L=4.13 m, 300x1100 mm, 1.363 m³
+  BEAM-006: L=6.55 m, 300x1100 mm, 2.161 m³
+  BEAM-007: L=3.05 m, 300x1100 mm, 1.007 m³
+  BEAM-008: L=6.21 m, 300x1100 mm, 2.049 m³
+  BEAM-009: L=2.10 m, 300x1100 mm, 0.693 m³
+  BEAM-010: L=2.50 m, 300x1100 mm, 0.825 m³
+  ... +124 more beams
+
+=== Inference metrics (raw drawing — no workbook GT) ===
+Slab+Beam entities: 650 (89.5%)
+Mean confidence (Slab+Beam): 73.87%
+Low confidence (<75.0%): 46.01%
+Review required: 84 (11.6%)
+Unknown: 6.5%
+Quality checks pass: False
+
+  SLAB-001: 24.637 m², 200 mm (200 THK), 4.927 m³
+  SLAB-002: 12.939 m², 200 mm (200 THK), 2.588 m³
+  SLAB-003: 25.050 m², 275 mm (275 THK), 6.889 m³
+  SLAB-004: 26.206 m², 275 mm (275 THK), 7.207 m³
+  SLAB-005: 16.672 m², 275 mm (275 THK), 4.585 m³
+  SLAB-006: 5.191 m², 200 mm (default_note), 1.038 m³
+  SLAB-007: 30.163 m², 200 mm (200 THK), 6.033 m³
+  SLAB-008: 15.841 m², 200 mm (200 THK), 3.168 m³
+  SLAB-009: 30.669 m², 275 mm (275 THK), 8.434 m³
+  SLAB-010: 32.086 m², 275 mm (275 THK), 8.824 m³
+  SLAB-011: 22.045 m², 275 mm (275 THK), 6.062 m³
+  SLAB-012: 5.169 m², 200 mm (default_note), 1.034 m³
+  SLAB-013: 3.351 m², 200 mm (default_note), 0.670 m³
+  SLAB-014: 13.356 m², 200 mm (default_note), 2.671 m³
+  SLAB-015: 16.355 m², 200 mm (default_note), 3.271 m³

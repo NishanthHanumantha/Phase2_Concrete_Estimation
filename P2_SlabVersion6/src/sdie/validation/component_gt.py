@@ -51,6 +51,79 @@ DEFAULT_ANNOTATION_LAYERS: tuple[str, ...] = (
     "G-ANNO-TEXT",
 )
 
+# --- Teach-corpus layer fallback (projects with non-Inizio layer naming) ---
+# Include keywords per supervised component; a layer is picked only when it
+# matches its own component's keywords and none of the other components'.
+TEACH_INCLUDE_KEYWORDS: dict[str, tuple[str, ...]] = {
+    ComponentType.BEAM.value: ("BEAM", "HATCH", "HAT", "FRAME", "BM"),
+    ComponentType.COLUMN.value: ("COL", "CLMN"),
+    ComponentType.SHEAR_WALL.value: ("WALL", "SHEAR", "SW"),
+    ComponentType.SLAB.value: ("SLAB", "HATCH", "SUNK", "FLOR"),
+}
+# Layers matching these are never structural teach layers.
+TEACH_EXCLUDE_KEYWORDS: tuple[str, ...] = (
+    "DIM", "TXT", "TEXT", "GRID", "ANNO", "IDEN", "NOTE", "TITLE", "SEC",
+    "LEVEL", "SYMB", "TEMP", "CHECK", "DEFPOINTS", "STAIR", "RAILING", "OPNG",
+    "WNDW", "DOOR", "BAND", "DESIGN", "DLINES", "BLOCK", "PATT", "OUTLINE",
+    "NON STR", "SUNK BY",
+)
+# Keywords that signal a *different* component than the supervised one.
+_TEACH_COMPONENT_MARKERS: dict[str, tuple[str, ...]] = {
+    ComponentType.BEAM.value: ("BEAM", "BM"),
+    ComponentType.COLUMN.value: ("COL", "CLMN"),
+    ComponentType.SHEAR_WALL.value: ("WALL", "SHEAR"),
+    ComponentType.SLAB.value: ("SLAB",),
+}
+
+_TEACH_STRUCTURAL_DXFTYPES = ("LINE", "LWPOLYLINE", "POLYLINE", "HATCH")
+
+
+def flatten_modelspace_entities(msp, *, max_depth: int = 2) -> list:
+    """Modelspace entities with block INSERTs expanded (teach fallback only)."""
+    out: list = []
+
+    def _walk(entities, depth: int) -> None:
+        for ent in entities:
+            if ent.dxftype() == "INSERT" and depth < max_depth:
+                try:
+                    _walk(ent.virtual_entities(), depth + 1)
+                except Exception:
+                    continue
+            else:
+                out.append(ent)
+
+    _walk(msp, 0)
+    return out
+
+
+def discover_teach_structural_layers(
+    entities: list,
+    supervised_type: str,
+) -> tuple[str, ...]:
+    """Pick structural layers by keyword for one supervised component type."""
+    include = TEACH_INCLUDE_KEYWORDS.get(supervised_type, ())
+    if not include:
+        return ()
+    other_markers = [
+        kw
+        for ctype, kws in _TEACH_COMPONENT_MARKERS.items()
+        if ctype != supervised_type
+        for kw in kws
+    ]
+    layers: set[str] = set()
+    for ent in entities:
+        if ent.dxftype() not in _TEACH_STRUCTURAL_DXFTYPES:
+            continue
+        layer = ent.dxf.layer
+        upper = layer.upper()
+        if any(kw in upper for kw in TEACH_EXCLUDE_KEYWORDS):
+            continue
+        if any(kw in upper for kw in other_markers):
+            continue
+        if any(kw in upper for kw in include):
+            layers.add(layer)
+    return tuple(sorted(layers))
+
 
 def normalize_business_type(component_type: str) -> str:
     """Map internal classifier labels to the four business calculator types."""
@@ -125,14 +198,32 @@ def extract_entities_from_dxf(
     *,
     structural_layers: tuple[str, ...] | None = None,
     annotation_layers: tuple[str, ...] | None = None,
+    supervised_fallback_type: str | None = None,
+    fallback_min_entities: int = 10,
 ) -> list[DrawingEntity]:
     doc, _meta = load_drawing(dxf_path)
     msp = doc.modelspace()
-    return extract_drawing_entities(
+    entities = extract_drawing_entities(
         msp,
         layers=structural_layers or DEFAULT_STRUCTURAL_LAYERS,
         include_text_layers=annotation_layers or DEFAULT_ANNOTATION_LAYERS,
     )
+    if supervised_fallback_type and len(entities) < fallback_min_entities:
+        # Teach corpus from a project with non-default layer naming: expand
+        # block INSERTs and pick layers by component keyword instead.
+        flat = flatten_modelspace_entities(msp)
+        fallback_layers = discover_teach_structural_layers(
+            flat, supervised_fallback_type
+        )
+        if fallback_layers:
+            fallback = extract_drawing_entities(
+                flat,
+                layers=fallback_layers,
+                include_text_layers=annotation_layers or DEFAULT_ANNOTATION_LAYERS,
+            )
+            if len(fallback) > len(entities):
+                return fallback
+    return entities
 
 
 def build_entity_ground_truth(
@@ -140,7 +231,10 @@ def build_entity_ground_truth(
     entities: list[DrawingEntity] | None = None,
 ) -> list[EntityGroundTruth]:
     """Build per-entity GT for one manifest drawing."""
-    entities = entities or extract_entities_from_dxf(spec.dxf_path)
+    entities = entities or extract_entities_from_dxf(
+        spec.dxf_path,
+        supervised_fallback_type=spec.supervised_type,
+    )
     out: list[EntityGroundTruth] = []
 
     if spec.supervised_type:

@@ -1,60 +1,16 @@
 {
-  "version": "4",
-  "description": "INIZIO teach: Tagged Files_2 single-floor component plans (primary) + legacy Tagged files full sheets. TRUST/MANOHAR unchanged.",
+  "version": "5",
+  "description": "Teach corpus: Revised Project Knowledge/Tagged Files_2 \u2014 8-9 projects (Inizio, Trust Office, and others) split per component (Slab/Beam/Column/Wall) and per floor. Sole source for slab/beam/column/wall supervised learning.",
   "projects": [
     {
       "project_id": "INIZIO",
-      "name": "Inizio \u2014 Revised Project Knowledge",
+      "name": "Revised Project Knowledge \u2014 multi-project tagged corpus",
       "knowledge_root": "Revised Project Knowledge",
       "dxf_folder": "Revised Project Knowledge/Tagged Files_2",
       "raw_dxf": "Revised Project Knowledge/Raw File/Inizio - Slab beam_Raw_Revised1.dxf",
       "ground_truth_json": "data/ground_truth/Inizio Slab with tag.json",
       "workbook": null,
       "drawings": [
-        {
-          "drawing_id": "Inizio Slab with tag_Revised1",
-          "dxf": "Revised Project Knowledge/Tagged files/Inizio Slab with tag_Revised1.dxf",
-          "tagged_slab": true,
-          "corpus": "tagged_files_v1",
-          "floor_plan": false
-        },
-        {
-          "drawing_id": "Inizio - Beam with tag_Revised1",
-          "dxf": "Revised Project Knowledge/Tagged files/Inizio - Beam with tag_Revised1.dxf",
-          "tagged_beam": true,
-          "corpus": "tagged_files_v1",
-          "floor_plan": false
-        },
-        {
-          "drawing_id": "Inizio - Colum with tag_Revised1",
-          "dxf": "Revised Project Knowledge/Tagged files/Inizio - Colum with tag_Revised1.dxf",
-          "tagged_column": true,
-          "corpus": "tagged_files_v1",
-          "floor_plan": false
-        },
-        {
-          "drawing_id": "Inizio - Shearwall with tag_Revised1",
-          "dxf": "Revised Project Knowledge/Tagged files/Inizio - Shearwall with tag_Revised1.dxf",
-          "tagged_shearwall": true,
-          "corpus": "tagged_files_v1",
-          "floor_plan": false
-        },
-        {
-          "drawing_id": "ShearWallTag_ST_Inizio1",
-          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/ShearWallTag_ST_Inizio1.dxf",
-          "tagged_slab": true,
-          "corpus": "tagged_files_v2",
-          "floor_plan": true,
-          "component_folder": "Slab"
-        },
-        {
-          "drawing_id": "Sherwall_Tag_ST_Inizio2",
-          "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/Sherwall_Tag_ST_Inizio2.dxf",
-          "tagged_slab": true,
-          "corpus": "tagged_files_v2",
-          "floor_plan": true,
-          "component_folder": "Slab"
-        },
         {
           "drawing_id": "SlabTag-Inizio_ST13",
           "dxf": "Revised Project Knowledge/Tagged Files_2/Slab/SlabTag-Inizio_ST13.dxf",
@@ -504,22 +460,6 @@
           "component_folder": "Wall"
         },
         {
-          "drawing_id": "SW_I_5",
-          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_5.dxf",
-          "tagged_shearwall": true,
-          "corpus": "tagged_files_v2",
-          "floor_plan": true,
-          "component_folder": "Wall"
-        },
-        {
-          "drawing_id": "SW_I_6",
-          "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_6.dxf",
-          "tagged_shearwall": true,
-          "corpus": "tagged_files_v2",
-          "floor_plan": true,
-          "component_folder": "Wall"
-        },
-        {
           "drawing_id": "SW_I_7",
           "dxf": "Revised Project Knowledge/Tagged Files_2/Wall/SW_I_7.dxf",
           "tagged_shearwall": true,
@@ -569,37 +509,6 @@
         }
       ],
       "tagged_corpus_v2": "Revised Project Knowledge/Tagged Files_2"
-    },
-    {
-      "project_id": "TRUST_OFFICE",
-      "name": "Project2 - TrustOffice",
-      "dxf_folder": "Project2 - TrustOffice",
-      "workbook": "Ground Truths/TestGT/TrustOffice_FF_ExpectedOutput.xlsx",
-      "drawings": [
-        {
-          "drawing_id": "Trust office Slab & Beam with tag",
-          "dxf": "Project2 - TrustOffice/Trust office Slab & Beam with tag.dxf",
-          "primary": true
-        },
-        {
-          "drawing_id": "Trust office Column with tag",
-          "dxf": "Project2 - TrustOffice/Trust office Column with tag.dxf",
-          "tagged_column": true
-        }
-      ]
-    },
-    {
-      "project_id": "MANOHAR",
-      "name": "Project3 - Manohar",
-      "dxf_folder": "Project3 - Manohar",
-      "workbook": "Ground Truths/Project3 - Manohar/Manohar Slab & Beam.xlsx",
-      "drawings": [
-        {
-          "drawing_id": "Manohar slab - beam -column with tag",
-          "dxf": "Project3 - Manohar/Manohar slab - beam -column with tag.dxf",
-          "primary": true
-        }
-      ]
     }
   ]
 }

@@ -1,0 +1,113 @@
+{
+  "split": "test",
+  "phase": "slab_beam_quantity",
+  "metric_type": "inference_proxy",
+  "ground_truth": {
+    "workbook_benchmark": "no_ground_truth",
+    "train_accuracy_eval": "scripts/evaluate_ml_project.py --train-only (entity F1 on Tagged Files_2)",
+    "test_accuracy_eval": "scripts/evaluate_ml_project.py --test-only (paired teach reference on Raw files_2)"
+  },
+  "classification": {
+    "entities_total": 597,
+    "by_type": {
+      "Unknown": 8,
+      "Slab": 111,
+      "Opening": 54,
+      "Beam": 412,
+      "Stair Core": 6,
+      "Lift Core": 3,
+      "Column": 2,
+      "Shaft": 1
+    },
+    "slab_beam_entity_count": 523,
+    "slab_beam_share_pct": 87.6,
+    "mean_confidence_all": 69.05,
+    "mean_confidence_slab_beam": 70.68,
+    "low_confidence_count": 430,
+    "low_confidence_pct": 72.03,
+    "review_required_count": 150,
+    "review_required_pct": 25.1,
+    "unknown_count": 8,
+    "unknown_pct": 1.3,
+    "ambiguous_count": 597,
+    "deepseek_updated": 533,
+    "per_type": {
+      "Beam": {
+        "count": 412,
+        "mean_confidence": 71.6,
+        "low_confidence_pct": 69.7
+      },
+      "Column": {
+        "count": 2,
+        "mean_confidence": 51.55,
+        "low_confidence_pct": 100.0
+      },
+      "Lift Core": {
+        "count": 3,
+        "mean_confidence": 61.5,
+        "low_confidence_pct": 100.0
+      },
+      "Opening": {
+        "count": 54,
+        "mean_confidence": 60.48,
+        "low_confidence_pct": 100.0
+      },
+      "Shaft": {
+        "count": 1,
+        "mean_confidence": 56.5,
+        "low_confidence_pct": 100.0
+      },
+      "Slab": {
+        "count": 111,
+        "mean_confidence": 67.28,
+        "low_confidence_pct": 62.2
+      },
+      "Stair Core": {
+        "count": 6,
+        "mean_confidence": 61.5,
+        "low_confidence_pct": 100.0
+      },
+      "Unknown": {
+        "count": 8,
+        "mean_confidence": 35.12,
+        "low_confidence_pct": 100.0
+      }
+    }
+  },
+  "quantities": {
+    "slab_count": 24,
+    "slab_area_m2": 473.165245,
+    "slab_concrete_m3": 70.974788,
+    "beam_count": 141,
+    "beam_total_length_m": 394.294,
+    "beam_concrete_m3": 47.315242,
+    "total_concrete_m3": 118.29003,
+    "total_shuttering_m2": 1025.176425
+  },
+  "quality_targets": {
+    "mean_confidence_slab_beam_min": 75.0,
+    "low_confidence_pct_max": 10.0,
+    "unknown_pct_max": 5.0
+  },
+  "quality_checks": [
+    {
+      "check": "slab_beam_mean_confidence",
+      "value": 70.68,
+      "target": ">= 75",
+      "pass": false
+    },
+    {
+      "check": "low_confidence_pct",
+      "value": 72.03,
+      "target": "<= 10",
+      "pass": false
+    },
+    {
+      "check": "unknown_pct",
+      "value": 1.3,
+      "target": "<= 5",
+      "pass": true
+    }
+  ],
+  "quality_pass": false
+}

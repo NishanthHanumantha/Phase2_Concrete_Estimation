@@ -112,20 +112,30 @@ def main() -> int:
     if args.write_manifest:
         manifest_path = args.write_manifest
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        inizio = None
         for project in manifest.get("projects", []):
-            if project.get("project_id") != "INIZIO":
-                continue
-            project["tagged_corpus_v2"] = REVISED_TAGGED_V2_ROOT_REL
-            project["drawings"] = entries
-            project["dxf_folder"] = REVISED_TAGGED_V2_ROOT_REL
-            break
-        manifest["version"] = "4"
+            if project.get("project_id") == "INIZIO":
+                inizio = project
+                break
+        if inizio is None:
+            inizio = {"project_id": "INIZIO"}
+        # Corpus key stays "INIZIO" for script compatibility, but the corpus itself
+        # is multi-project: 8-9 projects split by component folder and floor.
+        inizio["name"] = "Revised Project Knowledge — multi-project tagged corpus"
+        inizio["knowledge_root"] = "Revised Project Knowledge"
+        inizio["tagged_corpus_v2"] = REVISED_TAGGED_V2_ROOT_REL
+        inizio["drawings"] = entries
+        inizio["dxf_folder"] = REVISED_TAGGED_V2_ROOT_REL
+        # Sole teach source: Revised Project Knowledge (legacy Project2/3 unlearned).
+        manifest["projects"] = [inizio]
+        manifest["version"] = "5"
         manifest["description"] = (
-            "INIZIO teach: Tagged Files_2 single-floor component plans (primary) "
-            "+ legacy Tagged files full sheets. TRUST/MANOHAR unchanged."
+            "Teach corpus: Revised Project Knowledge/Tagged Files_2 — 8-9 projects "
+            "(Inizio, Trust Office, and others) split per component (Slab/Beam/Column/Wall) "
+            "and per floor. Sole source for slab/beam/column/wall supervised learning."
         )
         manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-        print(f"\nWrote {len(entries)} INIZIO drawings to {manifest_path}")
+        print(f"\nWrote {len(entries)} corpus drawings to {manifest_path}")
 
     return 0
 

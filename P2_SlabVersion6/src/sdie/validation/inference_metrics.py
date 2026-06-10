@@ -56,12 +56,18 @@ def build_inference_metrics(
 
     phase_conf = [float(c.confidence) for c in slab_beam]
     metrics: dict[str, Any] = {
+        "split": "test",
         "phase": "slab_beam_quantity",
+        "metric_type": "inference_proxy",
         "ground_truth": {
             "workbook_benchmark": benchmark.get("status", "unknown"),
-            "entity_accuracy_eval": (
-                "Run evaluate_component_classification.py --slab-beam-only "
-                "on tagged teach corpus"
+            "train_accuracy_eval": (
+                "scripts/evaluate_ml_project.py --train-only "
+                "(entity F1 on Tagged Files_2)"
+            ),
+            "test_accuracy_eval": (
+                "scripts/evaluate_ml_project.py --test-only "
+                "(paired teach reference on Raw files_2)"
             ),
         },
         "classification": {

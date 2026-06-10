@@ -14,6 +14,8 @@ from sdie.ingestion.entity_extractor import extract_drawing_entities
 from sdie.validation.component_gt import (
     DEFAULT_ANNOTATION_LAYERS,
     DEFAULT_STRUCTURAL_LAYERS,
+    discover_teach_structural_layers,
+    flatten_modelspace_entities,
 )
 
 
@@ -40,6 +42,21 @@ def build_atlas_samples_from_dxf(
         layers=layers,
         include_text_layers=ann,
     )
+    if supervised_component_type and len(entities) < 10:
+        # Project with non-default layer naming: expand INSERTs, pick layers
+        # by component keyword (see component_gt teach fallback).
+        flat = flatten_modelspace_entities(msp)
+        fallback_layers = discover_teach_structural_layers(
+            flat, supervised_component_type
+        )
+        if fallback_layers:
+            fallback = extract_drawing_entities(
+                flat,
+                layers=fallback_layers,
+                include_text_layers=ann,
+            )
+            if len(fallback) > len(entities):
+                entities = fallback
 
     if supervised_component_type:
         samples: list[AtlasSample] = []

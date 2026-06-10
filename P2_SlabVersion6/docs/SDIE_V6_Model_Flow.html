@@ -14,6 +14,7 @@
       --teach: #1a73e8;
       --infer: #34a853;
       --out: #f9ab00;
+      --metric: #9334e6;
       --border: #e0e4ea;
     }
     * { box-sizing: border-box; }
@@ -49,6 +50,7 @@
     .dot-teach { background: #E8F4FD; border: 2px solid var(--teach); }
     .dot-infer { background: #E6F4EA; border: 2px solid var(--infer); }
     .dot-out { background: #FEF7E0; border: 2px solid var(--out); }
+    .dot-metric { background: #F3E8FD; border: 2px solid var(--metric); }
 
     main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
     section {
@@ -132,48 +134,62 @@
 <body>
   <header>
     <h1>SDIE V6 — Model Flow</h1>
-    <p>Teach from reference projects → Infer on any drawing → Quantify slabs &amp; beams</p>
+    <p>Train on Tagged Files_2 (X) → Infer on Raw files_2 (Y) → Slab &amp; beam quantities + ML metrics</p>
     <div class="legend">
-      <span><i class="dot dot-teach"></i> Teach (offline)</span>
-      <span><i class="dot dot-infer"></i> Infer (runtime)</span>
+      <span><i class="dot dot-teach"></i> Train corpus X (teach)</span>
+      <span><i class="dot dot-infer"></i> Test corpus Y (infer)</span>
+      <span><i class="dot dot-metric"></i> ML metrics</span>
       <span><i class="dot dot-out"></i> Outputs</span>
     </div>
   </header>
 
   <main>
     <section class="hero" id="sec-e2e">
-      <h2>1. End-to-End Flow</h2>
-      <p class="desc">Single view: reference teach artifacts feed generic inference on any raw DXF.</p>
+      <h2>1. End-to-End ML Flow (X / Y Split)</h2>
+      <p class="desc">Multi-project teach corpus (8–9 projects) trains offline; raw floor plans are the held-out test set. Legacy Project2/3 knowledge is unlearned.</p>
       <div class="diagram-wrap" data-export="SDIE_V6_End_to_End">
         <pre class="mermaid">
 flowchart TD
     classDef teach fill:#E8F4FD,stroke:#1A73E8,stroke-width:2px
     classDef infer fill:#E6F4EA,stroke:#34A853,stroke-width:2px
+    classDef metric fill:#F3E8FD,stroke:#9334E6,stroke-width:2px
     classDef out fill:#FEF7E0,stroke:#FBBC04,stroke-width:2px
 
-    subgraph TEACH["A · TEACH — offline, reference projects only"]
-        T0["Tagged DXFs\nINIZIO · TRUST_OFFICE · MANOHAR"]:::teach
-        T1[Component Atlas]:::teach
-        T2[Layer Profiles]:::teach
-        T3[Structural Knowledge Base]:::teach
-        T0 --> T1 & T2 & T3
+    subgraph X["X · TRAIN — Revised Project Knowledge/Tagged Files_2"]
+        X0["62 tagged DXFs\nSlab/ · Beam/ · Column/ · Wall/\n8–9 projects · per floor"]:::teach
+        X1[discover_tagged_corpus.py]:::teach
+        X2[build_layer_profiles.py]:::teach
+        X3[ingest_estimator_workbooks\n--build-atlas --fresh-atlas --build-kb]:::teach
+        X4[(layer_profiles.json)]:::teach
+        X5[(component_atlas.json)]:::teach
+        X6[(structural_kb.json)]:::teach
+        X0 --> X1 --> X2 & X3
+        X2 --> X4
+        X3 --> X5 & X6
     end
 
-    subgraph INFER["B · INFER — runtime, any raw DXF · project-id GENERIC"]
-        I0[Input DXF]:::infer
-        I1["Prepare drawing\nlayers · floor zone · entities"]:::infer
-        I2["Classify components\nrules · graph · DeepSeek"]:::infer
-        I3["Quantify\nbeams · slabs · concrete"]:::infer
-        I4[Export results]:::infer
-        I0 --> I1 --> I2 --> I3 --> I4
+    subgraph METRICS["ML METRICS — evaluate_ml_project.py"]
+        M1["Train (X)\nentity accuracy · P/R/F1\n--slab-beam-only"]:::metric
+        M2["Test (Y)\npaired teach reference\nslab/beam count accuracy"]:::metric
+        M3[(ml_project_report.json)]:::metric
+        M1 & M2 --> M3
     end
 
-    T1 & T2 & T3 --> I1
-    T1 & T2 & T3 --> I2
+    subgraph Y["Y · TEST — Revised Project Knowledge/Raw files_2"]
+        Y0["18 raw DXFs\nInizio_Raw_* · TrustOffice_*"]:::infer
+        Y1[run_pipeline.py\n--project-id GENERIC]:::infer
+        Y2["Classify + quantify\nslab + beam only"]:::infer
+        Y0 --> Y1 --> Y2
+    end
 
-    I4 --> O1[JSON + building model]:::out
-    I4 --> O2[Overlay HTML / SVG]:::out
-    I4 --> O3[Excel + review queue]:::out
+    X4 & X5 & X6 --> Y1
+    X0 -.-> M1
+    Y2 --> M2
+
+    Y2 --> O1[results.json + metrics.json]:::out
+    Y2 --> O2[overlay.html / SVG]:::out
+    Y2 --> O3[quantities.xlsx + Metrics sheet]:::out
+    Y2 --> O4[review_queue.json]:::out
         </pre>
       </div>
       <div class="actions">
@@ -183,18 +199,29 @@ flowchart TD
     </section>
 
     <section id="sec-teach">
-      <h2>2. Teach Pipeline (Phase A)</h2>
-      <p class="desc">Offline learning from tagged reference DXFs per project.</p>
+      <h2>2. Teach Pipeline (Corpus X)</h2>
+      <p class="desc">Sole supervised source: Tagged Files_2. Component-aware layer fallback for DH/GC/M project naming.</p>
       <div class="diagram-wrap" data-export="SDIE_V6_Teach">
         <pre class="mermaid">
 flowchart LR
-    M[projects_manifest.json] --> D[Tagged DXF per project]
-    D --> S1[build_atlas.py]
-    D --> S2[build_layer_profiles.py]
-    D --> S3[RAG / KB builder]
-    S1 --> A[(component_atlas.json)]
-    S2 --> P[(layer_profiles.json)]
-    S3 --> K[(structural_kb.json)]
+    subgraph CORPUS["Tagged Files_2/"]
+        S[Slab/]
+        B[Beam/]
+        C[Column/]
+        W[Wall/]
+    end
+
+    M[projects_manifest.json\nmanifest key: INIZIO\nmulti-project corpus] --> D[discover_tagged_corpus.py]
+    CORPUS --> D
+
+    D --> LP[build_layer_profiles.py]
+    D --> AT[ingest_estimator_workbooks.py\n--build-atlas --fresh-atlas --build-kb]
+
+    LP --> P[(layer_profiles.json)]
+    AT --> A[(component_atlas.json)]
+    AT --> K[(structural_kb.json)]
+
+    D -.-> GT[Entity GT\nmanifest supervised flags\nSlab · Beam · Column · Wall]
         </pre>
       </div>
       <div class="actions">
@@ -203,25 +230,63 @@ flowchart LR
       </div>
     </section>
 
+    <section id="sec-ml">
+      <h2>3. ML Metrics (Train X + Test Y)</h2>
+      <p class="desc">Standard ML-style accuracy reporting. Target: ≥ 85% F1 (train) and reference accuracy (test).</p>
+      <div class="diagram-wrap" data-export="SDIE_V6_ML_Metrics">
+        <pre class="mermaid">
+flowchart TD
+    classDef train fill:#E8F4FD,stroke:#1A73E8,stroke-width:2px
+    classDef test fill:#E6F4EA,stroke:#34A853,stroke-width:2px
+    classDef out fill:#FEF7E0,stroke:#FBBC04,stroke-width:2px
+
+    subgraph TRAIN["Train metrics (X)"]
+        T1["Tagged Files_2\nSlab/ + Beam/ teach DXFs"]:::train
+        T2["evaluate_ml_project.py\n--train-only [--max-drawings N]"]:::train
+        T3["Entity classification eval\naccuracy · precision · recall · F1"]:::train
+        T1 --> T2 --> T3
+    end
+
+    subgraph TEST["Test metrics (Y)"]
+        R1["Raw files_2 pipeline outputs\n*_results.json"]:::test
+        R2["Auto-pair raw → teach floor\nInizio_Raw_N → STN tagged"]:::test
+        R3["Reference accuracy\nentity + quantity counts vs teach"]:::test
+        R1 --> R2 --> R3
+    end
+
+    T3 --> REP[(train_metrics.json)]:::out
+    R3 --> TST[(test_metrics.json)]:::out
+    REP & TST --> COMB[(ml_project_report.json)]:::out
+
+    INF["Per-run inference_metrics\nconfidence · unknown% · quality checks"]:::test
+    R1 --> INF
+        </pre>
+      </div>
+      <div class="actions">
+        <button class="primary" onclick="exportPng('sec-ml', 'SDIE_V6_ML_Metrics')">Download PNG</button>
+        <button onclick="exportSvg('sec-ml', 'SDIE_V6_ML_Metrics')">Download SVG</button>
+      </div>
+    </section>
+
     <section id="sec-infer">
-      <h2>3. Inference Pipeline (Phase B)</h2>
-      <p class="desc">Eleven numbered steps from DXF load through export.</p>
+      <h2>4. Inference Pipeline (Test Corpus Y)</h2>
+      <p class="desc">Eleven numbered steps from DXF load through export with inference metrics.</p>
       <div class="diagram-wrap" data-export="SDIE_V6_Inference">
         <pre class="mermaid">
 flowchart TD
     START([run_pipeline.py]) --> S1
 
     S1["① Load DXF\nunits · scale · extents"]
-    S2["② Auto-discover layers\nframe · annotation · void · column"]
+    S2["② Auto-discover layers\nV6 layer_discovery.py"]
     S3["③ Resolve floor zone\nTHK label clusters"]
-    S4["④ Load teach artifacts\nAtlas + KB · GENERIC = all projects"]
-    S5["⑤ Extract entities\nstructural · cutout · hatch void · columns"]
-    S6["⑥ Classify — V5 engine"]
+    S4["④ Load teach artifacts\nAtlas + KB + profiles · GENERIC"]
+    S5["⑤ Extract entities\nstructural · cutout · void · columns"]
+    S6["⑥ Classify — V5 engine\nrules · graph · atlas · DeepSeek"]
     S7["⑦ Beam quantities\nlength × section → concrete m³"]
     S8["⑧ Build structural graph\nnodes + topology edges"]
     S9["⑨ Slab detection\nexclusions → beam grid → bays"]
     S10["⑩ Slab quantities\narea × THK → concrete m³"]
-    S11["⑪ Export\nJSON · overlay · Excel · review queue"]
+    S11["⑪ Export + metrics\nJSON · overlay · Excel · inference_metrics"]
 
     START --> S1 --> S2 --> S3 --> S4 --> S5 --> S6
     S6 --> S7 --> S8 --> S9 --> S10 --> S11
@@ -234,15 +299,15 @@ flowchart TD
     </section>
 
     <section id="sec-classify">
-      <h2>4. V5 Classification Engine</h2>
-      <p class="desc">Rule baseline → graph topology → DeepSeek on low-confidence entities.</p>
+      <h2>5. V5 Classification Engine</h2>
+      <p class="desc">Rule baseline → layer profiles → graph topology → DeepSeek on low-confidence entities. Column/Wall classify for exclusions only.</p>
       <div class="diagram-wrap" data-export="SDIE_V6_Classification">
         <pre class="mermaid">
 flowchart TD
     E[Entity] --> R{Rule baseline}
     R -->|Hard layer| L1["Locked type\nOpening · Column · Beam"]
     R -->|Soft layer| L2["Geometry heuristics\nbeam line · column · wall"]
-    R -->|Teach rule| L3["Best layer profile\ncross-project if GENERIC"]
+    R -->|Teach rule| L3["Layer profile\nfrom Tagged Files_2 corpus"]
     L1 --> G[Structural graph topology]
     L2 --> G
     L3 --> G
@@ -251,6 +316,10 @@ flowchart TD
     D -->|Yes| DS["DeepSeek + RAG\natlas · KB · neighbours"]
     D -->|No| F[Final type]
     DS --> F
+
+    F --> QTY{Quantity phase?}
+    QTY -->|Slab · Beam| CALC[Concrete + shuttering]
+    QTY -->|Column · Wall · Opening| EXCL[Exclusions + context only]
         </pre>
       </div>
       <div class="actions">
@@ -260,8 +329,8 @@ flowchart TD
     </section>
 
     <section id="sec-qty">
-      <h2>5. Quantity Engines</h2>
-      <p class="desc">Beam takeoff (length × section) and slab takeoff (area × THK) combined into totals.</p>
+      <h2>6. Quantity Engines (Phase Scope)</h2>
+      <p class="desc">This phase: slab + beam quantities only. Supporting components drive exclusions, not quantity calculators.</p>
       <div class="diagram-wrap" data-export="SDIE_V6_Quantities">
         <pre class="mermaid">
 flowchart LR
@@ -272,14 +341,19 @@ flowchart LR
     end
 
     subgraph SLAB["Slab takeoff"]
-        SL1[Classified framing] --> SL2[Exclusions applied]
+        SL1[Classified framing] --> SL2[Exclusions applied\ncolumns · walls · voids]
         SL2 --> SL3[Closed bays via beam grid]
         SL3 --> SL4[Nearest THK label]
         SL4 --> SL5["Area × thickness → m³"]
     end
 
-    B4 --> T["Combined totals\nslab + beam concrete"]
+    subgraph CTX["Context only — no qty calc"]
+        CX1[Column · Shear Wall\nLift · Stair · Opening]
+    end
+
+    B4 --> T["Phase totals\nslab + beam concrete"]
     SL5 --> T
+    CX1 -.-> SL2
         </pre>
       </div>
       <div class="actions">
@@ -289,24 +363,33 @@ flowchart LR
     </section>
 
     <section>
-      <h2>6. Inference Mode &amp; Outputs</h2>
+      <h2>7. Data Layout &amp; Outputs</h2>
       <table>
-        <tr><th>project-id</th><th>Knowledge</th><th>Use case</th></tr>
-        <tr><td><strong>GENERIC</strong> (default)</td><td>All teach projects merged</td><td>New / unknown drawings</td></tr>
-        <tr><td>INIZIO</td><td>Inizio + GLOBAL</td><td>Teach evaluation</td></tr>
-        <tr><td>TRUST_OFFICE</td><td>Trust + GLOBAL</td><td>Teach evaluation</td></tr>
+        <tr><th>Folder / file</th><th>Role</th><th>Split</th></tr>
+        <tr><td><strong>Revised Project Knowledge/Tagged Files_2/</strong></td><td>Tagged teach DXFs (Slab/Beam/Column/Wall, per floor)</td><td>X (train)</td></tr>
+        <tr><td><strong>Revised Project Knowledge/Raw files_2/</strong></td><td>Raw untagged floor plans (18 DXFs)</td><td>Y (test)</td></tr>
+        <tr><td>data/atlas/component_atlas.json</td><td>RAG samples from teach corpus</td><td>Generated from X</td></tr>
+        <tr><td>data/layer_profiles.json</td><td>Per-layer component rules</td><td>Generated from X</td></tr>
+        <tr><td>data/knowledge_base/structural_kb.json</td><td>Structural reasoning patterns</td><td>Generated from X</td></tr>
+        <tr><td>Output/ml_eval/ml_project_report.json</td><td>Combined train + test ML metrics</td><td>Metrics</td></tr>
+      </table>
+      <table style="margin-top:1rem;">
+        <tr><th>project-id</th><th>Knowledge loaded</th><th>Use case</th></tr>
+        <tr><td><strong>GENERIC</strong> (default)</td><td>Full multi-project teach corpus</td><td>Raw files_2 + new client drawings</td></tr>
+        <tr><td>INIZIO</td><td>Corpus-scoped profiles</td><td>Teach eval / manifest key only</td></tr>
       </table>
       <table style="margin-top:1rem;">
         <tr><th>Output file</th><th>Contents</th></tr>
-        <tr><td>{drawing}_results.json</td><td>Classification, slabs, beams, totals</td></tr>
+        <tr><td>{drawing}_results.json</td><td>Classification, slabs, beams, totals, inference_metrics</td></tr>
+        <tr><td>{drawing}_metrics.json</td><td>Test-split confidence + quality checks</td></tr>
         <tr><td>{drawing}_overlay.html</td><td>Interactive component overlay</td></tr>
-        <tr><td>{drawing}_quantities.xlsx</td><td>Summary · Slabs · Beams · Classification</td></tr>
-        <tr><td>{drawing}_review_queue.json</td><td>Low-confidence entities</td></tr>
+        <tr><td>{drawing}_quantities.xlsx</td><td>Summary · Metrics · Slabs · Beams · Classification</td></tr>
+        <tr><td>{drawing}_review_queue.json</td><td>Low-confidence entities (&lt; 75%)</td></tr>
       </table>
     </section>
   </main>
 
-  <footer>SDIE V6 · P2_SlabVersion6 · Open in browser · Use Download PNG for image export</footer>
+  <footer>SDIE V6 · P2_SlabVersion6 · June 2026 · Open in browser · Use Download PNG for image export</footer>
 
   <script>
     mermaid.initialize({
@@ -365,8 +448,6 @@ flowchart LR
       };
       img.src = "data:image/svg+xml;base64," + svg64;
     }
-
-    // Export all diagrams button in header area via keyboard: none — per-section buttons suffice
   </script>
 </body>
 </html>

@@ -202,10 +202,16 @@ def _write_metrics_sheet(wb, result: dict[str, Any]) -> None:
         ws.cell(row=row, column=2, value=value)
         row += 1
 
+    section("ML split")
+    kv("Split", inf.get("split", "test"))
+    kv("Metric type", inf.get("metric_type"))
+    row += 1
+
     gt = inf.get("ground_truth") or {}
-    section("Ground truth")
+    section("Accuracy evaluation")
     kv("Workbook benchmark", gt.get("workbook_benchmark"))
-    kv("Entity accuracy eval", gt.get("entity_accuracy_eval"))
+    kv("Train accuracy (X)", gt.get("train_accuracy_eval"))
+    kv("Test accuracy (Y)", gt.get("test_accuracy_eval"))
     row += 1
 
     cls = inf.get("classification") or {}
